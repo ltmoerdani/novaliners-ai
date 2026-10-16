@@ -1,0 +1,113 @@
+{
+  "version": "0.3-mvp",
+  "note": "Subset Constraint Dictionary (internal-docs Bagian 4). MVP-1 hanya domain yang paling sering muncul di persona target. v0.2: + C6.4 Response/Follow-up Failure, verdict taxonomy (STOP/NOT_YET/TEST_FIRST), disqualifiers.",
+  "verdicts": {
+    "STOP": "Jangan lakukan aksi di area ini sama sekali",
+    "NOT_YET": "Tunda sampai syarat terpenuhi",
+    "TEST_FIRST": "Jangan scale dulu — uji dengan volume kecil terukur, perbaiki proses, baru naikkan"
+  },
+  "constraints": {
+    "D1.2": {"domain": "D1_DIRECTION", "name": "Goal-Path Ambiguity", "definition": "Tujuan ada tapi jalur menuju tujuan tidak terdefinisi."},
+    "V2.1": {"domain": "V2_VALUE", "name": "Capability-Offer Disconnect", "definition": "Kemampuan ada, tapi belum diubah menjadi penawaran yang bisa dibeli."},
+    "V2.4": {"domain": "V2_VALUE", "name": "Value-Proof Gap", "definition": "Klaim nilai tidak didukung bukti hasil yang bisa diverifikasi."},
+    "M3.1": {"domain": "M3_MARKET", "name": "ICP Dilution", "definition": "Sasaran terlalu luas — tidak ada segmen spesifik yang paling cocok membeli."},
+    "M3.4": {"domain": "M3_MARKET", "name": "Authority Mismatch", "definition": "Kontak yang dijangkau bukan pemegang keputusan pembelian."},
+    "DS4.2": {"domain": "DS4_DISTRIBUTION", "name": "Distribution Inactivity", "definition": "Tidak ada aktivitas outreach yang konsisten ke calon pembeli."},
+    "DM5.1": {"domain": "DM5_DEMAND", "name": "Demand Insufficiency", "definition": "Demand terbukti ada, tapi volume pipeline belum cukup untuk menutup gap ke target revenue."},
+    "DM5.5": {
+      "domain": "DM5_DEMAND", "name": "Trust Deficit",
+      "definition": "Pasar tidak cukup percaya untuk bertransaksi.",
+      "disqualifiers": [
+        {
+          "id": "DM5.5-DQ1-transaksi-nyata",
+          "source_prose": "Ada transaksi nyata baru-baru ini (trust terbukti cukup)",
+          "predicate": {"evidence_level_present": ["transactional", "outcome"]},
+          "note": "Disqualifier terpicu: ada transaksi nyata baru-baru ini — trust terbukti cukup; 'Trust Deficit' kemungkinan bukan akar masalah"
+        },
+        {
+          "id": "DM5.5-DQ2-tanpa-bukti-rejection-trust",
+          "source_prose": "Tidak ada bukti rejection/loss yang disebabkan trust/proof",
+          "executable": false,
+          "reason": "Menuntut kategorisasi semantik 'rejection akibat trust/proof' yang belum ada di bahasa predikat generik. Kandidat: absennya evidence pada mechanism `trust_gap`. Belum dieksekusi karena akan mengubah status DM5.5 di artefak dan butuh keputusan owner — dinyatakan NON-EKSEKUTABEL supaya deklarasi tidak diam-diam inert (ontology v0.3)."
+        }
+      ]
+    },
+    "DM5.6": {"domain": "DM5_DEMAND", "name": "Proof Deficit", "definition": "Tidak ada bukti sosial / hasil nyata yang memperkuat klaim."},
+    "C6.1": {"domain": "C6_CONVERSION", "name": "Qualification Failure", "definition": "Percakapan terjadi dengan pihak yang tidak akan pernah membeli."},
+    "C6.3": {"domain": "C6_CONVERSION", "name": "Value Framing Failure", "definition": "Nilai tidak dikomunikasikan dalam bahasa masalah pembeli."},
+    "C6.4": {"domain": "C6_CONVERSION", "name": "Response/Follow-up Failure", "definition": "Inquiry/prospek masuk tetapi bocor karena respons lambat atau follow-up tidak dilakukan."},
+    "R7.2": {"domain": "R7_RETENTION", "name": "Onboarding Friction", "definition": "Customer gagal mencapai nilai pertama karena onboarding berat."},
+    "L8.1": {"domain": "L8_LEVERAGE", "name": "Time-for-Money Trap", "definition": "Revenue hanya tumbuh sebanding jam kerja — tidak ada leverage."},
+    "L8.3": {"domain": "L8_LEVERAGE", "name": "Delivery Capacity Constraint", "definition": "Kapasitas delivery sudah mendekati maksimum: menambah klien tanpa mengubah cara kerja/asisten tidak bisa dilayani."}
+  },
+  "classes_v04": {
+    "note": "Ontology v0.4 candidate classes (iter-12) — dipakai saat constraint ontology tidak cukup (lihat NO_FIT di agents/diagnosis.py). Belum ber-status constraint sampai divalidasi pada >=3 kasus.",
+    "process_gaps": {
+      "name": "Process Gap",
+      "definition": "Proses operasional yang tidak ada/terputus — bukan akar kausal, tapi penyebab mekanis kebocoran.",
+      "examples": ["tidak ada pencatatan funnel", "tidak ada jadwal follow-up", "tidak ada rate card tertulis", "discovery tanpa pertanyaan dampak"]
+    },
+    "commercialization_maturity": {
+      "name": "Commercialization Maturity Gap",
+      "definition": "Kapabilitas & demand sudah ada, tetapi sistem komersial belum cukup standar untuk mereproduksi hasil.",
+      "levels": {
+        "L1": "Capability — bisa mengerjakan",
+        "L2": "Proven value — pernah dibayar",
+        "L3": "Repeatable offer — penawaran bisa dijelaskan berulang",
+        "L4": "Repeatable acquisition — channel predictable",
+        "L5": "Repeatable conversion — mekanika konversi diketahui",
+        "L6": "Predictable revenue — revenue bisa diramalkan"
+      }
+    }
+  },
+  "contraindications": {
+    "D1.*": {
+      "verdict": "STOP",
+      "text": "Don't pick any growth tactic yet",
+      "reason": "The route to your goal is not defined yet. Any tactic runs without direction, and your energy spreads in many directions at once",
+      "until": "One route (channel, ideal client and offer) is chosen on purpose and written in one sentence"
+    },
+    "V2.*": {
+      "verdict": "NOT_YET",
+      "text": "Don't run paid ads",
+      "reason": "Ads multiply your message. If the offer has not been tested, you multiply noise at a cost",
+      "until": "A test of the evidence or the offer has met its success measure"
+    },
+    "DS4.*": {
+      "verdict": "TEST_FIRST",
+      "text": "Don't build lots of content yet",
+      "reason": "Content with no direct contact with likely buyers is a tower with no door: your energy runs out before any conversation starts. Do direct outreach in small volume first, content follows",
+      "until": "A direct outreach routine has been running for at least 2 weeks"
+    },
+    "M3.*": {
+      "verdict": "NOT_YET",
+      "text": "Don't widen your channels",
+      "reason": "Your target is not sharp yet. Adding channels before your ideal client is clear only widens the shots in the wrong direction",
+      "until": "One ideal-client segment is defined and tested with at least 1 real conversation"
+    },
+    "DM5.*": {
+      "verdict": "TEST_FIRST",
+      "text": "Don't scale how you win clients, and don't assume demand is enough: measure it first from what you already have",
+      "reason": "Demand existing is not the same as demand being enough. Before judging whether you need more, measure how many inquiries become deals among the leads you already have. A test is not scale: run a small test to learn what converts, not to add volume",
+      "until": "Your numbers are measured (inquiry, call, proposal, close) and the number of deals your target needs can be worked out from data, not assumption"
+    },
+    "R7.*": {
+      "verdict": "NOT_YET",
+      "text": "Don't scale paid client acquisition",
+      "reason": "The value leaks after the first month: more traffic widens the leak, not revenue",
+      "until": "Existing clients reach a second value (repeat work or a measured result)"
+    },
+    "C6.*": {
+      "verdict": "TEST_FIRST",
+      "text": "Don't scale how you win clients yet, and don't test volume at the same time as fixing conversion. Do it in 4 phases: (1) fix price response on the leads you have, (2) measure how many inquiries become deals, (3) then run a controlled test with about 10 targeted prospects, (4) then judge whether the target is feasible",
+      "reason": "A test is not scale, and an order is not parallel. If fixing conversion and testing volume run together and fail, you cannot tell why (price? ideal client? demand?). First close the leak on the live leads you already have, measure, then add volume",
+      "until": "Each phase passes before the next: phases 1 and 2 until conversion is measured, phase 3 until at least 1 deal closes from the small test, phase 4 judges whether the target is realistic"
+    },
+    "L8.*": {
+      "verdict": "NOT_YET",
+      "text": "Don't take on more clients",
+      "reason": "Your capacity and process are not repeatable yet: more clients cost you quality and health. If the limit is delivery capacity (L8.3), speed up by handing off the work that can be handed off before adding clients",
+      "until": "Your delivery process is written down and has been run again without you at full stretch (or part of the work has been handed off)"
+    }
+  }
+}

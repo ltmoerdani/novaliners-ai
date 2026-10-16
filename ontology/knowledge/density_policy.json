@@ -1,0 +1,9 @@
+{
+ "$comment": "FASE 0 — density policy KB (internal-docs §7, internal-docs Gate 2(e)). Threshold minimum per capability: probe, rule, dan sumber unik yang menutupnya. Capability yang belum memenuhi threshold WAJIB terdaftar di known_thin dengan alasan + sumber penutup yang direncanakan. known_thin adalah RATCHET MENGECIL: entri baru = ERROR (cek dulu dengan pemilik knowledge), entri yang sudah naik kelas harus DIHAPUS dari daftar (validator menandai STALE). Daftar ini bagian dari fingerprint KB (kb_sha256).",
+ "thresholds": {
+  "min_probes": 3,
+  "min_rules": 3,
+  "min_sources": 2
+ },
+ "known_thin": {}
+}

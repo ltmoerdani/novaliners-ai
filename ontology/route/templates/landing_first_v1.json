@@ -1,0 +1,118 @@
+{
+  "$comment": "[PROOF SPECIMEN — BUKAN model produk final (metodologi 27 Sep, review owner; klasifikasi §8.1 int 08): template ini memperkuji ontology (grammar/depends_on/validator), bukan membuktikan pola landing-page = arah produk. JANGAN menambah RouteTemplate sebelum runtime composition stabil.] RouteTemplate #1 (Tahap 7). REVIEW f3a8d88 diterapkan: (1) not_applicable = [] — predikat 'sudah ada halaman aktif' mengukur SATISFACTION (milik adjudicator, RR7; goal PRESENT => INV-R12 route tak lahir, bukan NOT_APPLICABLE); applicability menjawab kecocokan STRATEGI thd konteks; tanpa bukti positif => UNDETERMINED (INV-R2). (2) node_id UUID DIHAPUS — kunci fisik instance (INV-R15); template pakai candidate_key lokal; UUID diterbitkan saat instansiasi. (3) applies DITAJAMKAN: menuntut sinyal kanal online/demand digital — 'menyebut kata landing' terlalu lebar ('saya tidak pakai landing page' pun cocok). Provenance diverifikasi: vp:ch05 (landing+copy), hg:ch04 (baseline).",
+  "template_id": "landing_first_v1",
+  "strategy_id": "template_led",
+  "applies_when": {
+    "applies": [
+      {
+        "text_contains_any": [
+          "jual online",
+          "kanal online",
+          "website",
+          "medsos",
+          "dm instagram",
+          "whatsapp bisnis",
+          "trafik",
+          "audiens digital",
+          "sell online",
+          "online channel",
+          "social media",
+          "instagram dm",
+          "whatsapp business",
+          "traffic",
+          "digital audience",
+          "landing page"
+        ]
+      }
+    ],
+    "not_applicable": []
+  },
+  "requires": [
+    "conversion.landing_page",
+    "conversion.copy_composition",
+    "experiment.baseline_comparison"
+  ],
+  "node_candidates": [
+    {
+      "candidate_key": "copy_main",
+      "resolves": [
+        "conversion.copy_composition"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Tulis copy conversion-oriented untuk landing page",
+      "i18n": {
+        "en": {
+          "activity": "Write conversion-focused copy for the landing page"
+        }
+      },
+      "execution_context": "landing-page"
+    },
+    {
+      "candidate_key": "copy_email",
+      "resolves": [
+        "conversion.copy_composition"
+      ],
+      "strength": "soft",
+      "depends_on": [],
+      "activity": "Adapt copy yang sama untuk email sequence reaktivasi",
+      "i18n": {
+        "en": {
+          "activity": "Adapt the same copy for a reactivation email sequence"
+        }
+      },
+      "execution_context": "email-sequence"
+    },
+    {
+      "candidate_key": "landing",
+      "resolves": [
+        "conversion.landing_page"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "copy_main"
+      ],
+      "activity": "Bangun halaman konversi dari copy dan template",
+      "i18n": {
+        "en": {
+          "activity": "Build the conversion page from the copy and a template"
+        }
+      }
+    },
+    {
+      "candidate_key": "baseline",
+      "resolves": [
+        "experiment.baseline_comparison"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "landing"
+      ],
+      "activity": "Jalankan uji konversi dasar 2 minggu dengan baseline tercatat",
+      "i18n": {
+        "en": {
+          "activity": "Run a two-week basic conversion test with the baseline written down"
+        }
+      }
+    }
+  ],
+  "provenance": [
+    {
+      "source_id": "vp",
+      "chapters": [
+        "ch05"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "hg",
+      "chapters": [
+        "ch04"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    }
+  ],
+  "goal_anchor": "conversion.landing_page"
+}

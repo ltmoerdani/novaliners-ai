@@ -1,0 +1,233 @@
+{
+ "$comment": "Diagnostic probes from Value Proposition Design (mapping §3). For the interview phase that touches on the offer/proposal.",
+ "probes": [
+  {
+   "probe_id": "VP-P01",
+   "text": "For your segment — who exactly are they, and what problem do they want to solve?",
+   "targets": [
+    "M3.1"
+   ],
+   "evidence_type": "segment",
+   "signal_interpretation": {
+    "positive": "Satu segmen spesifik + masalah jelas — prasyarat value proposition terpenuhi",
+    "negative": "Blurry segment / mixed many customer types — ICP dilution, profile cannot be created",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P02",
+   "text": "If your customers explain the problem themselves, what are their words — not yours?",
+   "targets": [
+    "C6.3"
+   ],
+   "evidence_type": "language",
+   "signal_interpretation": {
+    "positive": "There is concrete voice-of-customer (their quotes/terms) — value framing can use that language.",
+    "negative": "Hanya jargon penjual / tidak pernah dengar kata mereka — framing pasti off-target",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P03",
+   "text": "State their most extreme pain — in the units they use themselves (minutes, rupiah, percent)?",
+   "targets": [
+    "V2.4",
+    "C6.3"
+   ],
+   "evidence_type": "quantitative",
+   "signal_interpretation": {
+    "positive": "There is a measurable threshold ('more than x minutes', 'around Rp y') — pain concretization, testable",
+    "negative": "Pain is described vaguely without measurement — severity cannot be validated",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P04",
+   "text": "Offer Anda menyelesaikan pain/gain mana SATU yang paling penting — dan seberapa baik dibanding alternatif mereka saat ini?",
+   "targets": [
+    "V2.1"
+   ],
+   "evidence_type": "focus",
+   "signal_interpretation": {
+    "positive": "Satu fokus jelas + tahu keunggulan vs alternatif — karakteristik #2, #3, #9 terpenuhi arah",
+    "negative": "Mau menyelesaikan semuanya / tidak tahu posisi vs alternatif — offer tidak fokus, tidak diferensial",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch02",
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P05",
+   "text": "Try to state your offer in one sentence: we help [who] who want [what] with [how], different from [competitors]?",
+   "targets": [
+    "V2.1",
+    "C6.3"
+   ],
+   "evidence_type": "formulation",
+   "signal_interpretation": {
+    "positive": "Ad-lib terisi penuh dan koheren — capability sudah menjadi offer",
+    "negative": "Gagal mengisi / kalimat tidak utuh — capability-offer disconnect terkonfirmasi",
+    "neutral": "Filled in but segment or differentiation empty — half-finished offer"
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P06",
+   "text": "Of the 10 characteristics of a good value proposition, which 3 are the weakest in your offer?",
+   "targets": [
+    "V2.4"
+   ],
+   "evidence_type": "assessment",
+   "signal_interpretation": {
+    "positive": "Honest self-assessment with specific weak areas — the starting point for improvement is identified.",
+    "negative": "Mengklaim semua kuat tanpa bukti — overconfidence, tidak ada basis assessment",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P07",
+   "text": "Fit tahap mana Anda: punya bukti customer peduli (paper), peduli ke offer Anda (market), atau model untung (bank)?",
+   "targets": [
+    "D1.2",
+    "V2.4"
+   ],
+   "evidence_type": "stage",
+   "signal_interpretation": {
+    "positive": "Know exactly its stage — the next path can be determined (problem-solution → product-market → business model)",
+    "negative": "Tidak tahu / campur aduk — jalur tidak terdefinisi, langkah apa pun prematur",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P08",
+   "text": "The riskiest hypothesis of your offer — what must be true for this to work — and what is the cheapest experiment that proves it?",
+   "targets": [
+    "V2.4",
+    "DM5.6"
+   ],
+   "evidence_type": "hypothesis",
+   "signal_interpretation": {
+    "positive": "Hipotesis kritis teridentifikasi + eksperimen termurah jelas (test card) — jalur bukti ada",
+    "negative": "No explicit hypothesis / want to go straight to building the whole thing — spreadsheet fantasy, there won't be any evidence",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P09",
+   "text": "The last conversation or experiment that changed your decision about the offer — what was the result?",
+   "targets": [
+    "V2.4",
+    "DM5.6"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "There was a real experiment that changed the decision — evidence-driven, weight increased.",
+    "negative": "Keputusan murni dari opini/debat internal tanpa lapangan — opinion dominates over facts",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "VP-P10",
+   "text": "How does the customer measure success for that job — what numbers do they use?",
+   "targets": [
+    "C6.3",
+    "V2.4"
+   ],
+   "evidence_type": "quantitative",
+   "signal_interpretation": {
+    "positive": "Success criteria customer diketahui dan offer selaras dengannya — karakteristik #6",
+    "negative": "Don't know how they measure success — the value framing won't align.",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch01",
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

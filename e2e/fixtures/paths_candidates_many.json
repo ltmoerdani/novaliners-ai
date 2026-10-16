@@ -1,0 +1,4904 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "",
+  "found_version": 3,
+  "i18n": {},
+  "needs_rediagnosis": false,
+  "reason_code": null,
+  "status": "CURRENT"
+ },
+ "possible_paths": {
+  "generation": {
+   "considered": 8,
+   "emerged": [
+    "improve_activation",
+    "simplify_onboarding",
+    "clarify_pricing",
+    "fix_early_churn",
+    "longer_trial",
+    "ask_referrals",
+    "faster_support",
+    "track_funnel"
+   ],
+   "mechanisms": [
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m0"
+     ],
+     "knowledge_ids": [
+      "MN-R0"
+     ],
+     "mechanism_id": "mech_0",
+     "status": "ACTIVE",
+     "title": "Activation",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m1"
+     ],
+     "knowledge_ids": [
+      "MN-R1"
+     ],
+     "mechanism_id": "mech_1",
+     "status": "ACTIVE",
+     "title": "Onboarding",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m2"
+     ],
+     "knowledge_ids": [
+      "MN-R2"
+     ],
+     "mechanism_id": "mech_2",
+     "status": "ACTIVE",
+     "title": "Pricing page",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m3"
+     ],
+     "knowledge_ids": [
+      "MN-R3"
+     ],
+     "mechanism_id": "mech_3",
+     "status": "ACTIVE",
+     "title": "Early churn",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m4"
+     ],
+     "knowledge_ids": [
+      "MN-R4"
+     ],
+     "mechanism_id": "mech_4",
+     "status": "ACTIVE",
+     "title": "Longer trial",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m5"
+     ],
+     "knowledge_ids": [
+      "MN-R5"
+     ],
+     "mechanism_id": "mech_5",
+     "status": "ACTIVE",
+     "title": "Referrals",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m6"
+     ],
+     "knowledge_ids": [
+      "MN-R6"
+     ],
+     "mechanism_id": "mech_6",
+     "status": "ACTIVE",
+     "title": "Support speed",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m7"
+     ],
+     "knowledge_ids": [
+      "MN-R7"
+     ],
+     "mechanism_id": "mech_7",
+     "status": "ACTIVE",
+     "title": "Funnel tracking",
+     "transcript_anchors": []
+    }
+   ],
+   "not_emergent": [],
+   "possibilities": [
+    {
+     "candidate_id": "cand.improve_activation",
+     "conflicts": [],
+     "direction": "improve_activation",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0"
+     ],
+     "knowledge_ids": [
+      "MN-R0"
+     ],
+     "mechanism_ids": [
+      "mech_0"
+     ],
+     "missing": [],
+     "path_id": "path.improve_activation",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Improve activation first"
+    },
+    {
+     "candidate_id": "cand.simplify_onboarding",
+     "conflicts": [],
+     "direction": "simplify_onboarding",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m1"
+     ],
+     "knowledge_ids": [
+      "MN-R1"
+     ],
+     "mechanism_ids": [
+      "mech_1"
+     ],
+     "missing": [],
+     "path_id": "path.simplify_onboarding",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Simplify onboarding"
+    },
+    {
+     "candidate_id": "cand.clarify_pricing",
+     "conflicts": [],
+     "direction": "clarify_pricing",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m2"
+     ],
+     "knowledge_ids": [
+      "MN-R2"
+     ],
+     "mechanism_ids": [
+      "mech_2"
+     ],
+     "missing": [],
+     "path_id": "path.clarify_pricing",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Clarify the pricing page"
+    },
+    {
+     "candidate_id": "cand.fix_early_churn",
+     "conflicts": [],
+     "direction": "fix_early_churn",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m3"
+     ],
+     "knowledge_ids": [
+      "MN-R3"
+     ],
+     "mechanism_ids": [
+      "mech_3"
+     ],
+     "missing": [],
+     "path_id": "path.fix_early_churn",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Fix early churn"
+    },
+    {
+     "candidate_id": "cand.longer_trial",
+     "conflicts": [],
+     "direction": "longer_trial",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m4"
+     ],
+     "knowledge_ids": [
+      "MN-R4"
+     ],
+     "mechanism_ids": [
+      "mech_4"
+     ],
+     "missing": [],
+     "path_id": "path.longer_trial",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Test a longer trial"
+    },
+    {
+     "candidate_id": "cand.ask_referrals",
+     "conflicts": [],
+     "direction": "ask_referrals",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m5"
+     ],
+     "knowledge_ids": [
+      "MN-R5"
+     ],
+     "mechanism_ids": [
+      "mech_5"
+     ],
+     "missing": [],
+     "path_id": "path.ask_referrals",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Ask happy users for referrals"
+    },
+    {
+     "candidate_id": "cand.faster_support",
+     "conflicts": [],
+     "direction": "faster_support",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m6"
+     ],
+     "knowledge_ids": [
+      "MN-R6"
+     ],
+     "mechanism_ids": [
+      "mech_6"
+     ],
+     "missing": [],
+     "path_id": "path.faster_support",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Speed up support replies"
+    },
+    {
+     "candidate_id": "cand.track_funnel",
+     "conflicts": [],
+     "direction": "track_funnel",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m7"
+     ],
+     "knowledge_ids": [
+      "MN-R7"
+     ],
+     "mechanism_ids": [
+      "mech_7"
+     ],
+     "missing": [],
+     "path_id": "path.track_funnel",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Track the funnel"
+    }
+   ],
+   "rejected": [],
+   "undetermined": [],
+   "unsupported_knowledge": []
+  },
+  "paths": [
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "Help new sign-ups reach value first.",
+    "checks": [
+     {
+      "check_id": "chk_0",
+      "i18n": {
+       "en": {
+        "reason": "Condition 0 is met",
+        "title": "Condition 0 is in place",
+        "unlock": "Do the thing for 0."
+       }
+      },
+      "kind": "prereq",
+      "reason": "condition 0 met",
+      "refs": [
+       "ev-m0"
+      ],
+      "requirement_id": null,
+      "state": "PRESENT",
+      "title": "Condition 0",
+      "unlock": "unlock 0"
+     }
+    ],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.improve_activation",
+    "presentation": {
+     "en": {
+      "basis": "Help new sign-ups reach value first.",
+      "because": "Many people sign up, but too few reach the moment where the product pays off.",
+      "short": "Improve activation first",
+      "word": "Activation"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.improve_activation",
+      "conflicts": [],
+      "direction": "improve_activation",
+      "evidence_ids": [
+       "ev-m0"
+      ],
+      "knowledge_ids": [
+       "MN-R0"
+      ],
+      "mechanism_ids": [
+       "mech_0"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m0"
+        ],
+        "knowledge_ids": [
+         "MN-R0"
+        ],
+        "mechanism_id": "mech_0",
+        "status": "ACTIVE",
+        "title": "Activation",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R0"
+          ],
+          "mechanism_id": "mech_0",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_0 aktif (DERIVED)",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "mechanism:mech_0"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m0"
+          ],
+          "operand": [
+           "symptom 0 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R0 aktif, didukung evidence ev-m0",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "rule:MN-R0"
+       }
+      ],
+      "thesis": "Help new sign-ups reach value first.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_0"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0"
+     ],
+     "knowledge_ids": [
+      "MN-R0"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m0"
+         ],
+         "operand": [
+          "symptom 0 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m0"
+       ],
+       "rule_id": "MN-R0",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_0"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "improve_activation",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R0"
+         ],
+         "mechanism_id": "mech_0",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_0 aktif (DERIVED)",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "mechanism:mech_0"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m0"
+         ],
+         "operand": [
+          "symptom 0 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R0 aktif, didukung evidence ev-m0",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "rule:MN-R0"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "improve_activation",
+    "title": "Improve activation first",
+    "unlock_conditions": []
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "Cut the first session down to what leads to value.",
+    "checks": [
+     {
+      "check_id": "chk_1",
+      "i18n": {
+       "en": {
+        "reason": "Condition 1 is not measured yet",
+        "title": "Condition 1 is in place",
+        "unlock": "Do the thing for 1."
+       }
+      },
+      "kind": "prereq",
+      "reason": "condition 1 unknown",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "Condition 1",
+      "unlock": "unlock 1"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "chk_1",
+      "need": "unlock 1"
+     }
+    ],
+    "motion": null,
+    "path_id": "path.simplify_onboarding",
+    "presentation": {
+     "en": {
+      "basis": "Cut the first session down to what leads to value.",
+      "because": "Your first session is confusing, so people give up before they see value.",
+      "short": "Simplify onboarding",
+      "word": "Onboarding"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.simplify_onboarding",
+      "conflicts": [],
+      "direction": "simplify_onboarding",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m1"
+      ],
+      "knowledge_ids": [
+       "MN-R1"
+      ],
+      "mechanism_ids": [
+       "mech_1"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m1"
+        ],
+        "knowledge_ids": [
+         "MN-R1"
+        ],
+        "mechanism_id": "mech_1",
+        "status": "ACTIVE",
+        "title": "Onboarding",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R1"
+          ],
+          "mechanism_id": "mech_1",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_1 aktif (DERIVED)",
+        "refs": [
+         "ev-m1"
+        ],
+        "signal": "mechanism:mech_1"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m1"
+          ],
+          "operand": [
+           "symptom 1 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R1 aktif, didukung evidence ev-m1",
+        "refs": [
+         "ev-m1"
+        ],
+        "signal": "rule:MN-R1"
+       }
+      ],
+      "thesis": "Cut the first session down to what leads to value.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_1"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m1"
+     ],
+     "knowledge_ids": [
+      "MN-R1"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m1"
+         ],
+         "operand": [
+          "symptom 1 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m1"
+       ],
+       "rule_id": "MN-R1",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_1"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "simplify_onboarding",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R1"
+         ],
+         "mechanism_id": "mech_1",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_1 aktif (DERIVED)",
+       "refs": [
+        "ev-m1"
+       ],
+       "signal": "mechanism:mech_1"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m1"
+         ],
+         "operand": [
+          "symptom 1 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R1 aktif, didukung evidence ev-m1",
+       "refs": [
+        "ev-m1"
+       ],
+       "signal": "rule:MN-R1"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "simplify_onboarding",
+    "title": "Simplify onboarding",
+    "unlock_conditions": [
+     "unlock 1"
+    ]
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "Say plainly what each plan includes.",
+    "checks": [
+     {
+      "check_id": "chk_2",
+      "i18n": {
+       "en": {
+        "reason": "Condition 2 is not met",
+        "title": "Condition 2 is in place",
+        "unlock": "Do the thing for 2."
+       }
+      },
+      "kind": "prereq",
+      "reason": "condition 2 not met",
+      "refs": [
+       "ev-m2"
+      ],
+      "requirement_id": null,
+      "state": "ABSENT",
+      "title": "Condition 2",
+      "unlock": "unlock 2"
+     }
+    ],
+    "feasibility": "CONDITIONAL",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.clarify_pricing",
+    "presentation": {
+     "en": {
+      "basis": "Say plainly what each plan includes.",
+      "because": "People ask what each plan includes before they will start.",
+      "short": "Clarify the pricing page",
+      "word": "Pricing page"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.clarify_pricing",
+      "conflicts": [],
+      "direction": "clarify_pricing",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m2"
+      ],
+      "knowledge_ids": [
+       "MN-R2"
+      ],
+      "mechanism_ids": [
+       "mech_2"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m2"
+        ],
+        "knowledge_ids": [
+         "MN-R2"
+        ],
+        "mechanism_id": "mech_2",
+        "status": "ACTIVE",
+        "title": "Pricing page",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R2"
+          ],
+          "mechanism_id": "mech_2",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_2 aktif (DERIVED)",
+        "refs": [
+         "ev-m2"
+        ],
+        "signal": "mechanism:mech_2"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m2"
+          ],
+          "operand": [
+           "symptom 2 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R2 aktif, didukung evidence ev-m2",
+        "refs": [
+         "ev-m2"
+        ],
+        "signal": "rule:MN-R2"
+       }
+      ],
+      "thesis": "Say plainly what each plan includes.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_2"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m2"
+     ],
+     "knowledge_ids": [
+      "MN-R2"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m2"
+         ],
+         "operand": [
+          "symptom 2 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m2"
+       ],
+       "rule_id": "MN-R2",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_2"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "clarify_pricing",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R2"
+         ],
+         "mechanism_id": "mech_2",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_2 aktif (DERIVED)",
+       "refs": [
+        "ev-m2"
+       ],
+       "signal": "mechanism:mech_2"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m2"
+         ],
+         "operand": [
+          "symptom 2 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R2 aktif, didukung evidence ev-m2",
+       "refs": [
+        "ev-m2"
+       ],
+       "signal": "rule:MN-R2"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "NOT_YET",
+    "stop_provenance": [],
+    "strategy_id": "clarify_pricing",
+    "title": "Clarify the pricing page",
+    "unlock_conditions": [
+     "unlock 2"
+    ]
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "Find why people leave in the first week.",
+    "checks": [
+     {
+      "check_id": "chk_3",
+      "i18n": {
+       "en": {
+        "reason": "Condition 3 is not met",
+        "title": "Condition 3 is in place",
+        "unlock": "Do the thing for 3."
+       }
+      },
+      "kind": "hard",
+      "reason": "condition 3 not met",
+      "refs": [
+       "ev-m3"
+      ],
+      "requirement_id": null,
+      "state": "ABSENT",
+      "title": "Condition 3",
+      "unlock": "unlock 3"
+     }
+    ],
+    "feasibility": "CONTRADICTED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.fix_early_churn",
+    "presentation": {
+     "en": {
+      "basis": "Find why people leave in the first week.",
+      "because": "A lot of people leave within a week of starting.",
+      "short": "Fix early churn",
+      "word": "Early churn"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.fix_early_churn",
+      "conflicts": [],
+      "direction": "fix_early_churn",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m3"
+      ],
+      "knowledge_ids": [
+       "MN-R3"
+      ],
+      "mechanism_ids": [
+       "mech_3"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m3"
+        ],
+        "knowledge_ids": [
+         "MN-R3"
+        ],
+        "mechanism_id": "mech_3",
+        "status": "ACTIVE",
+        "title": "Early churn",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R3"
+          ],
+          "mechanism_id": "mech_3",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_3 aktif (DERIVED)",
+        "refs": [
+         "ev-m3"
+        ],
+        "signal": "mechanism:mech_3"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m3"
+          ],
+          "operand": [
+           "symptom 3 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R3 aktif, didukung evidence ev-m3",
+        "refs": [
+         "ev-m3"
+        ],
+        "signal": "rule:MN-R3"
+       }
+      ],
+      "thesis": "Find why people leave in the first week.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_3"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m3"
+     ],
+     "knowledge_ids": [
+      "MN-R3"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m3"
+         ],
+         "operand": [
+          "symptom 3 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m3"
+       ],
+       "rule_id": "MN-R3",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_3"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "fix_early_churn",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R3"
+         ],
+         "mechanism_id": "mech_3",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_3 aktif (DERIVED)",
+       "refs": [
+        "ev-m3"
+       ],
+       "signal": "mechanism:mech_3"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m3"
+         ],
+         "operand": [
+          "symptom 3 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R3 aktif, didukung evidence ev-m3",
+       "refs": [
+        "ev-m3"
+       ],
+       "signal": "rule:MN-R3"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "STOP",
+    "stop_provenance": [
+     {
+      "checks": [
+       "chk_3"
+      ],
+      "source": "ENGINE_CONTRADICTION"
+     }
+    ],
+    "strategy_id": "fix_early_churn",
+    "title": "Fix early churn",
+    "unlock_conditions": [
+     "unlock 3"
+    ]
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "Give people time to reach value.",
+    "checks": [
+     {
+      "check_id": "chk_4",
+      "i18n": {
+       "en": {
+        "reason": "Condition 4 is met",
+        "title": "Condition 4 is in place",
+        "unlock": "Do the thing for 4."
+       }
+      },
+      "kind": "prereq",
+      "reason": "condition 4 met",
+      "refs": [
+       "ev-m4"
+      ],
+      "requirement_id": null,
+      "state": "PRESENT",
+      "title": "Condition 4",
+      "unlock": "unlock 4"
+     }
+    ],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.longer_trial",
+    "presentation": {
+     "en": {
+      "basis": "Give people time to reach value.",
+      "because": "The trial ends before most people have had time to try it properly.",
+      "short": "Test a longer trial",
+      "word": "Longer trial"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.longer_trial",
+      "conflicts": [],
+      "direction": "longer_trial",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m4"
+      ],
+      "knowledge_ids": [
+       "MN-R4"
+      ],
+      "mechanism_ids": [
+       "mech_4"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m4"
+        ],
+        "knowledge_ids": [
+         "MN-R4"
+        ],
+        "mechanism_id": "mech_4",
+        "status": "ACTIVE",
+        "title": "Longer trial",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R4"
+          ],
+          "mechanism_id": "mech_4",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_4 aktif (DERIVED)",
+        "refs": [
+         "ev-m4"
+        ],
+        "signal": "mechanism:mech_4"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m4"
+          ],
+          "operand": [
+           "symptom 4 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R4 aktif, didukung evidence ev-m4",
+        "refs": [
+         "ev-m4"
+        ],
+        "signal": "rule:MN-R4"
+       }
+      ],
+      "thesis": "Give people time to reach value.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_4"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m4"
+     ],
+     "knowledge_ids": [
+      "MN-R4"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m4"
+         ],
+         "operand": [
+          "symptom 4 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m4"
+       ],
+       "rule_id": "MN-R4",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_4"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "longer_trial",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R4"
+         ],
+         "mechanism_id": "mech_4",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_4 aktif (DERIVED)",
+       "refs": [
+        "ev-m4"
+       ],
+       "signal": "mechanism:mech_4"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m4"
+         ],
+         "operand": [
+          "symptom 4 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R4 aktif, didukung evidence ev-m4",
+       "refs": [
+        "ev-m4"
+       ],
+       "signal": "rule:MN-R4"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "longer_trial",
+    "title": "Test a longer trial",
+    "unlock_conditions": []
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "Turn the people who like it into your next sign-ups.",
+    "checks": [
+     {
+      "check_id": "chk_5",
+      "i18n": {
+       "en": {
+        "reason": "Condition 5 is not measured yet",
+        "title": "Condition 5 is in place",
+        "unlock": "Do the thing for 5."
+       }
+      },
+      "kind": "prereq",
+      "reason": "condition 5 unknown",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "Condition 5",
+      "unlock": "unlock 5"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "chk_5",
+      "need": "unlock 5"
+     }
+    ],
+    "motion": null,
+    "path_id": "path.ask_referrals",
+    "presentation": {
+     "en": {
+      "basis": "Turn the people who like it into your next sign-ups.",
+      "because": "A few users say they like it and have told friends on their own.",
+      "short": "Ask happy users for referrals",
+      "word": "Referrals"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.ask_referrals",
+      "conflicts": [],
+      "direction": "ask_referrals",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m5"
+      ],
+      "knowledge_ids": [
+       "MN-R5"
+      ],
+      "mechanism_ids": [
+       "mech_5"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m5"
+        ],
+        "knowledge_ids": [
+         "MN-R5"
+        ],
+        "mechanism_id": "mech_5",
+        "status": "ACTIVE",
+        "title": "Referrals",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R5"
+          ],
+          "mechanism_id": "mech_5",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_5 aktif (DERIVED)",
+        "refs": [
+         "ev-m5"
+        ],
+        "signal": "mechanism:mech_5"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m5"
+          ],
+          "operand": [
+           "symptom 5 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R5 aktif, didukung evidence ev-m5",
+        "refs": [
+         "ev-m5"
+        ],
+        "signal": "rule:MN-R5"
+       }
+      ],
+      "thesis": "Turn the people who like it into your next sign-ups.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_5"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m5"
+     ],
+     "knowledge_ids": [
+      "MN-R5"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m5"
+         ],
+         "operand": [
+          "symptom 5 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m5"
+       ],
+       "rule_id": "MN-R5",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_5"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "ask_referrals",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R5"
+         ],
+         "mechanism_id": "mech_5",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_5 aktif (DERIVED)",
+       "refs": [
+        "ev-m5"
+       ],
+       "signal": "mechanism:mech_5"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m5"
+         ],
+         "operand": [
+          "symptom 5 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R5 aktif, didukung evidence ev-m5",
+       "refs": [
+        "ev-m5"
+       ],
+       "signal": "rule:MN-R5"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "ask_referrals",
+    "title": "Ask happy users for referrals",
+    "unlock_conditions": [
+     "unlock 5"
+    ]
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "Answer new users while they are still trying it.",
+    "checks": [
+     {
+      "check_id": "chk_6",
+      "i18n": {
+       "en": {
+        "reason": "Condition 6 is met",
+        "title": "Condition 6 is in place",
+        "unlock": "Do the thing for 6."
+       }
+      },
+      "kind": "prereq",
+      "reason": "condition 6 met",
+      "refs": [
+       "ev-m6"
+      ],
+      "requirement_id": null,
+      "state": "PRESENT",
+      "title": "Condition 6",
+      "unlock": "unlock 6"
+     }
+    ],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.faster_support",
+    "presentation": {
+     "en": {
+      "basis": "Answer new users while they are still trying it.",
+      "because": "New users wait too long for an answer and drift away.",
+      "short": "Speed up support replies",
+      "word": "Support speed"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.faster_support",
+      "conflicts": [],
+      "direction": "faster_support",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m6"
+      ],
+      "knowledge_ids": [
+       "MN-R6"
+      ],
+      "mechanism_ids": [
+       "mech_6"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m6"
+        ],
+        "knowledge_ids": [
+         "MN-R6"
+        ],
+        "mechanism_id": "mech_6",
+        "status": "ACTIVE",
+        "title": "Support speed",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R6"
+          ],
+          "mechanism_id": "mech_6",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_6 aktif (DERIVED)",
+        "refs": [
+         "ev-m6"
+        ],
+        "signal": "mechanism:mech_6"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m6"
+          ],
+          "operand": [
+           "symptom 6 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R6 aktif, didukung evidence ev-m6",
+        "refs": [
+         "ev-m6"
+        ],
+        "signal": "rule:MN-R6"
+       }
+      ],
+      "thesis": "Answer new users while they are still trying it.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_6"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m6"
+     ],
+     "knowledge_ids": [
+      "MN-R6"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m6"
+         ],
+         "operand": [
+          "symptom 6 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m6"
+       ],
+       "rule_id": "MN-R6",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_6"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "faster_support",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R6"
+         ],
+         "mechanism_id": "mech_6",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_6 aktif (DERIVED)",
+       "refs": [
+        "ev-m6"
+       ],
+       "signal": "mechanism:mech_6"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m6"
+         ],
+         "operand": [
+          "symptom 6 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R6 aktif, didukung evidence ev-m6",
+       "refs": [
+        "ev-m6"
+       ],
+       "signal": "rule:MN-R6"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "faster_support",
+    "title": "Speed up support replies",
+    "unlock_conditions": []
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "Measure where sign-ups stop.",
+    "checks": [
+     {
+      "check_id": "chk_7",
+      "i18n": {
+       "en": {
+        "reason": "Condition 7 is not measured yet",
+        "title": "Condition 7 is in place",
+        "unlock": "Do the thing for 7."
+       }
+      },
+      "kind": "prereq",
+      "reason": "condition 7 unknown",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "Condition 7",
+      "unlock": "unlock 7"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "chk_7",
+      "need": "unlock 7"
+     }
+    ],
+    "motion": null,
+    "path_id": "path.track_funnel",
+    "presentation": {
+     "en": {
+      "basis": "Measure where sign-ups stop.",
+      "because": "Nobody can say exactly where new sign-ups stop.",
+      "short": "Track the funnel",
+      "word": "Funnel tracking"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.track_funnel",
+      "conflicts": [],
+      "direction": "track_funnel",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m7"
+      ],
+      "knowledge_ids": [
+       "MN-R7"
+      ],
+      "mechanism_ids": [
+       "mech_7"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m7"
+        ],
+        "knowledge_ids": [
+         "MN-R7"
+        ],
+        "mechanism_id": "mech_7",
+        "status": "ACTIVE",
+        "title": "Funnel tracking",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R7"
+          ],
+          "mechanism_id": "mech_7",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_7 aktif (DERIVED)",
+        "refs": [
+         "ev-m7"
+        ],
+        "signal": "mechanism:mech_7"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m7"
+          ],
+          "operand": [
+           "symptom 7 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R7 aktif, didukung evidence ev-m7",
+        "refs": [
+         "ev-m7"
+        ],
+        "signal": "rule:MN-R7"
+       }
+      ],
+      "thesis": "Measure where sign-ups stop.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_7"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m7"
+     ],
+     "knowledge_ids": [
+      "MN-R7"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m7"
+         ],
+         "operand": [
+          "symptom 7 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m7"
+       ],
+       "rule_id": "MN-R7",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_7"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "track_funnel",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R7"
+         ],
+         "mechanism_id": "mech_7",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_7 aktif (DERIVED)",
+       "refs": [
+        "ev-m7"
+       ],
+       "signal": "mechanism:mech_7"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m7"
+         ],
+         "operand": [
+          "symptom 7 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R7 aktif, didukung evidence ev-m7",
+       "refs": [
+        "ev-m7"
+       ],
+       "signal": "rule:MN-R7"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "track_funnel",
+    "title": "Track the funnel",
+    "unlock_conditions": [
+     "unlock 7"
+    ]
+   }
+  ],
+  "space_id": "saas_many",
+  "unresolved": [],
+  "version": 3
+ },
+ "projection": {
+  "emerging": [],
+  "generation": {
+   "considered": 8,
+   "emerged": [
+    "improve_activation",
+    "simplify_onboarding",
+    "clarify_pricing",
+    "fix_early_churn",
+    "longer_trial",
+    "ask_referrals",
+    "faster_support",
+    "track_funnel"
+   ],
+   "mechanisms": [
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m0"
+     ],
+     "knowledge_ids": [
+      "MN-R0"
+     ],
+     "mechanism_id": "mech_0",
+     "status": "ACTIVE",
+     "title": "Activation",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m1"
+     ],
+     "knowledge_ids": [
+      "MN-R1"
+     ],
+     "mechanism_id": "mech_1",
+     "status": "ACTIVE",
+     "title": "Onboarding",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m2"
+     ],
+     "knowledge_ids": [
+      "MN-R2"
+     ],
+     "mechanism_id": "mech_2",
+     "status": "ACTIVE",
+     "title": "Pricing page",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m3"
+     ],
+     "knowledge_ids": [
+      "MN-R3"
+     ],
+     "mechanism_id": "mech_3",
+     "status": "ACTIVE",
+     "title": "Early churn",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m4"
+     ],
+     "knowledge_ids": [
+      "MN-R4"
+     ],
+     "mechanism_id": "mech_4",
+     "status": "ACTIVE",
+     "title": "Longer trial",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m5"
+     ],
+     "knowledge_ids": [
+      "MN-R5"
+     ],
+     "mechanism_id": "mech_5",
+     "status": "ACTIVE",
+     "title": "Referrals",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m6"
+     ],
+     "knowledge_ids": [
+      "MN-R6"
+     ],
+     "mechanism_id": "mech_6",
+     "status": "ACTIVE",
+     "title": "Support speed",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-m7"
+     ],
+     "knowledge_ids": [
+      "MN-R7"
+     ],
+     "mechanism_id": "mech_7",
+     "status": "ACTIVE",
+     "title": "Funnel tracking",
+     "transcript_anchors": []
+    }
+   ],
+   "not_emergent": [],
+   "possibilities": [
+    {
+     "candidate_id": "cand.improve_activation",
+     "conflicts": [],
+     "direction": "improve_activation",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0"
+     ],
+     "knowledge_ids": [
+      "MN-R0"
+     ],
+     "mechanism_ids": [
+      "mech_0"
+     ],
+     "missing": [],
+     "path_id": "path.improve_activation",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Improve activation first"
+    },
+    {
+     "candidate_id": "cand.simplify_onboarding",
+     "conflicts": [],
+     "direction": "simplify_onboarding",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m1"
+     ],
+     "knowledge_ids": [
+      "MN-R1"
+     ],
+     "mechanism_ids": [
+      "mech_1"
+     ],
+     "missing": [],
+     "path_id": "path.simplify_onboarding",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Simplify onboarding"
+    },
+    {
+     "candidate_id": "cand.clarify_pricing",
+     "conflicts": [],
+     "direction": "clarify_pricing",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m2"
+     ],
+     "knowledge_ids": [
+      "MN-R2"
+     ],
+     "mechanism_ids": [
+      "mech_2"
+     ],
+     "missing": [],
+     "path_id": "path.clarify_pricing",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Clarify the pricing page"
+    },
+    {
+     "candidate_id": "cand.fix_early_churn",
+     "conflicts": [],
+     "direction": "fix_early_churn",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m3"
+     ],
+     "knowledge_ids": [
+      "MN-R3"
+     ],
+     "mechanism_ids": [
+      "mech_3"
+     ],
+     "missing": [],
+     "path_id": "path.fix_early_churn",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Fix early churn"
+    },
+    {
+     "candidate_id": "cand.longer_trial",
+     "conflicts": [],
+     "direction": "longer_trial",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m4"
+     ],
+     "knowledge_ids": [
+      "MN-R4"
+     ],
+     "mechanism_ids": [
+      "mech_4"
+     ],
+     "missing": [],
+     "path_id": "path.longer_trial",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Test a longer trial"
+    },
+    {
+     "candidate_id": "cand.ask_referrals",
+     "conflicts": [],
+     "direction": "ask_referrals",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m5"
+     ],
+     "knowledge_ids": [
+      "MN-R5"
+     ],
+     "mechanism_ids": [
+      "mech_5"
+     ],
+     "missing": [],
+     "path_id": "path.ask_referrals",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Ask happy users for referrals"
+    },
+    {
+     "candidate_id": "cand.faster_support",
+     "conflicts": [],
+     "direction": "faster_support",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m6"
+     ],
+     "knowledge_ids": [
+      "MN-R6"
+     ],
+     "mechanism_ids": [
+      "mech_6"
+     ],
+     "missing": [],
+     "path_id": "path.faster_support",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Speed up support replies"
+    },
+    {
+     "candidate_id": "cand.track_funnel",
+     "conflicts": [],
+     "direction": "track_funnel",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m7"
+     ],
+     "knowledge_ids": [
+      "MN-R7"
+     ],
+     "mechanism_ids": [
+      "mech_7"
+     ],
+     "missing": [],
+     "path_id": "path.track_funnel",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Track the funnel"
+    }
+   ],
+   "rejected": [],
+   "undetermined": [],
+   "unsupported_knowledge": []
+  },
+  "navigation": {
+   "current_version": 3,
+   "detail": "",
+   "found_version": 3,
+   "i18n": {},
+   "needs_rediagnosis": false,
+   "reason_code": null,
+   "status": "CURRENT"
+  },
+  "paths": [
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Help new sign-ups reach value first."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.improve_activation",
+     "evidence_ids": [
+      "ev-m0"
+     ],
+     "knowledge_ids": [
+      "MN-R0"
+     ],
+     "mechanism_ids": [
+      "mech_0"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "Many people sign up, but too few reach the moment where the product pays off."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 1,
+     "total": 1,
+     "unknown": 0
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "SUPPORTED",
+    "feasibility_engine": "SUPPORTED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "chk_0",
+      "evidence": [
+       "check:chk_0",
+       "ev:ev-m0"
+      ],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Do the thing for 0."
+      },
+      "key": "chk_0",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Condition 0 is met"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Condition 0 is in place"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Do the thing for 0."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.improve_activation",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "You already have condition 0 is in place.",
+       "claim_type": "SUPPORTED",
+       "evidence_anchor": [
+        "check:chk_0",
+        "ev:ev-m0"
+       ],
+       "field": "supported",
+       "requirement_anchor": "chk_0",
+       "support_state": "PRESENT"
+      }
+     ],
+     "holding": "",
+     "supported": "You already have condition 0 is in place. That is what this path stands on right now.",
+     "unclear": ""
+    },
+    "path_id": "path.improve_activation",
+    "presentation": {
+     "en": {
+      "basis": "Help new sign-ups reach value first.",
+      "because": "Many people sign up, but too few reach the moment where the product pays off.",
+      "short": "Improve activation first",
+      "word": "Activation"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.improve_activation",
+      "conflicts": [],
+      "direction": "improve_activation",
+      "evidence_ids": [
+       "ev-m0"
+      ],
+      "knowledge_ids": [
+       "MN-R0"
+      ],
+      "mechanism_ids": [
+       "mech_0"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m0"
+        ],
+        "knowledge_ids": [
+         "MN-R0"
+        ],
+        "mechanism_id": "mech_0",
+        "status": "ACTIVE",
+        "title": "Activation",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R0"
+          ],
+          "mechanism_id": "mech_0",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_0 aktif (DERIVED)",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "mechanism:mech_0"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m0"
+          ],
+          "operand": [
+           "symptom 0 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R0 aktif, didukung evidence ev-m0",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "rule:MN-R0"
+       }
+      ],
+      "thesis": "Help new sign-ups reach value first.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_0"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0"
+     ],
+     "knowledge_ids": [
+      "MN-R0"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m0"
+         ],
+         "operand": [
+          "symptom 0 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m0"
+       ],
+       "rule_id": "MN-R0",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_0"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "improve_activation",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R0"
+         ],
+         "mechanism_id": "mech_0",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_0 aktif (DERIVED)",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "mechanism:mech_0"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m0"
+         ],
+         "operand": [
+          "symptom 0 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R0 aktif, didukung evidence ev-m0",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "rule:MN-R0"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "improve_activation",
+    "title": "Improve activation first"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Cut the first session down to what leads to value."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.simplify_onboarding",
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m1"
+     ],
+     "knowledge_ids": [
+      "MN-R1"
+     ],
+     "mechanism_ids": [
+      "mech_1"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "Your first session is confusing, so people give up before they see value."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 1,
+     "unknown": 1
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "UNDETERMINED",
+    "feasibility_engine": "UNDETERMINED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "chk_1",
+      "evidence": [],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Do the thing for 1."
+      },
+      "key": "chk_1",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Condition 1 is not measured yet"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "UNKNOWN",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Condition 1 is in place"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Do the thing for 1."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.simplify_onboarding",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "Whether condition 1 is in place is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "unclear",
+       "requirement_anchor": "chk_1",
+       "support_state": "UNKNOWN"
+      }
+     ],
+     "holding": "",
+     "supported": "",
+     "unclear": "Whether condition 1 is in place is in place is not known yet."
+    },
+    "path_id": "path.simplify_onboarding",
+    "presentation": {
+     "en": {
+      "basis": "Cut the first session down to what leads to value.",
+      "because": "Your first session is confusing, so people give up before they see value.",
+      "short": "Simplify onboarding",
+      "word": "Onboarding"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.simplify_onboarding",
+      "conflicts": [],
+      "direction": "simplify_onboarding",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m1"
+      ],
+      "knowledge_ids": [
+       "MN-R1"
+      ],
+      "mechanism_ids": [
+       "mech_1"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m1"
+        ],
+        "knowledge_ids": [
+         "MN-R1"
+        ],
+        "mechanism_id": "mech_1",
+        "status": "ACTIVE",
+        "title": "Onboarding",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R1"
+          ],
+          "mechanism_id": "mech_1",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_1 aktif (DERIVED)",
+        "refs": [
+         "ev-m1"
+        ],
+        "signal": "mechanism:mech_1"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m1"
+          ],
+          "operand": [
+           "symptom 1 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R1 aktif, didukung evidence ev-m1",
+        "refs": [
+         "ev-m1"
+        ],
+        "signal": "rule:MN-R1"
+       }
+      ],
+      "thesis": "Cut the first session down to what leads to value.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_1"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m1"
+     ],
+     "knowledge_ids": [
+      "MN-R1"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m1"
+         ],
+         "operand": [
+          "symptom 1 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m1"
+       ],
+       "rule_id": "MN-R1",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_1"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "simplify_onboarding",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R1"
+         ],
+         "mechanism_id": "mech_1",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_1 aktif (DERIVED)",
+       "refs": [
+        "ev-m1"
+       ],
+       "signal": "mechanism:mech_1"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m1"
+         ],
+         "operand": [
+          "symptom 1 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R1 aktif, didukung evidence ev-m1",
+       "refs": [
+        "ev-m1"
+       ],
+       "signal": "rule:MN-R1"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "simplify_onboarding",
+    "title": "Simplify onboarding"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Say plainly what each plan includes."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.clarify_pricing",
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m2"
+     ],
+     "knowledge_ids": [
+      "MN-R2"
+     ],
+     "mechanism_ids": [
+      "mech_2"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "People ask what each plan includes before they will start."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 1,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 1,
+     "unknown": 0
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "CONDITIONAL",
+    "feasibility_engine": "CONDITIONAL",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "chk_2",
+      "evidence": [
+       "check:chk_2",
+       "ev:ev-m2"
+      ],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Do the thing for 2."
+      },
+      "key": "chk_2",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Condition 2 is not met"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "ABSENT",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Condition 2 is in place"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Do the thing for 2."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.clarify_pricing",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "Condition 2 is in place is what this path waits on.",
+       "claim_type": "MISSING",
+       "evidence_anchor": [
+        "check:chk_2",
+        "ev:ev-m2"
+       ],
+       "field": "holding",
+       "requirement_anchor": "chk_2",
+       "support_state": "ABSENT"
+      }
+     ],
+     "holding": "Condition 2 is in place is what this path still waits on.",
+     "supported": "",
+     "unclear": ""
+    },
+    "path_id": "path.clarify_pricing",
+    "presentation": {
+     "en": {
+      "basis": "Say plainly what each plan includes.",
+      "because": "People ask what each plan includes before they will start.",
+      "short": "Clarify the pricing page",
+      "word": "Pricing page"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.clarify_pricing",
+      "conflicts": [],
+      "direction": "clarify_pricing",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m2"
+      ],
+      "knowledge_ids": [
+       "MN-R2"
+      ],
+      "mechanism_ids": [
+       "mech_2"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m2"
+        ],
+        "knowledge_ids": [
+         "MN-R2"
+        ],
+        "mechanism_id": "mech_2",
+        "status": "ACTIVE",
+        "title": "Pricing page",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R2"
+          ],
+          "mechanism_id": "mech_2",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_2 aktif (DERIVED)",
+        "refs": [
+         "ev-m2"
+        ],
+        "signal": "mechanism:mech_2"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m2"
+          ],
+          "operand": [
+           "symptom 2 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R2 aktif, didukung evidence ev-m2",
+        "refs": [
+         "ev-m2"
+        ],
+        "signal": "rule:MN-R2"
+       }
+      ],
+      "thesis": "Say plainly what each plan includes.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_2"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m2"
+     ],
+     "knowledge_ids": [
+      "MN-R2"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m2"
+         ],
+         "operand": [
+          "symptom 2 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m2"
+       ],
+       "rule_id": "MN-R2",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_2"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "clarify_pricing",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R2"
+         ],
+         "mechanism_id": "mech_2",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_2 aktif (DERIVED)",
+       "refs": [
+        "ev-m2"
+       ],
+       "signal": "mechanism:mech_2"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m2"
+         ],
+         "operand": [
+          "symptom 2 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R2 aktif, didukung evidence ev-m2",
+       "refs": [
+        "ev-m2"
+       ],
+       "signal": "rule:MN-R2"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "NOT_YET",
+    "stop_provenance": [],
+    "strategy_id": "clarify_pricing",
+    "title": "Clarify the pricing page"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Find why people leave in the first week."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.fix_early_churn",
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m3"
+     ],
+     "knowledge_ids": [
+      "MN-R3"
+     ],
+     "mechanism_ids": [
+      "mech_3"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "A lot of people leave within a week of starting."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 1,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 1,
+     "unknown": 0
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "CONTRADICTED",
+    "feasibility_engine": "CONTRADICTED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "chk_3",
+      "evidence": [
+       "check:chk_3",
+       "ev:ev-m3"
+      ],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Do the thing for 3."
+      },
+      "key": "chk_3",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Condition 3 is not met"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "ABSENT",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Condition 3 is in place"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Do the thing for 3."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.fix_early_churn",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [],
+     "holding": "",
+     "supported": "",
+     "unclear": ""
+    },
+    "path_id": "path.fix_early_churn",
+    "presentation": {
+     "en": {
+      "basis": "Find why people leave in the first week.",
+      "because": "A lot of people leave within a week of starting.",
+      "short": "Fix early churn",
+      "word": "Early churn"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.fix_early_churn",
+      "conflicts": [],
+      "direction": "fix_early_churn",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m3"
+      ],
+      "knowledge_ids": [
+       "MN-R3"
+      ],
+      "mechanism_ids": [
+       "mech_3"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m3"
+        ],
+        "knowledge_ids": [
+         "MN-R3"
+        ],
+        "mechanism_id": "mech_3",
+        "status": "ACTIVE",
+        "title": "Early churn",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R3"
+          ],
+          "mechanism_id": "mech_3",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_3 aktif (DERIVED)",
+        "refs": [
+         "ev-m3"
+        ],
+        "signal": "mechanism:mech_3"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m3"
+          ],
+          "operand": [
+           "symptom 3 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R3 aktif, didukung evidence ev-m3",
+        "refs": [
+         "ev-m3"
+        ],
+        "signal": "rule:MN-R3"
+       }
+      ],
+      "thesis": "Find why people leave in the first week.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_3"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m3"
+     ],
+     "knowledge_ids": [
+      "MN-R3"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m3"
+         ],
+         "operand": [
+          "symptom 3 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m3"
+       ],
+       "rule_id": "MN-R3",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_3"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "fix_early_churn",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R3"
+         ],
+         "mechanism_id": "mech_3",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_3 aktif (DERIVED)",
+       "refs": [
+        "ev-m3"
+       ],
+       "signal": "mechanism:mech_3"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m3"
+         ],
+         "operand": [
+          "symptom 3 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R3 aktif, didukung evidence ev-m3",
+       "refs": [
+        "ev-m3"
+       ],
+       "signal": "rule:MN-R3"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "STOP",
+    "stop_provenance": [
+     {
+      "checks": [
+       "chk_3"
+      ],
+      "source": "ENGINE_CONTRADICTION"
+     }
+    ],
+    "strategy_id": "fix_early_churn",
+    "title": "Fix early churn"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Give people time to reach value."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.longer_trial",
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m4"
+     ],
+     "knowledge_ids": [
+      "MN-R4"
+     ],
+     "mechanism_ids": [
+      "mech_4"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "The trial ends before most people have had time to try it properly."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 1,
+     "total": 1,
+     "unknown": 0
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "SUPPORTED",
+    "feasibility_engine": "SUPPORTED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "chk_4",
+      "evidence": [
+       "check:chk_4",
+       "ev:ev-m4"
+      ],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Do the thing for 4."
+      },
+      "key": "chk_4",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Condition 4 is met"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Condition 4 is in place"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Do the thing for 4."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.longer_trial",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "You already have condition 4 is in place.",
+       "claim_type": "SUPPORTED",
+       "evidence_anchor": [
+        "check:chk_4",
+        "ev:ev-m4"
+       ],
+       "field": "supported",
+       "requirement_anchor": "chk_4",
+       "support_state": "PRESENT"
+      }
+     ],
+     "holding": "",
+     "supported": "You already have condition 4 is in place. That is what this path stands on right now.",
+     "unclear": ""
+    },
+    "path_id": "path.longer_trial",
+    "presentation": {
+     "en": {
+      "basis": "Give people time to reach value.",
+      "because": "The trial ends before most people have had time to try it properly.",
+      "short": "Test a longer trial",
+      "word": "Longer trial"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.longer_trial",
+      "conflicts": [],
+      "direction": "longer_trial",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m4"
+      ],
+      "knowledge_ids": [
+       "MN-R4"
+      ],
+      "mechanism_ids": [
+       "mech_4"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m4"
+        ],
+        "knowledge_ids": [
+         "MN-R4"
+        ],
+        "mechanism_id": "mech_4",
+        "status": "ACTIVE",
+        "title": "Longer trial",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R4"
+          ],
+          "mechanism_id": "mech_4",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_4 aktif (DERIVED)",
+        "refs": [
+         "ev-m4"
+        ],
+        "signal": "mechanism:mech_4"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m4"
+          ],
+          "operand": [
+           "symptom 4 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R4 aktif, didukung evidence ev-m4",
+        "refs": [
+         "ev-m4"
+        ],
+        "signal": "rule:MN-R4"
+       }
+      ],
+      "thesis": "Give people time to reach value.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_4"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m4"
+     ],
+     "knowledge_ids": [
+      "MN-R4"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m4"
+         ],
+         "operand": [
+          "symptom 4 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m4"
+       ],
+       "rule_id": "MN-R4",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_4"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "longer_trial",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R4"
+         ],
+         "mechanism_id": "mech_4",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_4 aktif (DERIVED)",
+       "refs": [
+        "ev-m4"
+       ],
+       "signal": "mechanism:mech_4"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m4"
+         ],
+         "operand": [
+          "symptom 4 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R4 aktif, didukung evidence ev-m4",
+       "refs": [
+        "ev-m4"
+       ],
+       "signal": "rule:MN-R4"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "longer_trial",
+    "title": "Test a longer trial"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Turn the people who like it into your next sign-ups."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.ask_referrals",
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m5"
+     ],
+     "knowledge_ids": [
+      "MN-R5"
+     ],
+     "mechanism_ids": [
+      "mech_5"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "A few users say they like it and have told friends on their own."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 1,
+     "unknown": 1
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "UNDETERMINED",
+    "feasibility_engine": "UNDETERMINED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "chk_5",
+      "evidence": [],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Do the thing for 5."
+      },
+      "key": "chk_5",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Condition 5 is not measured yet"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "UNKNOWN",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Condition 5 is in place"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Do the thing for 5."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.ask_referrals",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "Whether condition 5 is in place is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "unclear",
+       "requirement_anchor": "chk_5",
+       "support_state": "UNKNOWN"
+      }
+     ],
+     "holding": "",
+     "supported": "",
+     "unclear": "Whether condition 5 is in place is in place is not known yet."
+    },
+    "path_id": "path.ask_referrals",
+    "presentation": {
+     "en": {
+      "basis": "Turn the people who like it into your next sign-ups.",
+      "because": "A few users say they like it and have told friends on their own.",
+      "short": "Ask happy users for referrals",
+      "word": "Referrals"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.ask_referrals",
+      "conflicts": [],
+      "direction": "ask_referrals",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m5"
+      ],
+      "knowledge_ids": [
+       "MN-R5"
+      ],
+      "mechanism_ids": [
+       "mech_5"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m5"
+        ],
+        "knowledge_ids": [
+         "MN-R5"
+        ],
+        "mechanism_id": "mech_5",
+        "status": "ACTIVE",
+        "title": "Referrals",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R5"
+          ],
+          "mechanism_id": "mech_5",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_5 aktif (DERIVED)",
+        "refs": [
+         "ev-m5"
+        ],
+        "signal": "mechanism:mech_5"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m5"
+          ],
+          "operand": [
+           "symptom 5 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R5 aktif, didukung evidence ev-m5",
+        "refs": [
+         "ev-m5"
+        ],
+        "signal": "rule:MN-R5"
+       }
+      ],
+      "thesis": "Turn the people who like it into your next sign-ups.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_5"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m5"
+     ],
+     "knowledge_ids": [
+      "MN-R5"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m5"
+         ],
+         "operand": [
+          "symptom 5 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m5"
+       ],
+       "rule_id": "MN-R5",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_5"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "ask_referrals",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R5"
+         ],
+         "mechanism_id": "mech_5",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_5 aktif (DERIVED)",
+       "refs": [
+        "ev-m5"
+       ],
+       "signal": "mechanism:mech_5"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m5"
+         ],
+         "operand": [
+          "symptom 5 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R5 aktif, didukung evidence ev-m5",
+       "refs": [
+        "ev-m5"
+       ],
+       "signal": "rule:MN-R5"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "ask_referrals",
+    "title": "Ask happy users for referrals"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Answer new users while they are still trying it."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.faster_support",
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m6"
+     ],
+     "knowledge_ids": [
+      "MN-R6"
+     ],
+     "mechanism_ids": [
+      "mech_6"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "New users wait too long for an answer and drift away."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 1,
+     "total": 1,
+     "unknown": 0
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "SUPPORTED",
+    "feasibility_engine": "SUPPORTED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "chk_6",
+      "evidence": [
+       "check:chk_6",
+       "ev:ev-m6"
+      ],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Do the thing for 6."
+      },
+      "key": "chk_6",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Condition 6 is met"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Condition 6 is in place"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Do the thing for 6."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.faster_support",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "You already have condition 6 is in place.",
+       "claim_type": "SUPPORTED",
+       "evidence_anchor": [
+        "check:chk_6",
+        "ev:ev-m6"
+       ],
+       "field": "supported",
+       "requirement_anchor": "chk_6",
+       "support_state": "PRESENT"
+      }
+     ],
+     "holding": "",
+     "supported": "You already have condition 6 is in place. That is what this path stands on right now.",
+     "unclear": ""
+    },
+    "path_id": "path.faster_support",
+    "presentation": {
+     "en": {
+      "basis": "Answer new users while they are still trying it.",
+      "because": "New users wait too long for an answer and drift away.",
+      "short": "Speed up support replies",
+      "word": "Support speed"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.faster_support",
+      "conflicts": [],
+      "direction": "faster_support",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m6"
+      ],
+      "knowledge_ids": [
+       "MN-R6"
+      ],
+      "mechanism_ids": [
+       "mech_6"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m6"
+        ],
+        "knowledge_ids": [
+         "MN-R6"
+        ],
+        "mechanism_id": "mech_6",
+        "status": "ACTIVE",
+        "title": "Support speed",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R6"
+          ],
+          "mechanism_id": "mech_6",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_6 aktif (DERIVED)",
+        "refs": [
+         "ev-m6"
+        ],
+        "signal": "mechanism:mech_6"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m6"
+          ],
+          "operand": [
+           "symptom 6 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R6 aktif, didukung evidence ev-m6",
+        "refs": [
+         "ev-m6"
+        ],
+        "signal": "rule:MN-R6"
+       }
+      ],
+      "thesis": "Answer new users while they are still trying it.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_6"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m6"
+     ],
+     "knowledge_ids": [
+      "MN-R6"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m6"
+         ],
+         "operand": [
+          "symptom 6 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m6"
+       ],
+       "rule_id": "MN-R6",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_6"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "faster_support",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R6"
+         ],
+         "mechanism_id": "mech_6",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_6 aktif (DERIVED)",
+       "refs": [
+        "ev-m6"
+       ],
+       "signal": "mechanism:mech_6"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m6"
+         ],
+         "operand": [
+          "symptom 6 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R6 aktif, didukung evidence ev-m6",
+       "refs": [
+        "ev-m6"
+       ],
+       "signal": "rule:MN-R6"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "faster_support",
+    "title": "Speed up support replies"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Measure where sign-ups stop."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.track_funnel",
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m7"
+     ],
+     "knowledge_ids": [
+      "MN-R7"
+     ],
+     "mechanism_ids": [
+      "mech_7"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "Nobody can say exactly where new sign-ups stop."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 1,
+     "unknown": 1
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "UNDETERMINED",
+    "feasibility_engine": "UNDETERMINED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "chk_7",
+      "evidence": [],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Do the thing for 7."
+      },
+      "key": "chk_7",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Condition 7 is not measured yet"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "UNKNOWN",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Condition 7 is in place"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Do the thing for 7."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.track_funnel",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "Whether condition 7 is in place is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "unclear",
+       "requirement_anchor": "chk_7",
+       "support_state": "UNKNOWN"
+      }
+     ],
+     "holding": "",
+     "supported": "",
+     "unclear": "Whether condition 7 is in place is in place is not known yet."
+    },
+    "path_id": "path.track_funnel",
+    "presentation": {
+     "en": {
+      "basis": "Measure where sign-ups stop.",
+      "because": "Nobody can say exactly where new sign-ups stop.",
+      "short": "Track the funnel",
+      "word": "Funnel tracking"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.track_funnel",
+      "conflicts": [],
+      "direction": "track_funnel",
+      "evidence_ids": [
+       "ev-m0",
+       "ev-m7"
+      ],
+      "knowledge_ids": [
+       "MN-R7"
+      ],
+      "mechanism_ids": [
+       "mech_7"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-m7"
+        ],
+        "knowledge_ids": [
+         "MN-R7"
+        ],
+        "mechanism_id": "mech_7",
+        "status": "ACTIVE",
+        "title": "Funnel tracking",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "a goal is stated",
+        "refs": [
+         "ev-m0"
+        ],
+        "signal": "state:goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:MN-R7"
+          ],
+          "mechanism_id": "mech_7",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme mech_7 aktif (DERIVED)",
+        "refs": [
+         "ev-m7"
+        ],
+        "signal": "mechanism:mech_7"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-m7"
+          ],
+          "operand": [
+           "symptom 7 "
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge MN-R7 aktif, didukung evidence ev-m7",
+        "refs": [
+         "ev-m7"
+        ],
+        "signal": "rule:MN-R7"
+       }
+      ],
+      "thesis": "Measure where sign-ups stop.",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:mech_7"
+      ]
+     },
+     "evidence_ids": [
+      "ev-m0",
+      "ev-m7"
+     ],
+     "knowledge_ids": [
+      "MN-R7"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m7"
+         ],
+         "operand": [
+          "symptom 7 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-m7"
+       ],
+       "rule_id": "MN-R7",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "mech_7"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "track_funnel",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [
+        "ev-m0"
+       ],
+       "signal": "state:goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:MN-R7"
+         ],
+         "mechanism_id": "mech_7",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme mech_7 aktif (DERIVED)",
+       "refs": [
+        "ev-m7"
+       ],
+       "signal": "mechanism:mech_7"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-m7"
+         ],
+         "operand": [
+          "symptom 7 "
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge MN-R7 aktif, didukung evidence ev-m7",
+       "refs": [
+        "ev-m7"
+       ],
+       "signal": "rule:MN-R7"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "track_funnel",
+    "title": "Track the funnel"
+   }
+  ],
+  "unresolved": [],
+  "version": 4
+ }
+}

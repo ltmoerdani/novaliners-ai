@@ -1,0 +1,173 @@
+{
+  "corpus_version": "g-corpus-v1",
+  "frozen_at": "2026-10-14 (WIB) — dibekukan SEBELUM satu pun panggilan live atas korpus ini",
+  "note": "Label cohort tidak boleh diubah retroaktif demi metrik. 'historic-tuned' = berasal dari kasus yang pernah dipakai menyetel (Rina/copywriter/founder jarang); 'holdout' = ditulis baru dan belum pernah diamati. Setiap cek bersifat schema-neutral (perilaku, bukan nama field). Skenario non-live dipetakan ke bukti deterministik/UI di int 08.",
+  "scenarios": [
+    {"id": "G-01", "cohort": "historic-tuned", "mode": "live", "lang": "id", "critical": false,
+     "title": "Founder ingin kebebasan waktu",
+     "turns": ["Omzet saya turun terus sejak tahun lalu dan saya capek sekali, hampir tiap malam masih kerja. Saya ingin punya waktu bebas lagi untuk keluarga.",
+               "Saya tidak mau menambah jam kerja. Idealnya bisnis tetap jalan walau saya libur seminggu."],
+     "checks": [
+       {"dim": "role", "type": "claim", "contains": "keluarga", "role_in": ["desire", "goal"]},
+       {"dim": "role", "type": "claim", "contains": "tidak mau menambah jam kerja", "aspect_in": ["constraint", "preference"]},
+       {"dim": "goal", "type": "goal", "target_none": true},
+       {"dim": "no_false_goal", "type": "goal", "confirmed": false}
+     ]},
+    {"id": "G-02", "cohort": "historic-tuned", "mode": "live", "lang": "id", "critical": false,
+     "title": "Rina: harga lama vs sekarang, jumlah klien, konversi",
+     "turns": ["Dulu saya pasang tarif 3 juta per klien tapi banyak yang menolak. Sekarang tarif saya 5 juta dan ada 4 klien aktif.",
+               "Dari 20 orang yang saya tawari bulan ini, 2 yang jadi bayar."],
+     "checks": [
+       {"dim": "temporal", "type": "quantity", "contains": "3 juta", "tense_in": ["past"]},
+       {"dim": "quantity", "type": "quantity", "contains": "4 klien", "kind_in": ["exact"]},
+       {"dim": "quantity", "type": "claim", "contains": "20 orang", "has_quantity": true},
+       {"dim": "no_false_promotion", "type": "no_claim", "contains": "premium", "role_in": ["claim", "goal"]}
+     ]},
+    {"id": "G-03", "cohort": "historic-tuned", "mode": "live", "lang": "id", "critical": false,
+     "title": "Copywriter: target ambisius, permintaan rendah",
+     "turns": ["Saya copywriter freelance. Saya ingin penghasilan 40 juta sebulan, sekarang baru sekitar 6 juta.",
+               "Orang yang tanya sedikit, dan yang tanya biasanya minta diskon."],
+     "checks": [
+       {"dim": "quantity", "type": "quantity", "contains": "40 juta", "kind_in": ["exact", "approximate"]},
+       {"dim": "quantity", "type": "quantity", "contains": "6 juta", "kind_in": ["approximate", "exact"]},
+       {"dim": "goal", "type": "goal", "confirmed": false}
+     ]},
+    {"id": "G-04", "cohort": "holdout", "mode": "live", "lang": "id", "critical": true,
+     "title": "Asumsi marketing → kebocoran follow-up",
+     "turns": ["Kayaknya marketing saya yang lemah, makanya klien sepi.",
+               "Sebenarnya tiap minggu ada 5-6 orang yang tanya lewat WhatsApp. Tapi jarang saya balas cepat, kadang baru dua hari kemudian."],
+     "checks": [
+       {"dim": "role", "type": "claim", "contains": "marketing saya yang lemah", "role_in": ["assumption"]},
+       {"dim": "hypothesis", "type": "hypothesis_mentions_any", "any": ["follow", "balas", "tindak lanjut", "respons"]},
+       {"dim": "hypothesis_trace", "type": "hypothesis_support_active"}
+     ]},
+    {"id": "G-05", "cohort": "holdout", "mode": "live", "lang": "id", "critical": true,
+     "title": "Koreksi asumsi harga → follow-up",
+     "turns": ["Saya kira masalahnya harga terlalu mahal.",
+               "Ralat, bukan harga. Ternyata prospek memang tidak pernah saya follow-up."],
+     "checks": [
+       {"dim": "revision", "type": "superseded_or_negated", "contains": "harga terlalu mahal"},
+       {"dim": "revision", "type": "claim", "contains": "tidak pernah saya follow-up", "role_in": ["claim", "event", "gap"]}
+     ]},
+    {"id": "G-06", "cohort": "holdout", "mode": "live", "lang": "id", "critical": true,
+     "title": "Penolakan: tidak melacak leads",
+     "turns": ["Saya tidak mencatat leads sama sekali, tidak tahu berapa yang masuk.",
+               "Seperti yang saya bilang, saya benar-benar tidak punya catatan lead."],
+     "checks": [
+       {"dim": "role", "type": "claim", "contains": "tidak mencatat leads", "role_in": ["gap"]},
+       {"dim": "no_repeat", "type": "no_repeat_question"},
+       {"dim": "measurement", "type": "presented_turn", "turn": 2, "kind_in": ["EVIDENCE_REQUEST", "ACTION", "HOLD", "QUESTION"],
+        "text_not_matches": "(berapa|how many).{0,40}(lead|leads).{0,20}(bulan|per month|masuk|diterima)"}
+     ]},
+    {"id": "G-07", "cohort": "holdout", "mode": "live", "lang": "id", "critical": false,
+     "title": "Jawaban out-of-order (menjawab pertanyaan tiga giliran lalu)",
+     "turns": ["Bisnis saya jasa desain interior untuk rumah tinggal.",
+               "Tarif saya 15 juta per proyek.",
+               "Oh iya, soal tadi: biasanya satu proyek selesai dalam 6 minggu."],
+     "checks": [
+       {"dim": "quantity", "type": "quantity", "contains": "15 juta", "kind_in": ["exact", "approximate"]},
+       {"dim": "quantity", "type": "quantity", "contains": "6 minggu", "kind_in": ["exact", "approximate"]}
+     ]},
+    {"id": "G-08", "cohort": "holdout", "mode": "live", "lang": "id", "critical": false,
+     "title": "Pesan pertama kaya (≥10 pernyataan)",
+     "turns": ["Saya punya studio fotografi produk. Dulu omzet 25 juta sebulan, sekarang sekitar 14 juta. Klien tetap ada 3 brand kecil. Saya kerja sendiri tanpa asisten. Saya merasa tidak enak menagih klien yang telat bayar. Saya kira masalahnya kurang konten Instagram. Saya tidak tahu berapa yang lihat profil saya. Saya ingin bisa libur dua minggu tanpa kehilangan klien. Saya tidak mau menurunkan harga. Setiap bulan ada sekitar 8 orang yang tanya harga. Dari 8 itu paling 1 yang jadi."],
+     "checks": [
+       {"dim": "coverage", "type": "min_active_claims", "n": 9},
+       {"dim": "role", "type": "claim", "contains": "kurang konten Instagram", "role_in": ["assumption"]},
+       {"dim": "role", "type": "claim", "contains": "tidak tahu berapa yang lihat", "role_in": ["gap"]},
+       {"dim": "role", "type": "claim", "contains": "tidak mau menurunkan harga", "aspect_in": ["constraint", "preference"]},
+       {"dim": "temporal", "type": "quantity", "contains": "25 juta", "tense_in": ["past"]}
+     ]},
+    {"id": "G-09", "cohort": "holdout", "mode": "live", "lang": "mixed", "critical": false,
+     "title": "Narasi 22 giliran: kronologi dan retensi",
+     "turns": ["Saya ingin bisnis catering saya lebih stabil.", "Pesanan rata-rata 40 box per minggu.", "Harga per box 35 ribu.",
+               "Pelanggan terbesar sebuah kantor, 15 box tiap Jumat.", "Saya masak sendiri hampir semua.", "Karyawan saya hanya dua orang paruh waktu.",
+               "Saya tidak pernah menghitung biaya bahan dengan rapi.", "Kemarin kantor itu bilang mungkin berhenti bulan depan.",
+               "Saya takut kalau kehilangan mereka, omzet turun separuh.", "Sebenarnya ada tiga kantor lain yang pernah tanya.",
+               "Tapi saya tidak sempat membalas mereka.", "My margin is probably around 20 percent, tapi saya tidak yakin.",
+               "Saya tidak mau buka cabang, terlalu repot.", "Ibu saya kadang bantu packing.", "Tahun lalu omzet sempat 30 juta sebulan.",
+               "Sekarang sekitar 22 juta.", "Saya pernah coba iklan Instagram tapi cuma dua bulan.", "Hasilnya tidak jelas karena tidak saya catat.",
+               "Saya lebih suka pelanggan langganan daripada acak.", "Kalau bisa, saya ingin ada pesanan tetap dari 5 kantor.",
+               "Ralat, pelanggan terbesar itu 12 box, bukan 15.", "Jadi, menurut kamu apa yang paling perlu saya cek dulu?"],
+     "checks": [
+       {"dim": "retention", "type": "claim_active", "contains": "tidak mau buka cabang"},
+       {"dim": "retention", "type": "claim_active", "contains": "pesanan tetap dari 5 kantor"},
+       {"dim": "revision", "type": "superseded_or_negated", "contains": "15 box"},
+       {"dim": "retention", "type": "claim_active", "contains": "12 box"},
+       {"dim": "retention", "type": "claim_active", "contains": "tidak sempat membalas"},
+       {"dim": "no_repeat", "type": "no_repeat_question"},
+       {"dim": "stability", "type": "reload_equal"}
+     ]},
+    {"id": "G-10", "cohort": "holdout", "mode": "live", "lang": "id", "critical": true,
+     "title": "Penghasilan pribadi vs omzet usaha",
+     "turns": ["Gaji saya dari kerja kantoran 12 juta sebulan. Usaha online saya baru jalan, omzetnya sekitar 3 juta."],
+     "checks": [
+       {"dim": "no_false_promotion", "type": "revenue_state", "current_not_in": [12.0, 15.0]}
+     ]},
+    {"id": "G-11", "cohort": "holdout", "mode": "live", "lang": "id", "critical": true,
+     "title": "Perkiraan / rentang / batas atas",
+     "turns": ["Omzet saya kira-kira 10 sampai 15 juta. Margin bersih paling banyak 3 juta.", "Target saya naik jadi minimal 30 juta."],
+     "checks": [
+       {"dim": "quantity", "type": "quantity", "contains": "10 sampai 15", "kind_in": ["range"]},
+       {"dim": "quantity", "type": "quantity", "contains": "paling banyak 3", "kind_in": ["at_most", "less_than"]},
+       {"dim": "quantity", "type": "quantity", "contains": "minimal 30", "kind_in": ["at_least", "greater_than"]},
+       {"dim": "no_false_promotion", "type": "revenue_state", "current_none": true}
+     ]},
+    {"id": "G-12", "cohort": "holdout", "mode": "live", "lang": "id", "critical": false,
+     "title": "Tujuan non-finansial: kurangi jam delivery",
+     "turns": ["Saya ingin mengurangi jam saya mengerjakan proyek klien dari 50 jam jadi sekitar 25 jam seminggu, tapi hasil bisnis tetap sama."],
+     "checks": [
+       {"dim": "goal", "type": "goal", "no_revenue_target": true},
+       {"dim": "quantity", "type": "claim", "contains": "25 jam", "has_quantity": true}
+     ]},
+    {"id": "G-21", "cohort": "holdout", "mode": "live", "lang": "id", "critical": false,
+     "title": "Friksi perilaku: tidak nyaman outreach",
+     "turns": ["Saya paling tidak suka menghubungi orang duluan, rasanya seperti mengganggu. Tapi saya butuh klien baru."],
+     "checks": [
+       {"dim": "role", "type": "claim", "contains": "tidak suka menghubungi", "aspect_in": ["concern", "preference", "behavior", "constraint"]},
+       {"dim": "no_psych_diagnosis", "type": "presented_text_not_matches", "pattern": "(anxiety|gangguan|fobia|introvert|trauma|kecemasan sosial)"}
+     ]},
+    {"id": "G-25", "cohort": "holdout", "mode": "live", "lang": "id", "critical": true,
+     "title": "Jawaban berulang, konteks berubah",
+     "turns": ["Saya tidak tahu berapa leads yang masuk.", "Saya tidak tahu berapa leads yang masuk.", "Tapi minggu ini saya mulai mencatat dan sudah ada 7 leads."],
+     "checks": [
+       {"dim": "no_repeat", "type": "no_repeat_question"},
+       {"dim": "quantity", "type": "claim", "contains": "7 leads", "has_quantity": true}
+     ]},
+    {"id": "G-30", "cohort": "holdout", "mode": "live_first_question", "lang": "id", "critical": true,
+     "title": "Pertanyaan pertama dari Desire bebas yang sudah berisi kendala",
+     "turns": ["Saya ingin pekerjaan freelance saya tetap bisa jalan sambil saya mengurus ibu yang sakit; saya tidak bisa kerja lebih dari 4 jam sehari."],
+     "checks": [
+       {"dim": "goal", "type": "goal", "target_none": true},
+       {"dim": "first_question", "type": "first_question_not_matches", "pattern": "(omzet|revenue|pendapatan|berapa.{0,20}(juta|rupiah|penghasilan))"},
+       {"dim": "role", "type": "claim", "contains": "tidak bisa kerja lebih dari 4 jam", "aspect_in": ["constraint"]}
+     ]},
+    {"id": "G-33", "cohort": "holdout", "mode": "live", "lang": "mixed", "critical": true,
+     "title": "Bilingual / slang / ICP tanpa kata kunci",
+     "turns": ["Target market gue tuh anak-anak startup fintech yang baru series A, biasanya CTO atau head of eng yang decide. Gue udah punya list 30 nama."],
+     "checks": [
+       {"dim": "role", "type": "claim", "contains": "list 30 nama", "has_quantity": true},
+       {"dim": "admissibility", "type": "claim", "contains": "series A", "role_in": ["claim"]},
+       {"dim": "no_false_promotion", "type": "icp_not_present_without_rule"}
+     ]},
+    {"id": "G-13", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_candidate_*.py, test_navigation_universal.py, test_m4_session_loop.py (HOLD)"},
+    {"id": "G-14", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_candidate_golden.py, test_candidate_possibility.py"},
+    {"id": "G-15", "cohort": "holdout", "mode": "deterministic+ui", "evidence": "evals/test_candidate_closure.py; e2e/presentation-cap.spec.mjs"},
+    {"id": "G-16", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_adaptive.py::test_kb_outage"},
+    {"id": "G-17", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_adaptive.py::test_guard"},
+    {"id": "G-18", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_semantic.py (F/G/O/P, R3.2-A)"},
+    {"id": "G-19", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_semantic.py::test_r32a_concurrent; test_recovery_living.py (D)"},
+    {"id": "G-20", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_living.py (A/B)"},
+    {"id": "G-22", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_adaptive.py::test_non_revenue_core"},
+    {"id": "G-23", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_living.py (E)"},
+    {"id": "G-24", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_living.py::test_unsupported_outcome"},
+    {"id": "G-26", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_adaptive.py::test_knowledge_applicability"},
+    {"id": "G-27", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_goal_admissibility.py (10-12)"},
+    {"id": "G-28", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_semantic.py (R3.2-C), test_recovery_goal_admissibility.py (14), test_goal_navigation.py"},
+    {"id": "G-29", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_living.py (C)"},
+    {"id": "G-31", "cohort": "holdout", "mode": "deterministic", "evidence": "evals/test_recovery_living.py (E)"},
+    {"id": "G-32", "cohort": "holdout", "mode": "deterministic", "evidence": "UNVERIFIED — tidak ada tes khusus provisional vs deep tanpa event baru"},
+    {"id": "G-34", "cohort": "holdout", "mode": "ui", "evidence": "e2e/maps.spec.mjs + scenes.mjs (dua lensa; overview→Explore)"},
+    {"id": "G-35", "cohort": "holdout", "mode": "owner", "evidence": "BLOCKED: kebijakan retensi/hapus data = keputusan owner; akses tak sah ditolak teruji di test_user_scope/R3.2-C"}
+  ]
+}

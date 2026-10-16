@@ -1,0 +1,112 @@
+{
+ "$comment": "E-Myth Revisited — evidence rules. Inti: Technician-dominan membangun pekerjaan, bukan bisnis; kapasitas = sistem, bukan jam ekstra.",
+ "evidence_rules": [
+  {
+   "rule_id": "EM-R01",
+   "condition": "A simple calculation shows that the new client hour requirements EXCEED the remaining weekly capacity, AND there is no system/delegation that can overcome it.",
+   "matcher_hint": "The user RECOUNTS their own numbers showing that adding the desired new clients requires MORE hours per week than remain available (delivery already consumes most of capacity), AND confirms there is no system, SOP, or helper that could absorb the load.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "L8.3"
+    ],
+    "rationale": "Gerber: adding clients without a system = adding your own working hours until you break. Capacity becomes a decision boundary — acquisition before the system is ready creates operational risk. This rule closes a constraint that previously had NOL knowledge."
+   },
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch02",
+     "ch08",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "evaluation_note": "First rule for L8.3 (previously zero total). The matcher must verify the user's own arithmetic, not guess."
+  },
+  {
+   "rule_id": "EM-R02",
+   "condition": "revenue tumbuh sebanding jam kerja user: setiap klien baru menambah jam delivery user secara langsung, tanpa sistem atau orang kedua",
+   "matcher_hint": "The user RECOUNTS revenue that scales ONLY with their own working hours — every new client directly adds hours of personal delivery work, with no systems, SOPs, or a second person involved.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "L8.1"
+    ],
+    "rationale": "Definisi literal time-for-money trap (Gerber: Technician-dominan). Naiknya L8.1 menegaskan jalur solusi = sistemisasi, bukan menambah klien lebih banyak."
+   },
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "EM-R03",
+   "condition": "user complains about running out of time BUT some routine tasks they do themselves can actually be documented & delegated",
+   "matcher_hint": "The user RECOUNTS complaining about lack of time WHILE describing routine tasks done personally (revisions, admin, reporting) that are repeatable and could be documented and delegated — no SOP exists.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "FLAG_SEGMENT",
+    "targets": [
+     "L8.3",
+     "L8.1"
+    ],
+    "rationale": "Waktu 'habis' sebagian karena kerja yang tidak wajib dipegang sendiri — konfirmasi dulu lewat probe EM-P02/EM-P04 sebelum intervensi kapasitas dipilih."
+   },
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch10",
+     "ch14"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "EM-R04",
+   "condition": "You have a work process that is repeatable & consistent ACROSS CLIENTS (similar results & steps), BUT none of it is written as an SOP",
+   "matcher_hint": "The user RECOUNTS a repeatable, consistent delivery process across clients (similar steps, similar outputs) WHILE confirming nothing is written down as a documented procedure — it all lives in their head.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "FLAG_SEGMENT",
+    "targets": [
+     "L8.3"
+    ],
+    "rationale": "Proses berulang + tak terdokumentasi = kandidat SOP termudah (franchise prototype thinking). Flag agar intervensi dokumentasi dipertimbangkan sebelum menolak klien atau menambah jam."
+   },
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch08",
+     "ch18"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

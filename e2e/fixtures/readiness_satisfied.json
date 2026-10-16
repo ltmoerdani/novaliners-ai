@@ -1,0 +1,318 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "",
+  "found_version": 3,
+  "i18n": {},
+  "needs_rediagnosis": false,
+  "reason_code": null,
+  "status": "CURRENT"
+ },
+ "possible_paths": {
+  "generation": {},
+  "paths": [
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "naikkan harga",
+    "checks": [],
+    "feasibility": "SUPPORTED",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.value_repricing",
+    "presentation": {
+     "en": {
+      "basis": "Raise or restructure your prices on the demand you already have.",
+      "short": "Reprice your offer",
+      "word": "Pricing"
+     }
+    },
+    "provenance": {
+     "support": [
+      {
+       "reason": "",
+       "refs": [],
+       "signal": "state:x"
+      }
+     ]
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "value_repricing",
+    "title": "Repricing your offer",
+    "unlock_conditions": []
+   }
+  ],
+  "space_id": "test",
+  "unresolved": [],
+  "version": 3
+ },
+ "projection": {
+  "emerging": [],
+  "generation": {},
+  "navigation": {
+   "current_version": 3,
+   "detail": "",
+   "found_version": 3,
+   "i18n": {},
+   "needs_rediagnosis": false,
+   "reason_code": null,
+   "status": "CURRENT"
+  },
+  "paths": [
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Raise or restructure your prices on the demand you already have."
+    },
+    "candidate": null,
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 4,
+     "total": 4,
+     "unknown": 0
+    },
+    "executability": null,
+    "feasibility": "SUPPORTED",
+    "feasibility_engine": "SUPPORTED",
+    "items": [
+     {
+      "activity": "Tulis dulu",
+      "check_id": null,
+      "evidence": [
+       "ledger:offering.outcome"
+      ],
+      "executability": "TRUE",
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Say, in numbers or plain words, what clients get out of working with you."
+      },
+      "key": "offering.outcome",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "offering.outcome",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "curated",
+       "text": "A clear result clients get"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": []
+     },
+     {
+      "activity": "Tulis dulu",
+      "check_id": null,
+      "evidence": [
+       "ledger:commercial.pricing_basis"
+      ],
+      "executability": "TRUE",
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Decide the basis for your price: per project, per hour, a package or the value you bring."
+      },
+      "key": "commercial.pricing_basis",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "commercial.pricing_basis",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "curated",
+       "text": "How you set your price"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": []
+     },
+     {
+      "activity": "Tulis dulu",
+      "check_id": null,
+      "evidence": [
+       "ledger:commercial.price"
+      ],
+      "executability": "TRUE",
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Set the new price as one number with its unit."
+      },
+      "key": "commercial.price",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "commercial.price",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "curated",
+       "text": "A specific new price"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": []
+     },
+     {
+      "activity": "Tulis dulu",
+      "check_id": null,
+      "evidence": [
+       "ledger:commercial.willingness_to_pay"
+      ],
+      "executability": "TRUE",
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Ask a buyer to commit money at your current price."
+      },
+      "key": "commercial.willingness_to_pay",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "commercial.willingness_to_pay",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Someone willing to pay that price"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.value_repricing",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "You already have a clear result clients get.",
+       "claim_type": "SUPPORTED",
+       "evidence_anchor": [
+        "ledger:offering.outcome"
+       ],
+       "field": "supported",
+       "requirement_anchor": "offering.outcome",
+       "support_state": "PRESENT"
+      },
+      {
+       "claim": "You already have how you set your price.",
+       "claim_type": "SUPPORTED",
+       "evidence_anchor": [
+        "ledger:commercial.pricing_basis"
+       ],
+       "field": "supported",
+       "requirement_anchor": "commercial.pricing_basis",
+       "support_state": "PRESENT"
+      },
+      {
+       "claim": "You already have a specific new price.",
+       "claim_type": "SUPPORTED",
+       "evidence_anchor": [
+        "ledger:commercial.price"
+       ],
+       "field": "supported",
+       "requirement_anchor": "commercial.price",
+       "support_state": "PRESENT"
+      }
+     ],
+     "holding": "",
+     "supported": "You already have a clear result clients get, how you set your price and a specific new price. That is what this path stands on right now.",
+     "unclear": ""
+    },
+    "path_id": "path.value_repricing",
+    "presentation": {
+     "en": {
+      "basis": "Raise or restructure your prices on the demand you already have.",
+      "short": "Reprice your offer",
+      "word": "Pricing"
+     }
+    },
+    "provenance": {
+     "support": [
+      {
+       "reason": "",
+       "refs": [],
+       "signal": "state:x"
+      }
+     ]
+    },
+    "route": {
+     "applicability": "APPLIES",
+     "lineage_status": "OPEN",
+     "revision_no": 1,
+     "route_id": "r-value_repricing",
+     "template_id": "value_repricing_v1"
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "value_repricing",
+    "title": "Repricing your offer"
+   }
+  ],
+  "unresolved": [],
+  "version": 4
+ }
+}

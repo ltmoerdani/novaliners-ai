@@ -1,0 +1,19 @@
+{
+ "updated_at": 1792203400,
+ "items": {
+  "LC-I01": {
+   "confidence": 0.343,
+   "grade": null,
+   "successes": 11,
+   "failures": 22,
+   "n": 33
+  },
+  "TM-I03": {
+   "confidence": 0.5,
+   "grade": null,
+   "successes": 10,
+   "failures": 10,
+   "n": 20
+  }
+ }
+}

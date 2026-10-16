@@ -1,0 +1,114 @@
+{
+ "$comment": "SPIN Selling — interventions.",
+ "interventions": [
+  {
+   "intervention_id": "SP-I01",
+   "name": "SPIN Question Map per Lead",
+   "targets": [
+    "C6.1",
+    "C6.3"
+   ],
+   "expected_evidence": "1 sheet containing 4 questions (Situation→Problem→Implication→Need-payoff) that have already been asked + quoted prospective client answers — at least 1 implication calculated together",
+   "contraindicated_until": "Belum ada konteks lead nyata (industri/situasi tercatat) — pertanyaan generik tanpa konteks = interrogasi, bukan diagnosa",
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "SP-I02",
+   "name": "Price-Last Rule",
+   "targets": [
+    "C6.3"
+   ],
+   "expected_evidence": "Dalam 2 percakapan berikutnya, harga TIDAK disebut sebelum calon sendiri mengakui masalah + konsekuensinya (kutipan kalimat mereka dicatat); objeksi harga dicatat turun",
+   "contraindicated_until": "Value belum dikembangkan (implication–need-payoff belum terucap dari calon) — harga lebih dulu tanpa nilai yang dibangun mengundang negosiasi harga murni",
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch04",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "SP-I03",
+   "name": "Objection Log → Pattern",
+   "targets": [
+    "C6.3",
+    "C6.1"
+   ],
+   "expected_evidence": "Log semua objection 2 minggu (kata, tahap, konteks) + identifikasi: objection muncul SEBELUM masalah dibahas (tanda pitch prematur) atau sesudah (tanda nilai kurang)",
+   "contraindicated_until": "Belum ada ≥5 percakapan penjualan — log kosong tidak menghasilkan pattern",
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "SP-I04",
+   "name": "Objection Log Review (SPIN lens)",
+   "targets": [
+    "C6.1",
+    "C6.3"
+   ],
+   "expected_evidence": "1 halaman log 5 objeksi terakhir: kata calon, urutan (sebelum/sesudah masalah dibahas), dan polanya — minimal 1 pola sistemik teridentifikasi",
+   "contraindicated_until": "Belum ada ≥5 percakapan penjualan atau log objeksi 1–2 minggu — review tanpa bahan hanya membahas dugaan",
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch06"
+    ]
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "SP-I05",
+   "name": "Benefits-to-Explicit-Need Rewrite",
+   "targets": [
+    "C6.3"
+   ],
+   "expected_evidence": "Pitch tertulis ulang: setiap klaim manfaat dirangkai ke kutipan masalah calon ('tadi Anda bilang…') — 0 feature tanpa anchor kebutuhan",
+   "contraindicated_until": "Belum ada kutipan masalah/implied need dari calon nyata — rewrite tanpa kutipan menghasilkan feature-dump halus",
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch05"
+    ]
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  }
+ ]
+}

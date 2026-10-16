@@ -1,0 +1,98 @@
+{
+ "$comment": "The Lost Art of Closing (Iannarino, 2017) — probes. Closing = rangkaian komitmen kecil (10 tahap), bukan satu momen. Target: C6.4.",
+ "probes": [
+  {
+   "probe_id": "LC-P01",
+   "text": "After a good conversation with a prospective client, do you always get a specific commitment for the NEXT step (date, action, person) before ending the conversation?",
+   "targets": [
+    "C6.4",
+    "C6.1"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Every conversation ends with a clear next commitment — the pipeline moves",
+    "negative": "The conversation ends with \"I'll let you know later\" and no next step — a dangling lead.",
+    "neutral": "Kadang dapat komitmen — inkonsisten"
+   },
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "LC-P02",
+   "text": "Setiap kali memberi sesuatu (info rincian, konsultasi, revisi kecil), apakah Anda meminta imbalan komitmen — atau memberi gratis saja?",
+   "targets": [
+    "C6.4",
+    "DM5.6"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Trading value: setiap pemberian diganti komitmen — momentum terjaga",
+    "negative": "Semua diberi gratis — pembeli tak berkomitmen, harga makin diperdebatkan",
+    "neutral": "Kadang minta — belum sistem"
+   },
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "LC-P03",
+   "text": "From a 'hanging' lead, do you know EXACTLY what commitment they last fulfilled — and what small commitment hasn't been asked of them?",
+   "targets": [
+    "C6.4"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "Posisi tiap lead di tangga komitmen diketahui + langkah berikutnya jelas",
+    "negative": "Tidak tahu posisi lead — tidak ada tangga komitmen sama sekali",
+    "neutral": "Tahu kasus per kasus tanpa tangga baku"
+   },
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch02",
+     "ch16"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "LC-P04",
+   "text": "When a prospective client hesitates or has objections, do you schedule a dedicated time to discuss them until they’re fully resolved — or wait for them to work through it on their own?",
+   "targets": [
+    "C6.4",
+    "DM5.5"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Keberatan dijadwalkan & diselesaikan (commitment to resolve concerns)",
+    "negative": "Keberatan dibiarkan mengendap sampai deal mati",
+    "neutral": "Menjawab sekilas tanpa penyelesaian"
+   },
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch11"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

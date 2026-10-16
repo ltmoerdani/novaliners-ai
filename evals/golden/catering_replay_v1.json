@@ -1,0 +1,47 @@
+{
+  "corpus_version": "catering-replay-v1",
+  "frozen_at": "2026-10-16",
+  "note": "MC01-6 (audit CIR-MC01 §2.1): EXACT replay insiden catering asli (15 Okt). Korpus beku golden/diagnostic TIDAK tersentuh. Evaluator: runner dedicated evals/run_catering_replay.py — verdict KUALITATIF per-dimensi (bukan klaim LIVE_PASS): semantic fidelity, status epistemik, hipotesis bersaing, kegunaan NextMove, evaluasi eligibility, perilaku pemulihan.",
+  "scenarios": [
+    {
+      "id": "CR-01",
+      "cohort": "incident-replay",
+      "mode": "live",
+      "lang": "id",
+      "critical": false,
+      "title": "Replay persis insiden katering: referral, follow-up lambat, asumsi iklan",
+      "turns": [
+        "Bisnis katering saya sekarang omzetnya sekitar Rp12 juta per bulan dan saya mau naik ke Rp25 juta dalam dua bulan.",
+        "Pelanggan saya ada tiga kantor yang langganan makan siang tiap minggu.",
+        "Kompetitor sejenis di kota saya baru viral di TikTok, jadi saya kepikiran harus pasang iklan Rp5 juta supaya ikut dikenal.",
+        "Sebenarnya selama ini pelanggan baru datang dari referensi kenalan, bukan dari iklan.",
+        "Belakangan ini ada sekitar tiga sampai empat kantor lain yang sempat kirim inquiry juga.",
+        "Tapi saya hampir tidak pernah sempat membalasnya karena seharian di dapur memasak.",
+        "Kalau diingat-ingat, kira-kira satu saja dari inquiry itu yang akhirnya jadi pelanggan.",
+        "Data kontak semua pelanggan saya cuma tersimpan di WhatsApp pribadi, tidak pernah saya catat di mana pun."
+      ],
+      "checks": [
+        {"dim": "coverage", "type": "min_active_claims", "n": 8},
+        {"dim": "quantity", "type": "quantity", "contains": "12 juta"},
+        {"dim": "goal", "type": "goal", "confirmed": false},
+        {"dim": "role", "type": "claim", "contains": "iklan", "role_in": ["assumption"]},
+        {"dim": "admissibility", "type": "claim", "contains": "referensi", "role_in": ["claim"]},
+        {"dim": "retention", "type": "claim_active", "contains": "whatsapp"},
+        {"dim": "retention", "type": "claim_active", "contains": "dapur"},
+        {"dim": "temporal", "type": "quantity", "contains": "25 juta", "tense_in": ["future", "now"]},
+        {"dim": "hypothesis", "type": "hypothesis_mentions_any", "any": ["tindak lanjut", "balas", "respons", "follow"]},
+        {"dim": "hypothesis", "type": "hypothesis_mentions_any", "any": ["permintaan", "demand", "iklan", "akuisisi", "pemasaran"]},
+        {"dim": "hypothesis", "type": "hypothesis_count_min", "n": 2},
+        {"dim": "hypothesis_trace", "type": "hypothesis_support_active"},
+        {"dim": "first_question", "type": "first_question_not_matches", "pattern": "(mau|ingin|target).{0,30}(penghasilan|omzet|pendapatan).{0,20}(berapa|apa)|berapa.{0,15}(target|penghasilan|omzet|pendapatan)"},
+        {"dim": "no_repeat", "type": "no_repeat_question"},
+        {"dim": "no_psych_diagnosis", "type": "presented_text_not_matches", "pattern": "(anxiety|kecemasan sosial|fobia|introvert|trauma|gangguan kecemasan|gangguan makan)"},
+        {"dim": "no_false_promotion", "type": "no_claim", "contains": "ramai karena iklan", "role_in": ["claim", "goal"]},
+        {"dim": "no_false_goal", "type": "goal", "confirmed": false},
+        {"dim": "stability", "type": "reload_equal"},
+        {"dim": "recovery", "type": "no_degraded_turns"},
+        {"dim": "eligibility", "type": "checkpoint_block_present"}
+      ]
+    }
+  ]
+}

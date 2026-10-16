@@ -1,0 +1,130 @@
+{
+  "$comment": "RouteTemplate PRODUKSI (D4 int 08 §8.4, 27 Sep). EXPANSION klien aktif. §7.10: repeat_purchase vakum-capable (populasi = pelanggan lama) — tak bisa disediakan di route -> applies_when menuntut pelanggan lama. Provenance diturunkan mekanis dari provenance requirement penyusun.",
+  "template_id": "client_expansion_v1",
+  "strategy_id": "client_expansion",
+  "goal_anchor": "retention.repeat_purchase",
+  "applies_when": {
+    "applies": [
+      {
+        "text_contains_any": [
+          "klien aktif",
+          "klien lama",
+          "pelanggan lama",
+          "pelanggan tetap",
+          "repeat order",
+          "active client",
+          "existing client",
+          "long-time client",
+          "loyal customer",
+          "repeat client",
+          "past client",
+          "retainer client"
+        ]
+      }
+    ],
+    "not_applicable": []
+  },
+  "requires": [
+    "offering.outcome",
+    "conversion.proof",
+    "delivery.capacity",
+    "retention.repeat_purchase"
+  ],
+  "node_candidates": [
+    {
+      "candidate_key": "outcome",
+      "resolves": [
+        "offering.outcome"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Nyatakan hasil terukur yang sudah diperoleh klien lama",
+      "i18n": {
+        "en": {
+          "activity": "Name the measurable results your existing clients have already gotten"
+        }
+      }
+    },
+    {
+      "candidate_key": "proof",
+      "resolves": [
+        "conversion.proof"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "outcome"
+      ],
+      "activity": "Kumpulkan case atau testimoni konkret dari klien nyata",
+      "i18n": {
+        "en": {
+          "activity": "Collect concrete cases or testimonials from real clients"
+        }
+      }
+    },
+    {
+      "candidate_key": "capacity",
+      "resolves": [
+        "delivery.capacity"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Hitung jam mingguan terpakai dan sisa untuk pekerjaan tambahan",
+      "i18n": {
+        "en": {
+          "activity": "Count your used weekly hours and what is left for extra work"
+        }
+      }
+    },
+    {
+      "candidate_key": "repeat",
+      "resolves": [
+        "retention.repeat_purchase"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "proof",
+        "capacity"
+      ],
+      "activity": "Tawarkan pembelian ulang atau nilai tambahan kepada klien lama",
+      "i18n": {
+        "en": {
+          "activity": "Offer a repeat purchase or extra value to your existing clients"
+        }
+      }
+    }
+  ],
+  "provenance": [
+    {
+      "source_id": "vp",
+      "chapters": [
+        "ch02"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "chasm",
+      "chapters": [
+        "ch03"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "em",
+      "chapters": [
+        "ch10"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "hg",
+      "chapters": [
+        "ch07"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    }
+  ]
+}

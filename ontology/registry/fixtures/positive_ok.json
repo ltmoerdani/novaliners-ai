@@ -1,0 +1,47 @@
+{
+  "$comment": "FIXTURE POSITIF Tahap 2 — contoh sintetis (prefix sample.), BUKAN entri registry (D4 deferred). Menyangga: 5 lapisan lengkap, union mode BINARY dan PARTIAL sah, provenance reuse skema KB, wording bebas sinyal RR9 → target: 0 error 0 warning.",
+  "$expect": { "errors": [], "warnings": [] },
+  "entries": [
+    {
+      "requirement_id": "sample.ritme_akses",
+      "definition": "Ritme akses pelanggan tercatat pada interval tetap dengan jumlah kontak tiap interval.",
+      "observability": [
+        "Pola akses tercatat dalam jadwal",
+        "Jumlah kontak tiap interval tersimpan"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Ritme interval dan jumlah kontak tiap interval keduanya tercatat.",
+        "no_decisive": "Belum ada catatan interval maupun jumlah kontak.",
+        "contradicting": "Catatan menunjukkan akses hanya terjadi satu kali tanpa pola interval."
+      },
+      "provenance": {
+        "source_id": "tm",
+        "chapters": ["ch06"],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "sample.harga_jasa",
+      "definition": "Angka harga jasa tercantum dengan satuan dan dasar penetapan yang jelas.",
+      "observability": [
+        "Angka harga dengan satuan",
+        "Dasar penetapan tercantum untuk tiap paket"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Angka harga, satuan, dan dasar penetapan semuanya tercantum.",
+        "partial": "Sebagian tercantum — misal angka ada tanpa dasar penetapan, atau dasar ada tanpa angka final.",
+        "no_decisive": "Belum ada keterangan harga sama sekali.",
+        "contradicting": "Keterangan menyatakan harga selalu ditentukan tanpa batas, tidak ada angka dasar."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": ["ch03"],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    }
+  ]
+}

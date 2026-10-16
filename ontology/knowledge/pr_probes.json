@@ -1,0 +1,169 @@
+{
+ "$comment": "Predictable Revenue (Ross & Tyler, 2011) — probes. Fase E2E: sales (prospecting) + repeatable demand. Target utama: DM5.1 (demand insufficiency), DS4.2 (distribution inactivity), C6.4 (response/follow-up failure).",
+ "probes": [
+  {
+   "probe_id": "PR-P01",
+   "text": "How many NEW prospective customers have you contacted this week (active outreach — email/call/DM/pitch)?",
+   "targets": [
+    "DS4.2",
+    "DM5.1"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Ada angka outreach konsisten per minggu — pipeline discipline mulai terbentuk, DS4.2 turun",
+    "negative": "Nol / hampir nol outreach proaktif minggu ini — demand tergantung momentum/ inbound semata, DS4.2 naik",
+    "neutral": "There's outreach, but it's not consistent every week — need to measure consistency (streak)"
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "PR-P02",
+   "text": "If a prospective customer says \"later\" or asks for a follow-up — when did you last follow up, and how many days have passed since the last contact?",
+   "targets": [
+    "C6.4",
+    "DS4.2"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Follow-up terjadwal dan dijalankan < 7 hari — C6.4 rendah",
+    "negative": "Banyak balasan/inquiry dibiarkan tanpa follow-up, atau follow-up > 2 minggu — inquiry bocor, C6.4 naik kuat",
+    "neutral": "Follow-up exists but without a schedule/system — prone to leaking as volume increases."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "PR-P03",
+   "text": "Out of the 10 prospects you contacted, roughly how many actually match your ideal customer profile — and how many did you contact just because they 'happened to be there'?",
+   "targets": [
+    "M3.1",
+    "DM5.1"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "List dibangun dari kriteria ICP — conversion pipeline lebih mungkin, M3.1 turun",
+    "negative": "Spray-and-pray ke siapa pun — response rate rendah bawaan, M3.1 dan DM5.1 naik",
+    "neutral": "Ada filter longgar — perlu probe definisi ICP eksplisit"
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "PR-P04",
+   "text": "Right now, who handles prospecting → replying to inquiries → closing—is it all you by yourself, or is there a division of labor?",
+   "targets": [
+    "DS4.2",
+    "L8.1"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "There is role specialization (though simple) — the process can stay consistent under load",
+    "negative": "Semua role satu orang tanpa blok waktu khusus prospek — prospek selalu kalah oleh pekerjaan 'mendesak', DS4.2 & L8.1 naik",
+    "neutral": "Pembagian informal — efektif selama volume rendah"
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch02",
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "PR-P05",
+   "text": "What metrics do you use to tell whether your customer search engine is healthy or not (e.g., number of meetings/replies per week, inquiry→closing conversion)?",
+   "targets": [
+    "DM5.1",
+    "C6.4"
+   ],
+   "evidence_type": "quantitative",
+   "signal_interpretation": {
+    "positive": "There is a weekly leading indicator being monitored — demand can be predicted & improved",
+    "negative": "Tidak ada ukuran pipeline sama sekali — 'sepi' selalu misteri, diagnosis DM5.1 tak terdiferensiasi",
+    "neutral": "Hanya ukur hasil akhir (omzet) tanpa ukuran proses — terlambat deteksi"
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch04",
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "PR-P06",
+   "text": "Why do prospective customers who are already interested end up not going through — what are the most common reasons they give (or that you suspect)?",
+   "targets": [
+    "C6.4",
+    "C6.1"
+   ],
+   "evidence_type": "commitment",
+   "signal_interpretation": {
+    "positive": "There is a recorded pattern of reasoning — leakage can be localized to a specific stage.",
+    "negative": "Tidak tahu sama sekali kenapa bocor — inquiry hilang diam-diam, C6.4 tak terdiagnosis",
+    "neutral": "Knows case by case but without a pattern — need to log loss-reason"
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "PR-P07",
+   "text": "Siapa yang biasanya menandatangani keputusan pembelian untuk layanan seperti ini, dan berapa lama prosesnya?",
+   "targets": [
+    "M3.4"
+   ],
+   "evidence_type": "stakeholders",
+   "signal_interpretation": {
+    "positive": "Peran penandatangan + estimasi durasi disebut konkret — akses otoritas bisa divalidasi",
+    "negative": "Tidak tahu siapa penandatangannya — kontak saat ini kemungkinan bukan pemegang keputusan",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "pr",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

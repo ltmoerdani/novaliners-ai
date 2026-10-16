@@ -1,0 +1,180 @@
+{
+ "$comment": "Evidence rules dari The Challenger Sale (mapping §4). PERHATIAN: CS-R06 konflik dengan TM rules di fase discovery — aktif hanya saat applicability condition AC-01 terpenuhi (fase OFFER/COMPLEX-SALE).",
+ "evidence_rules": [
+  {
+   "rule_id": "CS-R01",
+   "condition": "user answers the reframe question with total agreement ('exactly my problem') without surprise",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS that customers respond to their pitch with total agreement ('exactly our problem') WITHOUT surprise or new insight, yet deals still die.",
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.3"
+    ],
+    "rationale": "Persetujuan = mengajar di margin; tidak ada reframe — value framing belum terbedakan dari kompetitor."
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch04",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "CS-R02",
+   "condition": "user menghadapi permintaan diskon dan responsnya menurunkan harga tanpa percakapan value",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_contains_any": [
+        "diskon",
+        "discount"
+       ]
+      },
+      {
+       "text_present_pattern": "(turun\\w*|nurun\\w*|potong\\w*)[^.]{0,40}harga|harga[^.]{0,40}(turun\\w*|nurun\\w*|potong\\w*)"
+      }
+     ]
+    },
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS that when asked for a discount, they respond by directly lowering the price without any value conversation or trade.",
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "L8.1"
+    ],
+    "rationale": "Passive posture — caving; time-for-money/margin trap terkunci; transaksional decay."
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "CS-R03",
+   "condition": "deal via RFP/junior contact TANPA akses ke decision maker atau key executives",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_present_pattern": "\\b(rfp|tender|purchasing|junior|staf|staff)\\b"
+      },
+      {
+       "text_present_pattern": "belum[^.]{0,50}(bicara|ngomong|kontak|akses|ketemu)[^.]{0,50}(direksi|pemilik|atasan|bos|c[- ]?level|decision)|menunggu[^.]{0,30}(atasan|bos|approval|keputusan)"
+      }
+     ]
+    },
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS pursuing deals that arrive via RFP/tender or through junior staff (e.g. purchasing), WITHOUT access to the real decision maker; deals stall 'waiting for the boss'.",
+   "consequence": {
+    "action": "FLAG_SEGMENT",
+    "targets": [
+     "C6.1"
+    ],
+    "rationale": "≈20% of opportunities are verification foils — qualification is invalid; time is better spent elsewhere."
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "CS-R04",
+   "condition": "identical sales message for all stakeholders in a multi-person deal",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS using one identical sales message/deck for ALL stakeholders, with no per-role tailoring.",
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "M3.4"
+    ],
+    "rationale": "Consensus buying butuh resonansi per-role; satu pesan = 'so what?' dari non-teknikal stakeholder."
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "CS-R05",
+   "condition": "The teaching/insight shared does NOT lead to a unique strength that only the user has.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS teaching insights to customers, but those insights do NOT connect to any unique strength they alone can deliver.",
+   "consequence": {
+    "action": "IGNORE_SIGNAL",
+    "targets": [
+     "C6.3"
+    ],
+    "rationale": "Free consulting — good insight but doesn’t result in a win; don’t count it as value framing."
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "CS-R06",
+   "condition": "APPLICABILITY: penjualan kompleks/disruptive DAN strategi user relationship-first (delay semua komersial, defuse tension)",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS selling complex/disruptive services while describing a relationship-first passive approach (build relationship first, sell later).",
+   "consequence": {
+    "action": "FLAG_SEGMENT",
+    "targets": [
+     "C6.1",
+     "DM5.5"
+    ],
+    "rationale": "Profil pendekatan salah untuk konteks complex sale — Relationship Builder ≈0% star. AKTIF hanya di fase OFFER; nonaktif saat fase LEARNING (AC-01)."
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

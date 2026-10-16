@@ -1,0 +1,55 @@
+{"ts": 1792198808, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792198809, "session_id": "dc930554d1ab", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792198809, "session_id": "dc930554d1ab", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792198810, "session_id": "f800c6c12db7", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792198810, "session_id": "f800c6c12db7", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792198864, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792198865, "session_id": "77542035a4fe", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792198865, "session_id": "77542035a4fe", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792198867, "session_id": "162ad91fec45", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792198867, "session_id": "162ad91fec45", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792198911, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792198912, "session_id": "8cc140060518", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792198912, "session_id": "8cc140060518", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792198913, "session_id": "9187d77cb2fb", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792198913, "session_id": "9187d77cb2fb", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792199681, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792199683, "session_id": "f6ef38e3ed01", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792199683, "session_id": "f6ef38e3ed01", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792199685, "session_id": "c57ac52338c7", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792199685, "session_id": "c57ac52338c7", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792199738, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792199739, "session_id": "9d9a446cf9c9", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792199739, "session_id": "9d9a446cf9c9", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792199741, "session_id": "54f6ef0b197a", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792199741, "session_id": "54f6ef0b197a", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792200402, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792200404, "session_id": "2c6c1bd47a9a", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792200404, "session_id": "2c6c1bd47a9a", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792200408, "session_id": "023c6b1641c7", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792200408, "session_id": "023c6b1641c7", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792200577, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792200578, "session_id": "74aaa38704cb", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792200578, "session_id": "74aaa38704cb", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792200580, "session_id": "b5dae59e37c5", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792200580, "session_id": "b5dae59e37c5", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792202938, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792202939, "session_id": "7f311badd186", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792202939, "session_id": "7f311badd186", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792202940, "session_id": "4ee06e332347", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792202940, "session_id": "4ee06e332347", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792203108, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792203109, "session_id": "95554ca75b0d", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792203109, "session_id": "95554ca75b0d", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792203110, "session_id": "517af4d49d7e", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792203110, "session_id": "517af4d49d7e", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792203232, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792203234, "session_id": "69e21faf99bf", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792203234, "session_id": "69e21faf99bf", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792203235, "session_id": "ce82d6b4c487", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792203235, "session_id": "ce82d6b4c487", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}
+{"ts": 1792203399, "session_id": "test-sess", "intervention_id": "LC-I01", "outcome": "moved", "notes": "lead balas & minta proposal", "primary_constraint": null}
+{"ts": 1792203400, "session_id": "82c221623dfb", "intervention_id": "LC-I01", "outcome": "not_moved", "notes": "diam setelah follow-up", "primary_constraint": "C6.3"}
+{"ts": 1792203400, "session_id": "82c221623dfb", "intervention_id": "LC-I01", "outcome": "regret", "notes": "seharusnya tidak dilakukan", "primary_constraint": "C6.3"}
+{"ts": 1792203401, "session_id": "c49a1fa31962", "intervention_id": "TM-I03", "outcome": "moved", "notes": "4 balas dari 10 DM", "primary_constraint": "C6.3"}
+{"ts": 1792203401, "session_id": "c49a1fa31962", "intervention_id": "TM-I03", "outcome": "not_moved", "notes": "", "primary_constraint": "C6.3"}

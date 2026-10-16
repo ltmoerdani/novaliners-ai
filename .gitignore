@@ -1,0 +1,27 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+evals/*_result.json
+
+# Artifact hasil eval & manual testing (data sesi, bukan kode)
+eval_user_a_result.json
+eval_manual_s13.json
+eval_dod_smoke_result.json
+
+# Stage-trace per diagnosis (regenerable — jalankan ulang; berisi cuplikan percakapan)
+traces/
+
+# Data sesi runtime (transkrip + evidence + diagnosis persona uji)
+store/sessions/
+eval_funnel.jsonl
+
+
+# Snapshot audit G7 smoke-stability (dibandingkan saat eksekusi; regenerable)
+store/stability/
+
+# Workspaces per user (snapshot/event log runtime — dibuat saat UI/eval membuat sesi ber-user_id)
+store/workspaces/
+
+# Scratch probe browser sekali-pakai (bukan bagian suite; jangan di-commit)
+e2e/*.tmp.mjs

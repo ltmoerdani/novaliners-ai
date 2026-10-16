@@ -1,0 +1,130 @@
+{
+  "$comment": "RouteTemplate PRODUKSI (D4 int 08 §8.4, 27 Sep). PARTNERSHIP lewat referral berulang. §7.10: reference_customer_secured vakum-capable (populasi = pelanggan) -> applies_when menuntut pelanggan + konteks jaringan. gtm.partner dikecualikan (A2) — tidak dipakai. Provenance diturunkan mekanis dari provenance requirement penyusun.",
+  "template_id": "referral_partnership_v1",
+  "strategy_id": "referral_partnership",
+  "goal_anchor": "access.referral_channel",
+  "applies_when": {
+    "applies": [
+      {
+        "all_of": [
+          {
+            "text_contains_any": [
+              "klien",
+              "pelanggan",
+              "client",
+              "customer"
+            ]
+          },
+          {
+            "text_contains_any": [
+              "referral",
+              "rekomendasi",
+              "partner",
+              "komunitas",
+              "jaringan",
+              "recommendation",
+              "partnership",
+              "network",
+              "community"
+            ]
+          }
+        ]
+      }
+    ],
+    "not_applicable": []
+  },
+  "requires": [
+    "conversion.proof",
+    "gtm.reference_customer_secured",
+    "delivery.capacity",
+    "access.referral_channel"
+  ],
+  "node_candidates": [
+    {
+      "candidate_key": "proof",
+      "resolves": [
+        "conversion.proof"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Kumpulkan case atau testimoni konkret dari klien nyata",
+      "i18n": {
+        "en": {
+          "activity": "Collect concrete cases or testimonials from real clients"
+        }
+      }
+    },
+    {
+      "candidate_key": "reference",
+      "resolves": [
+        "gtm.reference_customer_secured"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "proof"
+      ],
+      "activity": "Minta satu pelanggan bersedia menjadi referensi aktif",
+      "i18n": {
+        "en": {
+          "activity": "Ask one client to be an active reference"
+        }
+      }
+    },
+    {
+      "candidate_key": "capacity",
+      "resolves": [
+        "delivery.capacity"
+      ],
+      "strength": "soft",
+      "depends_on": [],
+      "activity": "Pastikan ada sisa kapasitas untuk permintaan dari referral",
+      "i18n": {
+        "en": {
+          "activity": "Make sure there is spare capacity for referral demand"
+        }
+      }
+    },
+    {
+      "candidate_key": "referral",
+      "resolves": [
+        "access.referral_channel"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "reference"
+      ],
+      "activity": "Bangun mekanisme intro berulang lewat advisor, komunitas, atau klien",
+      "i18n": {
+        "en": {
+          "activity": "Build a repeatable intro mechanism through advisors, communities, or clients"
+        }
+      }
+    }
+  ],
+  "provenance": [
+    {
+      "source_id": "chasm",
+      "chapters": [
+        "ch03"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "em",
+      "chapters": [
+        "ch10"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "pr",
+      "chapters": [
+        "ch06"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    }
+  ]
+}

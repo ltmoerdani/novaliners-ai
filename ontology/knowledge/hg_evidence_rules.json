@@ -1,0 +1,179 @@
+{
+ "$comment": "Hacking Growth — evidence rules. Kontribusi utama: rule RAISE untuk sinyal positif organik (internal-docs §9 P2) + pembeda demand vs retention.",
+ "evidence_rules": [
+  {
+   "rule_id": "HG-R01",
+   "condition": "evidence perilaku: customer lama kembali/repeat atau mereferensikan orang lain TANPA diminta (organik)",
+   "matcher_hint": "The user RECOUNTS specific repeat purchases or unprompted referrals by existing customers (e.g. 'ada yang balik beli lagi', 'dia bawa temannya ke sini') as observed events, not as intentions.",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_contains_any": [
+        "balik lagi",
+        "repeat",
+        "langganan",
+        "referral",
+        "bawa teman",
+        "rekomendasi",
+        "kenalan",
+        "dipanggil lagi",
+        "order lagi",
+        "beli lagi",
+        "returning"
+       ]
+      }
+     ]
+    }
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "DM5.5"
+    ],
+    "rationale": "Repeat & referral organik = bukti level Behavior bahwa nilai benar-benar diterima — trust deficit menurun. Ini rule RAISE organik pertama untuk DM5.5 (menjawab internal-docs §9: mesin skeptis butuh daya konfirmasi)."
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch07",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "evaluation_note": "Predicate deteksi bahasa repeat/referral; LLM matcher tetap wajib menyaring intention ('nanti dia pasti balik') dari event lampau. Sitasi kutipan user wajib."
+  },
+  {
+   "rule_id": "HG-R02",
+   "condition": "users cannot articulate the customer's aha moment AND most new customers don't reach first value",
+   "matcher_hint": "The user RECOUNTS being unable to describe a concrete first-value moment when asked when customers 'get it', and acknowledges most new customers stall or disappear before experiencing the core value.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "R7.2"
+    ],
+    "rationale": "Aha moment tak terdefinisi + mayoritas tak sampai = onboarding frictions truktur; retensi rapuh sebelum scale acquisition."
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch03",
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "HG-R03",
+   "condition": "user complains 'customers are hard to come by' BUT doesn't know the distribution of existing customer sources (can't tell which channel is working)",
+   "matcher_hint": "The user RECOUNTS complaining about hard-to-get customers while admitting they have no breakdown of where current customers actually come from — acquisition is discussed purely as a feeling, never as channels with numbers.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "FLAG_SEGMENT",
+    "targets": [
+     "DS4.2"
+    ],
+    "rationale": "Tanpa data channel, 'sepi' tidak bisa didiagnosis (distribution inactivity vs demand tak ada). FLAG agar probe HG-P03 dijalankan sebelum intervensi channel dipilih."
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch02",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "HG-R04",
+   "condition": "evidence: seluruh energi dicurahkan ke akuisisi customer baru, existing customer tidak pernah dihubungi lagi setelah transaksi",
+   "matcher_hint": "The user RECOUNTS all activity as chasing new customers, with zero recurring touch (no broadcast, no check-in, no offer) to people who already bought — existing buyers exist only as past transactions.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "DM5.5"
+    ],
+    "rationale": "Relasi berhenti di transaksi = hubungan transaksional murni; trust/ repeat asset tidak dibangun. Sinyal DM5.5 dan biaya akuisisi struktural tinggi."
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "HG-R05",
+   "condition": "A channel experiment exists with measurable baseline vs treatment — demand generation is being tested, not guessed.",
+   "matcher_hint": "The user RECOUNTS running a growth/acquisition experiment with a written hypothesis and a baseline metric for the channel.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "DM5.1"
+    ],
+    "rationale": "High-tempo experimentation dengan metrik baseline adalah cara Hacking Growth menghasilkan demand yang terukur — bukan perasaan bulan ini."
+   },
+   "provenance": {
+    "source_id": "hg",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch01",
+     "ch04"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "HG-R06",
+   "condition": "More clients coincide with worse retention/quality — the engine is being pushed past what delivery can sustain.",
+   "matcher_hint": "The user RECOUNTS customer quality or retention visibly degrading as the number of active clients grows.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "L8.3"
+    ],
+    "rationale": "Retention yang retak saat volume naik adalah sinyal kapasitas delivery mentok dari sisi demand — scaling menambah keretakan (retention gate)."
+   },
+   "provenance": {
+    "source_id": "hg",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch02",
+     "ch06"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

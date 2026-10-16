@@ -1,0 +1,37 @@
+{
+  "$comment": "Lost Art of Closing — anti-patterns.",
+  "anti_patterns": [
+    {
+      "pattern_id": "LC-A01",
+      "name": "Hope-the-Phone-Rings Closing",
+      "symptom": "Tidak pernah meminta komitmen apa pun secara eksplisit; percakapan baik dibiarkan berakhir kabur ('nanti kabari ya') lalu menunggu.",
+      "constraint_link": ["C6.4"],
+      "provenance": {"source_id": "lc", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only"},
+      "lifecycle": "MAPPED"
+    },
+    {
+      "pattern_id": "LC-A02",
+      "name": "Free-Value Spiral",
+      "symptom": "Memberi rincian, konsultasi, dan revisi gratis berulang tanpa pernah meminta komitmen imbalan — nilai terasa murah, pembeli makin longgar berkomitmen.",
+      "constraint_link": ["C6.4", "DM5.6"],
+      "provenance": {"source_id": "lc", "chapters": ["ch03"], "knowledge_type": "source_claim", "confidence": "normative_only"},
+      "lifecycle": "MAPPED"
+    },
+    {
+      "pattern_id": "LC-A03",
+      "name": "Check-in Without Ask",
+      "symptom": "Follow-up hanya 'tanya kabar/ingatkan' tanpa membawa satu komitmen spesifik yang diminta — kontak bertambah, tangga komitmen tidak naik.",
+      "constraint_link": ["C6.4"],
+      "provenance": {"source_id": "lc", "chapters": ["ch16"], "knowledge_type": "source_claim", "confidence": "normative_only"},
+      "lifecycle": "MAPPED"
+    },
+    {
+      "pattern_id": "LC-A04",
+      "name": "Objection Left on the Table",
+      "symptom": "Keberatan calon ('kemahalan', 'pikir-pikir dulu') dibiarkan tanpa dijadwalkan sesi penyelesaian — berharap hilang sendiri.",
+      "constraint_link": ["C6.4", "DM5.5"],
+      "provenance": {"source_id": "lc", "chapters": ["ch11"], "knowledge_type": "source_claim", "confidence": "normative_only"},
+      "lifecycle": "MAPPED"
+    }
+  ]
+}

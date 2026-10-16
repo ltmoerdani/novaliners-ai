@@ -1,0 +1,94 @@
+{
+ "$comment": "Predictable Revenue — interventions. All with required expected_evidence (internal-docs §6.2 #11).",
+ "interventions": [
+  {
+   "intervention_id": "PR-I01",
+   "name": "Prospecting Time Block 5×30",
+   "targets": [
+    "DS4.2"
+   ],
+   "expected_evidence": "Log 5 blok waktu 30 menit prospek per minggu selama 2 minggu beruntun + jumlah kontak baru per blok (target minimal konsisten, bukan besar)",
+   "contraindicated_until": "ICP list (PR-I03) belum ada — volume prospek ke orang yang salah = rejection tinggi tanpa pembelajaran",
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES",
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "PR-I02",
+   "name": "Simple Response System (inbox 24 jam + follow-up 3×)",
+   "targets": [
+    "C6.4"
+   ],
+   "expected_evidence": "0 inquiry berumur >48 jam tanpa balasan selama 2 minggu + setiap lead 'nanti' punya tanggal follow-up berikutnya yang tercatat",
+   "contraindicated_until": "Inquiry masuk belum terukur (demand belum EXISTS) — sistem respon mengurus masalah yang belum ada",
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES",
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "PR-I03",
+   "name": "ICP List Filter sebelum tambah volume",
+   "targets": [
+    "M3.1",
+    "DM5.1"
+   ],
+   "expected_evidence": "Definisi tertulis kriteria prospek (min. 2 kriteria selain 'butuh produk') + list 20 prospek yang lolos filter + response rate list terfilter dibanding list lama",
+   "contraindicated_until": "Belum ada ≥3 pelanggan/percakapan historis terbaik — kriteria ICP dari nol data adalah tebakan",
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES",
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "PR-I04",
+   "name": "Weekly Pipeline Number (satu angka proses)",
+   "targets": [
+    "DM5.1"
+   ],
+   "expected_evidence": "Satu leading indicator mingguan dipilih & dicatat 4 minggu beruntun (mis. kontak baru/minggu atau balasan masuk/minggu) — tren naik/stabil terlihat dari angka, bukan perasaan",
+   "contraindicated_until": "Aktivitas prospek belum berjalan 2 minggu (PR-I01) — angka pipeline tanpa aktivitas = vanity metric",
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES",
+    "SALES"
+   ]
+  }
+ ]
+}

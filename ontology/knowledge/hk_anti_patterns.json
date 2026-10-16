@@ -1,0 +1,58 @@
+{
+ "$comment": "Anti-patterns dari Hooked (mapping §5).",
+ "anti_patterns": [
+  {
+   "pattern_id": "HK-A01",
+   "name": "Motivation-First Fix",
+   "symptom": "Responding to onboarding friction with a motivation/education campaign — even though it’s ability (simplicity of steps) that’s the problem.",
+   "constraint_link": [
+    "R7.2"
+   ],
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "HK-A02",
+   "name": "Gamification Mismatch",
+   "symptom": "Points/badges/leaderboard that don’t answer the customer’s itch — 'no amount of gamification will help'",
+   "constraint_link": [
+    "R7.2",
+    "DM5.5"
+   ],
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "HK-A03",
+   "name": "Forced Investment",
+   "symptom": "Meminta data/kerja/komitmen SEBELUM reward pertama — melanggar timing investasi (setelah reward, bukan sebelum)",
+   "constraint_link": [
+    "R7.2",
+    "DM5.5"
+   ],
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

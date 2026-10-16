@@ -1,0 +1,268 @@
+{
+ "$comment": "SPIN Selling — evidence rules. Riset empiris Huthwaite (35.000 calls): closing techniques gagal di large sale; needs dikembangkan lewat urutan pertanyaan; objections = simptom salah penjualan.",
+ "evidence_rules": [
+  {
+   "rule_id": "SP-R01",
+   "condition": "Evidence shows the price/offer is mentioned BEFORE the problem & implications of the problem are explicitly discussed, then the prospective client stops responding or says it’s expensive.",
+   "matcher_hint": "The user RECOUNTS mentioning price or the offer EARLY — before the prospect's problem and its consequences were explicitly discussed — and the prospect then stalled, went quiet, or said it was too expensive.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.3"
+    ],
+    "rationale": "Price without problem/implication context makes prospects evaluate the offer only by the number (SPIN research: needs must be developed before capability is demonstrated). Price objections = a symptom of the wrong sequence, not the wrong price."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch03",
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "SP-R02",
+   "condition": "user menggunakan closing techniques agresif (tekanan keputusan cepat, discount untuk hari ini, pertanyaan alternatif memaksa) padahal calon baru mengenalnya",
+   "matcher_hint": "The user RECOUNTS using pressure-closing tactics (urgency pushes, today-only discounts, forced-choice questions) with prospects who are new or barely qualified.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.3"
+    ],
+    "rationale": "Huthwaite research: closing techniques are NEGATIVELY correlated with success in large sales — they accelerate rejection and damage relationships. Frequent objections and rejections = symptoms of early closing."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "SP-R03",
+   "condition": "Consistently high frequency of objections/rejections AND most offers mention features/services instead of results for the buyer",
+   "matcher_hint": "The user RECOUNTS frequent price objections or rejections AND recounts offers framed around features/tasks of the work (deliverables, process) rather than outcomes the buyer gets.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.3"
+    ],
+    "rationale": "SPIN research: objections are caused by salespeople who mention features/advantages too early. Benefits must be tied to the buyer's explicit problem — not a feature list."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch05",
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "SP-R04",
+   "condition": "user understands and can name specific problems + their implications as stated directly by prospective clients (not assumptions)",
+   "matcher_hint": "The user RECOUNTS citing the prospect's own words about their problem and why it matters (quoted or paraphrased explicitly), distinguishing them from the user's own assumptions.",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_present_pattern": "\\b(dia bilang|kata dia|katanya|mereka bilang|jelas bilang|ucap|he said|she said|they said)\\b"
+      }
+     ]
+    },
+    "version": "v0.2"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.1"
+    ],
+    "rationale": "Masalah terverifikasi dari mulut pembeli = kualifikasi eksplisit (explicit need) tercapai — qualification failure menurun. Tier-1: sitasi kata kunci wajib."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "evaluation_note": "Predicate mendeteksi bahasa kutipan pembeli; LLM matcher tetap membedakan kutipan asli vs parafrasa. Sitasi wajib."
+  },
+  {
+   "rule_id": "SP-R05",
+   "condition": "Evidence shows the offer was framed as answers to needs the prospect already voiced; feature/advantage list appears only after an explicit need is on the table.",
+   "matcher_hint": "The user RECOUNTS presenting benefits by linking them to the buyer's OWN stated explicit needs ('tadi Anda bilang…') instead of listing generic features or advantages.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.3"
+    ],
+    "rationale": "Benefit yang dirangkai ke explicit need pembeli adalah satu-satunya bentuk 'benefit' yang berlaku di large sale (Huthwaite): fitur tanpa anchor kebutuhan memicu objeksi."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch05"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "SP-R06",
+   "condition": "Objection arrives at the very start of the exchange, before needs development — a symptom of premature pitching rather than weak value.",
+   "matcher_hint": "The user RECOUNTS receiving objections or push-back BEFORE any problem or its implications were discussed with that prospect.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.1"
+    ],
+    "rationale": "Objection pre-problem menandakan pitch prematur: penjual datang dengan solusi sebelum masalah dikonfirmasi (SPIN: objections are seller-caused)."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch06"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "SP-R07",
+   "condition": "The buyer initiates movement toward the solution once consequences were made explicit — explicit needs are developed.",
+   "matcher_hint": "The user RECOUNTS the prospect asking for details, pricing, or next steps AFTER implication and need-payoff questions were explored together.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.3"
+    ],
+    "rationale": "Calon yang bergerak setelah implikasi dihitung bersama menandakan nilai terasa SEBELUM harga — kondisi ideal penjualan besar."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch03",
+     "ch04"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "SP-R08",
+   "condition": "Call profile is situation-heavy: many background Q&A, zero or one problem statement — SPIN research links this profile to below-average success in large sales.",
+   "matcher_hint": "The user RECOUNTS spending most of the conversation on situation questions (background facts) without surfacing any problem.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.1"
+    ],
+    "rationale": "Situation questions berkorelasi negatif dengan sukses di large sale; mereka terindikasi kuat justru menutup pembeli (SP-A04)."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch01",
+     "ch04"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "SP-R09",
+   "condition": "Price/commitment request is sequenced after developed needs, and the prospect engaged with it rather than stalling.",
+   "matcher_hint": "The user RECOUNTS asking for commitment or naming the price ONLY after the prospect articulated explicit needs and consequences.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.4"
+    ],
+    "rationale": "Urutan harga-terakhir dengan needs terbangun = right commitment; keberhasilannya membuktikan value framing bekerja (SP-R01 cerminannya)."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch02",
+     "ch04"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "SP-R10",
+   "condition": "Escalating close techniques coincide with prospect retreat — the classic large-sale failure pattern.",
+   "matcher_hint": "The user RECOUNTS applying repeated closing pressure (urging, discounts, deadlines) in a large or high-uncertainty deal and the prospect withdrawing or going quiet.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.3"
+    ],
+    "rationale": "Closing techniques berkorelasi NEGATIF dengan sukses di large sale (riset 35.000 calls); tekanan menandakan needs belum dikembangkan."
+   },
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch02"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

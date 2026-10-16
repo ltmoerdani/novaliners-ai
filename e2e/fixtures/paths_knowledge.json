@@ -1,0 +1,574 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "",
+  "found_version": 3,
+  "i18n": {},
+  "needs_rediagnosis": false,
+  "reason_code": null,
+  "status": "CURRENT"
+ },
+ "possible_paths": {
+  "generation": {
+   "considered": 2,
+   "emerged": [
+    "structured_interviews",
+    "referral_hiring"
+   ],
+   "not_emergent": [],
+   "rejected": [],
+   "undetermined": [],
+   "unsupported_knowledge": []
+  },
+  "paths": [
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "interview every candidate against the same written rubric",
+    "checks": [
+     {
+      "check_id": "rubric",
+      "i18n": {
+       "en": {
+        "reason": "Not measured yet",
+        "title": "A written interview rubric exists",
+        "unlock": "Write a one-page rubric."
+       }
+      },
+      "kind": "prereq",
+      "reason": "belum terukur",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "Interview rubric",
+      "unlock": "write the interview rubric"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "rubric",
+      "need": "write the interview rubric"
+     }
+    ],
+    "motion": null,
+    "path_id": "path.structured_interviews",
+    "presentation": {
+     "en": {
+      "basis": "Interview every candidate against the same written rubric.",
+      "short": "Structured interviews",
+      "word": "Interviews"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": {
+      "all_of": [
+       "rule:HR-R1",
+       "mechanism:inconsistent_hiring_bar"
+      ]
+     },
+     "evidence_ids": [
+      "ev-hr-goal",
+      "ev-hr-1",
+      "ev-hr-2"
+     ],
+     "knowledge_ids": [
+      "HR-R1"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-hr-1"
+         ],
+         "operand": [
+          "tanpa rubrik"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].text_contains_any",
+         "evidence_ids": [
+          "ev-hr-2"
+         ],
+         "operand": [
+          "nilai subjektif"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-hr-1",
+        "ev-hr-2"
+       ],
+       "rule_id": "HR-R1",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "inconsistent_hiring_bar"
+     ],
+     "motion": null,
+     "route_template_ids": [
+      "structured_interviews_v1"
+     ],
+     "state_claims": [
+      "state:hiring_goal"
+     ],
+     "strategy_id": "structured_interviews",
+     "support": [
+      {
+       "reason": "goal",
+       "refs": [
+        "ev-hr-goal"
+       ],
+       "signal": "state:hiring_goal"
+      },
+      {
+       "basis": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-hr-1"
+         ],
+         "operand": [
+          "tanpa rubrik"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].text_contains_any",
+         "evidence_ids": [
+          "ev-hr-2"
+         ],
+         "operand": [
+          "nilai subjektif"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge HR-R1 aktif, didukung evidence ev-hr-1, ev-hr-2",
+       "refs": [
+        "ev-hr-1",
+        "ev-hr-2"
+       ],
+       "signal": "rule:HR-R1"
+      },
+      {
+       "reason": "mechanism inconsistent_hiring_bar",
+       "refs": [
+        "ev-hr-2"
+       ],
+       "signal": "mechanism:inconsistent_hiring_bar"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "structured_interviews_v1"
+     ]
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "structured_interviews",
+    "title": "Structured interviews",
+    "unlock_conditions": [
+     "write the interview rubric"
+    ]
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "",
+    "checks": [],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "DECLARED_UNCONDITIONAL",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.referral_hiring",
+    "presentation": {},
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": "state:network_large",
+     "evidence_ids": [
+      "ev-hr-goal",
+      "ev-hr-net"
+     ],
+     "knowledge_ids": [],
+     "knowledge_sources": [],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:hiring_goal",
+      "state:network_large"
+     ],
+     "strategy_id": "referral_hiring",
+     "support": [
+      {
+       "reason": "goal",
+       "refs": [
+        "ev-hr-goal"
+       ],
+       "signal": "state:hiring_goal"
+      },
+      {
+       "reason": "jaringan besar",
+       "refs": [
+        "ev-hr-net"
+       ],
+       "signal": "state:network_large"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "referral_hiring",
+    "title": "Referral hiring",
+    "unlock_conditions": []
+   }
+  ],
+  "space_id": "hiring",
+  "unresolved": [],
+  "version": 3
+ },
+ "projection": {
+  "emerging": [],
+  "generation": {
+   "considered": 2,
+   "emerged": [
+    "structured_interviews",
+    "referral_hiring"
+   ],
+   "not_emergent": [],
+   "rejected": [],
+   "undetermined": [],
+   "unsupported_knowledge": []
+  },
+  "navigation": {
+   "current_version": 3,
+   "detail": "",
+   "found_version": 3,
+   "i18n": {},
+   "needs_rediagnosis": false,
+   "reason_code": null,
+   "status": "CURRENT"
+  },
+  "paths": [
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Interview every candidate against the same written rubric."
+    },
+    "candidate": null,
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 1,
+     "unknown": 1
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "UNDETERMINED",
+    "feasibility_engine": "UNDETERMINED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "rubric",
+      "evidence": [],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Write a one-page rubric."
+      },
+      "key": "rubric",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Not measured yet"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "UNKNOWN",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "A written interview rubric exists"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Write a one-page rubric."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.structured_interviews",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "Whether a written interview rubric exists is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "unclear",
+       "requirement_anchor": "rubric",
+       "support_state": "UNKNOWN"
+      }
+     ],
+     "holding": "",
+     "supported": "",
+     "unclear": "Whether a written interview rubric exists is in place is not known yet."
+    },
+    "path_id": "path.structured_interviews",
+    "presentation": {
+     "en": {
+      "basis": "Interview every candidate against the same written rubric.",
+      "short": "Structured interviews",
+      "word": "Interviews"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": {
+      "all_of": [
+       "rule:HR-R1",
+       "mechanism:inconsistent_hiring_bar"
+      ]
+     },
+     "evidence_ids": [
+      "ev-hr-goal",
+      "ev-hr-1",
+      "ev-hr-2"
+     ],
+     "knowledge_ids": [
+      "HR-R1"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-hr-1"
+         ],
+         "operand": [
+          "tanpa rubrik"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].text_contains_any",
+         "evidence_ids": [
+          "ev-hr-2"
+         ],
+         "operand": [
+          "nilai subjektif"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-hr-1",
+        "ev-hr-2"
+       ],
+       "rule_id": "HR-R1",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "inconsistent_hiring_bar"
+     ],
+     "motion": null,
+     "route_template_ids": [
+      "structured_interviews_v1"
+     ],
+     "state_claims": [
+      "state:hiring_goal"
+     ],
+     "strategy_id": "structured_interviews",
+     "support": [
+      {
+       "reason": "goal",
+       "refs": [
+        "ev-hr-goal"
+       ],
+       "signal": "state:hiring_goal"
+      },
+      {
+       "basis": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-hr-1"
+         ],
+         "operand": [
+          "tanpa rubrik"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].text_contains_any",
+         "evidence_ids": [
+          "ev-hr-2"
+         ],
+         "operand": [
+          "nilai subjektif"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge HR-R1 aktif, didukung evidence ev-hr-1, ev-hr-2",
+       "refs": [
+        "ev-hr-1",
+        "ev-hr-2"
+       ],
+       "signal": "rule:HR-R1"
+      },
+      {
+       "reason": "mechanism inconsistent_hiring_bar",
+       "refs": [
+        "ev-hr-2"
+       ],
+       "signal": "mechanism:inconsistent_hiring_bar"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "structured_interviews_v1"
+     ]
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "structured_interviews",
+    "title": "Structured interviews"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "id",
+     "text": ""
+    },
+    "candidate": null,
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 0,
+     "unknown": 0
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "SUPPORTED",
+    "feasibility_engine": "SUPPORTED",
+    "items": [],
+    "key": "path.referral_hiring",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [],
+     "holding": "",
+     "supported": "",
+     "unclear": ""
+    },
+    "path_id": "path.referral_hiring",
+    "presentation": {},
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": "state:network_large",
+     "evidence_ids": [
+      "ev-hr-goal",
+      "ev-hr-net"
+     ],
+     "knowledge_ids": [],
+     "knowledge_sources": [],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:hiring_goal",
+      "state:network_large"
+     ],
+     "strategy_id": "referral_hiring",
+     "support": [
+      {
+       "reason": "goal",
+       "refs": [
+        "ev-hr-goal"
+       ],
+       "signal": "state:hiring_goal"
+      },
+      {
+       "reason": "jaringan besar",
+       "refs": [
+        "ev-hr-net"
+       ],
+       "signal": "state:network_large"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "referral_hiring",
+    "title": "Referral hiring"
+   }
+  ],
+  "unresolved": [],
+  "version": 4
+ }
+}

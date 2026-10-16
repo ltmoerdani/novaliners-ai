@@ -1,0 +1,22 @@
+{
+  "name": "novaliners-e2e",
+  "private": true,
+  "type": "module",
+  "description": "Visual + flow E2E for the Novaliners v11 UI (prototype parity in demo mode, live flows against the real API with the mock LLM, the seven canonical frames at eight viewports).",
+  "scripts": {
+    "test": "playwright test",
+    "test:parity": "playwright test parity.spec.mjs",
+    "test:live": "playwright test live.spec.mjs goal-relative.spec.mjs goal-visual.spec.mjs journey-goal.spec.mjs navigation.spec.mjs state.spec.mjs maps.spec.mjs maps-labels.spec.mjs moves.spec.mjs journey.spec.mjs talk.spec.mjs conversation.spec.mjs presentation-cap.spec.mjs tokens.spec.mjs copy.spec.mjs quality.spec.mjs state-laws.spec.mjs demo.spec.mjs visual.spec.mjs",
+    "test:conversation": "playwright test conversation.spec.mjs",
+    "test:cap": "playwright test presentation-cap.spec.mjs maps.spec.mjs",
+    "test:copy": "playwright test copy.spec.mjs",
+    "test:visual": "playwright test visual.spec.mjs",
+    "test:visual:update": "UPDATE_VISUAL=1 playwright test visual.spec.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.50.0",
+    "pixelmatch": "^5.3.0",
+    "pngjs": "^7.0.0"
+  }
+}

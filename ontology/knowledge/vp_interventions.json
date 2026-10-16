@@ -1,0 +1,94 @@
+{
+ "$comment": "Interventions dari Value Proposition Design (mapping §6).",
+ "interventions": [
+  {
+   "intervention_id": "VP-I01",
+   "name": "Map Customer Profile 1 segmen (jobs/pains/gains ranked + concrete)",
+   "targets": [
+    "M3.1",
+    "C6.3"
+   ],
+   "expected_evidence": "1 profil satu segmen penuh (banyak stickies) + setiap pain ekstrem punya threshold terukur dari ukuran customer sendiri",
+   "contraindicated_until": "Segmen dipilih (who-where pair) — profiling pada segmen kabur = buang waktu",
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "VP-I02",
+   "name": "Ad-lib offer + Value Map (relievers/creators ter-mapping ke profile)",
+   "targets": [
+    "V2.1",
+    "C6.3"
+   ],
+   "expected_evidence": "1 kalimat offer utuh (ad-lib terisi semua blanko) + setiap reliever/creator memetakan ≥1 pain/gain",
+   "contraindicated_until": "Pain/reliever-creator belum termapping dari percakapan nyata — offer dirancang dari dugaan, bukan bukti",
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch02",
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "VP-I03",
+   "name": "Fit check + 10-characteristics assessment",
+   "targets": [
+    "V2.4"
+   ],
+   "expected_evidence": "Skor assessment 10 karakteristik + daftar karakteristik terlemah + status fit stage (paper/market/bank)",
+   "contraindicated_until": "Offer (VP-I02) belum tertulis — menilai fit tanpa offer jelas menghasilkan skor tanpa pembanding",
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch03",
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "VP-I04",
+   "name": "Test-the-circle experiments (test card pada hipotesis risiko tertinggi)",
+   "targets": [
+    "V2.4",
+    "DM5.6"
+   ],
+   "expected_evidence": "≥3 learning cards filled with measurable evidence on the jobs/pains/gains that matter — BEFORE testing the offer",
+   "contraindicated_until": "Customer profile mapped (VP-I01) — without profile, hypothesis cannot be extracted",
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  }
+ ]
+}

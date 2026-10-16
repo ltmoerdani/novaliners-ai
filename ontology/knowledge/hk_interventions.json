@@ -1,0 +1,69 @@
+{
+ "$comment": "Interventions dari Hooked (mapping §6).",
+ "interventions": [
+  {
+   "intervention_id": "HK-I01",
+   "name": "Simplify onboarding: petakan trigger→value, hapus langkah pada scarcest resource",
+   "targets": [
+    "R7.2"
+   ],
+   "expected_evidence": "Jumlah langkah berkurang ≥30% ATAU time-to-value turun terukur; user baru mencapai reward pertama tanpa bantuan",
+   "contraindicated_until": "Aha moment (HG-I01) belum terdefinisi — menghapus langkah tanpa tahu value-moment berisiko membuang langkah yang justru membentuk kebiasaan",
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "AFTER_SALES"
+   ]
+  },
+  {
+   "intervention_id": "HK-I02",
+   "name": "Design stored value + loaded trigger",
+   "targets": [
+    "R7.2"
+   ],
+   "expected_evidence": "≥2 bentuk stored value aktif (content/data/followers/reputation/skill) + next trigger terpasang otomatis dari investasi user",
+   "contraindicated_until": "Reward pertama sudah dirasakan user — investasi diminta setelah reward, bukan sebelum",
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "AFTER_SALES"
+   ]
+  },
+  {
+   "intervention_id": "HK-I03",
+   "name": "Habit Testing per cohort (Identify→Codify→Modify)",
+   "targets": [
+    "R7.2",
+    "DM5.6"
+   ],
+   "expected_evidence": "Benchmark frequency disepakati + ≥5% user mencapai habitual threshold + Habit Path tercodify dan dipakai memandu onboarding baru",
+   "contraindicated_until": "The product is already live with real behavioral data.",
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "AFTER_SALES"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1167 @@
+{
+  "$schema_version": "0.1",
+  "note": "Requirement Registry — entries PILOT Tahap 6 gelombang-23 (internal-docs §9.5-9.6). Ditulis BARU per 5 lapisan §5.1 (arsip readiness = referensi baca, BUKAN port — int 08 §6+§7). Isi = 3 entry untuk rekonsiliasi example_lineage (verdict owner: landing_page, copy_composition entry BARU — id awal 'copy_ready' DITOLAK validator D2 (suffix _ready banned) lalu di-rename mechanical, baseline_comparison) + 1 entry pilot mode PARTIAL (commitment_obtained — checklist D-A1d §8.4). JUMLAH TIDAK DIPROYEKSIKAN. Id: 8 domain final §9.4, tanpa suffix banned (D2).",
+  "requirements": [
+    {
+      "requirement_id": "conversion.landing_page",
+      "definition": "Halaman konversi aktif berfungsi: memuat offer yang jelas dan CTA spesifik.",
+      "observability": [
+        "Halaman aktif dapat diakses",
+        "Offer pada halaman dinyatakan jelas",
+        "CTA spesifik tertampil di halaman"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Halaman konversi aktif dengan offer jelas dan CTA spesifik semuanya terpenuhi.",
+        "partial": "Halaman konversi aktif dengan setidaknya satu komponen — offer jelas atau CTA spesifik — terbukti terpenuhi, dan setidaknya satu komponen terbukti tidak terpenuhi.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah halaman konversi aktif dengan offer dan CTA-nya.",
+        "contradicting": "Terdapat bukti halaman konversi dinonaktifkan atau dihapus — tidak ada halaman yang melayani offer sama sekali — atau halaman aktif tanpa offer jelas maupun CTA sama sekali."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "conversion.copy_composition",
+      "definition": "Komposisi copy penawaran tersusun dan siap dipakai.",
+      "observability": [
+        "Draf copy penawaran tersimpan",
+        "Struktur offer dan ajakan pada copy terlihat"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Copy penawaran dengan struktur offer dan ajakan tersusun dan tersimpan.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah copy penawaran sudah tersusun.",
+        "contradicting": "Terdapat bukti bahwa copy penawaran tidak ada sama sekali, atau copy yang ada hanya daftar fitur tanpa offer maupun ajakan."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "novaliners_synthesis",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "experiment.baseline_comparison",
+      "definition": "Setiap perubahan yang sedang diuji punya pembanding dasar (baseline) yang tercatat, dan hasilnya dibandingkan terhadap baseline itu.",
+      "observability": [
+        "Baseline tercatat per eksperimen",
+        "Hasil dibandingkan terhadap baseline"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Seluruh perubahan yang sedang diuji punya baseline tercatat dan hasil telah dibandingkan terhadap baseline tersebut.",
+        "partial": "Setidaknya satu perubahan terbukti memiliki baseline tercatat yang hasilnya dibandingkan, dan setidaknya satu perubahan terbukti tidak memilikinya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah perubahan diuji dengan baseline; nol perubahan yang sedang diuji bukan bukti gagal (vakum — wilayah entri eksperimen lain).",
+        "contradicting": "Terdapat bukti seluruh perubahan yang sedang diuji diterapkan tanpa pembanding — tidak ada satu pun baseline yang dipakai."
+      },
+      "provenance": {
+        "source_id": "hg",
+        "chapters": [
+          "ch04"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "conversion.commitment_obtained",
+      "definition": "Dalam rangkaian kontak per prospek, setiap tahap yang dilalui disertai komitmen eksplisit.",
+      "observability": [
+        "Komitmen eksplisit disepakati di setiap tahap kontak yang telah dilalui",
+        "Komitmen tiap tahap dapat ditunjukkan: apa yang disepakati prospek dan kapan"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Komitmen eksplisit disepakati pada seluruh tahap kontak yang telah dilalui, pada seluruh prospek yang sedang ditangani.",
+        "partial": "Setidaknya satu tahap kontak terbukti disertai komitmen eksplisit, dan setidaknya satu tahap atau prospek terbukti tanpa komitmen.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah komitmen disepakati pada tahap kontak yang dilalui; belum ada tahap atau prospek yang dilalui sama sekali bukan bukti gagal (vakum — keberadaan prospek adalah wilayah access.prospect_list).",
+        "contradicting": "Terdapat bukti rangkaian kontak berjalan tanpa satu pun komitmen eksplisit — tidak disepakati pada tahap maupun prospek mana pun."
+      },
+      "provenance": {
+        "source_id": "lc",
+        "chapters": [
+          "ch02"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "offering.exists",
+      "definition": "Produk atau jasa yang dijual sudah berbentuk konkret dengan deliverable.",
+      "observability": [
+        "Produk atau jasa dinyatakan dengan deliverable yang jelas",
+        "Ada bentuk penawaran yang dapat ditunjukkan"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Produk atau jasa dinyatakan konkret dengan deliverable yang jelas.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah produk atau jasa sudah ada.",
+        "contradicting": "Terdapat bukti yang ditawarkan masih berupa ide — belum ada produk atau jasa konkret."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch02"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "offering.target_customer",
+      "definition": "Profil pelanggan target dinyatakan dengan konteks kebutuhan, masalah, dan manfaat.",
+      "observability": [
+        "Profil pelanggan target dinyatakan",
+        "Konteks kebutuhan, masalah, dan manfaat menyertai profil"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Profil pelanggan target dinyatakan lengkap dengan konteks kebutuhan, masalah, dan manfaat.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah profil pelanggan target dinyatakan.",
+        "contradicting": "Terdapat bukti target dinyatakan sebagai 'siapa saja butuh', atau profil disebut tanpa konteks kebutuhan, masalah, dan manfaat."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch01"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.contact_channel",
+      "definition": "Kanal kontak dengan akses nyata tersedia dan aktif.",
+      "observability": [
+        "Kanal kontak aktif dapat digunakan",
+        "Akses nyata ke kanal tersedia"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Kanal kontak dengan akses nyata tersedia dan aktif.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah kanal kontak tersedia.",
+        "contradicting": "Terdapat bukti tidak ada kanal kontak yang aktif maupun dapat diakses."
+      },
+      "provenance": {
+        "source_id": "tm",
+        "chapters": [
+          "ch06"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.language_fit",
+      "definition": "Wording penawaran sudah diuji ke prospek nyata dan responsnya diketahui.",
+      "observability": [
+        "Wording penawaran teruji ke prospek nyata",
+        "Respons prospek terhadap wording diketahui"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Wording penawaran teruji ke prospek nyata dan responsnya tercatat.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah wording penawaran sudah diuji.",
+        "contradicting": "Terdapat bukti wording belum pernah diuji ke prospek nyata — termasuk belanja kanal berjalan tanpa pengujian wording."
+      },
+      "provenance": {
+        "source_id": "hg",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.prospect_list",
+      "definition": "Daftar prospek aktif memuat nama nyata beserta asal tiap entri.",
+      "observability": [
+        "Nama nyata tercantum pada tiap entri daftar",
+        "Asal tiap entri daftar jelas"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Seluruh entri daftar prospek memuat nama nyata dan asal yang jelas.",
+        "partial": "Setidaknya satu entri terbukti memuat nama nyata dan asal yang jelas, dan setidaknya satu entri terbukti tidak memuatnya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah daftar prospek berisi entri.",
+        "contradicting": "Terdapat bukti tidak ada satu pun entri yang memuat nama nyata dan asal jelas — termasuk daftar kosong atau hanya klaim 'punya network' tanpa nama."
+      },
+      "provenance": {
+        "source_id": "pr",
+        "chapters": [
+          "ch03"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.cadence",
+      "definition": "Ritme akses prospek berjalan terjadwal dengan hitungan mingguan yang tercatat.",
+      "observability": [
+        "Jadwal time-block ritme akses tercatat",
+        "Hitungan mingguan aktivitas tercatat"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Jadwal time-block ritme akses dan hitungan mingguannya keduanya tercatat.",
+        "partial": "Setidaknya satu — jadwal time-block atau hitungan mingguan — terbukti tercatat, dan setidaknya satu terbukti tidak tercatat.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah ritme akses terjadwal.",
+        "contradicting": "Terdapat bukti tidak ada jadwal maupun hitungan mingguan sama sekali."
+      },
+      "provenance": {
+        "source_id": "pr",
+        "chapters": [
+          "ch04"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "commercial.price",
+      "definition": "Harga ditetapkan sebagai angka spesifik dengan satuan.",
+      "observability": [
+        "Harga dinyatakan sebagai angka",
+        "Satuan harga jelas"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Harga dinyatakan sebagai angka spesifik dengan satuan yang jelas.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah harga sudah ditetapkan.",
+        "contradicting": "Terdapat bukti harga hanya berupa anggapan 'tergantung' tanpa angka maupun baseline, atau harga belum pernah ditentukan."
+      },
+      "provenance": {
+        "source_id": "lc",
+        "chapters": [
+          "ch09"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "commercial.payment_terms",
+      "definition": "Termin pembayaran ditetapkan: jatuh tempo dan cara pembayarannya jelas.",
+      "observability": [
+        "Jatuh tempo pembayaran dinyatakan",
+        "Cara pembayaran dinyatakan"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Termin pembayaran jelas: jatuh tempo dan cara pembayarannya dinyatakan.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah termin pembayaran ditetapkan.",
+        "contradicting": "Terdapat bukti termin pembayaran tidak pernah ditentukan."
+      },
+      "provenance": {
+        "source_id": "lc",
+        "chapters": [
+          "ch09"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "conversion.proposal",
+      "definition": "Proposal penawaran tersusun dengan struktur masalah, solusi, dan harga.",
+      "observability": [
+        "Struktur proposal tersusun",
+        "Konten memuat masalah, solusi, dan harga"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Proposal penawaran tersusun dengan struktur masalah, solusi, dan harga.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah proposal penawaran tersusun.",
+        "contradicting": "Terdapat bukti proposal tidak pernah tersusun — penyusunan selalu mulai dari nol."
+      },
+      "provenance": {
+        "source_id": "lc",
+        "chapters": [
+          "ch02",
+          "ch03",
+          "ch04",
+          "ch05",
+          "ch06",
+          "ch07",
+          "ch08",
+          "ch09",
+          "ch10",
+          "ch11",
+          "ch12",
+          "ch13"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "delivery.response_system",
+      "definition": "Komponen sistem respons tersedia: log percakapan, template, dan jadwal follow-up.",
+      "observability": [
+        "Log percakapan pelanggan tersimpan",
+        "Template respons tersedia",
+        "Jadwal follow-up tercatat"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Log percakapan, template respons, dan jadwal follow-up semuanya tersedia.",
+        "partial": "Setidaknya satu komponen — log percakapan, template respons, atau jadwal follow-up — terbukti tersedia, dan setidaknya satu komponen terbukti tidak tersedia.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah komponen sistem respons tersedia.",
+        "contradicting": "Terdapat bukti tidak ada satu pun komponen sistem respons — tanpa log, template, maupun jadwal."
+      },
+      "provenance": {
+        "source_id": "pr",
+        "chapters": [
+          "ch03"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "gtm.beachhead",
+      "definition": "Satu segmen target tunggal terpilih yang memenuhi kriteria: economic buyer tunggal teridentifikasi, dapat diakses kanal yang dipakai, dan mampu membayar whole product — tanpa show-stopper (segmen berbenteng kompetitor).",
+      "observability": [
+        "Segmen target tunggal dinyatakan terpilih",
+        "Economic buyer tunggal segmen teridentifikasi",
+        "Segmen dapat diakses kanal yang dipakai dan mampu membayar whole product",
+        "Tidak ada show-stopper pada segmen terpilih"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Satu segmen target tunggal terpilih dengan economic buyer teridentifikasi, dapat diakses, mampu membayar whole product, dan tanpa show-stopper.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah satu segmen target tunggal yang memenuhi kriteria sudah terpilih.",
+        "contradicting": "Terdapat bukti lebih dari satu segmen dikejar serentak, atau segmen terpilih adalah wilayah kompetitor yang sudah menguasainya (fortified hill), atau economic buyer segmen terpilih terbukti tidak teridentifikasi atau tidak mampu membayar."
+      },
+      "provenance": {
+        "source_id": "chasm",
+        "chapters": [
+          "ch02"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "gtm.compelling_reason",
+      "definition": "Segmen terpilih punya alasan membeli yang kuat dan mendesak bagi economic buyer segmen itu.",
+      "observability": [
+        "Alasan membeli yang kuat pada segmen terpilih dinyatakan",
+        "Alasan terverifikasi dari scenario atau prospek nyata"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Segmen terpilih punya alasan membeli yang kuat dan mendesak bagi economic buyer-nya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah segmen terpilih punya alasan membeli yang kuat; belum ada segmen terpilih sama sekali = vakum → UNKNOWN, bukan bukti gagal (keberadaan segmen adalah wilayah gtm.beachhead).",
+        "contradicting": "Terdapat bukti alasan membeli hanya ketertarikan umum tanpa urgensi bagi segmen."
+      },
+      "provenance": {
+        "source_id": "chasm",
+        "chapters": [
+          "ch02"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "gtm.positioning",
+      "definition": "Klaim positioning tertulis dinilai pada dua dimensi: kredibel (bisa dipertanggungjawabkan) dan menarik (layak diinginkan) bagi niche.",
+      "observability": [
+        "Klaim positioning dinyatakan secara tertulis",
+        "Klaim dinilai kredibel bagi niche (bisa dipertanggungjawabkan — bukan kategori artifisial)",
+        "Klaim dinilai menarik bagi niche"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Klaim positioning tertulis yang dinilai kredibel sekaligus menarik bagi niche.",
+        "partial": "Setidaknya satu dimensi — kredibel atau menarik — terbukti terpenuhi pada klaim positioning, dan setidaknya satu dimensi terbukti tidak terpenuhi.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah klaim positioning ditulis dan dinilai pada dua dimensi.",
+        "contradicting": "Terdapat bukti klaim ditolak pada KEDUA dimensi — tidak kredibel sekaligus tidak menarik bagi niche."
+      },
+      "provenance": {
+        "source_id": "chasm",
+        "chapters": [
+          "ch04"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "offering.problem",
+      "definition": "Masalah spesifik dari pelanggan yang dijawab penawaran dinyatakan beserta dampaknya.",
+      "observability": [
+        "Masalah pelanggan dinyatakan spesifik",
+        "Dampak masalah bagi pelanggan menyertai"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Masalah spesifik beserta dampaknya bagi pelanggan dinyatakan.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah masalah pelanggan dinyatakan.",
+        "contradicting": "Terdapat bukti masalah disebut hanya generik tanpa spesifikasi dan dampak, atau masalah tidak bisa disebut saat ditanya."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch01"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "offering.outcome",
+      "definition": "Hasil yang diperoleh pelanggan dari pemakaian penawaran dinyatakan secara terukur atau terdeskripsi konkret.",
+      "observability": [
+        "Hasil bagi pelanggan dinyatakan",
+        "Hasil terukur atau terdeskripsi konkret, bukan sekadar fitur"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Hasil bagi pelanggan dinyatakan terukur atau terdeskripsi konkret.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah hasil bagi pelanggan dinyatakan.",
+        "contradicting": "Terdapat bukti jawaban hanya berupa fitur atau aktivitas yang dikerjakan, bukan hasil yang diperoleh pelanggan."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch02"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.icp",
+      "definition": "Ideal customer profile tertulis memuat jenis, level, dan peran.",
+      "observability": [
+        "ICP dinyatakan tertulis",
+        "ICP memuat jenis, level, dan peran"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "ICP tertulis memuat jenis, level, dan peran.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah ideal customer profile tertulis.",
+        "contradicting": "Terdapat bukti penentuan target berupa 'hubungi siapa saja', atau ICP disebut tanpa salah satu dari: jenis, level, atau peran."
+      },
+      "provenance": {
+        "source_id": "pr",
+        "chapters": [
+          "ch02"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "conversion.teaching_insight",
+      "definition": "Insight komersial tentang bisnis klien tertulis — menyatakan beban atau tantangan yang tidak disadari customer.",
+      "observability": [
+        "Insight tentang bisnis klien dinyatakan tertulis",
+        "Insight memuat beban atau tantangan yang tidak disadari customer"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Insight tertulis menyatakan beban atau tantangan customer yang tidak disadarinya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah insight komersial tentang bisnis klien tersedia.",
+        "contradicting": "Terdapat bukti jawaban hanya berupa fitur atau keunggulan penawaran sendiri, tanpa insight tentang bisnis klien."
+      },
+      "provenance": {
+        "source_id": "cs",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "conversion.proof",
+      "definition": "Bukti hasil berupa case atau testimoni konkret dari klien nyata.",
+      "observability": [
+        "Case atau testimoni tersedia",
+        "Sumber bukti adalah klien nyata yang teridentifikasi"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Case atau testimoni konkret dari klien nyata tersedia dan dinyatakan.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah bukti hasil tersedia.",
+        "contradicting": "Terdapat bukti hanya klaim 'sudah berpengalaman' tanpa contoh konkret, atau contoh yang diberikan bukan dari klien nyata."
+      },
+      "provenance": {
+        "source_id": "chasm",
+        "chapters": [
+          "ch03"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.outreach_asset",
+      "definition": "Aset pesan kontak pertama memuat pesan pendek, alasan kontak spesifik, dan ask kecil.",
+      "observability": [
+        "Pesan kontak pertama tertulis",
+        "Alasan kontak spesifik menyertai pesan",
+        "Ask kecil (mis. minta arahan) termuat"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Pesan kontak pertama memuat ketiganya: pesan pendek, alasan kontak spesifik, dan ask kecil.",
+        "partial": "Setidaknya satu komponen — pesan pendek, alasan kontak, atau ask kecil — terbukti tersedia, dan setidaknya satu komponen terbukti tidak tersedia.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah aset pesan kontak pertama tersedia.",
+        "contradicting": "Terdapat bukti tidak ada satu pun komponen pesan kontak pertama — tanpa pesan tertulis, tanpa alasan kontak, tanpa ask (mis. kontak berupa pitch jualan langsung)."
+      },
+      "provenance": {
+        "source_id": "pr",
+        "chapters": [
+          "ch02"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "delivery.capacity",
+      "definition": "Aritmetika jam mingguan tersedia: hitungan kapasitas terpakai dan sisa kapasitas untuk klien baru.",
+      "observability": [
+        "Jam mingguan terpakai dihitung",
+        "Sisa kapasitas untuk klien baru dihitung"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Aritmetika jam lengkap: kapasitas terpakai dan sisa untuk klien baru keduanya dihitung.",
+        "partial": "Setidaknya satu — hitungan jam terpakai atau hitungan sisa kapasitas — terbukti tersedia, dan setidaknya satu terbukti tidak tersedia.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah aritmetika jam mingguan dihitung.",
+        "contradicting": "Terdapat bukti beban klien diterima tanpa hitungan kapasitas sama sekali ('ya sudah kerjain aja')."
+      },
+      "provenance": {
+        "source_id": "em",
+        "chapters": [
+          "ch10"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "delivery.spare_capacity",
+      "definition": "Sisa kapasitas kerja terbukti mencukupi untuk melayani klien atau permintaan baru.",
+      "observability": [
+        "Hitungan sisa kapasitas menunjukkan ruang kerja yang tersisa",
+        "Ruang yang tersisa mencukupi untuk beban permintaan baru yang akan diterima"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Hitungan sisa kapasitas terbukti menyisakan ruang kerja yang mencukupi untuk permintaan baru.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah sisa kapasitas mencukupi; kapasitas terukur saja bukan bukti ada ruang (pengukuran = wilayah delivery.capacity).",
+        "contradicting": "Terdapat bukti sisa kapasitas habis — seluruh jam kerja terpakai untuk beban eksisting."
+      },
+      "provenance": {
+        "source_id": "em",
+        "chapters": [
+          "ch10"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "offering.scored",
+      "definition": "Posisi penawaran terhadap kriteria value proposition dan alternatifnya diketahui berupa skor.",
+      "observability": [
+        "Skor penilaian penawaran terhadap daftar kriteria tersedia",
+        "Perbandingan terhadap alternatif menyertai skor"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Skor posisi penawaran terhadap daftar kriteria tersedia, beserta perbandingan terhadap alternatif.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah penawaran sudah dinilai terhadap daftar kriteria.",
+        "contradicting": "Terdapat bukti penawaran tidak pernah dinilai terhadap daftar kriteria apa pun, atau penilaian ada tetapi tanpa perbandingan terhadap alternatif."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch04"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "offering.differentiation",
+      "definition": "Pembeda penawaran terhadap cara alternatif atau pesaing dinyatakan pada dimensi yang dipedulikan customer.",
+      "observability": [
+        "Pembeda terhadap alternatif/pesaing dinyatakan",
+        "Dimensi pembeda relevan bagi customer"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Pembeda penawaran dinyatakan pada dimensi yang dipedulikan customer.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah pembeda penawaran dinyatakan.",
+        "contradicting": "Terdapat bukti pembeda hanya klaim generik seperti 'kualitas kami bagus' pada dimensi yang tidak spesifik bagi customer, atau pembeda tidak bisa disebut saat ditanya."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch04"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "commercial.pricing_basis",
+      "definition": "Basis penetapan harga dinyatakan (per project, per jam, paket, atau value) beserta rasionalnya.",
+      "observability": [
+        "Basis penetapan harga dinyatakan",
+        "Rasional pemilihan basis menyertai"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Basis penetapan harga dinyatakan beserta rasionalnya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah basis penetapan harga dinyatakan.",
+        "contradicting": "Terdapat bukti harga disebut sebagai angka tanpa basis dan rasional penetapannya."
+      },
+      "provenance": {
+        "source_id": "lc",
+        "chapters": [
+          "ch09"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "commercial.investment_sized",
+      "definition": "Angka investasi final diketahui untuk setiap kesepakatan yang sedang dinegosiasikan — siap diajukan.",
+      "observability": [
+        "Angka investasi final per kesepakatan ditetapkan",
+        "Angka siap diajukan kepada prospek terkait"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Seluruh kesepakatan yang sedang dinegosiasikan memiliki angka investasi final yang siap diajukan.",
+        "partial": "Setidaknya satu kesepakatan terbukti memiliki angka investasi final yang siap diajukan, dan setidaknya satu kesepakatan terbukti tidak.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah angka investasi final ditetapkan; tidak ada kesepakatan yang sedang dinegosiasikan sama sekali = vakum -> UNKNOWN, bukan bukti gagal (keberadaan kesepakatan bukan bagian requirement ini).",
+        "contradicting": "Terdapat bukti angka investasi final belum ditetapkan pada kesepakatan apa pun yang sedang dinegosiasikan."
+      },
+      "provenance": {
+        "source_id": "lc",
+        "chapters": [
+          "ch09"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.referral_channel",
+      "definition": "Mekanisme intro atau referral berulang tersedia — advisor, komunitas, atau klien sebagai sumber.",
+      "observability": [
+        "Sumber referral yang dikelola tersedia",
+        "Mekanisme intro dapat berulang"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Mekanisme intro atau referral berulang tersedia (advisor, komunitas, atau klien).",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah mekanisme referral berulang tersedia.",
+        "contradicting": "Terdapat bukti referral hanya diharapkan terjadi kebetulan, tanpa mekanisme berulang yang dikelola."
+      },
+      "provenance": {
+        "source_id": "pr",
+        "chapters": [
+          "ch06"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "delivery.onboarding",
+      "definition": "Cara memulai kerja sama dengan klien baru dinyatakan dalam salah satu bentuk: brief, kontrak, atau kick-off.",
+      "observability": [
+        "Cara mulai kerja sama dinyatakan",
+        "Salah satu bentuk konkret tersedia: brief, kontrak, atau kick-off"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Cara memulai kerja sama dinyatakan dalam salah satu bentuk: brief, kontrak, atau kick-off.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah cara memulai kerja sama dinyatakan.",
+        "contradicting": "Terdapat bukti cara memulai kerja sama tidak ada sama sekali atau belum pernah dipikirkan."
+      },
+      "provenance": {
+        "source_id": "lc",
+        "chapters": [
+          "ch13"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "retention.aha_moment_defined",
+      "definition": "Aha moment produk teridentifikasi dari data behavior user paling loyal — perilaku pembeda user yang bertahan dan yang pergi.",
+      "observability": [
+        "Perilaku pembeda user bertahan vs pergi teridentifikasi",
+        "Sumber identifikasi adalah data behavioral, bukan asumsi"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Aha moment teridentifikasi dari data behavior user paling loyal.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah aha moment teridentifikasi dari data.",
+        "contradicting": "Terdapat bukti aha moment hanya ditetapkan dari imajinasi founder tanpa data behavioral user."
+      },
+      "provenance": {
+        "source_id": "hg",
+        "chapters": [
+          "ch03"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "delivery.franchise_prototype_documented",
+      "definition": "Proses kerja terdokumentasi sehingga dapat dijalankan siapa pun dengan hasil konsisten, tanpa ketergantungan pada orang kunci.",
+      "observability": [
+        "Proses kerja tertulis tersedia",
+        "Hasil konsisten dapat dihasilkan tanpa orang kunci"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Proses kerja terdokumentasi dan dapat dijalankan siapa pun dengan hasil konsisten.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah proses kerja terdokumentasi.",
+        "contradicting": "Terdapat bukti proses hanya berada di kepala pemilik — tidak dapat dijalankan orang lain dengan hasil konsisten."
+      },
+      "provenance": {
+        "source_id": "em",
+        "chapters": [
+          "ch08"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "retention.owned_trigger",
+      "definition": "Kanal owned aktif di lingkungan user mendorong kunjungan ulang.",
+      "observability": [
+        "Kanal owned aktif tersedia di lingkungan user",
+        "Kanal mendorong kunjungan ulang secara berulang"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Kanal owned aktif di lingkungan user mendorong kunjungan ulang.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah kanal owned aktif tersedia.",
+        "contradicting": "Terdapat bukti tidak ada satu pun kanal owned aktif yang mendorong kunjungan ulang — repeat sepenuhnya dari kanal eksternal."
+      },
+      "provenance": {
+        "source_id": "hk",
+        "chapters": [
+          "ch02"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "gtm.reference_customer_secured",
+      "definition": "Setidaknya satu pelanggan bersedia menjadi referensi aktif bagi prospek niche berikutnya.",
+      "observability": [
+        "Pelanggan bersedia dirujuk",
+        "Referensi dapat dihubungi prospek niche berikutnya"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Setidaknya satu pelanggan bersedia menjadi referensi aktif bagi prospek niche berikutnya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah ada pelanggan yang bersedia menjadi referensi; belum ada pelanggan sama sekali = vakum -> UNKNOWN, bukan bukti gagal.",
+        "contradicting": "Terdapat bukti tidak ada satu pun pelanggan yang bersedia menjadi referensi aktif."
+      },
+      "provenance": {
+        "source_id": "chasm",
+        "chapters": [
+          "ch03"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "retention.stored_value",
+      "definition": "Nilai yang ditaruh user pada produk tetap tertanam dan aktif — content, data, followers, reputation, atau skill — sehingga menambah biaya berpindah bagi user.",
+      "observability": [
+        "Bentuk stored value aktif bagi user tersedia",
+        "Nilai tertanam menambah biaya berpindah bagi user"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Bentuk stored value aktif bagi user tersedia dan menambah biaya berpindah.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah stored value aktif bagi user.",
+        "contradicting": "Terdapat bukti tidak ada nilai yang tertanam bagi user — pengguna dapat berpindah tanpa kehilangan apa pun."
+      },
+      "provenance": {
+        "source_id": "hk",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "commercial.value_linked_to_explicit_need",
+      "definition": "Nilai penawaran tertaut pada masalah eksplisit yang diakui pembeli sendiri.",
+      "observability": [
+        "Masalah eksplisit diakui pembeli sendiri",
+        "Nilai penawaran tertaut pada masalah itu"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Nilai penawaran tertaut pada masalah eksplisit yang diakui pembeli sendiri.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah nilai tertaut pada masalah eksplisit; belum ada pembeli yang menyatakan masalah = vakum -> UNKNOWN, bukan bukti gagal.",
+        "contradicting": "Terdapat bukti penawaran dipaparkan sebagai daftar fitur tanpa masalah eksplisit yang diakui pembeli — feature-dump."
+      },
+      "provenance": {
+        "source_id": "sp",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "delivery.activity_tracking",
+      "definition": "Aktivitas penjualan dalam periode berjalan tercatat sebagai angka.",
+      "observability": [
+        "Aktivitas penjualan tercatat sebagai angka harian/mingguan",
+        "Jumlah aktivitas kemarin/pekan lalu diketahui"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Seluruh aktivitas penjualan dalam periode berjalan tercatat sebagai angka.",
+        "partial": "Setidaknya satu aktivitas terbukti tercatat sebagai angka, dan setidaknya satu aktivitas terbukti tidak tercatat.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah aktivitas penjualan tercatat; tidak ada aktivitas penjualan sama sekali = vakum -> UNKNOWN, bukan bukti gagal.",
+        "contradicting": "Terdapat bukti aktivitas penjualan berjalan namun tak satu pun tercatat sebagai angka — jumlahnya tidak diketahui."
+      },
+      "provenance": {
+        "source_id": "em",
+        "chapters": [
+          "ch10"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "experiment.test_card_defined",
+      "definition": "Setiap hipotesis yang sedang diuji memiliki metrik dan kriteria keberhasilan yang terdefinisi.",
+      "observability": [
+        "Hipotesis yang sedang diuji dinyatakan",
+        "Metrik dan kriteria keberhasilan terdefinisi per hipotesis"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Seluruh hipotesis yang sedang diuji memiliki metrik dan kriteria keberhasilan yang terdefinisi (hipotesis tanpa keduanya dihitung GAGAL — unit dua tingkat dihitung per hipotesis, bukan per bagian).",
+        "partial": "Setidaknya satu hipotesis terbukti memiliki metrik dan kriteria keberhasilan yang terdefinisi, dan setidaknya satu hipotesis terbukti tidak.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah hipotesis yang diuji memiliki metrik dan kriteria terdefinisi; tidak ada hipotesis yang sedang diuji = vakum -> UNKNOWN, bukan bukti gagal.",
+        "contradicting": "Terdapat bukti tidak ada satu pun hipotesis berjalan dengan metrik dan kriteria keberhasilan yang terdefinisi."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "offering.fit_monitoring",
+      "definition": "Kondisi fit penawaran terhadap pasar diketahui dari pengukuran ulang jobs, pains, gains, dan value map.",
+      "observability": [
+        "Pengukuran ulang jobs/pains/gains tersedia",
+        "Pengukuran ulang value map tersedia",
+        "Hasil pengukuran ulang masih mencerminkan kondisi terkini"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Pengukuran ulang jobs, pains, gains, dan value map semuanya tersedia dan masih berlaku.",
+        "partial": "Setidaknya satu komponen pengukuran ulang — jobs, pains, gains, atau value map — terbukti tersedia dan masih berlaku, dan setidaknya satu komponen terbukti tidak tersedia atau tidak lagi berlaku.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah pengukuran ulang fit tersedia dan masih berlaku.",
+        "contradicting": "Terdapat bukti tidak ada satu pun komponen pengukuran yang tersedia dan masih berlaku — hasil pengukuran terakhir seluruhnya basi."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch06"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "gtm.learning_process_defined",
+      "definition": "Percakapan belajar terstruktur tersedia: daftar pertanyaan belajar, catatan kutipan eksak, dan hasil review pasca-percakapan.",
+      "observability": [
+        "Daftar pertanyaan belajar tersedia",
+        "Catatan kutipan eksak tersimpan",
+        "Hasil review pasca-percakapan tersedia"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Percakapan belajar memiliki ketiganya: pertanyaan belajar, catatan kutipan eksak, dan review pasca.",
+        "partial": "Setidaknya satu komponen — pertanyaan belajar, catatan kutipan eksak, atau review pasca — terbukti tersedia, dan setidaknya satu komponen terbukti tidak tersedia.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah percakapan belajar terstruktur tersedia.",
+        "contradicting": "Terdapat bukti percakapan berjalan tanpa daftar pertanyaan, tanpa catatan tersimpan, dan tanpa hasil review — hanya 'going through the motions'."
+      },
+      "provenance": {
+        "source_id": "tm",
+        "chapters": [
+          "ch08"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "gtm.meeting_outcome_standard",
+      "definition": "Standar hasil percakapan terverifikasi: fakta konkret dan kemajuan funnel nyata.",
+      "observability": [
+        "Fakta konkret (bukan compliment) terverifikasi",
+        "Kemajuan funnel nyata terverifikasi"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Hasil percakapan memenuhi keduanya: fakta konkret dan kemajuan funnel.",
+        "partial": "Setidaknya satu jenis hasil — fakta konkret atau kemajuan funnel — terbukti terverifikasi, dan setidaknya satu terbukti tidak.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah standar hasil percakapan diterapkan.",
+        "contradicting": "Terdapat bukti hasil percakapan hanya berupa compliment tanpa fakta maupun kemajuan funnel apa pun."
+      },
+      "provenance": {
+        "source_id": "tm",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "delivery.strategic_objective_defined",
+      "definition": "Arah bisnis terukur terdefinisi: angka target revenue, kapasitas, dan definisi peran pemilik.",
+      "observability": [
+        "Angka target revenue terdefinisi",
+        "Kapasitas terdefinisi",
+        "Definisi peran pemilik terdefinisi"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Arah bisnis terukur terdefinisi lengkap: target revenue, kapasitas, dan definisi peran pemilik.",
+        "partial": "Setidaknya satu komponen — target revenue, kapasitas, atau definisi peran pemilik — terbukti terdefinisi, dan setidaknya satu terbukti tidak.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah arah bisnis terukur terdefinisi.",
+        "contradicting": "Terdapat bukti arah bisnis hanya konsep tanpa satu pun tolok ukur terdefinisi."
+      },
+      "provenance": {
+        "source_id": "em",
+        "chapters": [
+          "ch13"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "commercial.unit_economics",
+      "definition": "Pendapatan per pelanggan terbukti melebihi biaya akuisisi ditambah biaya layanan untuk pelanggan itu.",
+      "observability": [
+        "Pendapatan per pelanggan diketahui",
+        "Biaya akuisisi per pelanggan diketahui",
+        "Biaya layanan per pelanggan diketahui"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Pendapatan per pelanggan, biaya akuisisi, dan biaya layanan per pelanggan diketahui, dan pendapatan melebihi jumlah kedua biaya itu.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah pendapatan per pelanggan melebihi biaya akuisisi ditambah biaya layanannya.",
+        "contradicting": "Terdapat bukti biaya akuisisi ditambah biaya layanan per pelanggan sama dengan atau melebihi pendapatan dari pelanggan itu."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": [
+          "ch03"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "conversion.conversion_baseline",
+      "definition": "Rasio dari permintaan masuk sampai closing terukur dari data transaksi nyata.",
+      "observability": [
+        "Jumlah permintaan masuk dalam satu periode tercatat",
+        "Jumlah closing dari permintaan itu tercatat",
+        "Rasio keduanya dapat dihitung"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Jumlah permintaan masuk dan jumlah closing dari permintaan itu tercatat dari transaksi nyata sehingga rasionya terukur.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah rasio permintaan masuk ke closing terukur.",
+        "contradicting": "Terdapat bukti jumlah permintaan masuk atau jumlah closing tidak tercatat sehingga rasio hanya berupa perkiraan."
+      },
+      "provenance": {
+        "source_id": "pr",
+        "chapters": [
+          "ch08"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "commercial.willingness_to_pay",
+      "definition": "Kesediaan membayar pada harga saat ini terbukti lewat komitmen uang nyata dari pembeli.",
+      "observability": [
+        "Pembayaran, deposit, pre-order, atau letter of intent pada harga saat ini tercatat",
+        "Harga pada komitmen uang sama dengan harga yang berlaku sekarang"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Tercatat komitmen uang nyata (pembayaran, deposit, pre-order, atau letter of intent) dari setidaknya satu pembeli pada harga saat ini.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah ada komitmen uang pada harga saat ini; pernyataan niat membeli bukan komitmen uang.",
+        "contradicting": "Terdapat bukti setiap calon pembeli yang diminta komitmen uang pada harga saat ini menolak, dan tidak ada satu pun komitmen uang pada harga itu."
+      },
+      "provenance": {
+        "source_id": "tm",
+        "chapters": [
+          "ch05"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "commercial.willingness_to_pay_at_new_price",
+      "definition": "Kesediaan membayar pada harga baru yang diusulkan terbukti lewat komitmen uang nyata dari pembeli.",
+      "observability": [
+        "Pembayaran, deposit, pre-order, atau letter of intent pada harga baru yang diusulkan tercatat",
+        "Harga pada komitmen uang sama dengan harga baru yang diusulkan"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Tercatat komitmen uang nyata (pembayaran, deposit, pre-order, atau letter of intent) dari setidaknya satu pembeli pada harga baru yang diusulkan.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah ada komitmen uang pada harga baru; komitmen pada harga berlaku sekarang bukan bukti (bukti harga sekarang = wilayah commercial.willingness_to_pay).",
+        "contradicting": "Terdapat bukti setiap calon pembeli yang diminta komitmen uang pada harga baru menolak, dan tidak ada satu pun komitmen pada harga itu."
+      },
+      "provenance": {
+        "source_id": "tm",
+        "chapters": [
+          "ch09"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.decision_maker",
+      "definition": "Pada setiap kesepakatan yang sedang berjalan, pengambil keputusan pembelian teridentifikasi dan dapat dihubungi langsung.",
+      "observability": [
+        "Pengambil keputusan tiap kesepakatan berjalan teridentifikasi",
+        "Jalur kontak langsung ke pengambil keputusan tersedia"
+      ],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Seluruh kesepakatan yang sedang berjalan memiliki pengambil keputusan yang teridentifikasi dan dapat dihubungi langsung.",
+        "partial": "Setidaknya satu kesepakatan terbukti memiliki pengambil keputusan yang teridentifikasi dan dapat dihubungi langsung, dan setidaknya satu kesepakatan terbukti tidak memilikinya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah pengambil keputusan tiap kesepakatan teridentifikasi; nol kesepakatan berjalan bukan bukti gagal (vakum — keberadaan prospek adalah wilayah access.prospect_list).",
+        "contradicting": "Terdapat bukti tidak ada satu pun kesepakatan berjalan yang pengambil keputusannya teridentifikasi dan dapat dihubungi langsung — misalnya seluruh kontak hanya lewat staf junior atau RFP."
+      },
+      "provenance": {
+        "source_id": "cs",
+        "chapters": [
+          "ch07"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "access.inbound_demand",
+      "definition": "Permintaan masuk dari calon pembeli (inquiry atau lead) tercatat dalam periode berjalan.",
+      "observability": [
+        "Inquiry atau lead masuk dalam periode berjalan tercatat",
+        "Asal permintaan masuk dapat ditunjukkan"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Setidaknya satu permintaan masuk dari calon pembeli tercatat dalam periode berjalan beserta asalnya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah ada permintaan masuk dalam periode berjalan.",
+        "contradicting": "Terdapat bukti tidak ada satu pun permintaan masuk dari calon pembeli dalam periode berjalan."
+      },
+      "provenance": {
+        "source_id": "pr",
+        "chapters": [
+          "ch03"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "retention.activation",
+      "definition": "Mayoritas pelanggan baru mencapai aha moment produk.",
+      "observability": [
+        "Proporsi pelanggan baru yang mencapai aha moment terukur",
+        "Proporsi itu lebih dari separuh pelanggan baru"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Proporsi pelanggan baru yang mencapai aha moment terukur dan lebih dari separuh.",
+        "no_decisive": "Tidak ada informasi yang menetapkan berapa proporsi pelanggan baru yang mencapai aha moment.",
+        "contradicting": "Terdapat bukti separuh atau lebih pelanggan baru tidak mencapai aha moment."
+      },
+      "provenance": {
+        "source_id": "hg",
+        "chapters": [
+          "ch06"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    },
+    {
+      "requirement_id": "retention.repeat_purchase",
+      "definition": "Pelanggan lama membeli ulang atau membeli nilai tambahan di luar transaksi pertamanya.",
+      "observability": [
+        "Pembelian kedua atau tambahan dari pelanggan lama tercatat",
+        "Pembelian itu terpisah dari transaksi pertama pelanggan yang sama"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Setidaknya satu pelanggan lama tercatat membeli ulang atau membeli nilai tambahan di luar transaksi pertamanya.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah ada pelanggan lama yang membeli ulang; belum ada pelanggan sama sekali = vakum -> UNKNOWN, bukan bukti gagal.",
+        "contradicting": "Terdapat bukti tidak ada satu pun pelanggan lama yang membeli ulang atau membeli nilai tambahan sejak transaksi pertamanya."
+      },
+      "provenance": {
+        "source_id": "hg",
+        "chapters": [
+          "ch07"
+        ],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    }
+  ]
+}

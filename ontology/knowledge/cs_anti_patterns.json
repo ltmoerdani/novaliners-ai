@@ -1,0 +1,76 @@
+{
+ "$comment": "Anti-patterns dari The Challenger Sale (mapping §5).",
+ "anti_patterns": [
+  {
+   "pattern_id": "CS-A01",
+   "name": "Relationship-First Passive",
+   "symptom": "'Bangun dulu hubungan, jualan nanti' — zombie leads, caving on price, defusing tension; 7% dari star performers, ~0% di complex sales",
+   "constraint_link": [
+    "C6.1",
+    "DM5.5"
+   ],
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "CS-A02",
+   "name": "Free Consulting",
+   "symptom": "Teaching valuable insights that don’t lead to unique strength — the customer takes the idea, the competitor takes the deal",
+   "constraint_link": [
+    "C6.3",
+    "V2.4"
+   ],
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "CS-A03",
+   "name": "Feature Dump Pitch",
+   "symptom": "Deck opens with 'About Us', client logos, feature list — supplier comes in at the start of the conversation, not at the end.",
+   "constraint_link": [
+    "C6.3"
+   ],
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "CS-A04",
+   "name": "SAFE Pitch Watering",
+   "symptom": "Pesan provokatif dihaluskan bertahap menjadi aman — kehilangan tepi yang membuat offer berbeda (Relationship Builders' belt sander)",
+   "constraint_link": [
+    "C6.3",
+    "V2.4"
+   ],
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

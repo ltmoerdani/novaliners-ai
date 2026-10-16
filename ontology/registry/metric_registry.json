@@ -1,0 +1,441 @@
+{
+  "$comment": [
+    "NOVALINERS METRIC REGISTRY (internal-docs §3.1).",
+    "Katalog definisi metric BERVERSEI — bukan rekomendasi strategi, bukan daftar path.",
+    "Registry-backed metric = satu-satunya jalur metric sah di rilis pertama (ADR-GR1 di implementation-log);",
+    "metric di luar registry → GOAL_METRIC_UNSUPPORTED (abstain aman + alasan), TIDAK dipetakan ke slot revenue terdekat.",
+    "Semantics (enum tertutup): INCREASE_TO_THRESHOLD | DECREASE_TO_THRESHOLD | MAINTAIN_RANGE | AT_LEAST | AT_MOST | COUNT_IN_WINDOW | RATE_OR_RATIO | EVIDENCE_CRITERIA.",
+    "Role (enum tertutup): outcome | leading_indicator | enabler | guardrail | diagnostic | activity.",
+    "Validator: ontology/registry/validate_metrics.py (make gate-fast)."
+  ],
+  "registry_id": "goal-metrics",
+  "registry_version": "goal-metrics-v1",
+  "semantics": [
+    "INCREASE_TO_THRESHOLD",
+    "DECREASE_TO_THRESHOLD",
+    "MAINTAIN_RANGE",
+    "AT_LEAST",
+    "AT_MOST",
+    "COUNT_IN_WINDOW",
+    "RATE_OR_RATIO",
+    "EVIDENCE_CRITERIA"
+  ],
+  "roles": [
+    "outcome",
+    "leading_indicator",
+    "enabler",
+    "guardrail",
+    "diagnostic",
+    "activity"
+  ],
+  "missing_handling_values": [
+    "ASK_OR_MEASURE",
+    "MEASURE_ONLY",
+    "EVIDENCE_ONLY"
+  ],
+  "conflict_handling_values": [
+    "RECONCILE_FLAG",
+    "PREFER_STRONGER_EVIDENCE"
+  ],
+  "metrics": [
+    {
+      "metric_id": "revenue_monthly",
+      "version": 1,
+      "display_name": {
+        "en": "Monthly revenue",
+        "id": "Omzet bulanan"
+      },
+      "aliases": [
+        "omzet bulanan",
+        "pendapatan bulanan",
+        "monthly revenue",
+        "revenue per month",
+        "penghasilan per bulan"
+      ],
+      "category": "revenue",
+      "unit": "Rp juta/bulan",
+      "semantics": "INCREASE_TO_THRESHOLD",
+      "window": "monthly",
+      "requires_denominator": false,
+      "requires_qualification": false,
+      "role": "outcome",
+      "allowed_evidence": [
+        "transactional",
+        "outcome"
+      ],
+      "missing_handling": "ASK_OR_MEASURE",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "current ≥ target pada unit dan periode bulanan yang sama (mis. Rp30jt → Rp60jt/bulan)",
+      "invalid_example": "angka deal-size satu klien dipakai sebagai target bulanan (guard fallback 19 Sep)",
+      "notes": "Metrik legacy default Goal; proyeksi derivasi target_monthly/current_monthly/gap_monthly tetap sah untuk metric ini."
+    },
+    {
+      "metric_id": "qualified_leads",
+      "version": 1,
+      "display_name": {
+        "en": "Qualified leads",
+        "id": "Lead terkualifikasi"
+      },
+      "aliases": [
+        "qualified leads",
+        "lead terkualifikasi",
+        "qualified discovery calls",
+        "calon klien terkualifikasi",
+        "qualified inquiries"
+      ],
+      "category": "demand",
+      "unit": "leads",
+      "semantics": "COUNT_IN_WINDOW",
+      "window": "rolling_days",
+      "requires_denominator": false,
+      "requires_qualification": true,
+      "role": "outcome",
+      "allowed_evidence": [
+        "behavioral",
+        "transactional",
+        "outcome"
+      ],
+      "missing_handling": "MEASURE_ONLY",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "jumlah event lead yang memenuhi kriteria kualifikasi DAN timestamp dalam window (mis. 3 dalam 14 hari)",
+      "invalid_example": "semua inquiry dihitung tanpa kriteria kualifikasi; event tanpa timestamp dihitung sebagai 0",
+      "notes": "Kriteria kualifikasi WAJIB konkret (goal.success_definition); tanpa kriteria → unresolved QUALIFICATION_UNDEFINED, bukan auto-qualified."
+    },
+    {
+      "metric_id": "demand_inquiries",
+      "version": 1,
+      "display_name": {
+        "en": "Inquiries / incoming demand",
+        "id": "Inquiry masuk"
+      },
+      "aliases": [
+        "inquiries",
+        "inquiry",
+        "permintaan masuk",
+        "incoming leads",
+        "signups"
+      ],
+      "category": "demand",
+      "unit": "inquiries",
+      "semantics": "COUNT_IN_WINDOW",
+      "window": "rolling_days",
+      "requires_denominator": false,
+      "requires_qualification": false,
+      "role": "leading_indicator",
+      "allowed_evidence": [
+        "behavioral",
+        "transactional"
+      ],
+      "missing_handling": "MEASURE_ONLY",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "n inquiry teramati dalam window terdefinisi",
+      "invalid_example": "signups disamakan dengan demand terbayar (UC-03)"
+    },
+    {
+      "metric_id": "close_rate",
+      "version": 1,
+      "display_name": {
+        "en": "Close rate",
+        "id": "Close rate"
+      },
+      "aliases": [
+        "close rate",
+        "closing rate",
+        "conversion rate",
+        "tingkat konversi",
+        "win rate",
+        "close ratio"
+      ],
+      "category": "sales_conversion",
+      "unit": "ratio",
+      "semantics": "RATE_OR_RATIO",
+      "window": "cohort_window",
+      "requires_denominator": true,
+      "requires_qualification": false,
+      "role": "outcome",
+      "allowed_evidence": [
+        "transactional",
+        "outcome"
+      ],
+      "missing_handling": "ASK_OR_MEASURE",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "won/opportunities pada kohort & window yang sebanding mencapai threshold (mis. 15% → 25%)",
+      "invalid_example": "persentase 3/20 diterima tanpa definisi opportunity/won yang sebanding (GR-02/UC-02)"
+    },
+    {
+      "metric_id": "reply_rate",
+      "version": 1,
+      "display_name": {
+        "en": "Reply rate",
+        "id": "Tingkat balasan"
+      },
+      "aliases": [
+        "reply rate",
+        "response rate",
+        "tingkat balasan",
+        "balasan"
+      ],
+      "category": "demand",
+      "unit": "ratio",
+      "semantics": "RATE_OR_RATIO",
+      "window": "cohort_window",
+      "requires_denominator": true,
+      "requires_qualification": false,
+      "role": "leading_indicator",
+      "allowed_evidence": [
+        "behavioral",
+        "transactional"
+      ],
+      "missing_handling": "MEASURE_ONLY",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "replies/sent pada kohort pesan yang sama window-nya",
+      "invalid_example": "hubungan kausal ke qualified leads diklaim dari korelasi saja (GR-16)"
+    },
+    {
+      "metric_id": "sales_cycle_days",
+      "version": 1,
+      "display_name": {
+        "en": "Sales cycle length",
+        "id": "Panjang siklus sales"
+      },
+      "aliases": [
+        "sales cycle",
+        "siklus sales",
+        "sales cycle days",
+        "durasi penjualan"
+      ],
+      "category": "sales_conversion",
+      "unit": "days",
+      "semantics": "DECREASE_TO_THRESHOLD",
+      "window": "cohort_window",
+      "requires_denominator": false,
+      "requires_qualification": false,
+      "role": "outcome",
+      "allowed_evidence": [
+        "transactional",
+        "outcome"
+      ],
+      "missing_handling": "MEASURE_ONLY",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "rata-rata hari first-contact→won ≤ threshold pada kohort terdefinisi",
+      "invalid_example": "gap generik target−current yang membalik makna penurunan"
+    },
+    {
+      "metric_id": "cac",
+      "version": 1,
+      "display_name": {
+        "en": "Customer acquisition cost",
+        "id": "Biaya akuisisi pelanggan"
+      },
+      "aliases": [
+        "cac",
+        "customer acquisition cost",
+        "biaya akuisisi",
+        "acquisition cost",
+        "cost per customer",
+        "biaya per pelanggan"
+      ],
+      "category": "economics",
+      "unit": "Rp ribu",
+      "semantics": "DECREASE_TO_THRESHOLD",
+      "window": "campaign_window",
+      "requires_denominator": true,
+      "requires_qualification": false,
+      "role": "outcome",
+      "allowed_evidence": [
+        "transactional",
+        "outcome"
+      ],
+      "missing_handling": "MEASURE_ONLY",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "spend pelanggan baru dalam scope akuisisi yang sebanding ≤ threshold (mis. Rp800rb → ≤ Rp600rb) — GR-03/UC-05",
+      "invalid_example": "CAC promosi dicampur biaya retensi; margin guardrail disembunyikan"
+    },
+    {
+      "metric_id": "contribution_margin",
+      "version": 1,
+      "display_name": {
+        "en": "Contribution margin",
+        "id": "Margin kontribusi"
+      },
+      "aliases": [
+        "contribution margin",
+        "margin kontribusi",
+        "margin"
+      ],
+      "category": "economics",
+      "unit": "ratio",
+      "semantics": "AT_LEAST",
+      "window": "period",
+      "requires_denominator": true,
+      "requires_qualification": false,
+      "role": "guardrail",
+      "allowed_evidence": [
+        "transactional",
+        "outcome"
+      ],
+      "missing_handling": "ASK_OR_MEASURE",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "margin periode terukur ≥ threshold (mis. ≥ 35%) dengan rentang tanggal/produk yang sebanding",
+      "invalid_example": "margin 32% dari rentang tanggal berbeda diperlakukan langsung sebagai konflik tanpa cek komparabilitas (UC-05)"
+    },
+    {
+      "metric_id": "active_distribution_partners",
+      "version": 1,
+      "display_name": {
+        "en": "Active distribution partners",
+        "id": "Mitra distribusi aktif"
+      },
+      "aliases": [
+        "active partners",
+        "mitra aktif",
+        "reseller aktif",
+        "active resellers",
+        "distribution partners",
+        "active distribution partners",
+        "partnership",
+        "partners",
+        "reseller partners",
+        "strategic partners"
+      ],
+      "category": "business_development",
+      "unit": "partners",
+      "semantics": "COUNT_IN_WINDOW",
+      "window": "rolling_days",
+      "requires_denominator": false,
+      "requires_qualification": true,
+      "role": "outcome",
+      "allowed_evidence": [
+        "transactional",
+        "outcome",
+        "behavioral"
+      ],
+      "missing_handling": "EVIDENCE_ONLY",
+      "conflict_handling": "PREFER_STRONGER_EVIDENCE",
+      "success_example": "partner memenuhi kriteria 'aktif' yang observable (mis. referral terkualifikasi/transaksi teratribusi dalam periode) — GR-04/UC-04",
+      "invalid_example": "surat kolaborasi non-binding dihitung sebagai partner aktif",
+      "notes": "Tanpa kriteria aktif yang observable → unresolved QUALIFICATION_UNDEFINED; tanda tangan ≠ aktif."
+    },
+    {
+      "metric_id": "founder_delivery_hours",
+      "version": 1,
+      "display_name": {
+        "en": "Founder delivery hours",
+        "id": "Jam delivery founder"
+      },
+      "aliases": [
+        "delivery hours",
+        "jam delivery",
+        "jam kerja delivery",
+        "founder hours",
+        "waktu delivery",
+        "hours a week delivering",
+        "hours per week delivering"
+      ],
+      "category": "operational_leverage",
+      "unit": "hours/week",
+      "semantics": "DECREASE_TO_THRESHOLD",
+      "window": "weekly",
+      "requires_denominator": false,
+      "requires_qualification": false,
+      "role": "outcome",
+      "allowed_evidence": [
+        "behavioral",
+        "self_reported"
+      ],
+      "missing_handling": "ASK_OR_MEASURE",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "rata-rata jam delivery/minggu ≤ threshold (mis. 30 → ≤ 15) dengan definisi kualitas layanan eksplisit — UC-06",
+      "invalid_example": "dipaksa ke slot monthly revenue; delegasi dihitung sebagai outcome"
+    },
+    {
+      "metric_id": "wtp_validated",
+      "version": 1,
+      "display_name": {
+        "en": "Willingness-to-pay validated",
+        "id": "WTP tervalidasi"
+      },
+      "aliases": [
+        "willingness to pay",
+        "wtp",
+        "kesediaan membayar",
+        "validate willingness to pay"
+      ],
+      "category": "evidence",
+      "unit": "criteria",
+      "semantics": "EVIDENCE_CRITERIA",
+      "window": "none",
+      "requires_denominator": false,
+      "requires_qualification": false,
+      "role": "outcome",
+      "allowed_evidence": [
+        "transactional",
+        "outcome"
+      ],
+      "missing_handling": "EVIDENCE_ONLY",
+      "conflict_handling": "PREFER_STRONGER_EVIDENCE",
+      "success_example": "kriteria bukti eksplisit terpenuhi: pembelian/deposit/komitmen harga terverifikasi (GR-11)",
+      "invalid_example": "skor numerik WTP dikarang dari opini; klaim verbal = validasi"
+    },
+    {
+      "metric_id": "channel_validated",
+      "version": 1,
+      "display_name": {
+        "en": "Acquisition channel validated",
+        "id": "Kanal akuisisi tervalidasi"
+      },
+      "aliases": [
+        "validate channel",
+        "channel validation",
+        "kanal tervalidasi",
+        "repeatable acquisition channel",
+        "validate a channel",
+        "validate one channel"
+      ],
+      "category": "distribution_marketing",
+      "unit": "criteria",
+      "semantics": "EVIDENCE_CRITERIA",
+      "window": "none",
+      "requires_denominator": false,
+      "requires_qualification": false,
+      "role": "outcome",
+      "allowed_evidence": [
+        "transactional",
+        "outcome"
+      ],
+      "missing_handling": "EVIDENCE_ONLY",
+      "conflict_handling": "PREFER_STRONGER_EVIDENCE",
+      "success_example": "kriteria 'tervalidasi' disepakati & terpenuhi (mis. ≥n pelanggan bayar teratribusi kanal pada ≥2 siklus) — UC-03",
+      "invalid_example": "signup dipakai sebagai bukti kanal membayar; atribusi kanal dikarang"
+    },
+    {
+      "metric_id": "outreach_messages_sent",
+      "version": 1,
+      "display_name": {
+        "en": "Outreach messages sent",
+        "id": "Pesan outreach terkirim"
+      },
+      "aliases": [
+        "outreach messages",
+        "send messages",
+        "kirim pesan outreach",
+        "messages sent"
+      ],
+      "category": "activity",
+      "unit": "messages",
+      "semantics": "COUNT_IN_WINDOW",
+      "window": "rolling_days",
+      "requires_denominator": false,
+      "requires_qualification": false,
+      "role": "activity",
+      "allowed_evidence": [
+        "behavioral",
+        "self_reported"
+      ],
+      "missing_handling": "MEASURE_ONLY",
+      "conflict_handling": "RECONCILE_FLAG",
+      "success_example": "kuota aktivitas tercatat APA ADANYA (goal activity) — sistem wajib menandai perlu klarifikasi kuota kerja vs proxy outcome",
+      "invalid_example": "pesan terkirim dihitung sebagai leads/revenue tercapai (GR-06)"
+    }
+  ]
+}

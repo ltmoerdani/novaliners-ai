@@ -1,0 +1,157 @@
+{
+ "$comment": "Lost Art of Closing — evidence rules. Inti buku: closing bukan momen akhir, tapi tangga 10 komitmen (time, explore, change, collaborate, invest, review, resolve concerns, decide, execute). Setiap tangga = komitmen kecil yang diminta eksplisit.",
+ "evidence_rules": [
+  {
+   "rule_id": "LC-R01",
+   "condition": "good conversation/momentum with a potential client ends WITHOUT a specific next-step commitment (without a clear date, action, or person)",
+   "matcher_hint": "The user RECOUNTS a good conversation or a warm lead that ended WITHOUT a specific next-step commitment — no date, no scheduled action, no agreed next person; it ended on vague 'I'll let you know'.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.4"
+    ],
+    "rationale": "Iannarino: percakapan tanpa komitmen berikutnya = lead mulai menggantung dari titik itu. Ini penyebab struktural follow-up terasa 'berat': tidak ada jangkar tanggal untuk melanjutkan."
+   },
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "LC-R02",
+   "condition": "user memberikan nilai (rincian, konsultasi, contoh, revisi) tanpa pernah meminta komitmen imbalan apa pun",
+   "matcher_hint": "The user RECOUNTS giving value repeatedly (details, advice, samples, small revisions) WITHOUT ever asking for any reciprocal commitment — everything is given free and unconditionally.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.4"
+    ],
+    "rationale": "Trading value: pemberian tanpa permintaan komitmen melatih pembeli untuk menerima tanpa memberi — lead jadi murah di mata mereka, momentum turun."
+   },
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "LC-R03",
+   "condition": "Evidence shows that leads whose objections have not been resolved are left idle (not scheduled for a dedicated discussion).",
+   "matcher_hint": "The user RECOUNTS leaving a prospect's concern or objection unaddressed — no scheduled time to resolve it, just waiting for the prospect to come back on their own.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.4"
+    ],
+    "rationale": "Commitment to resolve concerns: keberatan yang tidak dijadwalkan pembahasannya hampir selalu mati diam-diam — berbeda dari penolakan sebenarnya."
+   },
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch11"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "LC-R04",
+   "condition": "user contacts a prospective client WITHOUT a specific commitment objective to ask for (only 'checking in' or 'reminding')",
+   "matcher_hint": "The user RECOUNTS reaching out to prospects without a specific commitment goal — just checking in or reminding, with no ask prepared.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.4"
+    ],
+    "rationale": "Follow-up TANPA permintaan komitmen = kontak kosong: tidak menggerakkan lead naik tangga. Follow-up efektif selalu membawa satu komitmen spesifik yang diminta."
+   },
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch02",
+     "ch16"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "LC-R05",
+   "condition": "Effort is spent on someone who cannot make the buying decision — a ladder climbed with the wrong person.",
+   "matcher_hint": "The user RECOUNTS investing in a sales conversation (demo, proposal, follow-ups) with a contact who turns out to have no authority to purchase.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "M3.4"
+    ],
+    "rationale": "Pitch ke non-decision-maker buang siklus penjualan penuh — tanda qualification otoritas gagal (tangga komitmen butuh orang yang tepat)."
+   },
+   "provenance": {
+    "source_id": "lc",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch02"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "LC-R06",
+   "condition": "There is nothing concrete to accept or decline — the commitment asked for has no offer behind it.",
+   "matcher_hint": "The user RECOUNTS asking for interest or a meeting WITHOUT a defined, buyable offer (no scope, no price, no deliverable) being on the table.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "V2.1"
+    ],
+    "rationale": "Komitmen tanpa penawaran yang bisa dibeli adalah komitmen kosong — capability memang ada tapi belum jadi offer (V2.1 murni)."
+   },
+   "provenance": {
+    "source_id": "lc",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch03"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

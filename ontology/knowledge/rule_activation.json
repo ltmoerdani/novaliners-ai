@@ -1,0 +1,16 @@
+{
+ "schema_version": "0.2",
+ "$comment": "Aktivasi sumber rule knowledge untuk diagnosis (AC-01). M5 (doc 14 §26): menggantikan phases.json — gating sumber per fase interview dan probe per fase dihapus bersama mesin wawancara berfase. Diagnosis live memang sudah memakai daftar default ini sejak M4 (phase=None). File ini ikut masuk kb_fingerprint() (evals/test_artifact_integrity.py).",
+ "active_rule_sources": [
+  "TM",
+  "VP",
+  "CS",
+  "HK",
+  "PR",
+  "HG",
+  "SP",
+  "LC",
+  "EM"
+ ],
+ "rationale": "Seluruh ledger ditimbang diagnosis, sehingga semua sumber yang punya rule aktif. Sebelumnya default {TM,VP,CS} membuat HK/Retention bisu di diagnosis final: domain Retention kembali tanpa sumber (internal-docs §8.5 temuan #2). Sumber 'sf' terdaftar di sources.json tetapi belum punya rule, jadi sengaja tidak diaktifkan. Kontradiksi TM-vs-CS (AC-01) diselesaikan oleh konteks bukti dan tier rule, bukan dengan memilih satu sumber sebagai pemenang."
+}

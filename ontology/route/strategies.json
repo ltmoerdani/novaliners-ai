@@ -1,0 +1,18 @@
+{
+  "$comment": "STRATEGY REGISTRY (D5 int 08 §8.4, 27 Sep) — strategy = execution ontology (cara komposisi yang diizinkan), identity-bearing di reconciliation_key (INV-R14). Menjawab int 08 §7 item 5 untuk T1 SAJA: strategi dideklarasikan di sini; T2/PROPOSED tetap DILARANG. motion = primitive ekonomi terasosiasi (jembatan paths.py) — diambil DARI SINI oleh bridge, BUKAN dari template (T1.13) dan BUKAN dari pemanggil. status: active = masuk pustaka runtime; proof_only = spesimen ontologi, tidak pernah dikomposisikan untuk user. | motion_vocabulary (30 Sep 2026, hardening): kosakata label motion DIDEKLARASIKAN di sini (milik domain), bukan di enum mesin route — compose/validator/schema hanya membaca daftar ini; domain baru menambah label motion-nya di sini tanpa mengubah kode/schema route.",
+  "motion_vocabulary": ["ACQUISITION", "REPRICING", "EXPANSION", "PARTNERSHIP", "PAID_ACQUISITION"],
+  "strategies": [
+    {"strategy_id": "template_led", "motion": "ACQUISITION", "status": "proof_only",
+     "description": "Spesimen: bangun landing page dari template lalu uji baseline (landing_first_v1)."},
+    {"strategy_id": "direct_outreach", "motion": "ACQUISITION", "status": "active",
+     "description": "Akuisisi lewat kontak langsung ke prospek bernama sampai komitmen per tahap."},
+    {"strategy_id": "value_repricing", "motion": "REPRICING", "status": "active",
+     "description": "Menaikkan harga berbasis nilai yang terbukti sampai ada komitmen uang di harga baru."},
+    {"strategy_id": "client_expansion", "motion": "EXPANSION", "status": "active",
+     "description": "Memperluas nilai klien aktif sampai terjadi pembelian ulang atau tambahan."},
+    {"strategy_id": "referral_partnership", "motion": "PARTNERSHIP", "status": "active",
+     "description": "Membangun mekanisme intro/referral berulang dari klien dan jaringan yang ada."},
+    {"strategy_id": "paid_channel_test", "motion": "PAID_ACQUISITION", "status": "active",
+     "description": "Membeli demand lewat kanal berbayar setelah konversi dan unit economics terukur."}
+  ]
+}

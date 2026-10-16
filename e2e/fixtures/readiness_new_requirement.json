@@ -1,0 +1,238 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "",
+  "found_version": 3,
+  "i18n": {},
+  "needs_rediagnosis": false,
+  "reason_code": null,
+  "status": "CURRENT"
+ },
+ "possible_paths": {
+  "generation": {},
+  "paths": [
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "naikkan harga",
+    "checks": [],
+    "feasibility": "UNDETERMINED",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.value_repricing",
+    "presentation": {
+     "en": {
+      "basis": "Raise or restructure your prices on the demand you already have.",
+      "short": "Reprice your offer",
+      "word": "Pricing"
+     }
+    },
+    "provenance": {
+     "support": [
+      {
+       "reason": "",
+       "refs": [],
+       "signal": "state:x"
+      }
+     ]
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "value_repricing",
+    "title": "Repricing your offer",
+    "unlock_conditions": []
+   }
+  ],
+  "space_id": "test",
+  "unresolved": [],
+  "version": 3
+ },
+ "projection": {
+  "emerging": [],
+  "generation": {},
+  "navigation": {
+   "current_version": 3,
+   "detail": "",
+   "found_version": 3,
+   "i18n": {},
+   "needs_rediagnosis": false,
+   "reason_code": null,
+   "status": "CURRENT"
+  },
+  "paths": [
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Raise or restructure your prices on the demand you already have."
+    },
+    "candidate": null,
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 1,
+     "total": 2,
+     "unknown": 1
+    },
+    "executability": "TRUE",
+    "feasibility": "UNDETERMINED",
+    "feasibility_engine": "UNDETERMINED",
+    "items": [
+     {
+      "activity": "Jalankan satu uji kecil untuk kondisi baru",
+      "check_id": null,
+      "evidence": [],
+      "executability": "TRUE",
+      "executed": false,
+      "guidance": {
+       "lang": "id",
+       "source": "engine",
+       "text": "Jalankan satu uji kecil untuk kondisi baru"
+      },
+      "key": "sample.injected_condition",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "sample.injected_condition",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "UNKNOWN",
+      "title": {
+       "lang": "en",
+       "source": "fallback",
+       "text": "Injected condition"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": []
+     },
+     {
+      "activity": "Tulis dulu",
+      "check_id": null,
+      "evidence": [
+       "ledger:offering.outcome"
+      ],
+      "executability": "TRUE",
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Say, in numbers or plain words, what clients get out of working with you."
+      },
+      "key": "offering.outcome",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "offering.outcome",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "curated",
+       "text": "A clear result clients get"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.value_repricing",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "You already have a clear result clients get.",
+       "claim_type": "SUPPORTED",
+       "evidence_anchor": [
+        "ledger:offering.outcome"
+       ],
+       "field": "supported",
+       "requirement_anchor": "offering.outcome",
+       "support_state": "PRESENT"
+      },
+      {
+       "claim": "Whether injected condition is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "supported",
+       "requirement_anchor": "sample.injected_condition",
+       "support_state": "UNKNOWN"
+      },
+      {
+       "claim": "Whether injected condition is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "unclear",
+       "requirement_anchor": "sample.injected_condition",
+       "support_state": "UNKNOWN"
+      }
+     ],
+     "holding": "",
+     "supported": "You already have a clear result clients get. What we cannot say yet: whether injected condition is in place.",
+     "unclear": "Whether injected condition is in place is not known yet."
+    },
+    "path_id": "path.value_repricing",
+    "presentation": {
+     "en": {
+      "basis": "Raise or restructure your prices on the demand you already have.",
+      "short": "Reprice your offer",
+      "word": "Pricing"
+     }
+    },
+    "provenance": {
+     "support": [
+      {
+       "reason": "",
+       "refs": [],
+       "signal": "state:x"
+      }
+     ]
+    },
+    "route": {
+     "applicability": "APPLIES",
+     "lineage_status": "OPEN",
+     "revision_no": 1,
+     "route_id": "r-value_repricing",
+     "template_id": "value_repricing_v1"
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "value_repricing",
+    "title": "Repricing your offer"
+   }
+  ],
+  "unresolved": [],
+  "version": 4
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "$comment": "Lost Art of Closing — interventions. Tangga 10 komitmen: time → explore → change → collaborate → build consensus → invest → review → resolve concerns → decide → execute.",
+ "interventions": [
+  {
+   "intervention_id": "LC-I01",
+   "name": "Commitment Ladder Mapping",
+   "targets": [
+    "C6.4"
+   ],
+   "expected_evidence": "Every active lead is given a note: the last commitment fulfilled (from ladder 10) + the next small commitment to be requested + its date — 100% of leads mapped",
+   "contraindicated_until": "Daftar lead aktif kosong / belum ada interaksi nyata — ladder tanpa lead hanyalah teori",
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch02",
+     "ch16"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "LC-I02",
+   "name": "Always-One-Commitment Rule",
+   "targets": [
+    "C6.4"
+   ],
+   "expected_evidence": "Within 2 weeks, 100% of outbound conversations end with 1 specific commitment requested & logged (date/action/person) — no conversation ends vaguely",
+   "contraindicated_until": "Commitment ladder (LC-I01) belum dipetakan — meminta komitmen acak tanpa tahu rung berikutnya",
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "LC-I03",
+   "name": "Objection Resolution Session",
+   "targets": [
+    "C6.4",
+    "DM5.5"
+   ],
+   "expected_evidence": "Setiap keberatan yang muncul dijadwalkan sesi penyelesaiannya (15 menit, telepon/meet) maksimal 48 jam setelah muncul; hasil tiap sesi dicatat",
+   "contraindicated_until": "Belum ada objection tercatat (log 1–2 minggu) — sesi resolusi tanpa bahan hanya membahas dugaan",
+   "provenance": {
+    "source_id": "lc",
+    "chapters": [
+     "ch11"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  }
+ ]
+}

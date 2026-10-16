@@ -1,0 +1,114 @@
+{
+ "$comment": "Anti-patterns dari The Mom Test (mapping §4). Berlaku sebagai guardrail bagi user DAN self-check reasoning engine.",
+ "anti_patterns": [
+  {
+   "pattern_id": "TM-A01",
+   "name": "Fishing for Compliments",
+   "symptom": "Pertanyaan mencari restu: 'Menurut Anda ide ini bagus?' / 'Anda suka tidak?'",
+   "constraint_link": [
+    "V2.4"
+   ],
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch02",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "TM-A02",
+   "name": "Pathos Problem (Ego Exposure)",
+   "symptom": "Membuka ego: 'Tolong jujur, saya kuat kok' — orang tetap menarik pukulannya; data menjadi fluff pelindung perasaan",
+   "constraint_link": [
+    "V2.4"
+   ],
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch02",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "TM-A03",
+   "name": "Pitch Mode",
+   "symptom": "'No, you don't understand yet…' / 'Yeah, but this can also…' — enthusiastic monologue; customer stops talking about their problem",
+   "constraint_link": [
+    "DM5.5",
+    "C6.3"
+   ],
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch02",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "TM-A04",
+   "name": "Premature Zoom",
+   "symptom": "Zoom into specific problem details before confirming the user cares — producing data that looks like validation but is a false positive",
+   "constraint_link": [
+    "M3.1"
+   ],
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch03",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "TM-A05",
+   "name": "Too Formal",
+   "symptom": "'Terima kasih sudah mau diwawancara…' / skala 1-5 — meeting formal memicu jawaban interview, bukan kebenaran",
+   "constraint_link": [
+    "DS4.2"
+   ],
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch04",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "TM-A06",
+   "name": "Learning Bottleneck",
+   "symptom": "Satu orang pegang semua percakapan customer: 'Anda urus produk, saya urus customer' — de-facto dictator + sinyal hilang",
+   "constraint_link": [
+    "D1.2"
+   ],
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch08",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

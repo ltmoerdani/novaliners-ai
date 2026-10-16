@@ -1,0 +1,93 @@
+{
+ "$comment": "E-Myth Revisited — interventions. All with expected_evidence are mandatory.",
+ "interventions": [
+  {
+   "intervention_id": "EM-I01",
+   "name": "Capacity Ledger (hours per client)",
+   "targets": [
+    "L8.3"
+   ],
+   "expected_evidence": "Table: active clients × actual hours/week + remaining capacity + written decision 'accept/hold/reject' for new clients based on numbers — used before the next commitment",
+   "contraindicated_until": "Klien aktif <2 — ledger kapasitas tanpa beban nyata mengukur kehampaan",
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch08",
+     "ch18"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "AFTER_SALES"
+   ]
+  },
+  {
+   "intervention_id": "EM-I02",
+   "name": "SOP for the Single Most Frequent Process",
+   "targets": [
+    "L8.3",
+    "L8.1"
+   ],
+   "expected_evidence": "1 written SOP (numbered steps, followable by someone else) for the most time-consuming process + 1 test: someone else/a document version completes it without asking you",
+   "contraindicated_until": "Proses belum dijalankan ≥3 kali — SOP dari satu kali jalan mengunci cara yang belum terbukti",
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch14"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "AFTER_SALES"
+   ]
+  },
+  {
+   "intervention_id": "EM-I03",
+   "name": "Org Chart Masa Depan (3 topi)",
+   "targets": [
+    "L8.1"
+   ],
+   "expected_evidence": "1-page org chart: Entrepreneur/Manager/Technician hats + this week's task list marked with which hat holds each one + 1 technician task moved out (to an SOP/person) this week",
+   "contraindicated_until": "Belum menjalani ≥1 siklus delivery penuh — org chart masa depan tanpa pengalaman siklus jadi latihan kosong",
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch02",
+     "ch10"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "AFTER_SALES"
+   ]
+  },
+  {
+   "intervention_id": "EM-I04",
+   "name": "Working ON vs IN (2 jam/minggu)",
+   "targets": [
+    "L8.1",
+    "L8.3"
+   ],
+   "expected_evidence": "2 blok jam/minggu dikhususkan bekerja PADA bisnis (SOP, kapasitas, sistem) — bukan di dalamnya; 4 minggu beruntun tercatat di kalender + 1 perbaikan sistem per bulan terjadi",
+   "contraindicated_until": "Beban IN (delivery) <5 jam/minggu — jam ON tanpa IN nyata tidak punya bahan untuk disistemkan",
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "AFTER_SALES"
+   ]
+  }
+ ]
+}

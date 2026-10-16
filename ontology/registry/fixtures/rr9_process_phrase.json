@@ -1,0 +1,32 @@
+{
+  "$comment": "FIXTURE RR9 v2 (owner 27 Sep, syarat 3) — frasa PROSES memicu warning wajib, DI DEFINITION MAUPUN CABANG RULE. Memuat definisi gtm.beachhead VERSI PRA-87b77a3 verbatim ('terpilih melalui evaluasi scenario checklist') — kebocoran HOW nyata yang dulu lolos afiks — plus cabang no_decisive ber-frasa 'sebelum' yang HANYA muncul di rule (review 313c5a7: separuh kebocoran ada di cabang rule). WARNING, bukan error (guardrail).",
+  "$expect": {
+    "errors": [],
+    "warnings": [
+      "frasa proses ['melalui']"
+    ],
+    "warnings_min": 2
+  },
+  "entries": [
+    {
+      "requirement_id": "rr9.beachhead_pra_87b77a3",
+      "definition": "Satu segmen target (beachhead) terpilih melalui evaluasi scenario checklist — satu economic buyer yang bisa diakses dan mampu membayar, tanpa show-stopper segmen berbenteng.",
+      "observability": [
+        "Segmen target tunggal dinyatakan terpilih",
+        "Pemilihan melalui evaluasi scenario, bukan asumsi"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Satu segmen target terpilih melalui evaluasi scenario checklist 4 faktor, tanpa show-stopper.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah segmen target tunggal sudah ditentukan sebelum menyusun daftar prospek.",
+        "contradicting": "Terdapat bukti lebih dari satu segmen dikejar serentak."
+      },
+      "provenance": {
+        "source_id": "chasm",
+        "chapters": ["ch02"],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    }
+  ]
+}

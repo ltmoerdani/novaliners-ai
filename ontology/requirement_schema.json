@@ -1,0 +1,108 @@
+{
+  "$schema_version": "0.1",
+  "name": "NOVALINERS REQUIREMENT REGISTRY SCHEMA v0.1",
+  "note": "Grammar Requirement Registry — contract: internal-docs §5 (gelombang 1-3; GO Tahap 2 owner, 26 Sep 2026). Deklaratif mengikuti pola route_schema.json; di-enforce oleh ontology/registry/validate_registry.py. LARANGAN OWNER TAHAP 2: file ini dan fixtures TIDAK memuat 27 entri D4 — entry normalization & granularity = tahap 5/4. Guardrail terkunci: (1) mode = union sekaligus structural discriminator, validator TIDAK menilai kualitas isi partial; (2) RR9 linguistic = WARNING saja, tak pernah gagalkan entry; (3) structural-only benar-benar structural.",
+  "enums": {
+    "satisfaction_status": ["PRESENT", "PARTIAL", "UNKNOWN", "ABSENT"],
+    "rule_mode": ["BINARY", "PARTIAL"],
+    "knowledge_type": ["source_claim", "novaliners_synthesis", "empirical_outcome"],
+    "confidence": ["normative_only", "expert_hypothesis", "empirical_low", "empirical_high"]
+  },
+  "forbidden_fields": {
+    "$comment": "RR1 + RR3 + §5.2 — key DILARANG di SELURUH pohon entry (dicek rekursif). scope = milik Universal State; evidence_sources = evidence layer (RR6); route/strategy/execution/applicability/frontier/unlocks = layer lain.",
+    "fields": [
+      "route", "route_id", "strategy", "strategy_id", "template_id",
+      "activity", "execution", "execution_view", "applicability", "frontier",
+      "unlocks", "scope", "evidence_sources"
+    ]
+  },
+  "banned_id_suffixes": {
+    "$comment": "D2 guardrail — suffix dari vocabulary status TERTUTUP yang sudah dikunci (RR4 satisfaction + banned route_schema + status path). Struktur lain (mis. _defined/_scored) = urusan normalisasi tahap 5 (mapping A<->B), BUKAN cek validator.",
+    "suffixes": [
+      "present", "partial", "unknown", "absent",
+      "ready", "done", "executed", "blocked", "proposed",
+      "not_yet", "eligible", "conditional", "reopened", "retired"
+    ]
+  },
+  "entities": {
+    "requirement_entry": {
+      "description": "5 lapisan semantik (contract §5.1). NOL entri nyata di Tahap 2 — fixtures = contoh sintetis (prefix sample./bad./rr9.). Top-level keys PERSIS 5 lapisan; key lain = error.",
+      "required": ["requirement_id", "definition", "observability", "satisfaction_rule", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)+$",
+          "note": "dotted <domain>.<name> (D2) · tanpa suffix status (banned_id_suffixes) · RR2: identity stabil terhadap revisi wording/observability/rule/provenance"
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1,
+          "note": "WHAT — keadaan/post-condition yang harus benar (C1). BUKAN cara bukti, BUKAN instruksi (RR9 hard invariant)"
+        },
+        "observability": {
+          "type": "array",
+          "items": "string",
+          "minItems": 1,
+          "note": "kondisi yang BISA diamati (bukan evidence user; bukan whitelist kaku — C1). RR9: kondisi dunia, bukan aktivitas pelaksanaan"
+        },
+        "satisfaction_rule": { "ref": "satisfaction_rule" },
+        "provenance": {
+          "ref": "requirement_provenance",
+          "note": "RR6: requirement provenance SAJA (mengapa knowledge mendefinisikan WHAT ini) — evidence provenance = Universal State; evidence_sources DILARANG"
+        }
+      }
+    },
+    "satisfaction_rule": {
+      "description": "RR11 jangkar struktural (gelombang-3): union type mode = structural discriminator. Validator cek BENTUK, bukan isi (penilaian substantif = audit tahap 4).",
+      "required": ["mode", "sufficient", "no_decisive", "contradicting"],
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "enum:rule_mode",
+          "note": "BINARY → field 'partial' DILARANG · PARTIAL → field 'partial' WAJIB (union consistency)"
+        },
+        "sufficient": { "type": "string", "minLength": 1, "note": "evidence sufficient → PRESENT" },
+        "partial": {
+          "type": "string",
+          "minLength": 1,
+          "note": "evidence partial bermakna → PARTIAL (C3/RR11) — hanya legal saat mode=PARTIAL"
+        },
+        "no_decisive": {
+          "type": "string",
+          "minLength": 1,
+          "note": "no decisive evidence → UNKNOWN (C2/RR10 — bukan ABSENT)"
+        },
+        "contradicting": {
+          "type": "string",
+          "minLength": 1,
+          "note": "evidence contradicting → ABSENT — hanya dari evidence negatif, BUKAN absence of evidence (RR10/C2)"
+        }
+      }
+    },
+    "requirement_provenance": {
+      "description": "REUSE skema KB live (D5 — koreksi Temuan B: jangan skema paralel). source_id wajib terdaftar di ontology/knowledge/sources.json.",
+      "required": ["source_id", "chapters", "knowledge_type", "confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "source_id": { "type": "string", "note": "wajib ∈ sources.json (authority_grade + admission ikut terwarisi)" },
+        "chapters": { "type": "array", "items": "string", "minItems": 1 },
+        "knowledge_type": { "type": "enum:knowledge_type" },
+        "confidence": { "type": "enum:confidence" }
+      }
+    }
+  },
+  "invariants": {
+    "RR1": "entry tanpa field forbidden (rekursif) — requirement = WHAT",
+    "RR2": "requirement_id dotted + stabil (validator: bentuk; revisi definisi = urusan lineage, tahap 6+)",
+    "RR3": "tanpa route_id/strategy_id/template_id di definisi/identitas",
+    "RR4": "satisfaction_status closed set — status TIDAK hidup di registry (enum dicatat; entry tidak punya field status)",
+    "RR5": "PARTIAL hanya via mode=PARTIAL + field partial terisi (kontainer dilarang by construction)",
+    "RR6": "provenance requirement ≠ evidence — evidence_sources forbidden",
+    "RR7": "adjudicator authority — registry hanya mendefinisikan rule (struktur), bukan status",
+    "RR8": "registry tidak menulis state — tidak ada field tulisan-ke-state",
+    "RR9": "definition/observability = kondisi dunia — enforcement = linguistic WARNING best-effort, BUKAN error (guardrail owner)",
+    "RR10": "contradicting (→ABSENT) wajib ada sebagai cabang rule terpisah dari no_decisive (→UNKNOWN)",
+    "RR11": "mode union: BINARY↔tanpa partial · PARTIAL↔wajib partial — structural discriminator"
+  }
+}

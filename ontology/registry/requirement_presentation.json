@@ -1,0 +1,366 @@
+{
+  "$schema_version": "0.1",
+  "note": "REQUIREMENT PRESENTATION — lapisan bahasa manusia di atas Requirement Registry (internal-docs §Requirement Presentation). Registry = SATU-SATUNYA sumber identitas & semantik requirement; berkas ini HANYA teks tampilan per bahasa, dikunci dengan requirement_id. Field: title (nama), description (apa artinya; opsional), verification (cara mendapat/mengecek). Requirement tanpa entri di sini tetap tampil lewat fallback deterministik dari registry (core/navigation/presentation.py) — menambah requirement TIDAK memerlukan perubahan kode readiness. Dilarang: id/gate/status/aturan satisfaction di sini (validate_presentation.py).",
+  "languages": [
+    "en"
+  ],
+  "entries": {
+    "offering.exists": {
+      "en": {
+        "title": "A concrete offer",
+        "description": "What you sell has taken a concrete shape, with deliverables someone can point to.",
+        "verification": "Make sure what you sell has clear deliverables."
+      }
+    },
+    "offering.outcome": {
+      "en": {
+        "title": "A clear result clients get",
+        "description": "You can say what clients get from using your offer, in numbers or in concrete words, not just features.",
+        "verification": "Say, in numbers or plain words, what clients get out of working with you."
+      }
+    },
+    "offering.differentiation": {
+      "en": {
+        "title": "What sets you apart",
+        "description": "You can say how your offer differs from the alternatives, on something your clients care about.",
+        "verification": "Say how you differ from the alternatives, on something your clients care about."
+      }
+    },
+    "conversion.proof": {
+      "en": {
+        "title": "Proof from real clients",
+        "description": "You have proof of results: a concrete case or testimonial from a real client.",
+        "verification": "Collect one concrete case or testimonial from a real client."
+      }
+    },
+    "conversion.copy_composition": {
+      "en": {
+        "title": "Words for your offer",
+        "description": "The words that present your offer are written and ready to use.",
+        "verification": "Write the text that presents your offer, ready to use."
+      }
+    },
+    "conversion.landing_page": {
+      "en": {
+        "title": "A page that presents your offer",
+        "description": "A live page presents your offer clearly and has one specific button to act on.",
+        "verification": "Put up a page with a clear offer and one specific button to act on."
+      }
+    },
+    "conversion.conversion_baseline": {
+      "en": {
+        "title": "Your current close rate",
+        "description": "You know your close rate, measured from real transactions, from people asking to clients won.",
+        "verification": "Record how many people ask and how many become clients."
+      }
+    },
+    "conversion.commitment_obtained": {
+      "en": {
+        "title": "A clear next step agreed at every stage",
+        "description": "At each stage of contact with a prospect, you get a clear commitment.",
+        "verification": "Ask each person you talk to for one explicit commitment."
+      }
+    },
+    "experiment.baseline_comparison": {
+      "en": {
+        "title": "A starting number to compare with",
+        "description": "Every change you test has a recorded starting point, and the result is compared against it.",
+        "verification": "Record where you start, then compare what the test brings."
+      }
+    },
+    "delivery.capacity": {
+      "en": {
+        "title": "Hours you can spare",
+        "description": "You can work out your weekly hours: how many are in use and how many are left for new clients.",
+        "verification": "Count the hours you work each week and how many are left for more work."
+      }
+    },
+    "delivery.spare_capacity": {
+      "en": {
+        "title": "Room left in your week",
+        "description": "Your counted hours show real room left to take on new work.",
+        "verification": "Use your hours count to show the room left covers the new work you want to take on."
+      }
+    },
+    "delivery.response_system": {
+      "en": {
+        "title": "A way to keep up with replies",
+        "description": "You have the parts of a reply system: a log of conversations, templates and a follow-up schedule.",
+        "verification": "Keep a log of replies, a few reply templates and a follow-up schedule."
+      }
+    },
+    "retention.repeat_purchase": {
+      "en": {
+        "title": "Clients who buy again",
+        "description": "Past clients buy again, or buy something extra beyond their first purchase.",
+        "verification": "Offer a repeat purchase or an extra to a past client."
+      }
+    },
+    "access.icp": {
+      "en": {
+        "title": "A written ideal client",
+        "description": "You have written down who your ideal client is: type, level and role.",
+        "verification": "Write down who you sell to: type of business, level and the buyer's role."
+      }
+    },
+    "access.prospect_list": {
+      "en": {
+        "title": "A list of real prospects",
+        "description": "You keep a list of real prospects, each with a name and a known source.",
+        "verification": "List real people by name, and where each one came from."
+      }
+    },
+    "access.outreach_asset": {
+      "en": {
+        "title": "A first message ready to send",
+        "description": "You have a first message ready: short, with a specific reason to get in touch and a small ask.",
+        "verification": "Write a short first message with a specific reason to get in touch."
+      }
+    },
+    "access.cadence": {
+      "en": {
+        "title": "A weekly rhythm of contact",
+        "description": "Reaching out runs on a schedule, with a weekly count you keep.",
+        "verification": "Decide how many people you contact each week and count them."
+      }
+    },
+    "access.decision_maker": {
+      "en": {
+        "title": "A line to whoever decides",
+        "description": "For every deal in progress, you know who decides on the purchase and can reach them directly.",
+        "verification": "For each deal in progress, know who decides and how to reach them."
+      }
+    },
+    "access.referral_channel": {
+      "en": {
+        "title": "A steady source of introductions",
+        "description": "You have a repeatable way to get introduced, through an advisor, a community or clients.",
+        "verification": "Set up a repeat way to get introduced: an advisor, a community or your clients."
+      }
+    },
+    "gtm.reference_customer_secured": {
+      "en": {
+        "title": "A client who will vouch for you",
+        "description": "At least one client is willing to vouch for you to the next prospects in your niche.",
+        "verification": "Ask one client if they will act as a reference."
+      }
+    },
+    "commercial.unit_economics": {
+      "en": {
+        "title": "What a client earns you against what it costs",
+        "description": "What one client pays you is more than what it costs to win and to serve that client.",
+        "verification": "Work out what one client pays you against the cost of winning and serving them."
+      }
+    },
+    "commercial.value_linked_to_explicit_need": {
+      "en": {
+        "title": "Your value tied to a problem the buyer admits",
+        "description": "Your offer is tied to a problem the buyer has said out loud.",
+        "verification": "Connect what you offer to a problem the buyer has said out loud."
+      }
+    },
+    "commercial.pricing_basis": {
+      "en": {
+        "title": "How you set your price",
+        "description": "You have said what your price is based on (per project, per hour, a package or value) and why.",
+        "verification": "Decide the basis for your price: per project, per hour, a package or the value you bring."
+      }
+    },
+    "commercial.price": {
+      "en": {
+        "title": "A specific new price",
+        "description": "Your price is one specific number with its unit.",
+        "verification": "Set the new price as one number with its unit."
+      }
+    },
+    "commercial.willingness_to_pay": {
+      "en": {
+        "title": "Someone willing to pay that price",
+        "description": "A buyer has shown they will pay the current price by committing real money.",
+        "verification": "Ask a buyer to commit money at your current price."
+      }
+    },
+    "commercial.willingness_to_pay_at_new_price": {
+      "en": {
+        "title": "Someone willing to pay your new price",
+        "description": "A buyer has shown they will pay the new price you propose by committing real money.",
+        "verification": "Ask a buyer to commit money at the new price you propose."
+      }
+    },
+    "offering.target_customer": {
+      "en": {
+        "title": "Who the offer is for",
+        "description": "You can say who the offer is for, and what that person needs, struggles with and gains.",
+        "verification": "Write who the offer is for, and what they need, struggle with and gain."
+      }
+    },
+    "offering.problem": {
+      "en": {
+        "title": "The problem you solve",
+        "description": "You can name the specific problem your client has that your offer answers, and what it costs them.",
+        "verification": "Name the specific problem your client has, and what it costs them."
+      }
+    },
+    "offering.scored": {
+      "en": {
+        "title": "How your offer scores",
+        "description": "You know how your offer scores against the things buyers weigh, and against the alternatives.",
+        "verification": "Score your offer against the things buyers weigh, and against the alternatives."
+      }
+    },
+    "offering.fit_monitoring": {
+      "en": {
+        "title": "Whether your offer still fits",
+        "description": "You re-check how well your offer fits the market, so you know whether it still does.",
+        "verification": "Re-check what your clients are trying to get done, what hurts and what helps, against your offer."
+      }
+    },
+    "access.contact_channel": {
+      "en": {
+        "title": "A way to reach people",
+        "description": "You have a way of reaching people that works today, and real access to it.",
+        "verification": "Set up one channel you can use today to reach the people you sell to."
+      }
+    },
+    "access.language_fit": {
+      "en": {
+        "title": "Wording that works on real people",
+        "description": "You have tried your wording on real prospects and know how they respond to it.",
+        "verification": "Try your wording on real prospects and note how they respond."
+      }
+    },
+    "access.inbound_demand": {
+      "en": {
+        "title": "People reaching out to you",
+        "description": "People are reaching out to you, and you record each inquiry and where it came from.",
+        "verification": "Record every inquiry in the period and where it came from."
+      }
+    },
+    "commercial.payment_terms": {
+      "en": {
+        "title": "When and how you get paid",
+        "description": "You have set how and when you get paid: the due date and the way to pay.",
+        "verification": "Set the due date and the way to pay."
+      }
+    },
+    "commercial.investment_sized": {
+      "en": {
+        "title": "A final amount for each deal",
+        "description": "For each deal you are negotiating, the final amount is settled and ready to put to the buyer.",
+        "verification": "Settle the final amount for each deal you are negotiating, ready to put to the buyer."
+      }
+    },
+    "conversion.proposal": {
+      "en": {
+        "title": "A written proposal",
+        "description": "You have a written proposal that sets out the problem, your solution and the price.",
+        "verification": "Write a proposal that sets out the problem, your solution and the price."
+      }
+    },
+    "conversion.teaching_insight": {
+      "en": {
+        "title": "Something your client had not noticed",
+        "description": "You have written down an insight about your client's business: a burden or challenge they had not noticed.",
+        "verification": "Write down one insight about their business: a burden or challenge they had not seen."
+      }
+    },
+    "delivery.onboarding": {
+      "en": {
+        "title": "How you start with a new client",
+        "description": "You have said how you start working with a new client: a brief, a contract or a kick-off.",
+        "verification": "Say how you begin: a brief, a contract or a kick-off."
+      }
+    },
+    "delivery.franchise_prototype_documented": {
+      "en": {
+        "title": "Your way of working, written down",
+        "description": "Your way of working is written down, so someone else can run it with the same results.",
+        "verification": "Write down how the work is done, so someone else could run it with the same results."
+      }
+    },
+    "delivery.activity_tracking": {
+      "en": {
+        "title": "Your sales activity in numbers",
+        "description": "Your sales activity in the current period is recorded as numbers.",
+        "verification": "Record each day or week how many sales actions you took."
+      }
+    },
+    "delivery.strategic_objective_defined": {
+      "en": {
+        "title": "Where the business is heading",
+        "description": "Your direction is set in numbers: a revenue target, your capacity and your own role.",
+        "verification": "Set a revenue target, your capacity and your own role."
+      }
+    },
+    "experiment.test_card_defined": {
+      "en": {
+        "title": "A clear measure for each test",
+        "description": "Every idea you are testing has a measure and a clear definition of success.",
+        "verification": "For every idea you test, say what you will measure and what counts as success."
+      }
+    },
+    "retention.aha_moment_defined": {
+      "en": {
+        "title": "The moment users see the value",
+        "description": "You know the moment of value, found by looking at what your most loyal users actually do.",
+        "verification": "Compare what loyal users do with what leaving users do, using real usage data."
+      }
+    },
+    "retention.owned_trigger": {
+      "en": {
+        "title": "A channel of your own that brings users back",
+        "description": "A channel you own is active and brings users back again and again.",
+        "verification": "Use a channel you own, such as email, to bring users back more than once."
+      }
+    },
+    "retention.stored_value": {
+      "en": {
+        "title": "Something users leave behind that keeps them",
+        "description": "What users put into your product stays there and stays in use, which makes leaving costly.",
+        "verification": "Look for what users build in your product, such as content, data or reputation, and keep it active."
+      }
+    },
+    "retention.activation": {
+      "en": {
+        "title": "New clients reaching the moment of value",
+        "description": "Most new clients reach the moment of value in your product.",
+        "verification": "Measure how many new clients reach the moment of value. More than half is the aim."
+      }
+    },
+    "gtm.beachhead": {
+      "en": {
+        "title": "One segment to start with",
+        "description": "You have picked one target segment with a single buyer you can identify, reachable through your channels, able to pay for the whole product and free of blockers.",
+        "verification": "Pick one segment: a single buyer you can identify, reachable through your channels, able to pay, and with no blocker."
+      }
+    },
+    "gtm.compelling_reason": {
+      "en": {
+        "title": "A strong reason to buy",
+        "description": "The segment you picked has a strong, urgent reason to buy.",
+        "verification": "Find out, from a real scenario or prospect, why this segment must buy now."
+      }
+    },
+    "gtm.positioning": {
+      "en": {
+        "title": "A positioning claim people believe",
+        "description": "Your positioning claim is written down and judged on two things: whether it is believable and whether the niche finds it appealing.",
+        "verification": "Write your claim, then judge it on two things: believable, and appealing to the niche."
+      }
+    },
+    "gtm.learning_process_defined": {
+      "en": {
+        "title": "A set way to learn from conversations",
+        "description": "You hold learning conversations in a set way: a list of questions, exact quotes and a review afterwards.",
+        "verification": "Prepare questions, write down exact quotes and review each conversation afterwards."
+      }
+    },
+    "gtm.meeting_outcome_standard": {
+      "en": {
+        "title": "Judging a conversation by facts",
+        "description": "You judge a conversation by facts and real progress, not by compliments.",
+        "verification": "Check a conversation for concrete facts and real progress, not compliments."
+      }
+    }
+  }
+}

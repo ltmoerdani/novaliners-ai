@@ -1,0 +1,117 @@
+{
+ "$comment": "Evidence rules dari Hooked (mapping §4).",
+ "evidence_rules": [
+  {
+   "rule_id": "HK-R01",
+   "condition": "onboarding menuntut effort/investasi signifikan SEBELUM reward pertama dirasakan customer",
+   "evaluation": {
+    "tier": "deterministic",
+    "version": "v0.2",
+    "predicate": {
+     "all_of": [
+      {
+       "text_present_pattern": "\\b(onboarding|setup awal|set up awal|training|pelatihan|instalasi|konfigurasi)\\b"
+      },
+      {
+       "text_present_pattern": "(sebelum|dulu|baru bisa|belum sempat|belum bisa|belum pernah|sempat|before|previously|only then can|haven't had the chance yet)"
+      }
+     ]
+    }
+   },
+   "matcher_hint": "The user RECOUNTS that new customers must invest significant effort/steps/training BEFORE feeling the first reward/value.",
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "R7.2"
+    ],
+    "rationale": "Ability-first + investment-after-reward: friction sebelum nilai = user hilang sebelum sempat terbentuk kebiasaan."
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch03",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "HK-R02",
+   "condition": "behavior that is relied on is low-frequency AND its perceived utility is not high (habit zone check fails)",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS onboarding friction so severe that scaling acquisition now would waste the spend (users churn before reaching value).",
+   "consequence": {
+    "action": "BLOCK_VERDICT",
+    "targets": [
+     "R7.2"
+    ],
+    "rationale": "Di luar habit zone: behavior tidak akan otomatis; strategi retensi berbasis habit tidak sah — perlu mekanisme lain (kontrak, ritual kalender, dsb)."
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "HK-R03",
+   "condition": "reward penggunaan monoton / dapat diprediksi (finite variability) tanpa elemen baru",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS that usage drops off right after signup/first use (users never log in again after week one).",
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "R7.2"
+    ],
+    "rationale": "Guaranteed engagement decay (Zynga case): reward variation is the fuel for repeat engagement."
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "HK-R04",
+   "condition": "kurang dari 5% user mencapai frequency benchmark habitual use",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "matcher_hint": "The user RECOUNTS no habit/repeat usage forming — customers use it once or only when prompted, plus no proof of outcome to show prospects.",
+   "consequence": {
+    "action": "FLAG_SEGMENT",
+    "targets": [
+     "R7.2",
+     "DM5.6"
+    ],
+    "rationale": "Product-market-habit belum tercapai: salah segmen atau produk perlu didesain ulang — sebelum di-scale."
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

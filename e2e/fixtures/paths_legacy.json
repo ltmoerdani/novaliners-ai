@@ -1,0 +1,16 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "artefak ini dibuat sebelum model navigasi saat ini dan tidak memuat hasil Possible Path",
+  "found_version": null,
+  "i18n": {
+   "en": {
+    "detail": "This map was made before the current way of finding paths, so it holds no path result. That is not the same as having no paths."
+   }
+  },
+  "needs_rediagnosis": true,
+  "reason_code": "PATHSET_MISSING",
+  "status": "LEGACY"
+ },
+ "possible_paths": null
+}

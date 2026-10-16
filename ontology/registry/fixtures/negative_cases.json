@@ -1,0 +1,128 @@
+{
+  "$comment": "FIXTURE NEGATIF Tahap 2 — 8 kasus minimum dari owner, masing-masing satu pelanggaran. Self-expecting: setiap pola WAJIB muncul dan setiap error aktual WAJIB cocok (dua arah).",
+  "$expect": {
+    "errors": [
+      "mode=BINARY tapi field 'partial' ADA",
+      "mode=PARTIAL tapi field 'partial' HILANG",
+      "mode 'GRADUATED' invalid",
+      "DUPLIKAT",
+      "suffix status '_present'",
+      "field terlarang 'route_id'",
+      "field terlarang 'evidence_sources'",
+      "hilang ['provenance']",
+      "key tak dikenal di top-level"
+    ]
+  },
+  "entries": [
+    {
+      "requirement_id": "bad.union_biner",
+      "definition": "Kondisi biner dengan cabang partial yang tidak sah.",
+      "observability": ["Bukti bentuk pertama", "Bukti bentuk kedua"],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Segalanya tercatat.",
+        "partial": "CABANG TERLARANG untuk mode BINARY.",
+        "no_decisive": "Belum ada catatan.",
+        "contradicting": "Catatan menyangkal kondisi."
+      },
+      "provenance": { "source_id": "tm", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only" }
+    },
+    {
+      "requirement_id": "bad.partial_tanpa_field",
+      "definition": "Kondisi bertingkat tanpa definisi partial.",
+      "observability": ["Komponen pertama tercatat", "Komponen kedua tercatat"],
+      "satisfaction_rule": {
+        "mode": "PARTIAL",
+        "sufficient": "Semua komponen tercatat.",
+        "no_decisive": "Belum ada catatan komponen.",
+        "contradicting": "Catatan menyangkal komponen."
+      },
+      "provenance": { "source_id": "tm", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only" }
+    },
+    {
+      "requirement_id": "bad.mode_invalid",
+      "definition": "Mode adjudikasi di luar enum tertutup.",
+      "observability": ["Bentuk pengamatan tercatat"],
+      "satisfaction_rule": {
+        "mode": "GRADUATED",
+        "sufficient": "Terpenuhi.",
+        "no_decisive": "Tidak pasti.",
+        "contradicting": "Tertolak."
+      },
+      "provenance": { "source_id": "tm", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only" }
+    },
+    {
+      "requirement_id": "bad.dup",
+      "definition": "Entri pertama dari pasangan ber-requirement_id sama.",
+      "observability": ["Pengamatan entri pertama"],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Terpenuhi.",
+        "no_decisive": "Tidak pasti.",
+        "contradicting": "Tertolak."
+      },
+      "provenance": { "source_id": "tm", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only" }
+    },
+    {
+      "requirement_id": "bad.dup",
+      "definition": "Entri kedua dari pasangan ber-requirement_id sama — memicu duplikasi.",
+      "observability": ["Pengamatan entri kedua"],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Terpenuhi.",
+        "no_decisive": "Tidak pasti.",
+        "contradicting": "Tertolak."
+      },
+      "provenance": { "source_id": "tm", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only" }
+    },
+    {
+      "requirement_id": "bad.kehadiran_present",
+      "definition": "Identitas membawa suffix status epistemik.",
+      "observability": ["Pengamatan keadaan tercatat"],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Terpenuhi.",
+        "no_decisive": "Tidak pasti.",
+        "contradicting": "Tertolak."
+      },
+      "provenance": { "source_id": "tm", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only" }
+    },
+    {
+      "requirement_id": "bad.field_route",
+      "definition": "Entri menyuntikkan field milik layer route.",
+      "observability": ["Pengamatan tercatat"],
+      "route_id": "11111111-1111-4a11-8a11-111111111111",
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Terpenuhi.",
+        "no_decisive": "Tidak pasti.",
+        "contradicting": "Tertolak."
+      },
+      "provenance": { "source_id": "tm", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only" }
+    },
+    {
+      "requirement_id": "bad.evidence_sources",
+      "definition": "Entri menanam evidence provenance di registry.",
+      "observability": ["Pengamatan tercatat"],
+      "evidence_sources": ["state:claim_17"],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Terpenuhi.",
+        "no_decisive": "Tidak pasti.",
+        "contradicting": "Tertolak."
+      },
+      "provenance": { "source_id": "tm", "chapters": ["ch01"], "knowledge_type": "source_claim", "confidence": "normative_only" }
+    },
+    {
+      "requirement_id": "bad.tanpa_provenance",
+      "definition": "Entri tanpa lapisan provenance sama sekali.",
+      "observability": ["Pengamatan tercatat"],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Terpenuhi.",
+        "no_decisive": "Tidak pasti.",
+        "contradicting": "Tertolak."
+      }
+    }
+  ]
+}

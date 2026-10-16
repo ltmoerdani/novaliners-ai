@@ -1,0 +1,374 @@
+{
+ "$comment": "Diagnostic probes dari The Mom Test. Migrasi Fase 2 dari docs/knowledge/the-mom-test/mapping-novalianers.md §2. signal_interpretation = kerja intelektual baru (tidak ada di markdown) — makna jawaban user terhadap constraint target.",
+ "probes": [
+  {
+   "probe_id": "TM-P01",
+   "text": "Kapan terakhir kali [masalah ini] muncul?",
+   "targets": [
+    "V2.4",
+    "DM5.5",
+    "DM5.6"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Masalah muncul minggu/bulan ini — pain aktif, demand hypothesis naik",
+    "negative": "Sudah lama tidak terjadi / hampir tidak pernah — pain teoretis, turunkan pain severity",
+    "neutral": "Frekuensi sedang — perlu probe frekuensi lanjutan"
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P02",
+   "text": "Tell me what you did back then — teach me step-by-step how you handled it.",
+   "targets": [
+    "V2.4"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Concrete workflow explicitly stated: tools, costs, time, people involved — high-quality evidence for measuring severity",
+    "negative": "Can't explain the details / the story is vague — a sign of not being directly involved in the problem",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P03",
+   "text": "What are the consequences if this problem is not resolved?",
+   "targets": [
+    "C6.3",
+    "V2.4"
+   ],
+   "evidence_type": "implication",
+   "signal_interpretation": {
+    "positive": "Ada implikasi mahal terukur (uang/waktu/opportunitas hilang) — will-pay problem, pain severity naik + pricing anchor",
+    "negative": "'Ah, never mind' — annoying but tolerable problem; likely a vitamin, not a painkiller, downgrade severity",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P04",
+   "text": "Anda mengatasinya sekarang bagaimana?",
+   "targets": [
+    "V2.4",
+    "C6.3"
+   ],
+   "evidence_type": "workaround",
+   "signal_interpretation": {
+    "positive": "Ada workaround aktif yang berbiaya (alat/staf/waktu) — price anchor + bukti masalah nyata; nilai anchor jadi reference pricing",
+    "negative": "Tidak melakukan apa-apa — tidak ada budget mengalir ke masalah ini; willingness-to-pay meragukan",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P05",
+   "text": "What else have you tried to resolve it?",
+   "targets": [
+    "DM5.5",
+    "DM5.6",
+    "V2.4"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Sudah mencoba solusi lain dan kecewa — actively searching, demand hypothesis naik signifikan",
+    "negative": "Belum pernah mencari solusi sama sekali — 'if they haven't looked, they won't buy yours'; bukan customer",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P06",
+   "text": "Kenapa Anda repot-repot mengurus ini?",
+   "targets": [
+    "C6.3"
+   ],
+   "evidence_type": "motivation",
+   "signal_interpretation": {
+    "positive": "The real motivation is revealed and differs from the surface request — value framing must follow this motivation, not the feature requested",
+    "negative": "Tidak ada motivasi kuat — permintaan fitur tanpa alasan = tidak boleh diobey",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P07",
+   "text": "Where does the money come from? Who holds the purchasing decision?",
+   "targets": [
+    "M3.4"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "Kontak = budget owner / punya akses langsung ke decision maker — authority match",
+    "negative": "Kontak bukan pemegang budget dan tidak bisa mengantar ke decision maker — authority mismatch; deal kemungkinan mati",
+    "neutral": "Ada proses persetujuan berlapis — identifikasi semua veto holder sebelum lanjut"
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P08",
+   "text": "How serious are you about this [area/business]?",
+   "targets": [
+    "C6.1",
+    "DM5.6"
+   ],
+   "evidence_type": "commitment",
+   "signal_interpretation": {
+    "positive": "Menghasilkan uang / menghabiskan waktu-biaya signifikan / aspirasi bisnis nyata — painkiller customer",
+    "negative": "Hobi, tidak ada investasi waktu/uang — vitamin; turunkan prioritas segmen ini",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P09",
+   "text": "What 3 big things are you currently trying to improve?",
+   "targets": [
+    "M3.1",
+    "D1.2"
+   ],
+   "evidence_type": "priority",
+   "signal_interpretation": {
+    "positive": "Area masalah kita masuk top-3 prioritas mereka — must-solve, boleh zoom in",
+    "negative": "Tidak masuk daftar — premature zoom jika lanjut; kembali broad atau klasifikasikan non-customer",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P10",
+   "text": "Apa tujuan dan fokus besar Anda saat ini?",
+   "targets": [
+    "M3.1",
+    "D1.2"
+   ],
+   "evidence_type": "context",
+   "signal_interpretation": {
+    "positive": "Our problem comes up on its own without prompting — strong signal, safe to zoom",
+    "negative": "Masalah kita tidak muncul saat pertanyaan terbuka — hati-hati: kemungkinan bukan masalah mereka",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P11",
+   "text": "How much time and money do you spend on this problem per week/month?",
+   "targets": [
+    "DM5.5",
+    "DM5.6",
+    "C6.1"
+   ],
+   "evidence_type": "quantitative",
+   "signal_interpretation": {
+    "positive": "Angka spesifik dan material — seriousness signal kuat + budget anchor",
+    "negative": "Tidak tahu / mendekati nol — masalah tidak diinvestasi; turunkan demand confidence",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P12",
+   "text": "May I ask for [an intro to the decision maker / a case study / a pre-order / a deposit]?",
+   "targets": [
+    "V2.4",
+    "DM5.5",
+    "DM5.6"
+   ],
+   "evidence_type": "commitment",
+   "signal_interpretation": {
+    "positive": "Commitment given (significant time/reputation/money) — the only valid proof; increase confidence in demand & proof",
+    "negative": "Refusing or dodging with a vague promise ('later when it's done') — stalling; value = zero",
+    "neutral": "Menawarkan komitmen generik — konkretkan dulu (siapa, kapan, kenapa tidak sekarang)"
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P13",
+   "text": "Who else should I talk to about this?",
+   "targets": [
+    "M3.1",
+    "DS4.2"
+   ],
+   "evidence_type": "network",
+   "signal_interpretation": {
+    "positive": "Give a specific intro with enthusiasm — the issues they care about; snowball distribution works",
+    "negative": "Menolak intro — kemungkinan kita salah jalani percakapan (terlalu pitchy/formal) ATAU mereka tidak peduli; ambil dengan garam ekstra",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01",
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P14",
+   "text": "If [solution] were available now, when would you want to start?",
+   "targets": [
+    "C6.1"
+   ],
+   "evidence_type": "commitment",
+   "signal_interpretation": {
+    "positive": "'Now — this is my card' / ask for a trial with skin in the game — complainer vs customer strictly separated",
+    "negative": "'Next time' / 'once it's released' — complainer, not a customer; don't count it as pipeline",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch02",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P15",
+   "text": "Dari mana Anda biasanya tahu soal [topik/produk di area ini]?",
+   "targets": [
+    "DS4.2"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Concrete channels revealed (e.g., newspaper PR, specific recommendations) — distribution path for this segment identified",
+    "negative": "There is no channel they trust — distribution to this segment will be expensive/difficult; a factor that goes into segment selection",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01",
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "TM-P16",
+   "text": "Is there anything I should have asked but didn't?",
+   "targets": [],
+   "evidence_type": "meta",
+   "signal_interpretation": {
+    "positive": "User corrected the diagnostic path with a blind spot we missed — new question for list of 3",
+    "negative": "Tidak ada koreksi — jalur diagnosa tampak lengkap",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "$comment": "Hacking Growth (Ellis & Brown, 2017) — probes. Fase E2E: sales/akuisisi + after-sales (retensi, aha-moment). Target: DM5.1, DM5.5, R7.2, DS4.2.",
+ "probes": [
+  {
+   "probe_id": "HG-P01",
+   "text": "Pikirkan customer paling setia kamu — momen apa persisnya ketika mereka mulai 'ngerti nilai' produkmu (aha moment)? Dan dari 10 customer baru, berapa kira-kira yang sampai ke momen itu?",
+   "targets": [
+    "R7.2",
+    "DM5.5"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Aha moment can be described concretely + the majority of new customers reach it — onboarding is healthy",
+    "negative": "Tidak tahu momennya / mayoritas tidak sampai — nilai tidak pernah terasa, churn &口碑 negatif; R7.2 naik",
+    "neutral": "The aha moment is in the founder’s head but isn’t designed into the customer journey — onboarding needs to be mapped"
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch02",
+     "ch03",
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HG-P02",
+   "text": "What are the most common reasons customers stop/not repeat — have you ever asked those who stopped directly?",
+   "targets": [
+    "R7.2",
+    "DM5.5"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Have interviewed churned customers + clear pattern of reasons — root cause can be acted upon",
+    "negative": "Tidak pernah tanya / hanya dugaan sendiri — intervensi retensi jadi tebak-tebakan",
+    "neutral": "Know anecdotes but no pattern — need to collect 3-5 churn interviews"
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HG-P03",
+   "text": "Dari mana customermu datang sejauh ini — pernah kamu hitung persentase per sumber (referral, iklan, datang sendiri, marketplace, walk-in)?",
+   "targets": [
+    "DS4.2",
+    "DM5.1"
+   ],
+   "evidence_type": "quantitative",
+   "signal_interpretation": {
+    "positive": "Know the source distribution + at least one active measurable channel — there’s a basis to scale up the channel that works.",
+    "negative": "Tidak tahu sama sekali dari mana customer berasal — acquisition jadi tidak bisa dioptimasi, DS4.2/DM5.1 sulit dibedakan",
+    "neutral": "Rough estimate without numbers — sufficient for initial prioritization, weak for scaling"
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch03",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HG-P04",
+   "text": "Pernah coba perubahan kecil di cara kamu jualan/onboarding (mis. ganti pesan penawaran, ubah urutan langkah) lalu bandingkan hasilnya dengan cara lama?",
+   "targets": [
+    "DS4.2",
+    "C6.3"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "Pernah eksperimen A/B sederhana (walau informal) — ada budaya iterasi berbasis data",
+    "negative": "Tidak pernah — perubahan besar dilakukan berdasarkan selera/asumsi; C6.3 & channel tidak pernah teruji",
+    "neutral": "Changed before, but without a comparison — the results can’t be learned from."
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HG-P05",
+   "text": "If tomorrow all new customers stopped coming, how long would your business survive on repeat customers right now — and what are you doing this month for those who have already bought?",
+   "targets": [
+    "DM5.5",
+    "R7.2"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "There is real activity for existing customers (communication/reward/upgrade) — the foundation for repeat is there.",
+    "negative": "100% energi ke customer baru, existing diabaikan setelah transaksi — mahal & rapuh; DM5.5 naik",
+    "neutral": "Niat ada tanpa aktivitas terjadwal — belum menjadi sistem"
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch07",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HG-P06",
+   "text": "Customer yang puas pernah secara aktif mengarahkan orang lain ke kamu? Berapa kali itu terjadi karena kamu MINTA, dan berapa kali terjadi sendiri?",
+   "targets": [
+    "DM5.5",
+    "DM5.6"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Referral terjadi tanpa diminta berulang kali — nilai terbukti & terlihat, sinyal RAISE terkuat",
+    "negative": "Tidak pernah ada referral organik — klaim 'customer puas' belum terkonfirmasi perilaku pasar",
+    "neutral": "Referral only when requested — value is sufficient but not yet outstanding."
+   },
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch07",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

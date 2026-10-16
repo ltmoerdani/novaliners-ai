@@ -1,0 +1,80 @@
+{
+ "$comment": "E-Myth Revisited — anti-patterns.",
+ "anti_patterns": [
+  {
+   "pattern_id": "EM-A01",
+   "name": "Technician-Only Business",
+   "symptom": "Pemilik bisnis 100% berperan sebagai pelaksana (technician): semua delivery, semua detail, tanpa waktu berperan sebagai manajer/pengusaha — bisnis = pekerjaan, bukan sistem.",
+   "constraint_link": [
+    "L8.1",
+    "L8.3"
+   ],
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "EM-A02",
+   "name": "Accept-First, Figure-Out-Later",
+   "symptom": "Taking on new clients first without calculating capacity, then finding the hours by sacrificing sleep/weekends/prospects — capacity quietly blows out.",
+   "constraint_link": [
+    "L8.3",
+    "DS4.2"
+   ],
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch03",
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "EM-A03",
+   "name": "Tribal Knowledge",
+   "symptom": "Semua proses penting hanya ada di kepala pemilik; tidak ada SOP tertulis — setiap pergantian/jam hilang = risiko langsung pada pendapatan.",
+   "constraint_link": [
+    "L8.3"
+   ],
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch14",
+     "ch18"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "EM-A04",
+   "name": "Growth by Bravado",
+   "symptom": "Menjawab tekanan target dengan 'bakar jam lebih banyak' (60 jam/minggu) alih-alih membangun sistem — berkelanjutan hanya sampai burnout.",
+   "constraint_link": [
+    "L8.1",
+    "L8.3"
+   ],
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch05",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

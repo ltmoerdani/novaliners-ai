@@ -1,0 +1,14 @@
+{
+  "$comment": "KANONIS spesifikasi A3b (review 86f4299 H2): tabel input->expected immutable — runtime adapter DAN regression test lama sama-sama dicek terhadap fixture ini, sehingga drift-lock tak bisa tautologis (perubahan test lama tak mengubah kebenaran).",
+  "cases": [
+    {"units": [true, true, true],  "expected": {"sufficient": true,  "partial": false, "no_decisive": false, "contradicting": false}, "ket": "ALL terpenuhi"},
+    {"units": [true, false, true], "expected": {"sufficient": false, "partial": true,  "no_decisive": false, "contradicting": false}, "ket": "campuran terbukti dua sisi"},
+    {"units": [false, false, false], "expected": {"sufficient": false, "partial": false, "no_decisive": false, "contradicting": true}, "ket": "semua diketahui NOL memenuhi"},
+    {"units": [null, null],        "expected": {"sufficient": false, "partial": false, "no_decisive": true,  "contradicting": false}, "ket": "tanpa informasi"},
+    {"units": [true, false],       "expected": {"sufficient": false, "partial": true,  "no_decisive": false, "contradicting": false}, "ket": "pemicu batch-1: A penuh + B DIKETAHUI gagal"},
+    {"units": [true, null],        "expected": {"sufficient": false, "partial": false, "no_decisive": true,  "contradicting": false}, "ket": "B unknown — bukan PARTIAL (RR10)"},
+    {"units": [false, null],       "expected": {"sufficient": false, "partial": false, "no_decisive": true,  "contradicting": false}, "ket": "bukti negatif tunggal tak cukup ABSENT"},
+    {"units": [true, false, null], "expected": {"sufficient": false, "partial": true,  "no_decisive": false, "contradicting": false}, "ket": "PARTIAL dua sisi + sisa unknown"},
+    {"units": [],                  "expected": {"sufficient": false, "partial": false, "no_decisive": true,  "contradicting": false}, "ket": "kosong generik=UNKNOWN; per-entri via rule"}
+  ]
+}

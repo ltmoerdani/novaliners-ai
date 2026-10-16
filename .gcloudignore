@@ -1,0 +1,13 @@
+# Upload source ke Cloud Build — JANGAN exclude store/ (modul store dibutuhkan runtime).
+.env
+.git/
+.venv/
+__pycache__/
+*.pyc
+novaliners_engine.egg-info/
+.pytest_cache/
+.ruff_cache/
+.github/
+e2e/__visual__/
+.DS_Store
+gate-fast.sh

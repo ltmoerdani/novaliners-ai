@@ -1,0 +1,188 @@
+{
+ "$comment": "Diagnostic probes dari The Challenger Sale (mapping §3).",
+ "probes": [
+  {
+   "probe_id": "CS-P01",
+   "text": "What insight does your offer teach that the customer doesn’t yet know about their own business?",
+   "targets": [
+    "C6.3",
+    "V2.4"
+   ],
+   "evidence_type": "insight",
+   "signal_interpretation": {
+    "positive": "There is a specific insight that changes the customer's perspective — offer value is built through teaching.",
+    "negative": "None — offerings based on generic features/benefits ('innovative, customer-focused') that do not differentiate",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "CS-P02",
+   "text": "Reaksi apa yang Anda harapkan dari customer saat mendengar penawaran — setuju total, atau 'hmm, baru kepikiran'?",
+   "targets": [
+    "C6.3"
+   ],
+   "evidence_type": "reframe",
+   "signal_interpretation": {
+    "positive": "Mengharapkan refleksi/surprise — reframe benar; offer mendefinisikan kebutuhan",
+    "negative": "Mengharapkan persetujuan penuh — itu artinya mengajar di margin; customer sudah tahu dan sudah punya solusi sendiri",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch04",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "CS-P03",
+   "text": "Which unique strength that only you have does your Offer lead to — and how do you prove it?",
+   "targets": [
+    "V2.4",
+    "V2.1"
+   ],
+   "evidence_type": "strengths",
+   "signal_interpretation": {
+    "positive": "Specific unique strengths + proof — teaching culminates in 'why choose us', not free consulting",
+    "negative": "Can't answer / generic answer — free consulting; insight will be targeted by competitors",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "CS-P04",
+   "text": "If a customer asks for a 20% discount, what is your response?",
+   "targets": [
+    "L8.1",
+    "C6.3"
+   ],
+   "evidence_type": "control",
+   "signal_interpretation": {
+    "positive": "Acknowledge-defer lalu geser ke percakapan value/implications — take control, margin terlindungi",
+    "negative": "Langsung turunkan harga — passive posture; margin erosion, L8.1 terkunci",
+    "neutral": "Menawarkan sesuatu lain tanpa memahami alasan permintaan — setengah benar"
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "CS-P05",
+   "text": "How many stakeholders need to agree before the deal is finalized — and is your message tailored to each one?",
+   "targets": [
+    "M3.4"
+   ],
+   "evidence_type": "stakeholders",
+   "signal_interpretation": {
+    "positive": "Stakeholder terpetakan + pesan per-role (outcome/kekhawatiran masing-masing) — consensus dapat dibangun",
+    "negative": "One uniform message for everyone — consensus does not form, the deal dies midway.",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "CS-P06",
+   "text": "Stalled deal: know exactly who/what is holding it up — and what creative ideas have been tried to get it moving?",
+   "targets": [
+    "DS4.2",
+    "C6.1"
+   ],
+   "evidence_type": "innovation",
+   "signal_interpretation": {
+    "positive": "Peta decision process jelas + eksperimen un-stick spesifik — sales innovation",
+    "negative": "Menunggu/mengecek rutin tanpa strategi baru — deal inspection; zombie leads",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "CS-P07",
+   "text": "When was the last time you took a position that risked being rejected by a customer — what happened?",
+   "targets": [
+    "DM5.5",
+    "C6.1"
+   ],
+   "evidence_type": "control",
+   "signal_interpretation": {
+    "positive": "There is an assertive track record with measurable results — Challenger posture, controlled price pressure",
+    "negative": "Always passive / afraid of losing the relationship — trust is built via likability that doesn't win deals",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch02",
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "CS-P08",
+   "text": "From strong offerings — embedded in the business model, focus on what matters, differentiation, difficult to imitate — which ones do you already have?",
+   "targets": [
+    "V2.4"
+   ],
+   "evidence_type": "assessment",
+   "signal_interpretation": {
+    "positive": "Specific self-assessment with clear weak areas — echo 10 characteristics VPD; the basis for improvement exists",
+    "negative": "Mengklaim lengkap semua — tidak ada basis assessment",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

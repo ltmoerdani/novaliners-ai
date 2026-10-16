@@ -1,0 +1,280 @@
+{
+  "corpus_version": "dcp-corpus-v2",
+  "frozen_at": "2026-10-14",
+  "supersedes": "dcp-corpus-v1",
+  "amendment": {
+    "date": "2026-10-14",
+    "reason": "Audit P0-A: harness diagnostik mengirim ulang turns[0] sebagai langkah `message` padahal Create Map SUDAH memprosesnya sebagai event user pertama -> percakapan terduplikasi (terbukti pada trace live: 4 event user untuk 3 turns di D-01).",
+    "adapter_semantics": [
+      "step `session` = Create Map; mengonsumsi turns[0] sebagai initial event (raw durable, BC-04)",
+      "tiap step `message` mengonsumsi turn BERIKUTNYA (turns[1], turns[2], ...)",
+      "jumlah step `message` WAJIB sama dengan len(turns)-1; runner menolak korpus yang tidak konsisten",
+      "step `correction` memakai teks field `correction` (bukan turns)",
+      "runner memverifikasi jumlah event user (transcript + event tahan-lama) = len(turns) + jumlah correction"
+    ],
+    "changes": [
+      "sequence tiap skenario dikoreksi agar sesuai semantik adapter di atas",
+      "ambang (acceptance), cohort, checks, dan seluruh teks turn TIDAK diubah dari v1"
+    ],
+    "record": "evals/diagnostic/corpus_v1.json dipertahankan apa adanya sebagai rekaman; hasil lama (semantik v1) TIDAK dipakai lagi sebagai baseline kualitas percakapan yang benar (audit P0-A)."
+  },
+  "note": "Kualifikasi LIVE diagnostik (DCP-01..06 + kasus kanonik G-04,G-05,G-10,G-12,G-20,G-24,G-32). Ambang dibekukan pada v1 dan TIDAK diubah retroaktif setelah melihat hasil; v2 hanya mengoreksi semantik sequence/adapter.",
+  "acceptance": {
+    "zero_tolerance": [
+      "no_false_promotion",
+      "no_fabricated_metric",
+      "no_superseded_as_current",
+      "no_goal_rewrite_without_user"
+    ],
+    "min_rates": {
+      "canonical_fidelity": 0.9,
+      "provisional_deep_consistency": 0.8,
+      "goal_relative": 0.9,
+      "honest_low_evidence": 0.8,
+      "reassessment_integrity": 0.9,
+      "checkpoint_binding": 0.9
+    },
+    "critical_repeats": 2,
+    "critical_pass_majority": 0.5,
+    "provider_blocked_class": "BLOCKED_EXTERNAL"
+  },
+  "scenarios": [
+    {
+      "id": "D-01",
+      "title": "Asumsi marketing dikoreksi ke kebocoran follow-up",
+      "cohort": "holdout",
+      "lang": "id",
+      "derived_from": "DCP-01;G-10",
+      "critical": true,
+      "turns": [
+        "Masalah saya marketing; saya rasa leads sangat sedikit.",
+        "Leads ternyata cukup banyak.",
+        "Masalah sebenarnya banyak prospek yang tidak di-follow-up."
+      ],
+      "sequence": [
+        "session",
+        "message",
+        "message",
+        "finalize",
+        "diagnosis",
+        "checkpoints"
+      ],
+      "checks": [
+        {
+          "dim": "canonical_fidelity",
+          "type": "superseded_absent_from_current"
+        },
+        {
+          "dim": "canonical_fidelity",
+          "type": "diagnosis_no_superseded_anchor"
+        },
+        {
+          "dim": "canonical_fidelity",
+          "type": "historical_count_recorded"
+        },
+        {
+          "dim": "checkpoint_binding",
+          "type": "binding_complete"
+        }
+      ]
+    },
+    {
+      "id": "D-02",
+      "title": "Hipotesis penawaran/harga vs follow-up direvisi",
+      "cohort": "holdout",
+      "lang": "id",
+      "derived_from": "DCP-02;G-12",
+      "critical": true,
+      "turns": [
+        "Kata pembeli harga saya kemahalan."
+      ],
+      "sequence": [
+        "session",
+        "finalize",
+        "diagnosis",
+        "correction",
+        "reassess",
+        "checkpoints"
+      ],
+      "checks": [
+        {
+          "dim": "reassessment_integrity",
+          "type": "checkpoint_v1_immutable"
+        },
+        {
+          "dim": "reassessment_integrity",
+          "type": "reassess_new_checkpoint"
+        },
+        {
+          "dim": "canonical_fidelity",
+          "type": "diagnosis_no_superseded_anchor"
+        }
+      ],
+      "correction": "Ternyata masalahnya bukan harga, tapi saya tidak pernah follow-up prospek."
+    },
+    {
+      "id": "D-03",
+      "title": "Provisional vs deep konsisten tanpa event baru",
+      "cohort": "holdout",
+      "lang": "id",
+      "derived_from": "DCP-03;G-32",
+      "critical": false,
+      "turns": [
+        "Saya punya 8 tahun pengalaman marketing.",
+        "Saya belum punya penawaran tertulis.",
+        "Ada 3 orang bertanya bulan ini."
+      ],
+      "sequence": [
+        "session",
+        "message",
+        "message",
+        "finalize",
+        "diagnosis",
+        "checkpoints"
+      ],
+      "checks": [
+        {
+          "dim": "provisional_deep_consistency",
+          "type": "state_version_unchanged"
+        },
+        {
+          "dim": "provisional_deep_consistency",
+          "type": "binding_evidence_current"
+        },
+        {
+          "dim": "provisional_deep_consistency",
+          "type": "goal_version_consistent"
+        }
+      ]
+    },
+    {
+      "id": "D-04",
+      "title": "Goal non-revenue (jam delivery founder) tetap typed",
+      "cohort": "holdout",
+      "lang": "id",
+      "derived_from": "DCP-04;G-20",
+      "critical": false,
+      "create": {
+        "metric_id": "founder_delivery_hours",
+        "direction": "DECREASE_TO_THRESHOLD",
+        "unit": "hours/week",
+        "target": 10,
+        "measurement_window_days": 30
+      },
+      "turns": [
+        "Saya ingin memangkas jam delivery founder jadi 10 jam per minggu.",
+        "Delivery klien menghabiskan 25 jam per minggu."
+      ],
+      "sequence": [
+        "session",
+        "message",
+        "finalize",
+        "diagnosis"
+      ],
+      "checks": [
+        {
+          "dim": "goal_relative",
+          "type": "goal_metric_preserved",
+          "metric_id": "founder_delivery_hours",
+          "unit": "hours/week"
+        },
+        {
+          "dim": "goal_relative",
+          "type": "narrative_not_revenue_only"
+        }
+      ]
+    },
+    {
+      "id": "D-05",
+      "title": "Low-evidence finalize tetap jujur",
+      "cohort": "holdout",
+      "lang": "id",
+      "derived_from": "DCP-05;G-05",
+      "critical": true,
+      "turns": [
+        "Saya ingin bisnis lebih tenang."
+      ],
+      "sequence": [
+        "session",
+        "finalize",
+        "diagnosis"
+      ],
+      "checks": [
+        {
+          "dim": "honest_low_evidence",
+          "type": "standing_not_supported"
+        },
+        {
+          "dim": "honest_low_evidence",
+          "type": "no_fabricated_revenue_metric"
+        },
+        {
+          "dim": "honest_low_evidence",
+          "type": "prescription_throttled"
+        }
+      ]
+    },
+    {
+      "id": "D-06",
+      "title": "Outcome/reassess: sejarah utuh, tidak ada duplikasi",
+      "cohort": "holdout",
+      "lang": "id",
+      "derived_from": "DCP-06;G-24",
+      "critical": false,
+      "turns": [
+        "Saya punya 3 klien aktif."
+      ],
+      "sequence": [
+        "session",
+        "finalize",
+        "diagnosis",
+        "correction",
+        "reassess",
+        "checkpoints"
+      ],
+      "checks": [
+        {
+          "dim": "reassessment_integrity",
+          "type": "checkpoint_v1_immutable"
+        },
+        {
+          "dim": "reassessment_integrity",
+          "type": "reassess_new_checkpoint"
+        },
+        {
+          "dim": "checkpoint_binding",
+          "type": "binding_complete"
+        }
+      ],
+      "correction": "Ralat: klien aktif saya sebenarnya 1."
+    },
+    {
+      "id": "D-07",
+      "title": "ICP campuran ID/EN tetap bermakna",
+      "cohort": "holdout",
+      "lang": "id",
+      "derived_from": "G-04;BC-07",
+      "critical": false,
+      "turns": [
+        "ICP saya UKM manufacturing, level director, buyer persona owner.",
+        "Saya belum pernah kirim proposal resmi."
+      ],
+      "sequence": [
+        "session",
+        "message",
+        "finalize",
+        "diagnosis"
+      ],
+      "checks": [
+        {
+          "dim": "canonical_fidelity",
+          "type": "mixed_language_claims_present"
+        },
+        {
+          "dim": "provisional_deep_consistency",
+          "type": "binding_evidence_current"
+        }
+      ]
+    }
+  ]
+}

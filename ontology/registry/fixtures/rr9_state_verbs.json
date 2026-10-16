@@ -1,0 +1,30 @@
+{
+  "$comment": "FIXTURE RR9 v2 (owner 27 Sep, syarat 3) — kata kerja KEADAAN (stative verbs) TIDAK memicu warning: mereka menyatakan keadaan dunia, bukan cara. Ekspektasi: bersih (0 warning).",
+  "$expect": {
+    "errors": [],
+    "warnings": []
+  },
+  "entries": [
+    {
+      "requirement_id": "rr9.keadaan_bersih",
+      "definition": "Penawaran memuat pembeda yang berupa dimensi yang dipedulikan customer, disertai bukti bahwa customer membayar untuk nilai itu.",
+      "observability": [
+        "Pembeda berbentuk pernyataan pada dimensi customer",
+        "Penawaran berfungsi dan menarik bagi segmen",
+        "Bukti menyertai klaim"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Pembeda pada dimensi customer tersedia.",
+        "no_decisive": "Tidak ada informasi yang menetapkan apakah pembeda tersedia.",
+        "contradicting": "Terdapat bukti pembeda hanya klaim generik."
+      },
+      "provenance": {
+        "source_id": "vp",
+        "chapters": ["ch04"],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    }
+  ]
+}

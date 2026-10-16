@@ -1,0 +1,141 @@
+{
+ "$comment": "Diagnostic probes from Hooked (mapping §3). For onboarding/retention diagnosis.",
+ "probes": [
+  {
+   "probe_id": "HK-P01",
+   "text": "What does the customer do right before the moment they need [offer] — and what do they feel at that moment?",
+   "targets": [
+    "R7.2",
+    "C6.3"
+   ],
+   "evidence_type": "context",
+   "signal_interpretation": {
+    "positive": "Internal trigger (emotion/context) specifically identified — onboarding can be scheduled right when that emotion arises",
+    "negative": "Not knowing the triggering context/emotion — onboarding will miss the timing; additional friction",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HK-P02",
+   "text": "How many steps from when the customer feels a need to receiving the first value — and which ones can be removed?",
+   "targets": [
+    "R7.2"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "Alur terpetakan + langkah minimal; time-to-value singkat — friction rendah",
+    "negative": "Banyak langkah / tidak terpetakan — onboarding friction tinggi; user hilang sebelum nilai pertama",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HK-P03",
+   "text": "Dari 6 element simplicity (waktu, uang, effort, brain cycles, social deviance, non-routine), mana yang paling langka di customer saat ini?",
+   "targets": [
+    "R7.2"
+   ],
+   "evidence_type": "assessment",
+   "signal_interpretation": {
+    "positive": "Scarcest resource identified — improvement can be focused on one obstacle.",
+    "negative": "Not knowing which resource is the bottleneck — simplification will be misdirected.",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HK-P04",
+   "text": "What reward does the customer get each time they use you — and does it vary?",
+   "targets": [
+    "R7.2",
+    "DM5.6"
+   ],
+   "evidence_type": "reward",
+   "signal_interpretation": {
+    "positive": "Reward jelas + ada unsur variabilitas (tribe/hunt/self) — engagement berkelanjutan mungkin",
+    "negative": "Monotonous/predictable rewards — engagement will decay (finite variability)",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HK-P05",
+   "text": "What have customers 'entrusted' to you (data, content, history, reputation) that makes it difficult for them to switch?",
+   "targets": [
+    "R7.2",
+    "DM5.5"
+   ],
+   "evidence_type": "investment",
+   "signal_interpretation": {
+    "positive": "Stored value membentuk switching cost nyata — retensi terjaga",
+    "negative": "No stored value — the customer can leave without losing anything; zero switching cost",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "HK-P06",
+   "text": "Siapa habitual user Anda — mereka pakai seberapa sering, dan apa urutan aksi (Habit Path) mereka?",
+   "targets": [
+    "R7.2",
+    "DM5.6"
+   ],
+   "evidence_type": "behavioral",
+   "signal_interpretation": {
+    "positive": "Benchmark frequency + habit path codified from data — onboarding modifications can be data-driven",
+    "negative": "Tidak ada data frekuensi/path — retensi dikelola buta",
+    "neutral": null
+   },
+   "provenance": {
+    "source_id": "hk",
+    "chapters": [
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

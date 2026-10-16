@@ -1,0 +1,481 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "",
+  "found_version": 3,
+  "i18n": {},
+  "needs_rediagnosis": false,
+  "reason_code": null,
+  "status": "CURRENT"
+ },
+ "possible_paths": {
+  "generation": {
+   "considered": 3,
+   "emerged": [],
+   "mechanisms": [
+    {
+     "conflicts": [],
+     "derived": false,
+     "direct": false,
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "mechanism_id": "activation_bottleneck",
+     "status": "UNDETERMINED",
+     "title": "Activation bottleneck",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": false,
+     "direct": false,
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "mechanism_id": "onboarding_friction",
+     "status": "UNDETERMINED",
+     "title": "Onboarding friction",
+     "transcript_anchors": []
+    }
+   ],
+   "not_emergent": [],
+   "possibilities": [
+    {
+     "candidate_id": "cand.improve_activation_before_acquisition",
+     "conflicts": [],
+     "direction": "improve_activation_before_acquisition",
+     "disposition": "UNRESOLVED",
+     "emerging": "UNSUPPORTED",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "mechanism_ids": [],
+     "missing": [
+      "mechanism:activation_bottleneck",
+      "mechanism:onboarding_friction"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+        }
+       },
+       "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+       "signal": "mechanism:activation_bottleneck"
+      },
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:onboarding_friction"
+      }
+     ],
+     "presentation": {
+      "en": {
+       "basis": "Help new sign-ups reach value before you bring in more of them.",
+       "because": {
+        "activation_bottleneck": "Many people sign up, but too few reach the moment where the product pays off.",
+        "onboarding_friction": "Your first session is confusing, so people give up before they see value."
+       },
+       "short": "Improve activation first",
+       "word": "Activation"
+      }
+     },
+     "refuted": [],
+     "status": "UNDETERMINED",
+     "thesis": "acquiring more people into a weak activation only multiplies the leak",
+     "title": "Improve activation before increasing acquisition"
+    },
+    {
+     "candidate_id": "cand.define_aha_moment",
+     "conflicts": [],
+     "direction": "define_aha_moment",
+     "disposition": "UNRESOLVED",
+     "emerging": "UNSUPPORTED",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "mechanism_ids": [],
+     "missing": [
+      "mechanism:activation_bottleneck"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+        }
+       },
+       "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+       "signal": "mechanism:activation_bottleneck"
+      }
+     ],
+     "presentation": {
+      "en": {
+       "basis": "Name the moment a user first gets value, so you can tell if activation improves.",
+       "because": "New users are not reaching value, and nobody has named what value looks like.",
+       "short": "Define the aha moment",
+       "word": "Aha moment"
+      }
+     },
+     "refuted": [],
+     "status": "UNDETERMINED",
+     "thesis": "without a named aha moment nobody can tell if activation improves",
+     "title": "Define the aha moment"
+    }
+   ],
+   "rejected": [],
+   "undetermined": [
+    {
+     "candidate_id": "cand.improve_activation_before_acquisition",
+     "missing": [
+      "mechanism:activation_bottleneck",
+      "mechanism:onboarding_friction"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+        }
+       },
+       "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+       "signal": "mechanism:activation_bottleneck"
+      },
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:onboarding_friction"
+      }
+     ],
+     "strategy_id": "improve_activation_before_acquisition"
+    },
+    {
+     "candidate_id": "cand.define_aha_moment",
+     "missing": [
+      "mechanism:activation_bottleneck"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+        }
+       },
+       "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+       "signal": "mechanism:activation_bottleneck"
+      }
+     ],
+     "strategy_id": "define_aha_moment"
+    },
+    {
+     "candidate_id": "cand.simplify_onboarding",
+     "missing": [
+      "mechanism:onboarding_friction"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:onboarding_friction"
+      }
+     ],
+     "strategy_id": "simplify_onboarding"
+    }
+   ],
+   "unsupported_knowledge": [
+    {
+     "reason": "rule knowledge GW-R1 matched tetapi basisnya tidak dapat dibentuk: basis tak dapat dibentuk",
+     "signal": "rule:GW-R1"
+    },
+    {
+     "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+     "signal": "mechanism:activation_bottleneck"
+    }
+   ]
+  },
+  "paths": [],
+  "space_id": "growth",
+  "unresolved": [
+   {
+    "code": "INSUFFICIENT_VERIFIED_STATE",
+    "detail": "keadaan terverifikasi belum cukup untuk membentuk hipotesis path",
+    "i18n": {
+     "en": {
+      "detail": "We do not yet know enough about your situation to name a way forward with confidence."
+     }
+    },
+    "missing": [
+     "mechanism:activation_bottleneck",
+     "mechanism:onboarding_friction"
+    ],
+    "missing_detail": [
+     {
+      "i18n": {
+       "en": {
+        "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+       }
+      },
+      "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+      "signal": "mechanism:activation_bottleneck"
+     },
+     {
+      "i18n": {},
+      "reason": "",
+      "signal": "mechanism:onboarding_friction"
+     }
+    ]
+   }
+  ],
+  "version": 3
+ },
+ "projection": {
+  "emerging": [
+   {
+    "candidate_id": "cand.improve_activation_before_acquisition",
+    "conflicts": [],
+    "direction": "improve_activation_before_acquisition",
+    "key": "cand.improve_activation_before_acquisition",
+    "mechanism_ids": [],
+    "need": [],
+    "state": "UNSUPPORTED",
+    "title": {
+     "lang": "en",
+     "text": "Improve activation first"
+    }
+   },
+   {
+    "candidate_id": "cand.define_aha_moment",
+    "conflicts": [],
+    "direction": "define_aha_moment",
+    "key": "cand.define_aha_moment",
+    "mechanism_ids": [],
+    "need": [],
+    "state": "UNSUPPORTED",
+    "title": {
+     "lang": "en",
+     "text": "Define the aha moment"
+    }
+   }
+  ],
+  "generation": {
+   "considered": 3,
+   "emerged": [],
+   "mechanisms": [
+    {
+     "conflicts": [],
+     "derived": false,
+     "direct": false,
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "mechanism_id": "activation_bottleneck",
+     "status": "UNDETERMINED",
+     "title": "Activation bottleneck",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": false,
+     "direct": false,
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "mechanism_id": "onboarding_friction",
+     "status": "UNDETERMINED",
+     "title": "Onboarding friction",
+     "transcript_anchors": []
+    }
+   ],
+   "not_emergent": [],
+   "possibilities": [
+    {
+     "candidate_id": "cand.improve_activation_before_acquisition",
+     "conflicts": [],
+     "direction": "improve_activation_before_acquisition",
+     "disposition": "UNRESOLVED",
+     "emerging": "UNSUPPORTED",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "mechanism_ids": [],
+     "missing": [
+      "mechanism:activation_bottleneck",
+      "mechanism:onboarding_friction"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+        }
+       },
+       "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+       "signal": "mechanism:activation_bottleneck"
+      },
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:onboarding_friction"
+      }
+     ],
+     "presentation": {
+      "en": {
+       "basis": "Help new sign-ups reach value before you bring in more of them.",
+       "because": {
+        "activation_bottleneck": "Many people sign up, but too few reach the moment where the product pays off.",
+        "onboarding_friction": "Your first session is confusing, so people give up before they see value."
+       },
+       "short": "Improve activation first",
+       "word": "Activation"
+      }
+     },
+     "refuted": [],
+     "status": "UNDETERMINED",
+     "thesis": "acquiring more people into a weak activation only multiplies the leak",
+     "title": "Improve activation before increasing acquisition"
+    },
+    {
+     "candidate_id": "cand.define_aha_moment",
+     "conflicts": [],
+     "direction": "define_aha_moment",
+     "disposition": "UNRESOLVED",
+     "emerging": "UNSUPPORTED",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "mechanism_ids": [],
+     "missing": [
+      "mechanism:activation_bottleneck"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+        }
+       },
+       "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+       "signal": "mechanism:activation_bottleneck"
+      }
+     ],
+     "presentation": {
+      "en": {
+       "basis": "Name the moment a user first gets value, so you can tell if activation improves.",
+       "because": "New users are not reaching value, and nobody has named what value looks like.",
+       "short": "Define the aha moment",
+       "word": "Aha moment"
+      }
+     },
+     "refuted": [],
+     "status": "UNDETERMINED",
+     "thesis": "without a named aha moment nobody can tell if activation improves",
+     "title": "Define the aha moment"
+    }
+   ],
+   "rejected": [],
+   "undetermined": [
+    {
+     "candidate_id": "cand.improve_activation_before_acquisition",
+     "missing": [
+      "mechanism:activation_bottleneck",
+      "mechanism:onboarding_friction"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+        }
+       },
+       "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+       "signal": "mechanism:activation_bottleneck"
+      },
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:onboarding_friction"
+      }
+     ],
+     "strategy_id": "improve_activation_before_acquisition"
+    },
+    {
+     "candidate_id": "cand.define_aha_moment",
+     "missing": [
+      "mechanism:activation_bottleneck"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+        }
+       },
+       "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+       "signal": "mechanism:activation_bottleneck"
+      }
+     ],
+     "strategy_id": "define_aha_moment"
+    },
+    {
+     "candidate_id": "cand.simplify_onboarding",
+     "missing": [
+      "mechanism:onboarding_friction"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:onboarding_friction"
+      }
+     ],
+     "strategy_id": "simplify_onboarding"
+    }
+   ],
+   "unsupported_knowledge": [
+    {
+     "reason": "rule knowledge GW-R1 matched tetapi basisnya tidak dapat dibentuk: basis tak dapat dibentuk",
+     "signal": "rule:GW-R1"
+    },
+    {
+     "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+     "signal": "mechanism:activation_bottleneck"
+    }
+   ]
+  },
+  "navigation": {
+   "current_version": 3,
+   "detail": "",
+   "found_version": 3,
+   "i18n": {},
+   "needs_rediagnosis": false,
+   "reason_code": null,
+   "status": "CURRENT"
+  },
+  "paths": [],
+  "unresolved": [
+   {
+    "code": "INSUFFICIENT_VERIFIED_STATE",
+    "detail": "keadaan terverifikasi belum cukup untuk membentuk hipotesis path",
+    "i18n": {
+     "en": {
+      "detail": "We do not yet know enough about your situation to name a way forward with confidence."
+     }
+    },
+    "missing": [
+     "mechanism:activation_bottleneck",
+     "mechanism:onboarding_friction"
+    ],
+    "missing_detail": [
+     {
+      "i18n": {
+       "en": {
+        "reason": "A hint about Activation bottleneck cannot be backed by evidence, so it is not used"
+       }
+      },
+      "reason": "mekanisme activation_bottleneck: knowledge rule:GW-R1 tanpa basis",
+      "signal": "mechanism:activation_bottleneck"
+     },
+     {
+      "i18n": {},
+      "reason": "",
+      "signal": "mechanism:onboarding_friction"
+     }
+    ]
+   }
+  ],
+  "version": 4
+ }
+}

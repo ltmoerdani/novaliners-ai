@@ -1,0 +1,267 @@
+{
+ "$comment": "Evidence rules dari The Mom Test (mapping §3). consequence.action dipilih per rule; condition tetap prosa terstruktur — compiler tahap 2 yang mengkompilasi ke engine.",
+ "evidence_rules": [
+  {
+   "rule_id": "TM-R01",
+   "condition": "evidence about need in the form of hypothetical_intention (e.g., 'I will definitely buy') AND behavioral_evidence is absent",
+   "matcher_hint": "The user RECOUNTS their own future intention, plan, or optimistic prediction about demand as if it were evidence (e.g. 'kalau bisa...', 'saya yakin akan laris', 'rencananya saya akan...'), WITHOUT behavioral or transactional evidence that the need behind it has been tested.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "V2.4",
+     "DM5.6"
+    ],
+    "rationale": "Future promise = over-optimistic lie; false positive terbesar (kasus $10M). Confidence demand hypothesis tetap rendah."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "evaluation_note": "Klausa 'behavioral_evidence tidak ada' bersifat need-scoped (relasional). Predicate hanya bisa menyatakan fakta ledger-wide -> memaksakan tier-1 menghasilkan false negative (terbukti pada kasus Rina: 1 evidence transactional tak-terkait memblokir rule). Klasifikasi judgment."
+  },
+  {
+   "rule_id": "TM-R02",
+   "condition": "user responses in the form of compliments toward the idea/product ('cool', 'good luck', 'will try it when it launches')",
+   "matcher_hint": "The user RECOUNTS that prospects responded with compliments about the idea or product ('keren', 'sukses ya', 'akan dicoba nanti') instead of facts about their own behaviour or budget.",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_present_pattern": "\\b(keren|menarik banget|sukses ya|akan dicoba|mantap|bagus idenya|cool|awesome|very interesting|will try)\\b"
+      },
+      {
+       "none_of": [
+        {
+         "text_present_pattern": "\\b(tidak|nggak|belum|jangan|tanpa)\\s+(pernah\\s+)?(akan\\s+)?(keren|menarik banget|sukses ya|akan dicoba|mantap|bagus idenya|cool|awesome)\\b"
+        }
+       ]
+      }
+     ]
+    },
+    "version": "v0.5"
+   },
+   "consequence": {
+    "action": "IGNORE_SIGNAL",
+    "targets": [
+     "DM5.5"
+    ],
+    "rationale": "Compliment = fool's gold, zero data. Justru flag: user kemungkinan trying-to-get-rid-of-you. Trust deficit justru menggantung."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "evaluation_note": "iter-21 fix (sesi manual Rina): frasa 'tidak akan dicoba karena tanpa budget' memicu match palsu — compliment dilarang berada dalam konstruksi negasi 24-char sebelum frasa. (Rule pernah salah klasifikasi: kasus pertama di evaluation_note lama tetap berlaku.)"
+  },
+  {
+   "rule_id": "TM-R03",
+   "condition": "user TIDAK pernah mencari solusi existing (tidak pernah googled, tidak ada workaround, tidak tahu alternatif ada)",
+   "matcher_hint": "The user RECOUNTS never having searched for existing solutions or workarounds for the problem (never googled, no competitor mentioned, no DIY attempt).",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.1",
+     "DM5.6"
+    ],
+    "rationale": "If they haven't looked for ways of solving it, they're not going to buy yours. Bukan customer."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "TM-R04",
+   "condition": "The problem is mentioned by the user BUT implications = zero (taken for granted, no time/money cost is allocated).",
+   "matcher_hint": "The user RECOUNTS a problem or complaint BUT describes no cost, loss, or quantified implication of it - accepted as-is, with no money or time at stake.",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_present_pattern": "\\b(masalah|keluhan|complaint|kendala)\\b"
+      },
+      {
+       "text_absent_pattern": "(rp\\s?\\d|\\d+\\s?(juta|jt|miliar|m)|persen|\\d+\\s?%|bulan ke depan|runway|rugi|omzet|revenue)"
+      }
+     ]
+    },
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "C6.3",
+     "V2.4"
+    ],
+    "rationale": "Vitamin, bukan painkiller. Loud complaint tanpa implikasi mahal = non-problem komersial."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01",
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "TM-R05",
+   "condition": "cross-conversation feedback on the same segment is NOT consistent (problems & goals differ across each conversation)",
+   "matcher_hint": "The user RECOUNTS feedback across conversations within the SAME segment that is inconsistent - problems and goals vary widely between prospects of that segment.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "FLAG_SEGMENT",
+    "targets": [
+     "M3.1"
+    ],
+    "rationale": "Inconsistent signal = segment too broad (mungkin 20 jenis customer berbeda). Perbaiki segment, bukan pertanyaan."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "TM-R06",
+   "condition": "The customer segment has no concrete physical/digital location to be encountered (there is no who-where pair).",
+   "matcher_hint": "The user RECOUNTS a customer segment with NO concrete physical or digital place to meet them (no venue, no channel, no who-where pair).",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "BLOCK_VERDICT",
+    "targets": [
+     "M3.1"
+    ],
+    "rationale": "A segment without a who-where pair can neither be validated nor reached by distribution. Slice first before concluding demand."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "TM-R07",
+   "condition": "percakapan berakhir TANPA commitment DAN TANPA rejection eksplisit (wishy-washy, tanpa next steps)",
+   "matcher_hint": "The user RECOUNTS that a conversation or proposal thread ended WITHOUT any commitment AND WITHOUT an explicit rejection (wishy-washy, no next step).",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "IGNORE_SIGNAL",
+    "targets": [
+     "V2.4",
+     "DM5.6"
+    ],
+    "rationale": "Meeting tanpa commitment atau rejection = failed meeting. Datanya tidak boleh menaikkan confidence apa pun."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "TM-R08",
+   "condition": "user memberikan commitment berupa waktu signifikan / reputasi (intro ke decision maker, testimonial) / uang (LOI, pre-order, deposit)",
+   "matcher_hint": "The user RECOUNTS receiving a serious commitment of time or reputation from a prospect (an introduction to a decision maker, a written testimonial, a paid pilot).",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "V2.4",
+     "DM5.5",
+     "DM5.6"
+    ],
+    "rationale": "The more they give up, the more you can trust. Commitment = satu-satunya proof yang sah; semakin tinggi currency, semakin besar kenaikan confidence."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "TM-R09",
+   "condition": "dominant business risk = product risk ('if you can build it, I'll buy it') — not customer/market risk",
+   "matcher_hint": "The user RECOUNTS product risk as the dominant business risk ('kalau kamu bisa bangun, saya beli') rather than customer or market risk.",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "text_present_pattern": "(kalau (kamu|anda) bisa (bangun|buat|bikin)|kalau jadi (dibangun|dibuat)|saya beli kalau (bisa|jadi)|if you can (build|make|create) it)"
+    },
+    "version": "v0.4"
+   },
+   "consequence": {
+    "action": "BLOCK_VERDICT",
+    "targets": [
+     "D1.2"
+    ],
+    "rationale": "Customer conversations cannot validate product risk. The verdict 'validated by conversations' is invalid; a build test is needed."
+   },
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

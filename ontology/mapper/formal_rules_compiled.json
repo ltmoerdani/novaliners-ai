@@ -1,0 +1,263 @@
+{
+ "$comment": "ARTEFAK KOMPILASI FORMAL — PROMOSI FASE-5 (27 Sep). 3 predikat lolos kalibrasi fase-1..4 (predicate execution · branch-exact · semantic coverage · cross-evidence/unit) + T8 unit-conflict; verdict LOCK per fase oleh owner. compiled_by = METODE kompilasi; review = provenance approval (bukan authority — authority = reviewed artifact). source_rule_sha256 = hash per-rid teks cabang satisfaction_rule registry live. PROMOSI A3 (27 Sep, int 09 §9.8): access.icp + offering.differentiation — kriteria FP=0 & MIXED=0; recall rendah diterima (FN -> UNKNOWN, INV-R9). offering.problem DITAHAN sampai B1.",
+ "access.prospect_list": {
+  "predicates": {
+   "mode": "PARTIAL",
+   "sufficient": {
+    "any_of": [
+     {
+      "text_contains_all": [
+       "seluruh entri",
+       "nama nyata",
+       "asal yang jelas"
+      ]
+     }
+    ]
+   },
+   "partial": {
+    "any_of": [
+     {
+      "all_of": [
+       {
+        "text_contains_all": [
+         "nama nyata",
+         "asal yang jelas"
+        ]
+       },
+       {
+        "text_present_pattern": "entri lain[^.;]*(tidak|belum|tanpa)"
+       }
+      ]
+     }
+    ]
+   },
+   "no_decisive": {
+    "text_present_pattern": "(?!)"
+   },
+   "contradicting": {
+    "any_of": [
+     {
+      "text_contains_any": [
+       "daftar prospek kosong"
+      ]
+     },
+     {
+      "all_of": [
+       {
+        "text_contains_any": [
+         "network"
+        ]
+       },
+       {
+        "text_present_pattern": "tanpa nama|belum punya nama|tanpa satu pun nama"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "compiled_by": "deterministic_v1",
+  "review": "owner:fase1-4-lock-27Sep;5a-semantic-fix",
+  "source_rule_sha256": "30b3a8b32d4eecf53023e092b04d1fd473eaf6c68879c572a3cf0e00531c2cf7"
+ },
+ "offering.exists": {
+  "predicates": {
+   "mode": "BINARY",
+   "sufficient": {
+    "any_of": [
+     {
+      "all_of": [
+       {
+        "text_contains_any": [
+         "produk",
+         "jasa",
+         "penawaran"
+        ]
+       },
+       {
+        "text_contains_any": [
+         "konkret"
+        ]
+       },
+       {
+        "text_contains_any": [
+         "deliverable"
+        ]
+       },
+       {
+        "text_absent_pattern": "belum|masih"
+       }
+      ]
+     }
+    ]
+   },
+   "no_decisive": {
+    "text_present_pattern": "(?!)"
+   },
+   "contradicting": {
+    "any_of": [
+     {
+      "text_contains_any": [
+       "masih berupa ide",
+       "belum konkret",
+       "berupa rancangan"
+      ]
+     }
+    ]
+   }
+  },
+  "compiled_by": "deterministic_v1",
+  "review": "owner:fase1-4-lock-27Sep;5a-semantic-fix",
+  "source_rule_sha256": "fb6c14958c31c5d90b7799e6ad41dbda3226650828ce25c35b25884522ebd1aa"
+ },
+ "experiment.baseline_comparison": {
+  "predicates": {
+   "mode": "PARTIAL",
+   "sufficient": {
+    "any_of": [
+     {
+      "all_of": [
+       {
+        "text_contains_any": [
+         "setiap perubahan",
+         "seluruh perubahan"
+        ]
+       },
+       {
+        "text_contains_any": [
+         "dibandingkan terhadap"
+        ]
+       },
+       {
+        "text_contains_any": [
+         "tercatat"
+        ]
+       },
+       {
+        "text_absent_pattern": "tidak tercatat|belum tercatat"
+       }
+      ]
+     }
+    ]
+   },
+   "partial": {
+    "any_of": [
+     {
+      "all_of": [
+       {
+        "text_contains_any": [
+         "setidaknya satu",
+         "sebagian",
+         "beberapa"
+        ]
+       },
+       {
+        "text_contains_any": [
+         "tercatat"
+        ]
+       },
+       {
+        "text_contains_any": [
+         "dibandingkan terhadap"
+        ]
+       },
+       {
+        "text_contains_any": [
+         "belum dibandingkan"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "no_decisive": {
+    "text_present_pattern": "(?!)"
+   },
+   "contradicting": {
+    "any_of": [
+     {
+      "text_contains_any": [
+       "tanpa baseline"
+      ]
+     }
+    ]
+   }
+  },
+  "compiled_by": "deterministic_v1",
+  "review": "owner:fase1-4-lock-27Sep;5a-semantic-fix",
+  "source_rule_sha256": "ec5cc5cd867288c9a39d3b536c2628f1e3547f6932b52219f5c25b2275844b48"
+ },
+ "access.icp": {
+  "predicates": {
+   "mode": "BINARY",
+   "sufficient": {
+    "any_of": [
+     {
+      "text_contains_all": [
+       "icp",
+       "jenis",
+       "level",
+       "dan peran"
+      ]
+     }
+    ]
+   },
+   "no_decisive": {
+    "text_present_pattern": "(?!)"
+   },
+   "contradicting": {
+    "any_of": [
+     {
+      "text_contains_any": [
+       "siapa saja"
+      ]
+     }
+    ]
+   }
+  },
+  "compiled_by": "deterministic_v1",
+  "review": "owner:A3-27Sep;kriteria FP=0&MIXED=0 (challenge matrix 6f6ffdb)",
+  "source_rule_sha256": "a8f411e6eff11c907ceb58fc571e699c3769801157eb16c11641f74221b55133"
+ },
+ "offering.differentiation": {
+  "predicates": {
+   "mode": "BINARY",
+   "sufficient": {
+    "any_of": [
+     {
+      "all_of": [
+       {
+        "text_contains_any": [
+         "pembeda"
+        ]
+       },
+       {
+        "text_contains_any": [
+         "peduli"
+        ]
+       },
+       {
+        "text_absent_pattern": "bukan yang dipedulikan|tidak dipedulikan"
+       }
+      ]
+     }
+    ]
+   },
+   "no_decisive": {
+    "text_present_pattern": "(?!)"
+   },
+   "contradicting": {
+    "any_of": [
+     {
+      "text_contains_any": [
+       "kualitas kami bagus"
+      ]
+     }
+    ]
+   }
+  },
+  "compiled_by": "deterministic_v1",
+  "review": "owner:A3-27Sep;kriteria FP=0&MIXED=0 (challenge matrix 6f6ffdb)",
+  "source_rule_sha256": "c0db3cac48374374b0e07d3240d220af2a0f626445f208299570f136598a21af"
+ }
+}

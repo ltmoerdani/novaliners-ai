@@ -1,0 +1,129 @@
+{
+  "$schema_version": "0.2",
+  "name": "NOVALINERS KNOWLEDGE SCHEMA v0.1",
+  "note": "Schema minimal untuk Knowledge Compiler tahap 1. Scope: entitas yang dibutuhkan pilot extraction (The Mom Test). Entitas future (Concept, Claim, Principle, Condition, Mechanism, Relationship Graph penuh, Outcome) disiapkan sebagai reserved — tidak diisi sampai ada sumber kedua. Lihat docs/knowledge/schema/knowledge-schema-v0.1.md.",
+  "enums": {
+    "lifecycle": ["CANDIDATE", "EXTRACTED", "NORMALIZED", "MAPPED", "REVIEWED", "APPROVED", "PRODUCTION", "CHALLENGED", "UNDER_REVIEW", "REVISED", "RETIRED"],
+    "knowledge_type": ["source_claim", "novaliners_synthesis", "empirical_outcome"],
+    "evidence_type": ["behavioral", "hypothetical", "implication", "workaround", "motivation", "process", "commitment", "priority", "context", "quantitative", "network", "meta", "segment", "language", "focus", "formulation", "assessment", "stage", "hypothesis", "insight", "reframe", "strengths", "control", "stakeholders", "innovation", "reward", "investment"],
+    "constraint_id": ["D1.2", "V2.1", "V2.4", "M3.1", "M3.4", "DS4.2", "DM5.5", "DM5.6", "C6.1", "C6.3", "C6.4", "R7.2", "L8.1"],
+    "probe_signal": ["positive", "negative", "neutral"]
+  },
+  "applicability_conditions": [
+    {
+      "$comment": "AKTIVASI PERTAMA (trigger v0.2, internal-docs §2.7) — kontradiksi TM vs CS pada discovery. Runtime rule: fase LEARNING → aktifkan TM (CS-R06 nonaktif); fase OFFER/COMPLEX-SALE → aktifkan CS (TM probes discovery tidak dipaksa).",
+      "condition_id": "AC-01",
+      "sources": ["tm", "cs"],
+      "topic": "discovery vs teaching",
+      "conflict": "TM: talk less / ask / never mention idea. CS: tell customers what they need / lead with hypotheses.",
+      "resolution": "Keduanya benar di fase berbeda: TM governs LEARNING; CS governs OFFER delivery pada complex/risk-averse sales setelah riset TM-style selesai."
+    },
+    {
+      "$comment": "AC-02 (buku #4 Hooked vs VPD/TM) — asumsi vitamin-vs-painkiller.",
+      "condition_id": "AC-02",
+      "sources": ["vp", "hk"],
+      "topic": "vitamin vs painkiller",
+      "conflict": "VPD/TM: validasi pain nyata dulu (painkiller-first, komitmen wajib). HK: habit products mulai sebagai vitamins dan menjadi painkillers setelah habit terbentuk.",
+      "resolution": "Fase VALIDASI → perlakukan offer sebagai painkiller (bukti komitmen wajib, TM/VP aktif). Fase RETENSI produk digital berengagement tinggi yang sudah terbukti laku → HK habit path sah. Produk/jasa frekuensi rendah → HK tidak berlaku (habit zone check gagal)."
+    }
+  ],
+  "entities": {
+    "source": {
+      "description": "Buku/artikel/expert yang menjadi asal knowledge.",
+      "required": ["source_id", "title", "author", "type"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "title": {"type": "string"},
+        "author": {"type": "string"},
+        "type": {"enum": ["book", "paper", "research", "expert", "case_study", "internal"]},
+        "year": {"type": ["integer", "null"]},
+        "source_file": {"type": ["string", "null"], "note": "path lokal PDF/EPUB, tidak di-commit"},
+        "skill_path": {"type": ["string", "null"], "note": "path book-to-skill output"}
+      }
+    },
+    "probe": {
+      "description": "Diagnostic probe — pertanyaan yang diajukan engine ke user untuk mengumpulkan evidence terhadap constraint tertentu.",
+      "required": ["probe_id", "text", "targets", "evidence_type", "signal_interpretation", "provenance", "lifecycle"],
+      "properties": {
+        "probe_id": {"type": "string", "pattern": "^[A-Z]{2}-P[0-9]{2}$", "note": "prefix 2 huruf per source: TM=The Mom Test, VP=Value Prop Design, dst"},
+        "text": {"type": "string", "note": "pertanyaan utuh siap dipakai interview engine"},
+        "targets": {"type": "array", "items": "constraint_id", "minItems": 1, "note_load_rule": "KOSONG diperbolehkan HANYA jika evidence_type == 'meta' (probe pemantik tanpa sasaran constraint)"},
+        "evidence_type": {"enum_ref": "evidence_type"},
+        "signal_interpretation": {
+          "type": "object",
+          "required": ["positive", "negative"],
+          "properties": {
+            "positive": {"type": "string", "note": "apa arti jawaban yang menguatkan constraint"},
+            "negative": {"type": "string", "note": "apa arti jawaban yang melemahkan/membantah constraint"},
+            "neutral": {"type": ["string", "null"]}
+          }
+        },
+        "provenance": {"ref": "provenance"},
+        "lifecycle": {"enum_ref": "lifecycle", "default": "CANDIDATE"}
+      }
+    },
+    "evidence_rule": {
+      "description": "Rule deterministik IF-THEN yang mengubah evidence menjadi penilaian (naikkan/turunkan confidence, veto). Layer A — deterministic knowledge.",
+      "required": ["rule_id", "condition", "consequence", "provenance", "lifecycle"],
+      "properties": {
+        "rule_id": {"type": "string", "pattern": "^[A-Z]{2}-R[0-9]{2}$"},
+        "condition": {"type": "string", "note": "kondisi dalam bahasa IF — boleh pseudo-structured, compiler tahap 2 yang mengkompilasi ke kode"},
+        "consequence": {
+          "type": "object",
+          "required": ["action"],
+          "properties": {
+            "action": {"enum": ["RAISE_CONFIDENCE", "LOWER_CONFIDENCE", "BLOCK_VERDICT", "FLAG_SEGMENT", "IGNORE_SIGNAL"]},
+            "targets": {"type": "array", "items": "constraint_id"},
+            "rationale": {"type": "string"}
+          }
+        },
+        "provenance": {"ref": "provenance"},
+        "lifecycle": {"enum_ref": "lifecycle"}
+      }
+    },
+    "anti_pattern": {
+      "description": "Perilaku/sinyal yang harus dideteksi dan diberi flag oleh engine (baik pada diri user maupun pada reasoning engine sendiri).",
+      "required": ["pattern_id", "name", "symptom", "constraint_link", "provenance", "lifecycle"],
+      "properties": {
+        "pattern_id": {"type": "string", "pattern": "^[A-Z]{2}-A[0-9]{2}$"},
+        "name": {"type": "string"},
+        "symptom": {"type": "string"},
+        "constraint_link": {"type": "array", "items": "constraint_id"},
+        "provenance": {"ref": "provenance"},
+        "lifecycle": {"enum_ref": "lifecycle"}
+      }
+    },
+    "intervention": {
+      "description": "Aksi konkret yang mengubah state user. Terhubung ke constraint dan punya expected evidence (syarat outcome measurement).",
+      "required": ["intervention_id", "name", "targets", "expected_evidence", "provenance", "lifecycle"],
+      "properties": {
+        "intervention_id": {"type": "string", "pattern": "^[A-Z]{2}-I[0-9]{2}$"},
+        "name": {"type": "string"},
+        "targets": {"type": "array", "items": "constraint_id", "minItems": 1},
+        "expected_evidence": {"type": "string", "note": "bagaimana success diukur — dipakai Outcome Learning Store nanti"},
+        "contraindicated_until": {"type": ["string", "null"], "note": "kondisi yang harus terpenuhi dulu sebelum intervention ini boleh"},
+        "provenance": {"ref": "provenance"},
+        "lifecycle": {"enum_ref": "lifecycle"}
+      }
+    },
+    "provenance": {
+      "description": "Jejak sumber wajib di setiap knowledge item (internal-docs §2).6.",
+      "required": ["source_id", "chapters"],
+      "properties": {
+        "source_id": {"type": "string"},
+        "chapters": {"type": "array", "items": "string", "minItems": 1},
+        "knowledge_type": {"enum_ref": "knowledge_type", "default": "source_claim"},
+        "confidence": {"enum": ["normative_only", "expert_hypothesis", "empirical_low", "empirical_high"], "default": "normative_only"}
+      }
+    }
+  },
+  "reserved_entities_v0_2": {
+    "note": "Disiapkan tapi belum diisi — prasyaratnya ada ≥2 sumber untuk menguji relationship antar-sumber.",
+    "list": ["concept", "claim", "principle", "condition", "mechanism", "relationship (supports/contradicts/depends/mimics/causes)", "outcome_trajectory", "applicability_condition (competing frameworks, internal-docs §2.7)"]
+  },
+  "constraints": {
+    "vector_search_ban": "Vector search hanya untuk semantic discovery — tidak boleh menentukan keputusan (internal-docs §2 Register).",
+    "non_immutable": "Semua item punya lifecycle; knowledge tidak immutable (internal-docs §2.6).",
+    "provenance_mandatory": "Item tanpa provenance tidak valid — rejected at load time."
+  }
+}

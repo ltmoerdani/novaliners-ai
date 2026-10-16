@@ -1,0 +1,96 @@
+{
+  "base": "http://127.0.0.1:8791",
+  "startedAt": "2026-10-18T17:16:16.252Z",
+  "steps": [
+    {
+      "name": "start screen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "interview opens",
+      "ok": true,
+      "detail": "What we will ask next · A written ideal client\nIt applies to your situation. We cannot tell yet where you stand on it.\nWhy we ask this"
+    },
+    {
+      "name": "interview turn 1",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "interview turn 2",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "interview turn 3",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "diagnosis built",
+      "ok": true,
+      "detail": "http://127.0.0.1:8791/#/diagnosis/result"
+    },
+    {
+      "name": "maps shows the paths",
+      "ok": true,
+      "detail": "paths=5"
+    },
+    {
+      "name": "asked the engine for the next move",
+      "ok": true,
+      "detail": "[{\"move_id\":\"mv-60b888ea\",\"lifecycle\":\"PLANNED\",\"path\":\"path.direct_outreach\",\"actions\":[{\"id\":\"ma-a37df7c20b\",\"title\":\"Write the ideal-client profile: business type, level, and the buyer's role\",\"status\":\"TODO\",\"required\":true}]}]"
+    },
+    {
+      "name": "a canonical move exists with an action list",
+      "ok": true,
+      "detail": "{\"move_id\":\"mv-60b888ea\",\"lifecycle\":\"PLANNED\",\"path\":\"path.direct_outreach\",\"actions\":[{\"id\":\"ma-a37df7c20b\",\"title\":\"Write the ideal-client profile: business type, level, and the buyer's role\",\"status\":\"TODO\",\"required\":true}]}"
+    },
+    {
+      "name": "tick action ma-a37df7c20b",
+      "ok": true,
+      "detail": "lifecycle=EXECUTED done=1/1"
+    },
+    {
+      "name": "the SAME move advanced to EXECUTED",
+      "ok": true,
+      "detail": "lifecycle=EXECUTED"
+    },
+    {
+      "name": "result recorded on the move",
+      "ok": true,
+      "detail": "lifecycle=OBSERVED"
+    },
+    {
+      "name": "no next move authorized yet - frontier recorded",
+      "ok": true,
+      "detail": "{\"kind\":\"NEXT_MOVE_PENDING\",\"move_id\":null,\"last_move_id\":\"mv-60b888ea\"}"
+    },
+    {
+      "name": "maps renders the SAME move_id",
+      "ok": true,
+      "detail": "stations=1 | Write the ideal-client profile: business type, level, and the buyer's role · 1 of 1 actions completed · OBSERVED"
+    },
+    {
+      "name": "maps shows the NEW move as its own node",
+      "ok": false,
+      "detail": "[\"Write the ideal-client profile: business type, level, and the buyer's role · OBSERVED\"]"
+    },
+    {
+      "name": "journey reached",
+      "ok": true,
+      "detail": "http://127.0.0.1:8791/#/journey"
+    }
+  ],
+  "verdict": "PARTIAL",
+  "move_id": "mv-60b888ea",
+  "lifecycle_after_ticks": "EXECUTED",
+  "maps_station_title": "Write the ideal-client profile: business type, level, and the buyer's role · 1 of 1 actions completed · OBSERVED",
+  "maps_stations": 1,
+  "maps_sequence": [
+    "Write the ideal-client profile: business type, level, and the buyer's role · OBSERVED"
+  ],
+  "finishedAt": "2026-10-18T17:18:02.852Z",
+  "video": "/Users/ltmoerdani/Startup/the engine/e2e/__video__/page@e775a08670c6c3fd715e8956ebb1bdf2.webm"
+}

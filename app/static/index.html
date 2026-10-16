@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>(function(){var t;try{t=localStorage.getItem("novaliners-theme")}catch(e){}if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t})()</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Novaliners Revenue Navigation Map: finds the one constraint holding your income back, maps the possible paths, and gives you one evidence-first next step. GO. STOP. OR DO SOMETHING ELSE.">
+<meta property="og:title" content="Novaliners · Revenue Navigation Map">
+<meta property="og:description" content="Evidence-first revenue diagnosis: find the constraint, map the paths, take the next right move.">
+<meta property="og:type" content="website">
+<title>Novaliners · Revenue Navigation Map</title>
+<link rel="icon" href="/static/assets/novaliners-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="preload" href="/static/app.css?v=6" as="style">
+<link rel="preload" href="/static/js/util.js" as="script">
+<link rel="preload" href="/static/js/engine-text.js" as="script">
+<link rel="preload" href="/static/js/demo-data.js" as="script">
+<link rel="preload" href="/static/js/store.js" as="script">
+<link rel="preload" href="/static/js/api.js" as="script">
+<link rel="preload" href="/static/js/live.js" as="script">
+<link rel="preload" href="/static/js/present-cap.js" as="script">
+<link rel="preload" href="/static/js/live-vm.js" as="script">
+<link rel="preload" href="/static/js/demo-sim.js" as="script">
+<link rel="preload" href="/static/js/ui-kit.js" as="script">
+<link rel="preload" href="/static/js/shell.js" as="script">
+<link rel="preload" href="/static/js/screens-onboarding.js" as="script">
+<link rel="preload" href="/static/js/screens-home.js" as="script">
+<link rel="preload" href="/static/js/screens-map-journey.js" as="script">
+<link rel="preload" href="/static/js/screens-other.js" as="script">
+<link rel="preload" href="/static/js/screens-live-chat.js" as="script">
+<link rel="preload" href="/static/js/screens-live-reveal.js" as="script">
+<link rel="preload" href="/static/js/screens-live-home.js" as="script">
+<link rel="preload" href="/static/js/maps-topology.js" as="script">
+<link rel="preload" href="/static/js/screens-live-map.js" as="script">
+<link rel="preload" href="/static/js/screens-readiness.js" as="script">
+<link rel="preload" href="/static/js/screens-ask.js" as="script">
+<link rel="preload" href="/static/js/screens-live-readiness.js" as="script">
+<link rel="preload" href="/static/js/screens-live-ask.js" as="script">
+<link rel="preload" href="/static/js/overlays.js" as="script">
+<link rel="preload" href="/static/js/widget.js" as="script">
+<link rel="preload" href="/static/js/router.js" as="script">
+<link rel="stylesheet" href="/static/app.css?v=6">
+<link rel="stylesheet" href="/static/live.css?v=3">
+</head>
+<body>
+<a class="skip-link" href="#app-root">Skip to main content</a>
+<!-- FLOATING PROTOTYPE SWITCHER WIDGET (Can be minimized on the right side of the screen) -->
+<div id="proto-widget">
+  <!-- Minimized Trigger Pill -->
+  <button id="proto-widget-btn" onclick="toggleProtoWidget()" style="display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--border-subtle);border:1px solid var(--ink-2b);border-radius:999px;padding:7px 14px 7px 12px;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.25);transition: background-color 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s, opacity 0.15s, transform 0.15s;backdrop-filter:blur(8px)" onmouseover="this.style.background='var(--ink-hover)';this.style.borderColor='var(--ink-3)'" onmouseout="this.style.background='var(--ink)';this.style.borderColor='var(--ink-2b)'" title="Open screen and persona menu">
+    <div style="width:7px;height:7px;border-radius:50%;background:var(--open-line-2);box-shadow:0 0 8px var(--open-line-2)"></div>
+    <span style="color:var(--ink-muted)">Screen:</span>
+    <span id="proto-widget-current-screen" style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">01 · Start (/)</span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+
+  <!-- Expanded Card -->
+  <div id="proto-widget-card" style="display:none;width:300px;background:var(--ink);color:var(--border-subtle);border:1px solid var(--ink-2b);border-radius:14px;padding:14px 16px;box-shadow:0 12px 32px rgba(0,0,0,0.35);flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--ink-hover)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="/static/assets/novaliners-mark.png" alt="Novaliners" style="height:16px;width:auto;display:inline-block;object-fit:contain" onerror="this.style.display='none'">
+        <span style="font-size:12px;font-weight:700;color:var(--on-ink)">Novaliners Dev</span>
+        <span style="font-size:9.5px;padding:1px 6px;border-radius:4px;background:var(--ink-hover);color:var(--ink-muted);font-weight:600">v11</span>
+      </div>
+      <button onclick="toggleProtoWidget()" style="display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--ink-muted);padding:3px 8px;border-radius:6px;background:var(--ink-hover);border:1px solid var(--ink-2b);cursor:pointer;transition: background-color 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s, opacity 0.15s, transform 0.15s" onmouseover="this.style.color='var(--on-ink)';this.style.background='var(--ink-2b)'" onmouseout="this.style.color='var(--ink-muted)';this.style.background='var(--ink-hover)'" title="Minimize">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+        <span>Minimize</span>
+      </button>
+    </div>
+
+    <!-- Screen Selector -->
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <label style="font-size:11px;font-weight:600;color:var(--ink-muted);display:flex;justify-content:space-between">
+        <span>Switch screen:</span>
+        <span style="font-size:10px;color:var(--ink-3)">Testing Flow</span>
+      </label>
+      <select id="screen-selector" onchange="widgetGo(this.value);updateProtoWidgetLabel()" style="width:100%;background:var(--ink-hover);color:var(--on-ink);border:1px solid var(--ink-2b);border-radius:8px;padding:6px 10px;font-size:12px;font-family:var(--font-ui);outline:none;cursor:pointer">
+        <optgroup label="V11 PRODUCT">
+          <option value="state" selected>State</option>
+          <option value="maps">Maps · Explore</option>
+          <option value="maps:readiness">Maps · Readiness</option>
+          <option value="moves">Moves</option>
+          <option value="journey">Journey</option>
+          <option value="talk">Talk</option>
+        </optgroup>
+        <optgroup label="Entry flow and check-in scenes">
+          <option value="01">01 · Start (/)</option>
+          <option value="02">02 · Talk interview (/diagnosis)</option>
+          <option value="03">03 · Diagnosis reveal (/diagnosis/result)</option>
+          <option value="13">13 · Provisional diagnosis (Rina)</option>
+          <option value="15">15 · Safety first (Bayu)</option>
+          <option value="05">05 · Weekly check-in (/check-in)</option>
+          <option value="06a">06a · Map updated · New path</option>
+          <option value="06b">06b · Map adjusted · No replies</option>
+          <option value="12">12 · Map adjusted · Mixed result</option>
+          <option value="14">14 · Welcome back</option>
+          <option value="16">16 · Day 90 review</option>
+        </optgroup>
+        <optgroup label="Overlays &amp; contrast">
+          <option value="09">09 · Why? reasoning trace (drawer)</option>
+          <option value="11">11 · Doing a stopped path (modal)</option>
+          <option value="10">10 · Same question, opposite answers</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- 90-day simulation -->
+    <div style="display:flex;flex-direction:column;gap:6px;padding:10px 0;border-top:1px solid var(--ink-hover);border-bottom:1px solid var(--ink-hover)">
+      <label style="font-size:11px;font-weight:600;color:var(--ink-muted);display:flex;justify-content:space-between">
+        <span>Simulate 90 days:</span>
+        <span id="sim-status" style="font-size:10.5px;color:var(--open-on-ink)">Cycle 1 · Day 3 · Rp0M</span>
+      </label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <button onclick="simulateNextCycle()" style="background:var(--ink-hover);color:var(--on-ink);border:1px solid var(--ink-2b);border-radius:7px;padding:6px 8px;font-size:11.5px;font-weight:600;cursor:pointer">Next cycle →</button>
+        <button onclick="simulateToDay90('miss')" style="background:var(--ink-hover);color:var(--on-ink);border:1px solid var(--ink-2b);border-radius:7px;padding:6px 8px;font-size:11.5px;font-weight:600;cursor:pointer">Jump to Day 90</button>
+        <button onclick="simulateToDay90('success')" style="background:var(--ink-hover);color:var(--open-on-ink);border:1px solid var(--ink-2b);border-radius:7px;padding:6px 8px;font-size:11.5px;font-weight:600;cursor:pointer">Success ending</button>
+        <button onclick="resetSimulation()" style="background:transparent;color:var(--ink-muted);border:1px solid var(--ink-2b);border-radius:7px;padding:6px 8px;font-size:11.5px;font-weight:600;cursor:pointer">Reset</button>
+        <button onclick="advanceDemoDay()" style="grid-column:1 / -1;background:var(--ink-hover);color:var(--on-ink);border:1px solid var(--ink-2b);border-radius:7px;padding:6px 8px;font-size:11.5px;font-weight:600;cursor:pointer">Next day →</button>
+      </div>
+    </div>
+
+    <!-- Persona Selector -->
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <label style="font-size:11px;font-weight:600;color:var(--ink-muted)">Test persona:</label>
+      <select id="persona-selector" onchange="setPersona(this.value)" style="width:100%;background:var(--ink-hover);color:var(--on-ink);border:1px solid var(--ink-2b);border-radius:8px;padding:6px 10px;font-size:12px;font-family:var(--font-ui);outline:none;cursor:pointer">
+        <option value="dimas">Dimas A. (Main persona)</option>
+        <option value="rina">Rina W. (Zero Open / Provisional)</option>
+        <option value="arif">Arif S. (Capacity / Several Open)</option>
+        <option value="bayu">Bayu (Safety First / Low savings)</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- MASTER VIEWPORT -->
+<div class="app-viewport" id="app-root">
+  <!-- Content injected here -->
+</div>
+
+<!-- DRAWER OVERLAY (Screen 09) -->
+<div class="drawer-backdrop" id="why-drawer" onclick="if(event.target===this)closeDrawer()">
+  <div class="drawer-panel" id="drawer-content"></div>
+</div>
+
+<!-- MODAL OVERLAY (Screen 11) -->
+<div class="modal-backdrop" id="stop-modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-card" id="modal-content"></div>
+</div>
+<script src="/static/js/util.js"></script>
+<script src="/static/js/engine-text.js"></script>
+<script src="/static/js/demo-data.js"></script>
+<script src="/static/js/store.js"></script>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/live.js"></script>
+<script src="/static/js/experience-state.js"></script>
+<script src="/static/js/execution-projection.js"></script>
+<script src="/static/js/nav-move.js"></script>
+<script src="/static/js/present-cap.js"></script>
+<script src="/static/js/live-vm.js"></script>
+<script src="/static/js/demo-sim.js"></script>
+<script src="/static/js/ui-kit.js"></script>
+<script src="/static/js/shell.js"></script>
+<script src="/static/js/screens-onboarding.js"></script>
+<script src="/static/js/screens-home.js"></script>
+<script src="/static/js/screens-map-journey.js"></script>
+<script src="/static/js/screens-other.js"></script>
+<script src="/static/js/screens-live-chat.js"></script>
+<script src="/static/js/screens-live-reveal.js"></script>
+<script src="/static/js/screens-live-home.js"></script>
+<script src="/static/js/moves-report.js"></script>
+<script src="/static/js/maps-topology.js"></script>
+<script src="/static/js/screens-live-map.js"></script>
+<script src="/static/js/screens-readiness.js"></script>
+<script src="/static/js/screens-ask.js"></script>
+<script src="/static/js/screens-live-readiness.js"></script>
+<script src="/static/js/screens-live-ask.js"></script>
+<script src="/static/js/overlays.js"></script>
+<script src="/static/js/widget.js"></script>
+<script src="/static/js/router.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+{
+  "$comment": "RouteTemplate PRODUKSI (D4 int 08 §8.4, 27 Sep). REPRICING berbasis nilai. §7.10: value_linked_to_explicit_need vakum-capable (populasi = pembeli yang menyatakan masalah) — tak bisa disediakan di route -> applies_when menuntut konteks klien yang ada. Provenance diturunkan mekanis dari provenance requirement penyusun.",
+  "template_id": "value_repricing_v1",
+  "strategy_id": "value_repricing",
+  "goal_anchor": "commercial.willingness_to_pay",
+  "applies_when": {
+    "applies": [
+      {
+        "all_of": [
+          {
+            "text_contains_any": [
+              "klien",
+              "pelanggan",
+              "customer",
+              "client"
+            ]
+          },
+          {
+            "text_contains_any": [
+              "harga",
+              "tarif",
+              "margin",
+              "kemurahan",
+              "price",
+              "rate",
+              "underpriced",
+              "too cheap",
+              "discount"
+            ]
+          }
+        ]
+      }
+    ],
+    "not_applicable": []
+  },
+  "requires": [
+    "offering.outcome",
+    "offering.differentiation",
+    "commercial.value_linked_to_explicit_need",
+    "commercial.pricing_basis",
+    "commercial.price",
+    "commercial.willingness_to_pay"
+  ],
+  "node_candidates": [
+    {
+      "candidate_key": "outcome",
+      "resolves": [
+        "offering.outcome"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Nyatakan hasil terukur yang diperoleh klien dari penawaran",
+      "i18n": {
+        "en": {
+          "activity": "Name the measurable results clients get from the offer"
+        }
+      }
+    },
+    {
+      "candidate_key": "diff",
+      "resolves": [
+        "offering.differentiation"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Nyatakan pembeda pada dimensi yang dipedulikan klien",
+      "i18n": {
+        "en": {
+          "activity": "Name what sets the offer apart on a dimension clients care about"
+        }
+      }
+    },
+    {
+      "candidate_key": "need_link",
+      "resolves": [
+        "commercial.value_linked_to_explicit_need"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "outcome"
+      ],
+      "activity": "Tautkan nilai penawaran ke masalah yang diakui pembeli sendiri",
+      "i18n": {
+        "en": {
+          "activity": "Tie the offer's value to a problem the buyer names themselves"
+        }
+      }
+    },
+    {
+      "candidate_key": "basis",
+      "resolves": [
+        "commercial.pricing_basis"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "outcome",
+        "diff"
+      ],
+      "activity": "Tetapkan basis harga berbasis nilai",
+      "i18n": {
+        "en": {
+          "activity": "Set the value-based pricing basis"
+        }
+      }
+    },
+    {
+      "candidate_key": "price",
+      "resolves": [
+        "commercial.price"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "basis"
+      ],
+      "activity": "Tetapkan angka harga baru dengan satuan",
+      "i18n": {
+        "en": {
+          "activity": "Set the new price number with its unit"
+        }
+      }
+    },
+    {
+      "candidate_key": "wtp",
+      "resolves": [
+        "commercial.willingness_to_pay"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "price",
+        "need_link"
+      ],
+      "activity": "Minta komitmen uang pada harga baru kepada pembeli",
+      "i18n": {
+        "en": {
+          "activity": "Ask a buyer for a money commitment at the new price"
+        }
+      }
+    }
+  ],
+  "provenance": [
+    {
+      "source_id": "vp",
+      "chapters": [
+        "ch02",
+        "ch04"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "sp",
+      "chapters": [
+        "ch05"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "lc",
+      "chapters": [
+        "ch09"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "tm",
+      "chapters": [
+        "ch05"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    }
+  ]
+}

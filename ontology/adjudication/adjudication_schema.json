@@ -1,0 +1,113 @@
+{
+  "$schema_version": "0.1",
+  "name": "NOVALINERS ADJUDICATION SCHEMA v0.1",
+  "note": "Tahap 3 langkah 5 — adjudication schema + ledger (contract FINAL: internal-docs §6, gelombang 5-11, lock owner 26 Sep 2026). Deklaratif mengikuti pola requirement_schema.json; di-enforce oleh ontology/adjudication/validate_adjudication.py. INVARIANT TERKUNCI: (1) totalitas rule_evaluation — no_decisive = komplemen definisional, all-false dilarang; (2) D-A1c exclusivity — sufficient AND partial = INVALID, ditolak validator, bukan diselesaikan precedence; (3) PROPOSED != VERIFIED != ADJUDICATION — tiga objek terpisah struktural (acceptance criterion Tahap 3); (4) verification_method + verified hidup di VERIFIED mapping, BUKAN di ADJUDICATION result (D-A2); (5) ledger HANYA untuk adjudication sah — evaluation anomaly di channel terpisah (D-A1d); (6) UNKNOWN-by-absence: ketiadaan entry != entry berstatus UNKNOWN (INV-9).",
+  "enums": {
+    "satisfaction_status": ["PRESENT", "PARTIAL", "UNKNOWN", "ABSENT"],
+    "rule_mode": ["BINARY", "PARTIAL"],
+    "verification_method": ["deterministic_predicate", "second_pass_verified", "human_reviewed"],
+    "rule_branch": ["sufficient", "partial", "no_decisive", "contradicting"]
+  },
+  "entities": {
+    "proposed_mapping": {
+      "description": "Usulan evidence->requirement dari semantic mapper (LLM boleh) — BUKAN evidence, BUKAN authoritative (§6.7). Objek TERPISAH dari verified_mapping dan adjudication (acceptance criterion Tahap 3).",
+      "required": ["proposed_by", "requirement_id", "evidence_refs", "proposed_at"],
+      "additionalProperties": false,
+      "properties": {
+        "proposed_by": { "type": "string", "minLength": 1, "note": "identitas mapper (mis. 'llm:mapper-v1') — proposal tanpa asal tak auditabel" },
+        "requirement_id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)+$" },
+        "evidence_refs": { "type": "array", "items": "string", "minItems": 1 },
+        "proposed_at": { "type": "integer", "note": "unix seconds" }
+      }
+    },
+    "verified_mapping": {
+      "description": "Hasil verifikasi ATAS proposed mapping (D-A2 LOCKED). verification_method + verified hidup DI SINI — DILARANG di adjudication result. Structural (opsi A) = prasyarat semua jalur, BUKAN anggota enum: gagal structural = malformed input, ditolak sebelum masuk sini.",
+      "required": ["requirement_id", "evidence_refs", "verification_method", "verified", "verified_at"],
+      "additionalProperties": false,
+      "properties": {
+        "requirement_id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)+$" },
+        "evidence_refs": { "type": "array", "items": "string", "minItems": 1, "note": "ref wajib menunjuk evidence yang BENAR-BENAR ADA di Universal State (ref integrity, §6.6)" },
+        "verification_method": { "type": "enum:verification_method" },
+        "verified": { "type": "boolean", "note": "false -> evidence TIDAK diadmit (degradation rule) — consumer jatuh UNKNOWN, bukan status salah" },
+        "verified_at": { "type": "integer" }
+      }
+    },
+    "adjudication_input": {
+      "description": "Kontrak I/O §6.2 — dua sumber read-only + waktu evaluasi.",
+      "required": ["requirement_id", "evidence_refs", "evaluation_time"],
+      "additionalProperties": false,
+      "properties": {
+        "requirement_id": { "type": "string" },
+        "evidence_refs": { "type": "array", "items": "string", "note": "hanya evidence dari VERIFIED mapping verified=true (Admitted Evidence Set)" },
+        "evaluation_time": { "type": "integer", "note": "horizon penilaian evidence — BERBEDA dari adjudicated_at" }
+      }
+    },
+    "rule_evaluation": {
+      "description": "Evaluasi SEMUA cabang (bukan label singular). Invariant: totalitas (no_decisive = komplemen; all-false dilarang) + D-A1c exclusivity (sufficient AND partial = INVALID — objek seperti ini DITOLAK validator dan TIDAK PERNAH jadi adjudication output).",
+      "required": ["sufficient", "partial", "no_decisive", "contradicting"],
+      "additionalProperties": false,
+      "properties": {
+        "sufficient": { "type": "boolean" },
+        "partial": { "type": "boolean", "note": "partial=true => sufficient=false (D-A1c)" },
+        "no_decisive": { "type": "boolean", "note": "true TEPAT KETIKA tiga lainnya false (totalitas)" },
+        "contradicting": { "type": "boolean" }
+      }
+    },
+    "conflict_object": {
+      "description": "D-A1a — dua sisi tercatat; bool terlalu tipis (§6.2). Wajib lengkap KEDUA sisi saat conflict terdeteksi. D-A1c menjamin present_evidence_refs selalu tepat merujuk SATU cabang aktif (sufficient XOR partial).",
+      "required": ["present_evidence_refs", "contradicting_evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "present_evidence_refs": { "type": "array", "items": "string" },
+        "contradicting_evidence_refs": { "type": "array", "items": "string" }
+      }
+    },
+    "adjudication_output": {
+      "description": "VALUE + record hasil adjudication SAH (boundary §6.1). DILARANG: evidence baru, tulis-ke-state, status di luar 4-enum, verification_method/verified (milik VERIFIED mapping).",
+      "required": ["requirement_id", "status", "rule_evaluation", "evidence_refs", "conflict", "evaluation_time", "adjudicated_at"],
+      "additionalProperties": false,
+      "properties": {
+        "requirement_id": { "type": "string" },
+        "status": { "type": "enum:satisfaction_status" },
+        "rule_evaluation": { "ref": "rule_evaluation" },
+        "evidence_refs": { "type": "array", "items": "string", "note": "evidence yang benar-benar mendasari output (auditability)" },
+        "conflict": { "ref": "conflict_object" },
+        "evaluation_time": { "type": "integer" },
+        "adjudicated_at": { "type": "integer", "note": "kapan adjudication DIJALANKAN" }
+      }
+    },
+    "ledger_entry": {
+      "description": "Append-only adjudication ledger (§6.4) — store TERPISAH dari Universal State (RR8; preseden store/nba.py + drift.py). HANYA berisi adjudication SAH — bukan bukti kegagalan konstruksi rule (itu anomaly channel).",
+      "required": ["entry_id", "adjudication"],
+      "additionalProperties": false,
+      "properties": {
+        "entry_id": { "type": "string", "minLength": 1, "note": "monotonic/unique — append-only, tak pernah diubah/dihapus" },
+        "adjudication": { "ref": "adjudication_output" }
+      }
+    },
+    "evaluation_anomaly": {
+      "description": "D-A1d — catatan kegagalan konstruksi rule (mis. S∧P invalid) di channel TERPISAH dari ledger. Bukan RequirementStatus, bukan adjudication result, bukan conflict. TIDAK memblokir pipeline.",
+      "required": ["anomaly_id", "requirement_id", "reason", "detected_at"],
+      "additionalProperties": false,
+      "properties": {
+        "anomaly_id": { "type": "string", "minLength": 1 },
+        "requirement_id": { "type": "string" },
+        "reason": { "type": "string", "minLength": 1, "note": "mis. 'rule_evaluation invalid: sufficient AND partial (D-A1c)'" },
+        "detail": { "type": "object" },
+        "detected_at": { "type": "integer" }
+      }
+    }
+  },
+  "invariants": {
+    "AD1": "rule_evaluation total — no_decisive TEPAT KETIKA sufficient=partial=contradicting=false; all-false ditolak",
+    "AD2": "D-A1c exclusivity — sufficient AND partial = INVALID; validator tolak (bukan precedence)",
+    "AD3": "conflict (D-A1a) = (sufficient OR partial) AND contradicting; conflict object wajib dua sisi saat conflict",
+    "AD4": "resolusi D-A1b: S->PRESENT, P->PARTIAL (hanya mode=PARTIAL, RR11), no_decisive->UNKNOWN, C tanpa S/P->ABSENT, conflict->UNKNOWN",
+    "AD5": "status = fungsi murni (rule, evidence_set, evaluation_time) — recompute, tanpa sticky (§6.4)",
+    "AD6": "ledger append-only, store terpisah dari Universal State (RR8) — hanya adjudication sah",
+    "AD7": "evaluation anomaly = channel terpisah — bukan status, bukan adjudication result, bukan conflict (D-A1d)",
+    "AD8": "PROPOSED != VERIFIED != ADJUDICATION — tiga objek terpisah struktural (acceptance criterion Tahap 3)",
+    "AD9": "verification_method enum tertutup + verified: bool di VERIFIED mapping saja (D-A2); verified=false -> tidak diadmit -> UNKNOWN by absence",
+    "AD10": "boundary §6.1 — adjudicator read-only: tidak menciptakan evidence, tidak menulis Universal State"
+  }
+}

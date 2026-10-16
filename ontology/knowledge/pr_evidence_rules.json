@@ -1,0 +1,251 @@
+{
+ "$comment": "Predictable Revenue — evidence rules. Focus: confidence modulation on demand/pipeline/follow-up. Tier-1 for those that can be evaluated from full ledger/transcript.",
+ "evidence_rules": [
+  {
+   "rule_id": "PR-R01",
+   "condition": "evidence menunjukkan prospek/inquiry MASUK (ada yang menghubungi/menjawab) TETAPI tidak ada jejak tindak lanjut dalam transkrip (tidak ada mention follow-up, balasan, jadwal ketemu)",
+   "matcher_hint": "The user RECOUNTS incoming interest (inquiry, DM, lead, 'ada yang tanya') but the transcript shows NO subsequent action taken on it — the lead is mentioned once and never revisited.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "C6.4"
+    ],
+    "rationale": "Demand sudah sampai ke pintu tapi bocor di follow-up = sinyal C6.4 kuat (bukan DM5.1). Menaikkan C6.4 penting agar intervensi mengarah ke response system, bukan acquisition."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "evaluation_note": "Rule RAISE (not LOWER) — PR is a rare source of positive confirmation for C6.4, which has so far had zero knowledge. The matcher must be strict: inquiry WITHOUT follow-up; if there is follow-up, do not match."
+  },
+  {
+   "rule_id": "PR-R02",
+   "condition": "user mengklaim 'sedang fokus menjual / lagi rame' TIDAK disertai angka outreach proaktif mingguan apa pun dalam 2 minggu terakhir",
+   "matcher_hint": "The user RECOUNTS being busy selling or hustling, BUT when numbers are probed there is NO countable proactive outreach activity (calls, emails, DMs, offers sent) in the recent period — activity exists only as identity claim, not behavior.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "DM5.1"
+    ],
+    "rationale": "Klaim aktivitas tanpa bukti perilaku tidak boleh menurunkan DM5.1 — demand problem tetap hidup sampai outreach terukur ada (selaras disiplin bukti TM-R01: intention ≠ evidence)."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "PR-R03",
+   "condition": "evidence transkrip memuat angka outreach/ kontak baru ≥ threshold dalam minggu berjalan, disitasi eksplisit oleh user",
+   "matcher_hint": "The user RECOUNTS a concrete count of NEW prospects contacted this week or a consistent recent streak (e.g. 'minggu ini kirim 15 penawaran', 'tiap hari DM 5 orang').",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_contains_any": [
+        "outreach",
+        "dm",
+        "email",
+        "kontak",
+        "penawaran",
+        "prospek",
+        "follow up",
+        "follow-up",
+        "hubungi",
+        "pitch"
+       ]
+      }
+     ]
+    }
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "DS4.2"
+    ],
+    "rationale": "Outreach aktif terukur = distribution inactivity menurun. LOWER DS4.2 agar sumber daya diagnosis tidak salah arah ke distribusi."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "evaluation_note": "Predicate hanya mendeteksi BAHASAN outreach — apakah angkanya cukup tetap judgment LLM di tahap probe. Tier-1 dipilih agar sitasi kata kunci wajib (anti-halusinasi), bukan untuk mengukur volume."
+  },
+  {
+   "rule_id": "PR-R04",
+   "condition": "user menjalankan semua tahap (cari prospek, balas, closing, delivery) sendiri DAN mengeluh tidak sempat / selalu kalah prioritas oleh pekerjaan lain",
+   "matcher_hint": "The user RECOUNTS doing every sales role alone AND complains time is consumed by delivery or urgent work so prospecting never happens — classic solo founder no-specialization pattern.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "DS4.2"
+    ],
+    "rationale": "PR: tanpa pemisahan role/blok waktu, prospek selalu kalah oleh 'urgent' — structural inactivity, bukan masalah keinginan. Intervensi = sistem blok waktu, bukan motivasi."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch02",
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "PR-R05",
+   "condition": "target prospek tidak difilter kriteria (semua orang dihubungi) DAN response rate dikeluhkan rendah",
+   "matcher_hint": "The user RECOUNTS contacting anyone and everyone (no ICP filter, no list criteria) AND complains that almost nobody responds.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "FLAG_SEGMENT",
+    "targets": [
+     "M3.1"
+    ],
+    "rationale": "Low response pada list tak terfilter bisa disalahartikan sebagai 'pasar sepi' (DM5.1). FLAG M3.1 agar diagnosis membedakan demand problem vs targeting problem sebelum menambah volume."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "evaluation_note": "Dipilih FLAG_SEGMENT (bukan RAISE) karena perlu konfirmasi definisi ICP via probe PR-P03 sebelum yakin M3.1 — buka jalur pembeda DM5.1 vs M3.1."
+  },
+  {
+   "rule_id": "PR-R06",
+   "condition": "A numeric bridge exists between the stated goal and the weekly outbound/inquiry activity that is supposed to produce it.",
+   "matcher_hint": "The user RECOUNTS breaking an annual revenue goal down into weekly activity math — number of conversations × conversion rate × average deal size — and tracking against it.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "D1.2"
+    ],
+    "rationale": "Pipeline math (Predictable Revenue) mengubah tujuan ambigu menjadi jalur terukur per minggu — path ambiguity turun."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch02"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "PR-R07",
+   "condition": "Actual volume is being counted and compared to the required pipeline, not just outcomes.",
+   "matcher_hint": "The user RECOUNTS tracking weekly prospecting/inquiry volume (conversations held, inquiries received) against the pipeline volume the revenue gap requires.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "DM5.1"
+    ],
+    "rationale": "Demand insufficiency hanya bisa didiagnosis dengan mengukur volume aktivitas vs gap — tanpa angka ini, kekurangan pipeline tak terlihat."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch03"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "PR-R08",
+   "condition": "Outreach is aimed at non-decision-makers; volume of activity cannot convert because authority is missing.",
+   "matcher_hint": "The user RECOUNTS prospecting or pitching people who cannot buy — students of the service, employees without budget authority, or contacts outside the defined ICP.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "M3.4"
+    ],
+    "rationale": "Volume ke orang yang salah (bukan decision-maker ICP) = rejection tanpa pembelajaran — inti Authority Mismatch."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch01"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "PR-R09",
+   "condition": "One person performs delivery plus acquisition; scaling either side is structurally capped by their hours.",
+   "matcher_hint": "The user RECOUNTS the founder personally handling BOTH delivery AND all sales work at the same time, with no specialized roles.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "L8.3"
+    ],
+    "rationale": "Spesialisasi peran (prospector/closer/delivery terpisah) adalah prasyarat skala — founder jalan dua arah menandai kapasitas delivery mentok."
+   },
+   "provenance": {
+    "source_id": "pr",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch01"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "$comment": "Interventions dari The Mom Test (mapping §5). expected_evidence wajib = hook Outcome Learning Store.",
+ "interventions": [
+  {
+   "intervention_id": "TM-I01",
+   "name": "Customer Slicing sampai who-where pair",
+   "targets": [
+    "M3.1"
+   ],
+   "expected_evidence": "1 specific segment with a concrete physical/digital location + ≥3 conversations with consistent problems/goals",
+   "contraindicated_until": "Sudah ada who-where pair tervalidasi + ≥3 percakapan konsisten — slicing ulang tanpa sinyal baru hanya menunda kontak pertama",
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "TM-I02",
+   "name": "Batch 3-5 customer conversations (Mom Test rules, ≤2 minggu)",
+   "targets": [
+    "V2.4",
+    "DM5.5",
+    "DM5.6"
+   ],
+   "expected_evidence": "≥N fakta behavioral tercatat (bukan compliment/fluff); 0 compliment dihitung sebagai data; list of 3 terjawab",
+   "contraindicated_until": "Segmen sudah who-where pair (TM-I01 selesai) — percakapan pada segmen kabur = sinyal campur aduk",
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01",
+     "ch02",
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "TM-I03",
+   "name": "Commitment ask di akhir setiap percakapan",
+   "targets": [
+    "C6.1",
+    "DM5.5",
+    "DM5.6"
+   ],
+   "expected_evidence": "≥1 commitment currency didapat (intro decision maker / case study / LOI / pre-order / deposit) ATAU rejection eksplisit — keduanya valid, wishy-washy tidak",
+   "contraindicated_until": "Segmen belum jelas (TM-I01 belum selesai) — meminta commitment dari orang yang salah segmen menghasilkan commitment murah yang menyesatkan pipeline",
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "TM-I04",
+   "name": "Snowball intro (end every conversation with 'who else should I talk to?')",
+   "targets": [
+    "DS4.2"
+   ],
+   "expected_evidence": "Rasio warm:cold intros naik setelah 2 percakapan pertama; pipeline percakapan berikutnya terisi tanpa cold outreach",
+   "contraindicated_until": "Belum ada ≥1 percakapan Mom-Test berkualitas — minta intro dari percakapan kosong menghasilkan intro dingin berlabel hangat",
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch01",
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "TM-I05",
+   "name": "Immerse di tempat segment berada (hadir/organisir event komunitas)",
+   "targets": [
+    "DS4.2"
+   ],
+   "expected_evidence": "≥5 percakapan customer diperoleh dari 1 venue/event; kredibilitas industri naik (diukur dari respons meeting request)",
+   "contraindicated_until": "Segmen sudah who-where pair — lokasi imersi = komponen 'where' dari pair",
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "TM-I06",
+   "name": "VFWPA meeting request for senior/decision maker targets",
+   "targets": [
+    "M3.4"
+   ],
+   "expected_evidence": "Meeting terjadi dengan budget owner / decision maker; ≥1 pertanyaan budget terjawab ('dari mana uangnya, siapa veto holder')",
+   "contraindicated_until": "Masalah spesifik belum terkonfirmasi dari percakapan awal — meeting decision-maker tanpa hipotesis masalah = membakar akses senior",
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  },
+  {
+   "intervention_id": "TM-I07",
+   "name": "Goal-to-first-step backmap (single written milestone)",
+   "targets": [
+    "D1.2"
+   ],
+   "expected_evidence": "One page containing: the goal with a date, the single next customer-contact step that moves it, and the metric that tells them the path is working — reviewed after that step is actually taken",
+   "contraindicated_until": "Goal revenue belum bernomor & bertenggat — backmap tanpa target terukur menghasilkan milestone kosong",
+   "provenance": {
+    "source_id": "tm",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "PRA_SALES"
+   ]
+  }
+ ]
+}

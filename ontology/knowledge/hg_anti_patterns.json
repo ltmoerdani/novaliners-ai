@@ -1,0 +1,59 @@
+{
+ "$comment": "Hacking Growth — anti-pattern perilaku user pada akuisisi/retensi.",
+ "anti_patterns": [
+  {
+   "pattern_id": "HG-A01",
+   "name": "Shiny Channel Hopping",
+   "symptom": "Pindah-pindah channel (iklan, konten, marketplace, tiktok) tiap beberapa minggu tanpa pernah mengukur satu channel sampai bisa disimpulkan.",
+   "constraint_link": [
+    "DS4.2"
+   ],
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch04",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "HG-A02",
+   "name": "Acquisition Before Retention",
+   "symptom": "Increasing ad/outreach volume even though many new customers don’t return — filling a leaky bucket.",
+   "constraint_link": [
+    "R7.2",
+    "DM5.1"
+   ],
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "HG-A03",
+   "name": "Feelings-Driven Iteration",
+   "symptom": "Mengubah penawaran/harga/channel berdasarkan selera atau komentar satu orang — tanpa pembanding sebelum-sesudah.",
+   "constraint_link": [
+    "C6.3",
+    "DS4.2"
+   ],
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

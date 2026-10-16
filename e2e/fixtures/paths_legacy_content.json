@@ -1,0 +1,874 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "artefak ini dibuat dengan skema navigasi versi lain; hasilnya tidak dibaca sebagai temuan",
+  "found_version": "v0-sebelum-navigasi-universal",
+  "i18n": {
+   "en": {
+    "detail": "This map was made with an older version of the path model, so its result is not read as a current finding. That is not the same as having no paths."
+   }
+  },
+  "needs_rediagnosis": true,
+  "reason_code": "SCHEMA_VERSION_MISMATCH",
+  "status": "LEGACY"
+ },
+ "possible_paths": {
+  "context": {
+   "capacity_utilization": 0.5,
+   "goal": null,
+   "spectrum_level": "TEST_FIRST"
+  },
+  "generation": {
+   "considered": 8,
+   "emerged": [
+    "direct_outreach",
+    "value_repricing",
+    "client_expansion",
+    "referral_partnership",
+    "paid_channel_test"
+   ],
+   "not_emergent": [],
+   "rejected": [],
+   "undetermined": [
+    {
+     "candidate_id": "cand.fix_response_before_more_leads",
+     "missing": [
+      "mechanism:lead_leakage"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:lead_leakage"
+      }
+     ],
+     "strategy_id": "fix_response_before_more_leads"
+    },
+    {
+     "candidate_id": "cand.narrow_target_before_volume",
+     "missing": [
+      "mechanism:targeting_gap"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:targeting_gap"
+      }
+     ],
+     "strategy_id": "narrow_target_before_volume"
+    },
+    {
+     "candidate_id": "cand.shape_buyable_offer",
+     "missing": [
+      "mechanism:offer_disconnect"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:offer_disconnect"
+      }
+     ],
+     "strategy_id": "shape_buyable_offer"
+    }
+   ],
+   "unsupported_knowledge": []
+  },
+  "note": "Peta jalur ini berdasar keadaan yang sudah terukur; seberapa besar Anda boleh melangkah tetap diatur Decision Spectrum (GO. STOP. OR DO SOMETHING ELSE). NOT YET berarti syaratnya belum terpenuhi dan bisa dibuka; STOP berarti jalur ini bertentangan dengan kondisi bisnis Anda sekarang atau sudah Anda hentikan.",
+  "note_i18n": {
+   "en": "This map of paths is built from what is measured today; how big a step you may take is still governed by the Decision Spectrum (GO. STOP. OR DO SOMETHING ELSE). NOT YET means the condition is not met yet and can be opened; STOP means this path collides with your business as it stands today, or you stopped it yourself."
+  },
+  "paths": [
+   {
+    "advisory": "Jalur lewat percobaan kecil dulu, bukan langsung memperbesar skala.",
+    "advisory_i18n": {
+     "en": "Go through a small test first, not straight to scale."
+    },
+    "applicability": "APPLIES",
+    "basis": "dapat klien baru lewat kanal yang cocok dengan calon klien ideal Anda",
+    "checks": [
+     {
+      "check_id": "capacity_available",
+      "i18n": {
+       "en": {
+        "reason": "Your working time is about 50% used, so there is still room",
+        "title": "You still have room in your week",
+        "unlock": "Measure your delivery hours, then cut the load or add capacity (subcontract) until you have enough room."
+       }
+      },
+      "kind": "prereq",
+      "reason": "waktu kerja Anda terpakai sekitar 50%, masih ada ruang",
+      "refs": [],
+      "requirement_id": "delivery.spare_capacity",
+      "state": "PRESENT",
+      "title": "kapasitas masih tersedia",
+      "unlock": "ukur jam delivery → turunkan beban atau tambah kapasitas (subkon) sampai tersisa ruang kerja yang cukup"
+     },
+     {
+      "check_id": "demand_exists",
+      "i18n": {
+       "en": {
+        "reason": "Leads or inquiries are coming in",
+        "title": "Demand exists (inquiries or leads come in)",
+        "unlock": "Run a small manual outreach test to prove that leads come in."
+       }
+      },
+      "kind": "prereq",
+      "reason": "ada lead/inquiry yang masuk",
+      "refs": [],
+      "requirement_id": null,
+      "state": "PRESENT",
+      "title": "demand ada (inquiry/lead masuk)",
+      "unlock": "jalankan percobaan akuisisi kecil (outbound/manual) untuk membuktikan lead masuk"
+     }
+    ],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "CHECKS",
+    "goal_relation": "UNKNOWN_RELATION",
+    "goal_relation_note": "Path ini muncul dari kondisi revenue terverifikasi; hubungan mekanismenya ke metric Goal ini belum didukung Knowledge — bukan klaim kausal.",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": "ACQUISITION",
+    "path_id": "path.direct_outreach",
+    "presentation": {
+     "en": {
+      "basis": "Win new clients through a channel that fits your ideal client.",
+      "short": "Win new clients",
+      "word": "Outreach"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": {
+      "any_of": [
+       "state:revenue_gap",
+       "mechanism:insufficient_pipeline"
+      ]
+     },
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [
+      {
+       "chapters": [
+        "ch02",
+        "ch03",
+        "ch04"
+       ],
+       "source_id": "pr"
+      },
+      {
+       "chapters": [
+        "ch07"
+       ],
+       "source_id": "cs"
+      },
+      {
+       "chapters": [
+        "ch02"
+       ],
+       "source_id": "lc"
+      }
+     ],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": "ACQUISITION",
+     "route_template_ids": [
+      "direct_outreach_v1"
+     ],
+     "state_claims": [
+      "state:goal_established",
+      "state:revenue_gap"
+     ],
+     "strategy_id": "direct_outreach",
+     "support": [
+      {
+       "reason": "target revenue dinyatakan",
+       "refs": [],
+       "signal": "state:goal_established"
+      },
+      {
+       "reason": "ada selisih antara pendapatan sekarang dan target",
+       "refs": [],
+       "signal": "state:revenue_gap"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "direct_outreach_v1"
+     ]
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "direct_outreach",
+    "title": "Winning new clients",
+    "unlock_conditions": []
+   },
+   {
+    "advisory": "Jalur lewat percobaan kecil dulu, bukan langsung memperbesar skala.",
+    "advisory_i18n": {
+     "en": "Go through a small test first, not straight to scale."
+    },
+    "applicability": "APPLIES",
+    "basis": "naikkan harga/penataan arsitektur harga pada demand eksisting",
+    "checks": [
+     {
+      "check_id": "willingness_to_pay",
+      "i18n": {
+       "en": {
+        "reason": "Willingness to pay at the new price is not proven yet",
+        "title": "A buyer is proven to pay your new price",
+        "unlock": "Show that a buyer commits real money at the new price you propose."
+       }
+      },
+      "kind": "hard",
+      "reason": "kesediaan membayar di harga baru belum terbukti",
+      "refs": [],
+      "requirement_id": "commercial.willingness_to_pay_at_new_price",
+      "state": "UNKNOWN",
+      "title": "willingness-to-pay terbukti di harga baru",
+      "unlock": "bukti kesediaan membayar harga baru yang diusulkan: komitmen uang nyata dari pembeli pada harga baru"
+     },
+     {
+      "check_id": "demand_exceeds_capacity",
+      "i18n": {
+       "en": {
+        "reason": "Your working time is about 50% used, so there is still room. Whether demand is enough is not measured yet.",
+        "title": "Demand is proven to be more than you can serve",
+        "unlock": "Measure your working hours and collect the overflow inquiries as proof that demand is more than you can serve."
+       }
+      },
+      "kind": "prereq",
+      "reason": "waktu kerja Anda terpakai sekitar 50%, masih ada ruang; kecukupan permintaan belum terukur",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "bukti permintaan melebihi kapasitas",
+      "unlock": "ukur jam kerja / kumpulkan inquiry yang berlebih sebagai bukti permintaan melebihi kapasitas"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "goal_relation": "UNKNOWN_RELATION",
+    "goal_relation_note": "Path ini muncul dari kondisi revenue terverifikasi; hubungan mekanismenya ke metric Goal ini belum didukung Knowledge — bukan klaim kausal.",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "willingness_to_pay",
+      "need": "bukti kesediaan membayar harga baru yang diusulkan: komitmen uang nyata dari pembeli pada harga baru"
+     },
+     {
+      "check_id": "demand_exceeds_capacity",
+      "need": "ukur jam kerja / kumpulkan inquiry yang berlebih sebagai bukti permintaan melebihi kapasitas"
+     }
+    ],
+    "motion": "REPRICING",
+    "path_id": "path.value_repricing",
+    "presentation": {
+     "en": {
+      "basis": "Raise or restructure your prices on the demand you already have.",
+      "short": "Reprice your offer",
+      "word": "Pricing"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": {
+      "any_of": [
+       "state:existing_revenue",
+       "mechanism:pricing_avoidance_loop"
+      ]
+     },
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [
+      {
+       "chapters": [
+        "ch02",
+        "ch04"
+       ],
+       "source_id": "vp"
+      },
+      {
+       "chapters": [
+        "ch05"
+       ],
+       "source_id": "sp"
+      },
+      {
+       "chapters": [
+        "ch09"
+       ],
+       "source_id": "lc"
+      },
+      {
+       "chapters": [
+        "ch05"
+       ],
+       "source_id": "tm"
+      }
+     ],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": "REPRICING",
+     "route_template_ids": [
+      "value_repricing_v1"
+     ],
+     "state_claims": [
+      "state:goal_established",
+      "state:existing_revenue"
+     ],
+     "strategy_id": "value_repricing",
+     "support": [
+      {
+       "reason": "target revenue dinyatakan",
+       "refs": [],
+       "signal": "state:goal_established"
+      },
+      {
+       "reason": "sudah ada pendapatan berjalan",
+       "refs": [],
+       "signal": "state:existing_revenue"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "value_repricing_v1"
+     ]
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "value_repricing",
+    "title": "Repricing your offer",
+    "unlock_conditions": [
+     "bukti kesediaan membayar harga baru yang diusulkan: komitmen uang nyata dari pembeli pada harga baru",
+     "ukur jam kerja / kumpulkan inquiry yang berlebih sebagai bukti permintaan melebihi kapasitas"
+    ]
+   },
+   {
+    "advisory": "Jalur lewat percobaan kecil dulu, bukan langsung memperbesar skala.",
+    "advisory_i18n": {
+     "en": "Go through a small test first, not straight to scale."
+    },
+    "applicability": "APPLIES",
+    "basis": "perluas nilai klien aktif (upsell/lingkup baru di basis yang sama)",
+    "checks": [
+     {
+      "check_id": "clients_measured",
+      "i18n": {
+       "en": {
+        "reason": "Average client value is about 10.0M, current income 30.0M a month",
+        "title": "Active clients are measured (deal value and current income)",
+        "unlock": "Measure the value of your active clients (average deal and current income) from real transactions."
+       }
+      },
+      "kind": "prereq",
+      "reason": "rata-rata nilai klien sekitar 10.0, pendapatan berjalan 30.0/bulan",
+      "refs": [],
+      "requirement_id": null,
+      "state": "PRESENT",
+      "title": "klien aktif terukur (nilai deal + pendapatan berjalan)",
+      "unlock": "ukur nilai klien aktif (rata-rata nilai deal + pendapatan berjalan) dari bukti transaksi"
+     },
+     {
+      "check_id": "willingness_to_pay",
+      "i18n": {
+       "en": {
+        "reason": "Clients are proven to pay full price today",
+        "title": "Clients are proven to pay your current price",
+        "unlock": "Show that clients pay full price today and stay (measured retention)."
+       }
+      },
+      "kind": "hard",
+      "reason": "klien terbukti membayar penuh di harga sekarang",
+      "refs": [],
+      "requirement_id": "commercial.willingness_to_pay",
+      "state": "PRESENT",
+      "title": "willingness-to-pay terbukti di harga sekarang",
+      "unlock": "bukti kesediaan membayar: klien bayar penuh di harga sekarang dan bertahan (retensi terukur)"
+     }
+    ],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "CHECKS",
+    "goal_relation": "UNKNOWN_RELATION",
+    "goal_relation_note": "Path ini muncul dari kondisi revenue terverifikasi; hubungan mekanismenya ke metric Goal ini belum didukung Knowledge — bukan klaim kausal.",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": "EXPANSION",
+    "path_id": "path.client_expansion",
+    "presentation": {
+     "en": {
+      "basis": "Grow what your current clients are worth with upsells or new scope.",
+      "short": "Grow current clients",
+      "word": "Upsell"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": {
+      "any_of": [
+       "state:existing_revenue"
+      ]
+     },
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [
+      {
+       "chapters": [
+        "ch02"
+       ],
+       "source_id": "vp"
+      },
+      {
+       "chapters": [
+        "ch03"
+       ],
+       "source_id": "chasm"
+      },
+      {
+       "chapters": [
+        "ch10"
+       ],
+       "source_id": "em"
+      },
+      {
+       "chapters": [
+        "ch07"
+       ],
+       "source_id": "hg"
+      }
+     ],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": "EXPANSION",
+     "route_template_ids": [
+      "client_expansion_v1"
+     ],
+     "state_claims": [
+      "state:goal_established",
+      "state:existing_revenue"
+     ],
+     "strategy_id": "client_expansion",
+     "support": [
+      {
+       "reason": "target revenue dinyatakan",
+       "refs": [],
+       "signal": "state:goal_established"
+      },
+      {
+       "reason": "sudah ada pendapatan berjalan",
+       "refs": [],
+       "signal": "state:existing_revenue"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "client_expansion_v1"
+     ]
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "client_expansion",
+    "title": "Growing current clients",
+    "unlock_conditions": []
+   },
+   {
+    "advisory": "Jalur lewat percobaan kecil dulu, bukan langsung memperbesar skala.",
+    "advisory_i18n": {
+     "en": "Go through a small test first, not straight to scale."
+    },
+    "applicability": "APPLIES",
+    "basis": "pakai jalur distribusi pihak lain (referral, affiliate, aliansi, channel)",
+    "checks": [
+     {
+      "check_id": "clients_measured",
+      "i18n": {
+       "en": {
+        "reason": "Average client value is about 10.0M, current income 30.0M a month",
+        "title": "Active clients are measured (deal value and current income)",
+        "unlock": "Measure the value of your active clients from real transactions, as material for a partner offer."
+       }
+      },
+      "kind": "prereq",
+      "reason": "rata-rata nilai klien sekitar 10.0, pendapatan berjalan 30.0/bulan",
+      "refs": [],
+      "requirement_id": null,
+      "state": "PRESENT",
+      "title": "klien aktif terukur (nilai deal + pendapatan berjalan)",
+      "unlock": "ukur nilai klien aktif dari bukti transaksi, sebagai bahan penawaran kemitraan"
+     },
+     {
+      "check_id": "referral_evidence",
+      "i18n": {
+       "en": {
+        "reason": "No proof yet that leads come from referrals or your network",
+        "title": "Referrals or your network are proven to bring leads",
+        "unlock": "Record at least 1 lead that came from a referral or your network."
+       }
+      },
+      "kind": "prereq",
+      "reason": "belum ada bukti lead datang dari referral/jaringan",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "bukti referral/jaringan menghasilkan lead",
+      "unlock": "catat minimal 1 lead yang datang dari referral/jaringan Anda"
+     },
+     {
+      "check_id": "capacity_for_partners",
+      "i18n": {
+       "en": {
+        "reason": "Your working time is about 50% used, so there is still room",
+        "title": "You have room for partner demand",
+        "unlock": "Measure your delivery hours and make sure you have room before you commit to a partner."
+       }
+      },
+      "kind": "prereq",
+      "reason": "waktu kerja Anda terpakai sekitar 50%, masih ada ruang",
+      "refs": [],
+      "requirement_id": "delivery.spare_capacity",
+      "state": "PRESENT",
+      "title": "kapasitas tersedia untuk permintaan kemitraan",
+      "unlock": "ukur jam delivery → pastikan ada ruang kapasitas sebelum komit partner"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "goal_relation": "UNKNOWN_RELATION",
+    "goal_relation_note": "Path ini muncul dari kondisi revenue terverifikasi; hubungan mekanismenya ke metric Goal ini belum didukung Knowledge — bukan klaim kausal.",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "referral_evidence",
+      "need": "catat minimal 1 lead yang datang dari referral/jaringan Anda"
+     }
+    ],
+    "motion": "PARTNERSHIP",
+    "path_id": "path.referral_partnership",
+    "presentation": {
+     "en": {
+      "basis": "Use other people's channels: referrals, affiliates, alliances.",
+      "short": "Partners and referrals",
+      "word": "Partner"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": {
+      "any_of": [
+       "state:existing_revenue",
+       "mechanism:trust_gap"
+      ]
+     },
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [
+      {
+       "chapters": [
+        "ch03"
+       ],
+       "source_id": "chasm"
+      },
+      {
+       "chapters": [
+        "ch10"
+       ],
+       "source_id": "em"
+      },
+      {
+       "chapters": [
+        "ch06"
+       ],
+       "source_id": "pr"
+      }
+     ],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": "PARTNERSHIP",
+     "route_template_ids": [
+      "referral_partnership_v1"
+     ],
+     "state_claims": [
+      "state:goal_established",
+      "state:existing_revenue"
+     ],
+     "strategy_id": "referral_partnership",
+     "support": [
+      {
+       "reason": "target revenue dinyatakan",
+       "refs": [],
+       "signal": "state:goal_established"
+      },
+      {
+       "reason": "sudah ada pendapatan berjalan",
+       "refs": [],
+       "signal": "state:existing_revenue"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "referral_partnership_v1"
+     ]
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "referral_partnership",
+    "title": "Partners and referrals",
+    "unlock_conditions": [
+     "catat minimal 1 lead yang datang dari referral/jaringan Anda"
+    ]
+   },
+   {
+    "advisory": "Jalur lewat percobaan kecil dulu, bukan langsung memperbesar skala.",
+    "advisory_i18n": {
+     "en": "Go through a small test first, not straight to scale."
+    },
+    "applicability": "APPLIES",
+    "basis": "beli permintaan lewat iklan (Meta/Google/LinkedIn)",
+    "checks": [
+     {
+      "check_id": "conversion_baseline",
+      "i18n": {
+       "en": {
+        "reason": "Conversion is not measured yet",
+        "title": "Conversion is measured (inquiry to closed deal)",
+        "unlock": "Measure your current funnel (inquiries to closed deals, at least one cycle)."
+       }
+      },
+      "kind": "prereq",
+      "reason": "baseline konversi belum terukur",
+      "refs": [],
+      "requirement_id": "conversion.conversion_baseline",
+      "state": "UNKNOWN",
+      "title": "baseline konversi terukur (inquiry → closing)",
+      "unlock": "ukur konversi funnel eksisting (n inquiry → n closing, ≥1 siklus)"
+     },
+     {
+      "check_id": "cac_baseline",
+      "i18n": {
+       "en": {
+        "reason": "Cost per client is not measured yet",
+        "title": "Cost per client is measured",
+        "unlock": "Run a small test budget and record the spend per lead or customer."
+       }
+      },
+      "kind": "prereq",
+      "reason": "CAC belum terukur",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "baseline CAC terukur",
+      "unlock": "jalankan budget uji kecil dan catat spend per lead/customer"
+     },
+     {
+      "check_id": "unit_economics",
+      "i18n": {
+       "en": {
+        "reason": "Unit economics are not worked out yet",
+        "title": "The economics work (positive unit economics)",
+        "unlock": "Work out unit economics from the measured cost per client and client value."
+       }
+      },
+      "kind": "hard",
+      "reason": "unit economics belum terhitung",
+      "refs": [],
+      "requirement_id": "commercial.unit_economics",
+      "state": "UNKNOWN",
+      "title": "ekonomi viable (unit economics positif)",
+      "unlock": "hitung unit economics dari CAC + nilai klien terukur"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "goal_relation": "UNKNOWN_RELATION",
+    "goal_relation_note": "Path ini muncul dari kondisi revenue terverifikasi; hubungan mekanismenya ke metric Goal ini belum didukung Knowledge — bukan klaim kausal.",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "conversion_baseline",
+      "need": "ukur konversi funnel eksisting (n inquiry → n closing, ≥1 siklus)"
+     },
+     {
+      "check_id": "cac_baseline",
+      "need": "jalankan budget uji kecil dan catat spend per lead/customer"
+     },
+     {
+      "check_id": "unit_economics",
+      "need": "hitung unit economics dari CAC + nilai klien terukur"
+     }
+    ],
+    "motion": "PAID_ACQUISITION",
+    "path_id": "path.paid_channel_test",
+    "presentation": {
+     "en": {
+      "basis": "Buy demand through ads (Meta, Google, LinkedIn).",
+      "short": "Paid ads",
+      "word": "Ads"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": {
+      "any_of": [
+       "state:revenue_gap"
+      ]
+     },
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [
+      {
+       "chapters": [
+        "ch02",
+        "ch05",
+        "ch03"
+       ],
+       "source_id": "vp"
+      },
+      {
+       "chapters": [
+        "ch08"
+       ],
+       "source_id": "pr"
+      },
+      {
+       "chapters": [
+        "ch04"
+       ],
+       "source_id": "hg"
+      }
+     ],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": "PAID_ACQUISITION",
+     "route_template_ids": [
+      "paid_channel_test_v1"
+     ],
+     "state_claims": [
+      "state:goal_established",
+      "state:revenue_gap"
+     ],
+     "strategy_id": "paid_channel_test",
+     "support": [
+      {
+       "reason": "target revenue dinyatakan",
+       "refs": [],
+       "signal": "state:goal_established"
+      },
+      {
+       "reason": "ada selisih antara pendapatan sekarang dan target",
+       "refs": [],
+       "signal": "state:revenue_gap"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "paid_channel_test_v1"
+     ]
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "paid_channel_test",
+    "title": "Paid ads",
+    "unlock_conditions": [
+     "ukur konversi funnel eksisting (n inquiry → n closing, ≥1 siklus)",
+     "jalankan budget uji kecil dan catat spend per lead/customer",
+     "hitung unit economics dari CAC + nilai klien terukur"
+    ]
+   }
+  ],
+  "space_id": "revenue",
+  "unresolved": [],
+  "version": "v0-sebelum-navigasi-universal"
+ },
+ "projection": {
+  "emerging": [],
+  "generation": {
+   "considered": 8,
+   "emerged": [
+    "direct_outreach",
+    "value_repricing",
+    "client_expansion",
+    "referral_partnership",
+    "paid_channel_test"
+   ],
+   "not_emergent": [],
+   "rejected": [],
+   "undetermined": [
+    {
+     "candidate_id": "cand.fix_response_before_more_leads",
+     "missing": [
+      "mechanism:lead_leakage"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:lead_leakage"
+      }
+     ],
+     "strategy_id": "fix_response_before_more_leads"
+    },
+    {
+     "candidate_id": "cand.narrow_target_before_volume",
+     "missing": [
+      "mechanism:targeting_gap"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:targeting_gap"
+      }
+     ],
+     "strategy_id": "narrow_target_before_volume"
+    },
+    {
+     "candidate_id": "cand.shape_buyable_offer",
+     "missing": [
+      "mechanism:offer_disconnect"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:offer_disconnect"
+      }
+     ],
+     "strategy_id": "shape_buyable_offer"
+    }
+   ],
+   "unsupported_knowledge": []
+  },
+  "navigation": {
+   "current_version": 3,
+   "detail": "artefak ini dibuat dengan skema navigasi versi lain; hasilnya tidak dibaca sebagai temuan",
+   "found_version": "v0-sebelum-navigasi-universal",
+   "i18n": {
+    "en": {
+     "detail": "This map was made with an older version of the path model, so its result is not read as a current finding. That is not the same as having no paths."
+    }
+   },
+   "needs_rediagnosis": true,
+   "reason_code": "SCHEMA_VERSION_MISMATCH",
+   "status": "LEGACY"
+  },
+  "paths": [],
+  "unresolved": [],
+  "version": 4
+ }
+}

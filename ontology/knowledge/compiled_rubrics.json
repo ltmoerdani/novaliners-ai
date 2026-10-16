@@ -1,0 +1,303 @@
+{
+ "$comment": "FASE 1 — rubrik kompilasi KB (internal-docs §5.1). Dibuat oleh compile_rubrics.py; JANGAN edit manual — regenerasi dengan script. Konsumen: tier-2 matcher (core/stages/knowledge_rules.py). Deterministik: sorted, tanpa timestamp — aman di kb_sha256.",
+ "rubric_lines": {
+  "CS-R01": "CS-R01 - The user RECOUNTS that customers respond to their pitch with total agreement ('exactly our problem') WITHOUT surprise or new insight, yet deals still die.",
+  "CS-R02": "CS-R02 - The user RECOUNTS that when asked for a discount, they respond by directly lowering the price without any value conversation or trade.",
+  "CS-R03": "CS-R03 ~ The user RECOUNTS pursuing deals that arrive via RFP/tender or through junior staff (e.g.",
+  "CS-R04": "CS-R04 - The user RECOUNTS using one identical sales message/deck for ALL stakeholders, with no per-role tailoring.",
+  "CS-R05": "CS-R05 ~ The user RECOUNTS teaching insights to customers, but those insights do NOT connect to any unique strength they alone can deliver.",
+  "CS-R06": "CS-R06 ~ The user RECOUNTS selling complex/disruptive services while describing a relationship-first passive approach (build relationship first, sell later).",
+  "EM-R01": "EM-R01 + The user RECOUNTS their own numbers showing that adding the desired new clients requires MORE hours per week than remain available (delivery already consumes…",
+  "EM-R02": "EM-R02 + The user RECOUNTS revenue that scales ONLY with their own working hours — every new client directly adds hours of personal delivery work, with no systems,…",
+  "EM-R03": "EM-R03 ~ The user RECOUNTS complaining about lack of time WHILE describing routine tasks done personally (revisions, admin, reporting) that are repeatable and could be…",
+  "EM-R04": "EM-R04 ~ The user RECOUNTS a repeatable, consistent delivery process across clients (similar steps, similar outputs) WHILE confirming nothing is written down as a…",
+  "HG-R01": "HG-R01 + The user RECOUNTS specific repeat purchases or unprompted referrals by existing customers (e.g.",
+  "HG-R02": "HG-R02 + The user RECOUNTS being unable to describe a concrete first-value moment when asked when customers 'get it', and acknowledges most new customers stall or…",
+  "HG-R03": "HG-R03 ~ The user RECOUNTS complaining about hard-to-get customers while admitting they have no breakdown of where current customers actually come from — acquisition…",
+  "HG-R04": "HG-R04 + The user RECOUNTS all activity as chasing new customers, with zero recurring touch (no broadcast, no check-in, no offer) to people who already bought —…",
+  "HG-R05": "HG-R05 + The user RECOUNTS running a growth/acquisition experiment with a written hypothesis and a baseline metric for the channel.",
+  "HG-R06": "HG-R06 + The user RECOUNTS customer quality or retention visibly degrading as the number of active clients grows.",
+  "HK-R01": "HK-R01 - The user RECOUNTS that new customers must invest significant effort/steps/training BEFORE feeling the first reward/value.",
+  "HK-R02": "HK-R02 ! The user RECOUNTS onboarding friction so severe that scaling acquisition now would waste the spend (users churn before reaching value).",
+  "HK-R03": "HK-R03 - The user RECOUNTS that usage drops off right after signup/first use (users never log in again after week one).",
+  "HK-R04": "HK-R04 ~ The user RECOUNTS no habit/repeat usage forming — customers use it once or only when prompted, plus no proof of outcome to show prospects.",
+  "LC-R01": "LC-R01 + The user RECOUNTS a good conversation or a warm lead that ended WITHOUT a specific next-step commitment — no date, no scheduled action, no agreed next person;…",
+  "LC-R02": "LC-R02 + The user RECOUNTS giving value repeatedly (details, advice, samples, small revisions) WITHOUT ever asking for any reciprocal commitment — everything is given…",
+  "LC-R03": "LC-R03 + The user RECOUNTS leaving a prospect's concern or objection unaddressed — no scheduled time to resolve it, just waiting for the prospect to come back on their…",
+  "LC-R04": "LC-R04 - The user RECOUNTS reaching out to prospects without a specific commitment goal — just checking in or reminding, with no ask prepared.",
+  "LC-R05": "LC-R05 - The user RECOUNTS investing in a sales conversation (demo, proposal, follow-ups) with a contact who turns out to have no authority to purchase.",
+  "LC-R06": "LC-R06 - The user RECOUNTS asking for interest or a meeting WITHOUT a defined, buyable offer (no scope, no price, no deliverable) being on the table.",
+  "PR-R01": "PR-R01 + The user RECOUNTS incoming interest (inquiry, DM, lead, 'ada yang tanya') but the transcript shows NO subsequent action taken on it — the lead is mentioned…",
+  "PR-R02": "PR-R02 - The user RECOUNTS being busy selling or hustling, BUT when numbers are probed there is NO countable proactive outreach activity (calls, emails, DMs, offers…",
+  "PR-R03": "PR-R03 - The user RECOUNTS a concrete count of NEW prospects contacted this week or a consistent recent streak (e.g.",
+  "PR-R04": "PR-R04 + The user RECOUNTS doing every sales role alone AND complains time is consumed by delivery or urgent work so prospecting never happens — classic solo founder…",
+  "PR-R05": "PR-R05 ~ The user RECOUNTS contacting anyone and everyone (no ICP filter, no list criteria) AND complains that almost nobody responds.",
+  "PR-R06": "PR-R06 + The user RECOUNTS breaking an annual revenue goal down into weekly activity math — number of conversations × conversion rate × average deal size — and…",
+  "PR-R07": "PR-R07 + The user RECOUNTS tracking weekly prospecting/inquiry volume (conversations held, inquiries received) against the pipeline volume the revenue gap requires.",
+  "PR-R08": "PR-R08 - The user RECOUNTS prospecting or pitching people who cannot buy — students of the service, employees without budget authority, or contacts outside the defined…",
+  "PR-R09": "PR-R09 + The user RECOUNTS the founder personally handling BOTH delivery AND all sales work at the same time, with no specialized roles.",
+  "SP-R01": "SP-R01 + The user RECOUNTS mentioning price or the offer EARLY — before the prospect's problem and its consequences were explicitly discussed — and the prospect then…",
+  "SP-R02": "SP-R02 - The user RECOUNTS using pressure-closing tactics (urgency pushes, today-only discounts, forced-choice questions) with prospects who are new or barely qualified.",
+  "SP-R03": "SP-R03 + The user RECOUNTS frequent price objections or rejections AND recounts offers framed around features/tasks of the work (deliverables, process) rather than…",
+  "SP-R04": "SP-R04 - The user RECOUNTS citing the prospect's own words about their problem and why it matters (quoted or paraphrased explicitly), distinguishing them from the…",
+  "SP-R05": "SP-R05 + The user RECOUNTS presenting benefits by linking them to the buyer's OWN stated explicit needs ('tadi Anda bilang…') instead of listing generic features or…",
+  "SP-R06": "SP-R06 - The user RECOUNTS receiving objections or push-back BEFORE any problem or its implications were discussed with that prospect.",
+  "SP-R07": "SP-R07 + The user RECOUNTS the prospect asking for details, pricing, or next steps AFTER implication and need-payoff questions were explored together.",
+  "SP-R08": "SP-R08 - The user RECOUNTS spending most of the conversation on situation questions (background facts) without surfacing any problem.",
+  "SP-R09": "SP-R09 + The user RECOUNTS asking for commitment or naming the price ONLY after the prospect articulated explicit needs and consequences.",
+  "SP-R10": "SP-R10 - The user RECOUNTS applying repeated closing pressure (urging, discounts, deadlines) in a large or high-uncertainty deal and the prospect withdrawing or going…",
+  "TM-R01": "TM-R01 - The user RECOUNTS their own future intention, plan, or optimistic prediction about demand as if it were evidence (e.g.",
+  "TM-R02": "TM-R02 ~ The user RECOUNTS that prospects responded with compliments about the idea or product ('keren', 'sukses ya', 'akan dicoba nanti') instead of facts about their…",
+  "TM-R03": "TM-R03 - The user RECOUNTS never having searched for existing solutions or workarounds for the problem (never googled, no competitor mentioned, no DIY attempt).",
+  "TM-R04": "TM-R04 - The user RECOUNTS a problem or complaint BUT describes no cost, loss, or quantified implication of it - accepted as-is, with no money or time at stake.",
+  "TM-R05": "TM-R05 ~ The user RECOUNTS feedback across conversations within the SAME segment that is inconsistent - problems and goals vary widely between prospects of that segment.",
+  "TM-R06": "TM-R06 ! The user RECOUNTS a customer segment with NO concrete physical or digital place to meet them (no venue, no channel, no who-where pair).",
+  "TM-R07": "TM-R07 ~ The user RECOUNTS that a conversation or proposal thread ended WITHOUT any commitment AND WITHOUT an explicit rejection (wishy-washy, no next step).",
+  "TM-R08": "TM-R08 + The user RECOUNTS receiving a serious commitment of time or reputation from a prospect (an introduction to a decision maker, a written testimonial, a paid…",
+  "TM-R09": "TM-R09 ! The user RECOUNTS product risk as the dominant business risk ('kalau kamu bisa bangun, saya beli') rather than customer or market risk.",
+  "VP-R01": "VP-R01 - The user RECOUNTS an offer that cannot be stated in one complete sentence naming who it is for, which problem it solves, and how it differs from alternatives.",
+  "VP-R02": "VP-R02 - The user RECOUNTS customer pains or gains WITHOUT any measurable threshold (no minutes, rupiah, or percent from the customer's own measurement).",
+  "VP-R03": "VP-R03 ~ The user RECOUNTS a pain reliever or gain creator that does not map to any specific job, pain, or gain in a customer profile.",
+  "VP-R04": "VP-R04 - The user RECOUNTS building the customer profile from their own assumptions and offer, without observing actual customers (no customer interview, no research,…",
+  "VP-R05": "VP-R05 ! The user RECOUNTS testing or pitching an offer to customers BEFORE establishing evidence that the targeted jobs, pains, or gains actually matter to them.",
+  "VP-R06": "VP-R06 ! The user RECOUNTS that revenue exceeding costs has not been evidenced - margin, unit economics, or profitability unknown, never calculated, or untested.",
+  "VP-R07": "VP-R07 + The user RECOUNTS turning a capability into a named, scoped, priced offer — a productized service a buyer could accept this week."
+ },
+ "by_capability": {
+  "C6.1": [
+   "CS-R03 ~ The user RECOUNTS pursuing deals that arrive via RFP/tender or through junior staff (e.g.",
+   "CS-R06 ~ The user RECOUNTS selling complex/disruptive services while describing a relationship-first passive approach (build relationship first, sell later).",
+   "SP-R04 - The user RECOUNTS citing the prospect's own words about their problem and why it matters (quoted or paraphrased explicitly), distinguishing them from the…",
+   "SP-R06 - The user RECOUNTS receiving objections or push-back BEFORE any problem or its implications were discussed with that prospect.",
+   "SP-R08 - The user RECOUNTS spending most of the conversation on situation questions (background facts) without surfacing any problem.",
+   "TM-R03 - The user RECOUNTS never having searched for existing solutions or workarounds for the problem (never googled, no competitor mentioned, no DIY attempt)."
+  ],
+  "C6.3": [
+   "CS-R01 - The user RECOUNTS that customers respond to their pitch with total agreement ('exactly our problem') WITHOUT surprise or new insight, yet deals still die.",
+   "CS-R05 ~ The user RECOUNTS teaching insights to customers, but those insights do NOT connect to any unique strength they alone can deliver.",
+   "SP-R01 + The user RECOUNTS mentioning price or the offer EARLY — before the prospect's problem and its consequences were explicitly discussed — and the prospect then…",
+   "SP-R02 - The user RECOUNTS using pressure-closing tactics (urgency pushes, today-only discounts, forced-choice questions) with prospects who are new or barely qualified.",
+   "SP-R03 + The user RECOUNTS frequent price objections or rejections AND recounts offers framed around features/tasks of the work (deliverables, process) rather than…",
+   "SP-R05 + The user RECOUNTS presenting benefits by linking them to the buyer's OWN stated explicit needs ('tadi Anda bilang…') instead of listing generic features or…",
+   "SP-R07 + The user RECOUNTS the prospect asking for details, pricing, or next steps AFTER implication and need-payoff questions were explored together.",
+   "SP-R10 - The user RECOUNTS applying repeated closing pressure (urging, discounts, deadlines) in a large or high-uncertainty deal and the prospect withdrawing or going…",
+   "TM-R04 - The user RECOUNTS a problem or complaint BUT describes no cost, loss, or quantified implication of it - accepted as-is, with no money or time at stake.",
+   "VP-R02 - The user RECOUNTS customer pains or gains WITHOUT any measurable threshold (no minutes, rupiah, or percent from the customer's own measurement)."
+  ],
+  "C6.4": [
+   "LC-R01 + The user RECOUNTS a good conversation or a warm lead that ended WITHOUT a specific next-step commitment — no date, no scheduled action, no agreed next person;…",
+   "LC-R02 + The user RECOUNTS giving value repeatedly (details, advice, samples, small revisions) WITHOUT ever asking for any reciprocal commitment — everything is given…",
+   "LC-R03 + The user RECOUNTS leaving a prospect's concern or objection unaddressed — no scheduled time to resolve it, just waiting for the prospect to come back on their…",
+   "LC-R04 - The user RECOUNTS reaching out to prospects without a specific commitment goal — just checking in or reminding, with no ask prepared.",
+   "PR-R01 + The user RECOUNTS incoming interest (inquiry, DM, lead, 'ada yang tanya') but the transcript shows NO subsequent action taken on it — the lead is mentioned…",
+   "SP-R09 + The user RECOUNTS asking for commitment or naming the price ONLY after the prospect articulated explicit needs and consequences."
+  ],
+  "D1.2": [
+   "PR-R06 + The user RECOUNTS breaking an annual revenue goal down into weekly activity math — number of conversations × conversion rate × average deal size — and…",
+   "TM-R09 ! The user RECOUNTS product risk as the dominant business risk ('kalau kamu bisa bangun, saya beli') rather than customer or market risk.",
+   "VP-R06 ! The user RECOUNTS that revenue exceeding costs has not been evidenced - margin, unit economics, or profitability unknown, never calculated, or untested."
+  ],
+  "DM5.1": [
+   "HG-R05 + The user RECOUNTS running a growth/acquisition experiment with a written hypothesis and a baseline metric for the channel.",
+   "PR-R02 - The user RECOUNTS being busy selling or hustling, BUT when numbers are probed there is NO countable proactive outreach activity (calls, emails, DMs, offers…",
+   "PR-R07 + The user RECOUNTS tracking weekly prospecting/inquiry volume (conversations held, inquiries received) against the pipeline volume the revenue gap requires."
+  ],
+  "DM5.5": [
+   "CS-R06 ~ The user RECOUNTS selling complex/disruptive services while describing a relationship-first passive approach (build relationship first, sell later).",
+   "HG-R01 + The user RECOUNTS specific repeat purchases or unprompted referrals by existing customers (e.g.",
+   "HG-R04 + The user RECOUNTS all activity as chasing new customers, with zero recurring touch (no broadcast, no check-in, no offer) to people who already bought —…",
+   "TM-R02 ~ The user RECOUNTS that prospects responded with compliments about the idea or product ('keren', 'sukses ya', 'akan dicoba nanti') instead of facts about their…",
+   "TM-R08 + The user RECOUNTS receiving a serious commitment of time or reputation from a prospect (an introduction to a decision maker, a written testimonial, a paid…"
+  ],
+  "DM5.6": [
+   "HK-R04 ~ The user RECOUNTS no habit/repeat usage forming — customers use it once or only when prompted, plus no proof of outcome to show prospects.",
+   "TM-R01 - The user RECOUNTS their own future intention, plan, or optimistic prediction about demand as if it were evidence (e.g.",
+   "TM-R03 - The user RECOUNTS never having searched for existing solutions or workarounds for the problem (never googled, no competitor mentioned, no DIY attempt).",
+   "TM-R07 ~ The user RECOUNTS that a conversation or proposal thread ended WITHOUT any commitment AND WITHOUT an explicit rejection (wishy-washy, no next step).",
+   "TM-R08 + The user RECOUNTS receiving a serious commitment of time or reputation from a prospect (an introduction to a decision maker, a written testimonial, a paid…"
+  ],
+  "DS4.2": [
+   "HG-R03 ~ The user RECOUNTS complaining about hard-to-get customers while admitting they have no breakdown of where current customers actually come from — acquisition…",
+   "PR-R03 - The user RECOUNTS a concrete count of NEW prospects contacted this week or a consistent recent streak (e.g.",
+   "PR-R04 + The user RECOUNTS doing every sales role alone AND complains time is consumed by delivery or urgent work so prospecting never happens — classic solo founder…"
+  ],
+  "L8.1": [
+   "CS-R02 - The user RECOUNTS that when asked for a discount, they respond by directly lowering the price without any value conversation or trade.",
+   "EM-R02 + The user RECOUNTS revenue that scales ONLY with their own working hours — every new client directly adds hours of personal delivery work, with no systems,…",
+   "EM-R03 ~ The user RECOUNTS complaining about lack of time WHILE describing routine tasks done personally (revisions, admin, reporting) that are repeatable and could be…"
+  ],
+  "L8.3": [
+   "EM-R01 + The user RECOUNTS their own numbers showing that adding the desired new clients requires MORE hours per week than remain available (delivery already consumes…",
+   "EM-R03 ~ The user RECOUNTS complaining about lack of time WHILE describing routine tasks done personally (revisions, admin, reporting) that are repeatable and could be…",
+   "EM-R04 ~ The user RECOUNTS a repeatable, consistent delivery process across clients (similar steps, similar outputs) WHILE confirming nothing is written down as a…",
+   "HG-R06 + The user RECOUNTS customer quality or retention visibly degrading as the number of active clients grows.",
+   "PR-R09 + The user RECOUNTS the founder personally handling BOTH delivery AND all sales work at the same time, with no specialized roles."
+  ],
+  "M3.1": [
+   "PR-R05 ~ The user RECOUNTS contacting anyone and everyone (no ICP filter, no list criteria) AND complains that almost nobody responds.",
+   "TM-R05 ~ The user RECOUNTS feedback across conversations within the SAME segment that is inconsistent - problems and goals vary widely between prospects of that segment.",
+   "TM-R06 ! The user RECOUNTS a customer segment with NO concrete physical or digital place to meet them (no venue, no channel, no who-where pair).",
+   "VP-R04 - The user RECOUNTS building the customer profile from their own assumptions and offer, without observing actual customers (no customer interview, no research,…"
+  ],
+  "M3.4": [
+   "CS-R04 - The user RECOUNTS using one identical sales message/deck for ALL stakeholders, with no per-role tailoring.",
+   "LC-R05 - The user RECOUNTS investing in a sales conversation (demo, proposal, follow-ups) with a contact who turns out to have no authority to purchase.",
+   "PR-R08 - The user RECOUNTS prospecting or pitching people who cannot buy — students of the service, employees without budget authority, or contacts outside the defined…"
+  ],
+  "R7.2": [
+   "HG-R02 + The user RECOUNTS being unable to describe a concrete first-value moment when asked when customers 'get it', and acknowledges most new customers stall or…",
+   "HK-R01 - The user RECOUNTS that new customers must invest significant effort/steps/training BEFORE feeling the first reward/value.",
+   "HK-R02 ! The user RECOUNTS onboarding friction so severe that scaling acquisition now would waste the spend (users churn before reaching value).",
+   "HK-R03 - The user RECOUNTS that usage drops off right after signup/first use (users never log in again after week one).",
+   "HK-R04 ~ The user RECOUNTS no habit/repeat usage forming — customers use it once or only when prompted, plus no proof of outcome to show prospects."
+  ],
+  "V2.1": [
+   "LC-R06 - The user RECOUNTS asking for interest or a meeting WITHOUT a defined, buyable offer (no scope, no price, no deliverable) being on the table.",
+   "VP-R01 - The user RECOUNTS an offer that cannot be stated in one complete sentence naming who it is for, which problem it solves, and how it differs from alternatives.",
+   "VP-R03 ~ The user RECOUNTS a pain reliever or gain creator that does not map to any specific job, pain, or gain in a customer profile.",
+   "VP-R07 + The user RECOUNTS turning a capability into a named, scoped, priced offer — a productized service a buyer could accept this week."
+  ],
+  "V2.4": [
+   "TM-R01 - The user RECOUNTS their own future intention, plan, or optimistic prediction about demand as if it were evidence (e.g.",
+   "TM-R04 - The user RECOUNTS a problem or complaint BUT describes no cost, loss, or quantified implication of it - accepted as-is, with no money or time at stake.",
+   "TM-R07 ~ The user RECOUNTS that a conversation or proposal thread ended WITHOUT any commitment AND WITHOUT an explicit rejection (wishy-washy, no next step).",
+   "TM-R08 + The user RECOUNTS receiving a serious commitment of time or reputation from a prospect (an introduction to a decision maker, a written testimonial, a paid…",
+   "VP-R02 - The user RECOUNTS customer pains or gains WITHOUT any measurable threshold (no minutes, rupiah, or percent from the customer's own measurement).",
+   "VP-R05 ! The user RECOUNTS testing or pitching an offer to customers BEFORE establishing evidence that the targeted jobs, pains, or gains actually matter to them."
+  ]
+ },
+ "contradiction_report": [
+  {
+   "capability": "C6.3",
+   "raise_sources": [
+    "SP"
+   ],
+   "lower_sources": [
+    "CS",
+    "SP",
+    "TM",
+    "VP"
+   ],
+   "cross_source_pairs": [
+    [
+     "SP",
+     "CS"
+    ],
+    [
+     "SP",
+     "TM"
+    ],
+    [
+     "SP",
+     "VP"
+    ]
+   ],
+   "status": "REPORT_ONLY — adjudicate bila kedua sumber aktif di fase yang sama"
+  },
+  {
+   "capability": "C6.4",
+   "raise_sources": [
+    "LC",
+    "PR",
+    "SP"
+   ],
+   "lower_sources": [
+    "LC"
+   ],
+   "cross_source_pairs": [
+    [
+     "PR",
+     "LC"
+    ],
+    [
+     "SP",
+     "LC"
+    ]
+   ],
+   "status": "REPORT_ONLY — adjudicate bila kedua sumber aktif di fase yang sama"
+  },
+  {
+   "capability": "DM5.1",
+   "raise_sources": [
+    "HG",
+    "PR"
+   ],
+   "lower_sources": [
+    "PR"
+   ],
+   "cross_source_pairs": [
+    [
+     "HG",
+     "PR"
+    ]
+   ],
+   "status": "REPORT_ONLY — adjudicate bila kedua sumber aktif di fase yang sama"
+  },
+  {
+   "capability": "L8.1",
+   "raise_sources": [
+    "EM"
+   ],
+   "lower_sources": [
+    "CS"
+   ],
+   "cross_source_pairs": [
+    [
+     "EM",
+     "CS"
+    ]
+   ],
+   "status": "REPORT_ONLY — adjudicate bila kedua sumber aktif di fase yang sama"
+  },
+  {
+   "capability": "R7.2",
+   "raise_sources": [
+    "HG"
+   ],
+   "lower_sources": [
+    "HK"
+   ],
+   "cross_source_pairs": [
+    [
+     "HG",
+     "HK"
+    ]
+   ],
+   "status": "REPORT_ONLY — adjudicate bila kedua sumber aktif di fase yang sama"
+  },
+  {
+   "capability": "V2.1",
+   "raise_sources": [
+    "VP"
+   ],
+   "lower_sources": [
+    "LC",
+    "VP"
+   ],
+   "cross_source_pairs": [
+    [
+     "VP",
+     "LC"
+    ]
+   ],
+   "status": "REPORT_ONLY — adjudicate bila kedua sumber aktif di fase yang sama"
+  },
+  {
+   "capability": "V2.4",
+   "raise_sources": [
+    "TM"
+   ],
+   "lower_sources": [
+    "TM",
+    "VP"
+   ],
+   "cross_source_pairs": [
+    [
+     "TM",
+     "VP"
+    ]
+   ],
+   "status": "REPORT_ONLY — adjudicate bila kedua sumber aktif di fase yang sama"
+  }
+ ]
+}

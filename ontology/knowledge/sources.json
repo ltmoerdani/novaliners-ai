@@ -1,0 +1,127 @@
+{
+  "sources": [
+    {
+      "source_id": "chasm",
+      "title": "Crossing the Chasm: Marketing and Selling Disruptive Products to Mainstream Customers",
+      "author": "Geoffrey A. Moore",
+      "type": "book",
+      "year": 1991,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "conceptual_framework",
+      "admission": "primary",
+      "$comment": "G2 26 Sep 2026: L2-only readiness-scoped extraction (segment/GTM/whole product/positioning/partner) — 0 item L3, pola sf. Ekstraksi langsung dari PDF (174 hal, verbatim + page anchor). source_file/skill_path memakai path aktual internal-docs (utang path entri lama telah dilunasi lintas-sumber, 066c528)."
+    },
+    {
+      "source_id": "cs",
+      "title": "The Challenger Sale",
+      "author": "Matthew Dixon & Brent Adamson (CEB/SEC)",
+      "type": "book",
+      "year": 2011,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "empirical_research",
+      "admission": "primary"
+    },
+    {
+      "source_id": "em",
+      "title": "The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It",
+      "author": "Michael E. Gerber",
+      "type": "book",
+      "year": 1995,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "conceptual_framework",
+      "admission": "primary"
+    },
+    {
+      "source_id": "hg",
+      "title": "Hacking Growth: How Today's Fastest-Growing Companies Drive Breakout Success",
+      "author": "Sean Ellis & Morgan Brown",
+      "type": "book",
+      "year": 2017,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "practitioner_playbook",
+      "admission": "primary"
+    },
+    {
+      "source_id": "hk",
+      "title": "Hooked: How to Build Habit-Forming Products",
+      "author": "Nir Eyal with Ryan Hoover",
+      "type": "book",
+      "year": 2014,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "practitioner_playbook",
+      "admission": "primary"
+    },
+    {
+      "source_id": "lc",
+      "title": "The Lost Art of Closing: Winning the Customer's Commitment in a World That Can Say No",
+      "author": "Anthony Iannarino",
+      "type": "book",
+      "year": 2017,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "practitioner_playbook",
+      "admission": "primary"
+    },
+    {
+      "source_id": "pr",
+      "title": "Predictable Revenue: Turn Your Business Into a Sales Machine with the $100 Million Best Practices of Salesforce.com",
+      "author": "Aaron Ross & Marylou Tyler",
+      "type": "book",
+      "year": 2011,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "practitioner_playbook",
+      "admission": "primary"
+    },
+    {
+      "source_id": "sf",
+      "title": "The SPIN Selling Fieldbook",
+      "author": "Neil Rackham",
+      "type": "book",
+      "year": 1996,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "practitioner_playbook",
+      "admission": "reinforcing"
+    },
+    {
+      "source_id": "sp",
+      "title": "SPIN Selling",
+      "author": "Neil Rackham (Huthwaite research)",
+      "type": "book",
+      "year": 1988,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "empirical_research",
+      "admission": "primary"
+    },
+    {
+      "source_id": "tm",
+      "title": "The Mom Test: how to talk to customers and learn if your business is a good idea when everyone is lying to you",
+      "author": "Rob Fitzpatrick",
+      "type": "book",
+      "year": 2013,
+      "source_file": "internal-docs",
+      "skill_path": "internal-docs",
+      "authority_grade": "practitioner_playbook",
+      "admission": "primary"
+    },
+    {
+      "source_id": "vp",
+      "title": "Value Proposition Design",
+      "author": "Alexander Osterwalder, Yves Pigneur, Greg Bernarda, Alan Smith",
+      "type": "book",
+      "year": 2014,
+      "source_file": "internal-docs Proposition Design (Osterwalder 2014, Wiley).pdf",
+      "skill_path": "internal-docs",
+      "authority_grade": "conceptual_framework",
+      "admission": "primary"
+    }
+  ],
+  "$comment": "FASE 3 (internal-docs §6.2e, internal-docs): authority_grade = urutan otoritas untuk pre-rerank tier-2 & adjudication (empirical_research > practitioner_playbook > conceptual_framework). admission = hasil admission test per buku: 'primary' boleh menambah rule baru; 'reinforcing' hanya provenance/confidence upgrade — BUKAN rule baru (collector fallacy, internal-docs §7). Sumber baru wajib mengisi keduanya — divalidasi validate_knowledge.py."
+}

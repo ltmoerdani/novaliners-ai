@@ -1,0 +1,26 @@
+{
+  "$comment": "FIXTURE RR9 Tahap 2 — guardrail owner: heuristik linguistik = WARNING, BUKAN ERROR; entry tetap valid (exit 0); reviewer/audit = otoritas semantik. Kata ber-afiks tindakan (Menjadwalkan/menghubungi) memicu SIGNAL, bukan penolakan.",
+  "$expect": { "errors": [], "warnings": ["RR9 SIGNAL"], "warnings_min": 1 },
+  "entries": [
+    {
+      "requirement_id": "rr9.jadwal_aktivitas",
+      "definition": "Menjadwalkan blok waktu untuk menghubungi prospek setiap pekan.",
+      "observability": [
+        "Blok waktu tersimpan di jadwal harian",
+        "Catatan kontak pekan tercatat pada berkas"
+      ],
+      "satisfaction_rule": {
+        "mode": "BINARY",
+        "sufficient": "Jadwal dan catatan kontak pekan keduanya tersimpan.",
+        "no_decisive": "Belum ada jadwal maupun catatan.",
+        "contradicting": "Catatan menunjukkan tidak ada blok waktu sama sekali."
+      },
+      "provenance": {
+        "source_id": "tm",
+        "chapters": ["ch06"],
+        "knowledge_type": "source_claim",
+        "confidence": "normative_only"
+      }
+    }
+  ]
+}

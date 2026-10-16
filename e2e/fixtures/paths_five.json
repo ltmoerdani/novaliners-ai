@@ -1,0 +1,402 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "",
+  "found_version": 3,
+  "i18n": {},
+  "needs_rediagnosis": false,
+  "reason_code": null,
+  "status": "CURRENT"
+ },
+ "possible_paths": {
+  "generation": {
+   "considered": 5,
+   "emerged": [
+    "s0",
+    "s1",
+    "s2",
+    "s3",
+    "s4"
+   ],
+   "not_emergent": [],
+   "rejected": [],
+   "undetermined": [],
+   "unsupported_knowledge": []
+  },
+  "paths": [
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "improve activation to move toward the goal",
+    "checks": [
+     {
+      "check_id": "c0",
+      "i18n": {
+       "en": {
+        "reason": "Condition 0 is met",
+        "title": "Condition 0 is in place",
+        "unlock": "Do the thing for 0."
+       }
+      },
+      "kind": "prereq",
+      "reason": "kondisi 0 terpenuhi",
+      "refs": [
+       "ev-0"
+      ],
+      "requirement_id": null,
+      "state": "PRESENT",
+      "title": "Condition 0",
+      "unlock": "unlock 0"
+     }
+    ],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.s0",
+    "presentation": {
+     "en": {
+      "basis": "Improve activation to move toward the goal.",
+      "short": "Improve activation",
+      "word": "Improve"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": "state:goal",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "s0",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [],
+       "signal": "state:goal"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "s0",
+    "title": "Improve activation",
+    "unlock_conditions": []
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "raise trial conversion to move toward the goal",
+    "checks": [
+     {
+      "check_id": "c1",
+      "i18n": {
+       "en": {
+        "reason": "Condition 1 is not measured yet",
+        "title": "Condition 1 is in place",
+        "unlock": "Do the thing for 1."
+       }
+      },
+      "kind": "prereq",
+      "reason": "kondisi 1 belum terukur",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "Condition 1",
+      "unlock": "unlock 1"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "c1",
+      "need": "unlock 1"
+     }
+    ],
+    "motion": null,
+    "path_id": "path.s1",
+    "presentation": {
+     "en": {
+      "basis": "Raise trial conversion to move toward the goal.",
+      "short": "Raise trial conversion",
+      "word": "Raise"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": "state:goal",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "s1",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [],
+       "signal": "state:goal"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "s1",
+    "title": "Raise trial conversion",
+    "unlock_conditions": [
+     "unlock 1"
+    ]
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "shorten onboarding to move toward the goal",
+    "checks": [
+     {
+      "check_id": "c2",
+      "i18n": {
+       "en": {
+        "reason": "Condition 2 is not measured yet",
+        "title": "Condition 2 is in place",
+        "unlock": "Do the thing for 2."
+       }
+      },
+      "kind": "prereq",
+      "reason": "kondisi 2 belum terukur",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "Condition 2",
+      "unlock": "unlock 2"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "c2",
+      "need": "unlock 2"
+     }
+    ],
+    "motion": null,
+    "path_id": "path.s2",
+    "presentation": {
+     "en": {
+      "basis": "Shorten onboarding to move toward the goal.",
+      "short": "Shorten onboarding",
+      "word": "Shorten"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": "state:goal",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "s2",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [],
+       "signal": "state:goal"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "s2",
+    "title": "Shorten onboarding",
+    "unlock_conditions": [
+     "unlock 2"
+    ]
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "reduce churn to move toward the goal",
+    "checks": [
+     {
+      "check_id": "c3",
+      "i18n": {
+       "en": {
+        "reason": "Condition 3 is met",
+        "title": "Condition 3 is in place",
+        "unlock": "Do the thing for 3."
+       }
+      },
+      "kind": "prereq",
+      "reason": "kondisi 3 terpenuhi",
+      "refs": [
+       "ev-3"
+      ],
+      "requirement_id": null,
+      "state": "PRESENT",
+      "title": "Condition 3",
+      "unlock": "unlock 3"
+     }
+    ],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.s3",
+    "presentation": {
+     "en": {
+      "basis": "Reduce churn to move toward the goal.",
+      "short": "Reduce churn",
+      "word": "Reduce"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": "state:goal",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "s3",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [],
+       "signal": "state:goal"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "s3",
+    "title": "Reduce churn",
+    "unlock_conditions": []
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "grow referrals to move toward the goal",
+    "checks": [
+     {
+      "check_id": "c4",
+      "i18n": {
+       "en": {
+        "reason": "Condition 4 is not measured yet",
+        "title": "Condition 4 is in place",
+        "unlock": "Do the thing for 4."
+       }
+      },
+      "kind": "prereq",
+      "reason": "kondisi 4 belum terukur",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "Condition 4",
+      "unlock": "unlock 4"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "c4",
+      "need": "unlock 4"
+     }
+    ],
+    "motion": null,
+    "path_id": "path.s4",
+    "presentation": {
+     "en": {
+      "basis": "Grow referrals to move toward the goal.",
+      "short": "Grow referrals",
+      "word": "Grow"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "emerges_when": "state:goal",
+     "evidence_ids": [],
+     "knowledge_ids": [],
+     "knowledge_sources": [],
+     "knowledge_support": [],
+     "mechanism_ids": [],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:goal"
+     ],
+     "strategy_id": "s4",
+     "support": [
+      {
+       "reason": "a goal is stated",
+       "refs": [],
+       "signal": "state:goal"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "s4",
+    "title": "Grow referrals",
+    "unlock_conditions": [
+     "unlock 4"
+    ]
+   }
+  ],
+  "space_id": "synthetic5",
+  "unresolved": [],
+  "version": 3
+ }
+}

@@ -1,0 +1,181 @@
+{
+  "$comment": "RouteTemplate PRODUKSI (D4 int 08 §8.4, 27 Sep). ACQUISITION lewat kontak langsung. §7.10: commitment_obtained & decision_maker vakum-capable (populasi = prospek) -> depends_on node prospects (populasi DISEDIAKAN di route ini). Provenance diturunkan mekanis dari provenance requirement penyusun.",
+  "template_id": "direct_outreach_v1",
+  "strategy_id": "direct_outreach",
+  "goal_anchor": "conversion.commitment_obtained",
+  "applies_when": {
+    "applies": [
+      {
+        "text_contains_any": [
+          "b2b",
+          "klien bisnis",
+          "jual ke perusahaan",
+          "jasa",
+          "konsultan",
+          "freelance",
+          "agensi",
+          "proyek klien",
+          "business client",
+          "sell to companies",
+          "consulting",
+          "consultant",
+          "freelance work",
+          "agency",
+          "client project",
+          "service business"
+        ]
+      }
+    ],
+    "not_applicable": []
+  },
+  "requires": [
+    "access.icp",
+    "access.prospect_list",
+    "access.outreach_asset",
+    "access.cadence",
+    "delivery.response_system",
+    "access.decision_maker",
+    "conversion.commitment_obtained"
+  ],
+  "node_candidates": [
+    {
+      "candidate_key": "icp",
+      "resolves": [
+        "access.icp"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Tulis ICP: jenis usaha, level, dan peran pembeli",
+      "i18n": {
+        "en": {
+          "activity": "Write the ideal-client profile: business type, level, and the buyer's role"
+        }
+      }
+    },
+    {
+      "candidate_key": "prospects",
+      "resolves": [
+        "access.prospect_list"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "icp"
+      ],
+      "activity": "Susun daftar prospek bernama nyata beserta asal tiap entri",
+      "i18n": {
+        "en": {
+          "activity": "Build a list of named, real prospects with where each entry came from"
+        }
+      }
+    },
+    {
+      "candidate_key": "message",
+      "resolves": [
+        "access.outreach_asset"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "icp"
+      ],
+      "activity": "Siapkan pesan kontak pertama yang pendek dengan alasan kontak spesifik",
+      "i18n": {
+        "en": {
+          "activity": "Prepare a short first-contact message with a specific reason for reaching out"
+        }
+      }
+    },
+    {
+      "candidate_key": "cadence",
+      "resolves": [
+        "access.cadence"
+      ],
+      "strength": "soft",
+      "depends_on": [
+        "prospects"
+      ],
+      "activity": "Tetapkan ritme kontak mingguan dan catat jumlah kontak tiap minggu",
+      "i18n": {
+        "en": {
+          "activity": "Set a weekly contact rhythm and record how many contacts you make each week"
+        }
+      }
+    },
+    {
+      "candidate_key": "responses",
+      "resolves": [
+        "delivery.response_system"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "prospects"
+      ],
+      "activity": "Siapkan log respons, template balasan, dan jadwal follow-up",
+      "i18n": {
+        "en": {
+          "activity": "Prepare a response log, reply templates, and a follow-up schedule"
+        }
+      }
+    },
+    {
+      "candidate_key": "decision",
+      "resolves": [
+        "access.decision_maker"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "prospects"
+      ],
+      "activity": "Pastikan tiap kesepakatan berjalan punya jalur langsung ke pengambil keputusan",
+      "i18n": {
+        "en": {
+          "activity": "Make sure every live deal has a direct line to the decision maker"
+        }
+      }
+    },
+    {
+      "candidate_key": "commitment",
+      "resolves": [
+        "conversion.commitment_obtained"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "prospects",
+        "message"
+      ],
+      "activity": "Minta satu komitmen eksplisit di setiap tahap kontak",
+      "i18n": {
+        "en": {
+          "activity": "Ask for one explicit commitment at every stage of contact"
+        }
+      }
+    }
+  ],
+  "provenance": [
+    {
+      "source_id": "pr",
+      "chapters": [
+        "ch02",
+        "ch03",
+        "ch04"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "cs",
+      "chapters": [
+        "ch07"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "lc",
+      "chapters": [
+        "ch02"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    }
+  ]
+}

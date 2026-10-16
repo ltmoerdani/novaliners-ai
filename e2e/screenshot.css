@@ -1,0 +1,2 @@
+/* Transient UI must not decide a visual baseline. */
+.app-toast { display: none !important; }

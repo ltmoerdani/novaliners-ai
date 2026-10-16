@@ -1,0 +1,152 @@
+{
+  "$comment": "RouteTemplate PRODUKSI (D4 int 08 §8.4, 27 Sep). PAID_ACQUISITION setelah konversi & ekonomi terukur. §7.10: baseline_comparison vakum-capable (populasi = perubahan yang diuji = landing) -> depends_on landing. unit_economics bergantung pada conversion_baseline (biaya per pelanggan butuh rasio konversi). Provenance diturunkan mekanis dari provenance requirement penyusun.",
+  "template_id": "paid_channel_test_v1",
+  "strategy_id": "paid_channel_test",
+  "goal_anchor": "commercial.unit_economics",
+  "applies_when": {
+    "applies": [
+      {
+        "text_contains_any": [
+          "iklan",
+          "ads",
+          "kanal berbayar",
+          "budget marketing",
+          "budget iklan",
+          "advertising",
+          "paid channel",
+          "marketing budget",
+          "ad budget",
+          "paid ads"
+        ]
+      }
+    ],
+    "not_applicable": [
+      {
+        "text_contains_any": [
+          "tidak ada budget iklan",
+          "tidak punya budget iklan",
+          "tanpa budget iklan",
+          "no ads budget",
+          "no ad budget",
+          "no budget for ads",
+          "without ad budget",
+          "no marketing budget"
+        ]
+      }
+    ]
+  },
+  "requires": [
+    "offering.exists",
+    "conversion.landing_page",
+    "conversion.conversion_baseline",
+    "experiment.baseline_comparison",
+    "commercial.unit_economics"
+  ],
+  "node_candidates": [
+    {
+      "candidate_key": "offer",
+      "resolves": [
+        "offering.exists"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Pastikan penawaran konkret dengan deliverable jelas",
+      "i18n": {
+        "en": {
+          "activity": "Make the offer concrete with clear deliverables"
+        }
+      }
+    },
+    {
+      "candidate_key": "landing",
+      "resolves": [
+        "conversion.landing_page"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "offer"
+      ],
+      "activity": "Aktifkan halaman konversi dengan offer jelas dan CTA spesifik",
+      "i18n": {
+        "en": {
+          "activity": "Turn on the conversion page with a clear offer and a specific call to action"
+        }
+      }
+    },
+    {
+      "candidate_key": "conv",
+      "resolves": [
+        "conversion.conversion_baseline"
+      ],
+      "strength": "hard",
+      "depends_on": [],
+      "activity": "Catat jumlah permintaan masuk dan closing untuk menghitung rasio",
+      "i18n": {
+        "en": {
+          "activity": "Record how many inquiries come in and how many close, to compute the ratio"
+        }
+      }
+    },
+    {
+      "candidate_key": "test",
+      "resolves": [
+        "experiment.baseline_comparison"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "landing"
+      ],
+      "activity": "Uji kanal berbayar dengan baseline tercatat dan bandingkan hasilnya",
+      "i18n": {
+        "en": {
+          "activity": "Test the paid channel with the baseline written down and compare the results"
+        }
+      }
+    },
+    {
+      "candidate_key": "unit",
+      "resolves": [
+        "commercial.unit_economics"
+      ],
+      "strength": "hard",
+      "depends_on": [
+        "conv",
+        "test"
+      ],
+      "activity": "Hitung pendapatan vs biaya memperoleh dan melayani satu pelanggan",
+      "i18n": {
+        "en": {
+          "activity": "Compute revenue versus the cost of winning and serving one client"
+        }
+      }
+    }
+  ],
+  "provenance": [
+    {
+      "source_id": "vp",
+      "chapters": [
+        "ch02",
+        "ch05",
+        "ch03"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "pr",
+      "chapters": [
+        "ch08"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    },
+    {
+      "source_id": "hg",
+      "chapters": [
+        "ch04"
+      ],
+      "knowledge_type": "source_claim",
+      "confidence": "normative_only"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "pack_id": "revenue",
+  "version": "0.1.0",
+  "schema_version": "0.1",
+
+  "$lookup_semantics": "Resolusi lexicon bersifat PER-DOMAIN: kunci lookup = prefix domain sebenarnya (`constraint_id.split('.')[0]`, mis. 'DM5.1' → 'DM5'). Sebelum Fase D, kode memakai 2 huruf pertama sehingga domain 3 huruf (DS4, DM5) tidak pernah cocok dan diam-diam memakai nilai default — lihat $resolved_legacy_gap. Kelengkapan lexicon DITEGAKKAN saat load (fail-fast): setiap prefix di ontology/constraints.json WAJIB punya entri di sini.",
+
+  "$comment": "Revenue domain pack — manifest + lexicon (P5a, internal-docs §9). Engine (core/stages/*) DILARANG menulis identitas domain (prefix D1..L8) sendiri; semua dibaca dari sini lewat engine/domain_pack.py. Pre-image dari domains/revenue/pack.json + core/registry.py (F1, internal-docs §4).",
+
+  "$field_legend": {
+    "prefix": "prefix constraint ID di ontology/constraints.json (mis. 'DM5' untuk 'DM5.2')",
+    "upstream_order": "urutan upstream-ness; makin kecil makin upstream (menang saat skor seri)",
+    "reversibility": "pengali skor efektif — seberapa cepat user sendiri bisa memperbaiki constraint ini",
+    "decision_priority": "true = constraint ini menyentuh angka keputusan → decision_relevance penuh (1.0), selainnya 0.8",
+    "experiment_priority": "true = uji untuk constraint ini cepat & informatif → experiment_confidence +0.25"
+  },
+
+  "evidence_markers": {
+    "$comment": "Fase E: tabel frasa domain yang dulu hardcoded di core/stages/confidence.py (_EVENT_MARKERS/_CONTRAST_MARKERS). Engine hanya tahu CARA memakainya; kata-katanya milik domain.",
+    "event": [
+      "hilang", "hilang ke kompetitor", "mati", "menguap", "stall", "stalled", "diam",
+      "tidak balas", "tidak dibalas", "belum balas", "berhenti balas", "telat", "terlambat",
+      "lambat", "ditolak", "menolak", "gagal", "bocor", "lepas", "batal", "mundur",
+      "ambil jasa orang lain", "tidak ditindaklanjuti", "tidak di-follow", "tidak difollow",
+      "tidak pernah dikejar", "diabaikan", "lost", "churn", "cancel", "np", "nol closing",
+      "0 closing", "0 dari", "tidak jadi klien", "gagal closing", "lead mati", "prospek mati"
+    ],
+    "contrast": [
+      "dulu", "sebelumnya", "waktu itu", "saat rajin", "ketika rajin", "historis",
+      "dibanding sekarang", "vs sekarang", "6 dari 10", "6/10", "mulai berhenti"
+    ]
+  },
+
+  "constraint_domains": [
+    {
+      "prefix": "D1",
+      "name": "Direction & Goal",
+      "upstream_order": 0,
+      "reversibility": 0.97,
+      "decision_priority": false
+    },
+    {
+      "prefix": "V2",
+      "name": "Value & Offer",
+      "upstream_order": 1,
+      "reversibility": 1.0,
+      "decision_priority": true,
+      "experiment_priority": true
+    },
+    {
+      "prefix": "M3",
+      "name": "Market & Segment",
+      "upstream_order": 2,
+      "reversibility": 0.92,
+      "decision_priority": false
+    },
+    {
+      "prefix": "DS4",
+      "name": "Distribution",
+      "upstream_order": 3,
+      "reversibility": 1.0,
+      "decision_priority": true,
+      "experiment_priority": true
+    },
+    {
+      "prefix": "DM5",
+      "name": "Demand",
+      "upstream_order": 4,
+      "reversibility": 0.97,
+      "decision_priority": true
+    },
+    {
+      "prefix": "C6",
+      "name": "Conversion",
+      "upstream_order": 5,
+      "reversibility": 1.0,
+      "decision_priority": true,
+      "experiment_priority": true
+    },
+    {
+      "prefix": "R7",
+      "name": "Retention",
+      "upstream_order": 6,
+      "reversibility": 0.95,
+      "decision_priority": false
+    },
+    {
+      "prefix": "L8",
+      "name": "Leverage & Capacity",
+      "upstream_order": 7,
+      "reversibility": 0.9,
+      "decision_priority": false
+    }
+  ],
+
+  "$resolved_legacy_gap": {
+    "affected_prefixes": ["DS4", "DM5"],
+    "mechanism": "Pra-Fase D, confidence.py me-lookup reversibility, decision_priority, dan experiment_priority dengan constraint_id[:2] terhadap tabel berkunci prefix LENGKAP; prefix 3 huruf tidak pernah cocok sehingga selalu jatuh ke default (1.0 / 0.8 / tanpa bonus).",
+    "status": "SELESAI di Fase D contract (internal-docs §9): lookup kini per-domain, mode + seam shadow dihapus, dan kelengkapan lexicon ditegakkan saat load. Nilai deklarasi di blok constraint_domains BERLAKU.",
+    "effect_at_switch": {
+      "DS4": {"reversibility": "tetap 1.0 (deklarasi = default)", "decision_priority": "false → true", "experiment_priority": "false → true"},
+      "DM5": {"reversibility": "1.0 → 0.97 (satu-satunya perubahan skor)", "decision_priority": "false → true", "experiment_priority": "tetap false"}
+    }
+  },
+
+  "$material_gap_note": "Fase J (internal-docs): P2 — gap yang menyentuh angka keputusan adalah gap MATERIAL (menurunkan confidence + memicu probe). Kosakata ini dulunya MATERIAL_GAP_KEYWORDS di core/stages/confidence.py — kelas S1 yang sama dengan evidence_markers (Fase E); nilai dipindah apa adanya, perilaku tidak berubah.",
+
+  "material_gap_keywords": [
+    "conversion", "konversi", "rate", "rasio", "kapasitas", "capacity",
+    "jam per", "jam/minggu", "alasan", "target", "timeline", "deadline",
+    "hari", "harga", "price", "pricing", "berapa", "funnel", "closing",
+    "close", "renewal", "upsell", "pipeline", "butuh", "dibutuhkan"
+  ],
+
+  "unmapped_distribution_note": {
+    "$comment": "Fase J (internal-docs): E5 — bukti distribusi ada di ledger tapi mapping LLM drop → constraint distribusi dapat note jujur, bukan UNKNOWN diam. Dulunya tuple channel + startswith('DS4') hardcoded di core/stages/confidence.py:603-608.",
+    "applies_to_constraint_domains": ["DS4"],
+    "signals": ["inquiry", "outreach", "linkedin", "dm", "referral", "inbound"]
+  },
+
+  "systemic_risk": {
+    "$comment": "Constraint domain yang naik dari UNRESOLVED → SYSTEMIC_RISK ketika state menunjukkan kapasitas mentok. Dievaluasi generic oleh engine/domain_pack.is_systemic_risk() — menggantikan `if cid.startswith(\"L8\")` di confidence.py (S1, internal-docs §3.4).",
+    "verdict": "SYSTEMIC_RISK",
+    "applies_to_constraint_domains": ["L8"],
+    "when_state": {
+      "all_of": [
+        {"field": "acquisition_hours_per_week", "op": "is_not_null"},
+        {"field": "deals_needed", "op": "gte", "value": 2}
+      ]
+    }
+  }
+}

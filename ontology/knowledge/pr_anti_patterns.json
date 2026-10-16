@@ -1,0 +1,76 @@
+{
+ "$comment": "Predictable Revenue — anti-pattern perilaku user pada fase prospecting/pipeline.",
+ "anti_patterns": [
+  {
+   "pattern_id": "PR-A01",
+   "name": "Mood-Dependent Prospecting",
+   "symptom": "Prospecting is done only when it’s quiet / in a good mood: 'only when I’m feeling motivated do I DM people' — without a fixed schedule.",
+   "constraint_link": [
+    "DS4.2"
+   ],
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "PR-A02",
+   "name": "One-Message Wonder",
+   "symptom": "Mengirim satu pesan/penawaran lalu berhenti; menganggap tidak dibalas = tidak tertarik, padahal mayoritas deal butuh beberapa sentuhan.",
+   "constraint_link": [
+    "C6.4",
+    "DS4.2"
+   ],
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "PR-A03",
+   "name": "Spray and Pray",
+   "symptom": "Blast pesan/penawaran identik ke semua orang tanpa filter profil — lalu menyalahkan 'pasar lagi sepi' saat response rendah.",
+   "constraint_link": [
+    "M3.1",
+    "C6.1"
+   ],
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "PR-A04",
+   "name": "Chaos Handoff to Self",
+   "symptom": "Semua role dipegang sendiri tanpa sistem: lead baru dicampur dengan follow-up lama, inbox/CRM tidak ada — inquiry hilang tanpa sadar.",
+   "constraint_link": [
+    "C6.4"
+   ],
+   "provenance": {
+    "source_id": "pr",
+    "chapters": [
+     "ch03",
+     "ch08"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

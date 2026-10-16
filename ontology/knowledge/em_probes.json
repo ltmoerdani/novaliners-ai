@@ -1,0 +1,100 @@
+{
+ "$comment": "The E-Myth Revisited (Gerber, 1995) — probes. Target: L8.3 (delivery capacity), L8.1 (time-for-money), sistemisasi.",
+ "probes": [
+  {
+   "probe_id": "EM-P01",
+   "text": "If you are sick for 2 weeks and cannot work at all, what happens to your income and your clients’ work — honestly?",
+   "targets": [
+    "L8.3",
+    "L8.1"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "There is a system/person who can replace — the business does not depend on an individual",
+    "negative": "Pendapatan berhenti total & pekerjaan tertunda — 100% tergantung satu orang",
+    "neutral": "Some can be diverted — semi-finished system"
+   },
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch02",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "EM-P02",
+   "text": "Your routine work (revisions, client onboarding, reports) — is there a step-by-step document that others can follow, or is it all just in your head?",
+   "targets": [
+    "L8.3",
+    "L8.1"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "There is a written SOP in use — it can be delegated.",
+    "negative": "All in your head — every new client necessarily adds to your hours",
+    "neutral": "Ada sebagian, tidak terpakai konsisten"
+   },
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch10",
+     "ch14"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "EM-P03",
+   "text": "Before taking on a new client, have you ever calculated beforehand: how many hours/week they need AND where those hours will be taken from?",
+   "targets": [
+    "L8.3"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "Capacity is calculated before commit — client acceptance is controlled",
+    "negative": "Accept first, find time later — capacity quietly collapses.",
+    "neutral": "Rasakan kasar tanpa angka"
+   },
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch08",
+     "ch18"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "probe_id": "EM-P04",
+   "text": "If today you had to work 2× less, which work do you think does NOT need to be done at all — and why are you still doing it?",
+   "targets": [
+    "L8.1",
+    "L8.3"
+   ],
+   "evidence_type": "process",
+   "signal_interpretation": {
+    "positive": "Able to distinguish valuable vs non-valuable work + has a systemic rationale",
+    "negative": "Semua terasa wajib & dilakukan sendiri — tanda technician-dominan",
+    "neutral": "Knowing something is wasteful but hesitant to stop"
+   },
+   "provenance": {
+    "source_id": "em",
+    "chapters": [
+     "ch02",
+     "ch10"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

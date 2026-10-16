@@ -1,0 +1,215 @@
+{
+ "$comment": "Evidence rules dari Value Proposition Design (mapping §4).",
+ "evidence_rules": [
+  {
+   "rule_id": "VP-R01",
+   "condition": "The offer cannot be expressed in one complete sentence (who-problem-how-different from competitors).",
+   "matcher_hint": "The user RECOUNTS an offer that cannot be stated in one complete sentence naming who it is for, which problem it solves, and how it differs from alternatives.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "V2.1"
+    ],
+    "rationale": "Ad-lib gagal terisi = capability belum berubah menjadi offer; disconnect terkonfirmasi."
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "VP-R02",
+   "condition": "pains/gains digambarkan tanpa threshold terukur (tidak ada angka menit/rupiah/persen dari ukuran customer)",
+   "matcher_hint": "The user RECOUNTS customer pains or gains WITHOUT any measurable threshold (no minutes, rupiah, or percent from the customer's own measurement).",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_present_pattern": "\\b(pain|masalah|kesulitan|susah|kendala|frustrasi)\\b"
+      },
+      {
+       "text_absent_pattern": "(rp\\s?\\d|\\d+\\s?(juta|jt)|persen|\\d+\\s?%|menit|jam|hari)"
+      }
+     ]
+    },
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "V2.4",
+     "C6.3"
+    ],
+    "rationale": "Severity cannot be validated; pain reliever cannot be designed precisely without a customer measure."
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "VP-R03",
+   "condition": "pain reliever / gain creator tidak memetakan ke job, pain, atau gain manapun di customer profile",
+   "matcher_hint": "The user RECOUNTS a pain reliever or gain creator that does not map to any specific job, pain, or gain in a customer profile.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "IGNORE_SIGNAL",
+    "targets": [
+     "V2.1"
+    ],
+    "rationale": "Fit check gagal: elemen itu kemungkinan tidak menciptakan customer value — jangan dihitung sebagai kekuatan offer."
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "VP-R04",
+   "condition": "customer profile is created with your own offer in mind (not in anthropologist mode)",
+   "matcher_hint": "The user RECOUNTS building the customer profile from their own assumptions and offer, without observing actual customers (no customer interview, no research, no field contact).",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "LOWER_CONFIDENCE",
+    "targets": [
+     "M3.1"
+    ],
+    "rationale": "Profile bias — jobs/pains/gains that are less relevant to the offer are not mapped; segment understanding becomes shallow."
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "VP-R05",
+   "condition": "offer is tested on customers BEFORE there is evidence that the targeted jobs/pains/gains actually matter",
+   "matcher_hint": "The user RECOUNTS testing or pitching an offer to customers BEFORE establishing evidence that the targeted jobs, pains, or gains actually matter to them.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "BLOCK_VERDICT",
+    "targets": [
+     "V2.4"
+    ],
+    "rationale": "Rejection ambigu: menolak offer atau menolak pain yang tidak relevan? Verdict 'validated/invalidated' tidak sah — test-the-circle dulu."
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "VP-R06",
+   "condition": "revenue > costs is not yet proven (there is no evidence yet of a profitable and scalable business model)",
+   "matcher_hint": "The user RECOUNTS that revenue exceeding costs has not been evidenced - margin, unit economics, or profitability unknown, never calculated, or untested.",
+   "evaluation": {
+    "tier": "deterministic",
+    "predicate": {
+     "all_of": [
+      {
+       "text_contains_any": [
+        "margin",
+        "laba",
+        "untung",
+        "biaya",
+        "cost"
+       ]
+      },
+      {
+       "text_contains_any": [
+        "tidak tahu",
+        "belum",
+        "tidak ada",
+        "gap data",
+        "tidak pernah",
+        "belum pasti"
+       ]
+      }
+     ]
+    },
+    "version": "v0.3"
+   },
+   "consequence": {
+    "action": "BLOCK_VERDICT",
+    "targets": [
+     "D1.2"
+    ],
+    "rationale": "Business model fit belum tercapai — product-market fit tidak boleh dinyatakan lengkap; great offer tetap bisa gagal."
+   },
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch03"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "rule_id": "VP-R07",
+   "condition": "A buyable unit exists: name, boundary of what is included, and a price attached to the capability.",
+   "matcher_hint": "The user RECOUNTS turning a capability into a named, scoped, priced offer — a productized service a buyer could accept this week.",
+   "evaluation": {
+    "tier": "judgment",
+    "version": "v0.1"
+   },
+   "consequence": {
+    "action": "RAISE_CONFIDENCE",
+    "targets": [
+     "V2.1"
+    ],
+    "rationale": "Offer terproduk (nama + scope + harga) adalah bukti langsung capability→offer terhubung — bukan lagi sekadar skill di kepala."
+   },
+   "provenance": {
+    "source_id": "vp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch01",
+     "ch02"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

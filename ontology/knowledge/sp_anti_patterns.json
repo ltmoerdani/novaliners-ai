@@ -1,0 +1,112 @@
+{
+ "$comment": "SPIN Selling — anti-patterns (berbasis riset Huthwaite).",
+ "anti_patterns": [
+  {
+   "pattern_id": "SP-A01",
+   "name": "Premature Pitch",
+   "symptom": "Menunjukkan portofolio/penawaran/harga sebelum masalah & implikasinya dikonfirmasi pembeli sendiri — deal besar ditutup lebih awal.",
+   "constraint_link": [
+    "C6.1",
+    "C6.3"
+   ],
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch02",
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "SP-A02",
+   "name": "Feature-Dump",
+   "symptom": "Answering every objection with a list of features/services ('I can also build this, that, you know') — the more features mentioned, the more objections arise.",
+   "constraint_link": [
+    "C6.3"
+   ],
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch05",
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "SP-A03",
+   "name": "Pressure Closing",
+   "symptom": "Menggunakan teknik closing tekanan (discount hari ini, terbatas, paksa pilih) pada calon baru — di large sale berkorelasi dengan penolakan.",
+   "constraint_link": [
+    "C6.3",
+    "C6.4"
+   ],
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "SP-A04",
+   "name": "Situation Interrogation",
+   "symptom": "Menumpuk pertanyaan data/latar belakang ('sejak kapan, berapa karyawan, pakai apa') tanpa masuk ke masalah — calon merasa diinterogasi tanpa nilai.",
+   "constraint_link": [
+    "C6.1"
+   ],
+   "provenance": {
+    "source_id": "sp",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "SP-A05",
+   "name": "Advantage Oversell",
+   "symptom": "Menjual dengan klaim 'advantage' generik ('lebih cepat', 'lebih murah') tanpa merangkainya ke explicit need yang pembeli akui sendiri — di large sale ini dibaca sebagai obrolan penjual, bukan nilai.",
+   "constraint_link": [
+    "C6.3"
+   ],
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch05"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "SP-A06",
+   "name": "Objection Evasion",
+   "symptom": "Menghindari atau membelokkan objeksi ('itu nanti juga beres') alih-alih menelusuri masalah di baliknya — objeksi adalah sinyal kebutuhan yang belum berkembang, bukan hambatan yang dilawan.",
+   "constraint_link": [
+    "C6.1",
+    "C6.3"
+   ],
+   "provenance": {
+    "source_id": "sp",
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only",
+    "chapters": [
+     "ch06"
+    ]
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}

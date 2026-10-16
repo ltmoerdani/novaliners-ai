@@ -1,0 +1,2615 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "",
+  "found_version": 3,
+  "i18n": {},
+  "needs_rediagnosis": false,
+  "reason_code": null,
+  "status": "CURRENT"
+ },
+ "possible_paths": {
+  "generation": {
+   "considered": 3,
+   "emerged": [
+    "improve_activation_before_acquisition",
+    "define_aha_moment",
+    "simplify_onboarding"
+   ],
+   "mechanisms": [
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-g-1",
+      "ev-g-2"
+     ],
+     "knowledge_ids": [
+      "GW-R1"
+     ],
+     "mechanism_id": "activation_bottleneck",
+     "status": "ACTIVE",
+     "title": "Activation bottleneck",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R2"
+     ],
+     "mechanism_id": "onboarding_friction",
+     "status": "ACTIVE",
+     "title": "Onboarding friction",
+     "transcript_anchors": []
+    }
+   ],
+   "not_emergent": [],
+   "possibilities": [
+    {
+     "candidate_id": "cand.improve_activation_before_acquisition",
+     "conflicts": [],
+     "direction": "improve_activation_before_acquisition",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R1",
+      "GW-R2"
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck",
+      "onboarding_friction"
+     ],
+     "missing": [],
+     "path_id": "path.improve_activation_before_acquisition",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Improve activation before increasing acquisition"
+    },
+    {
+     "candidate_id": "cand.define_aha_moment",
+     "conflicts": [],
+     "direction": "define_aha_moment",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2"
+     ],
+     "knowledge_ids": [
+      "GW-R1"
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck"
+     ],
+     "missing": [],
+     "path_id": "path.define_aha_moment",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Define the aha moment"
+    },
+    {
+     "candidate_id": "cand.simplify_onboarding",
+     "conflicts": [],
+     "direction": "simplify_onboarding",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R2"
+     ],
+     "mechanism_ids": [
+      "onboarding_friction"
+     ],
+     "missing": [],
+     "path_id": "path.simplify_onboarding",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Simplify onboarding"
+    }
+   ],
+   "rejected": [],
+   "undetermined": [],
+   "unsupported_knowledge": []
+  },
+  "paths": [
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "acquiring more people into a weak activation only multiplies the leak",
+    "checks": [
+     {
+      "check_id": "aha_defined",
+      "i18n": {
+       "en": {
+        "reason": "Aha defined is not measured yet",
+        "title": "The aha moment is defined",
+        "unlock": "Name the moment a user first gets value."
+       }
+      },
+      "kind": "prereq",
+      "reason": "aha defined: belum terukur",
+      "refs": [],
+      "requirement_id": null,
+      "state": "UNKNOWN",
+      "title": "The aha moment is defined",
+      "unlock": "define the aha moment"
+     }
+    ],
+    "feasibility": "UNDETERMINED",
+    "feasibility_basis": "CHECKS",
+    "lifecycle": "OPEN",
+    "missing_evidence": [
+     {
+      "check_id": "aha_defined",
+      "need": "define the aha moment"
+     }
+    ],
+    "motion": null,
+    "path_id": "path.improve_activation_before_acquisition",
+    "presentation": {
+     "en": {
+      "basis": "Help new sign-ups reach value before you bring in more of them.",
+      "because": {
+       "activation_bottleneck": "Many people sign up, but too few reach the moment where the product pays off.",
+       "onboarding_friction": "Your first session is confusing, so people give up before they see value."
+      },
+      "short": "Improve activation first",
+      "word": "Activation"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [
+      {
+       "basis": "NO_MATCHING_RECORD",
+       "branch": ".all_of[2].none_of",
+       "operand": [
+        "text_contains_any(aktivasi sudah kuat)"
+       ],
+       "operator": "none_of",
+       "rule_id": "GW-R1"
+      }
+     ],
+     "candidate": {
+      "assumed_absences": [
+       {
+        "basis": "NO_MATCHING_RECORD",
+        "branch": ".all_of[2].none_of",
+        "operand": [
+         "text_contains_any(aktivasi sudah kuat)"
+        ],
+        "operator": "none_of",
+        "rule_id": "GW-R1"
+       }
+      ],
+      "candidate_id": "cand.improve_activation_before_acquisition",
+      "conflicts": [],
+      "direction": "improve_activation_before_acquisition",
+      "evidence_ids": [
+       "ev-g-0",
+       "ev-g-1",
+       "ev-g-2",
+       "ev-g-3"
+      ],
+      "knowledge_ids": [
+       "GW-R1",
+       "GW-R2"
+      ],
+      "mechanism_ids": [
+       "activation_bottleneck",
+       "onboarding_friction"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "knowledge_ids": [
+         "GW-R1"
+        ],
+        "mechanism_id": "activation_bottleneck",
+        "status": "ACTIVE",
+        "title": "Activation bottleneck",
+        "transcript_anchors": []
+       },
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-g-3"
+        ],
+        "knowledge_ids": [
+         "GW-R2"
+        ],
+        "mechanism_id": "onboarding_friction",
+        "status": "ACTIVE",
+        "title": "Onboarding friction",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "revenue goal: terbukti",
+        "refs": [
+         "ev-g-0"
+        ],
+        "signal": "state:revenue_goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:GW-R1"
+          ],
+          "mechanism_id": "activation_bottleneck",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme activation_bottleneck aktif (DERIVED)",
+        "refs": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "signal": "mechanism:activation_bottleneck"
+       },
+       {
+        "assumes": [
+         {
+          "basis": "NO_MATCHING_RECORD",
+          "branch": ".all_of[2].none_of",
+          "operand": [
+           "text_contains_any(aktivasi sudah kuat)"
+          ],
+          "operator": "none_of"
+         }
+        ],
+        "basis": [
+         {
+          "branch": ".all_of[0].text_contains_any",
+          "evidence_ids": [
+           "ev-g-1"
+          ],
+          "operand": [
+           "sign-up banyak"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         },
+         {
+          "branch": ".all_of[1].any_of[0].text_contains_any",
+          "evidence_ids": [
+           "ev-g-2"
+          ],
+          "operand": [
+           "tidak mencapai aha"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge GW-R1 aktif, didukung evidence ev-g-1, ev-g-2",
+        "refs": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "signal": "rule:GW-R1"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:GW-R2"
+          ],
+          "mechanism_id": "onboarding_friction",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme onboarding_friction aktif (DERIVED)",
+        "refs": [
+         "ev-g-3"
+        ],
+        "signal": "mechanism:onboarding_friction"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-g-3"
+          ],
+          "operand": [
+           "onboarding membingungkan"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge GW-R2 aktif, didukung evidence ev-g-3",
+        "refs": [
+         "ev-g-3"
+        ],
+        "signal": "rule:GW-R2"
+       },
+       {
+        "reason": "acquisition exists: terbukti",
+        "refs": [
+         "ev-g-1"
+        ],
+        "signal": "state:acquisition_exists"
+       }
+      ],
+      "thesis": "acquiring more people into a weak activation only multiplies the leak",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "all_of": [
+       {
+        "any_of": [
+         "mechanism:activation_bottleneck",
+         "mechanism:onboarding_friction"
+        ]
+       },
+       "state:acquisition_exists"
+      ]
+     },
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R1",
+      "GW-R2"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [
+        {
+         "basis": "NO_MATCHING_RECORD",
+         "branch": ".all_of[2].none_of",
+         "operand": [
+          "text_contains_any(aktivasi sudah kuat)"
+         ],
+         "operator": "none_of"
+        }
+       ],
+       "branches": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-1"
+         ],
+         "operand": [
+          "sign-up banyak"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].any_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-2"
+         ],
+         "operand": [
+          "tidak mencapai aha"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "rule_id": "GW-R1",
+       "transcript_anchors": []
+      },
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-g-3"
+         ],
+         "operand": [
+          "onboarding membingungkan"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-g-3"
+       ],
+       "rule_id": "GW-R2",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck",
+      "onboarding_friction"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:revenue_goal",
+      "state:acquisition_exists"
+     ],
+     "strategy_id": "improve_activation_before_acquisition",
+     "support": [
+      {
+       "reason": "revenue goal: terbukti",
+       "refs": [
+        "ev-g-0"
+       ],
+       "signal": "state:revenue_goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:GW-R1"
+         ],
+         "mechanism_id": "activation_bottleneck",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme activation_bottleneck aktif (DERIVED)",
+       "refs": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "signal": "mechanism:activation_bottleneck"
+      },
+      {
+       "assumes": [
+        {
+         "basis": "NO_MATCHING_RECORD",
+         "branch": ".all_of[2].none_of",
+         "operand": [
+          "text_contains_any(aktivasi sudah kuat)"
+         ],
+         "operator": "none_of"
+        }
+       ],
+       "basis": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-1"
+         ],
+         "operand": [
+          "sign-up banyak"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].any_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-2"
+         ],
+         "operand": [
+          "tidak mencapai aha"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge GW-R1 aktif, didukung evidence ev-g-1, ev-g-2",
+       "refs": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "signal": "rule:GW-R1"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:GW-R2"
+         ],
+         "mechanism_id": "onboarding_friction",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme onboarding_friction aktif (DERIVED)",
+       "refs": [
+        "ev-g-3"
+       ],
+       "signal": "mechanism:onboarding_friction"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-g-3"
+         ],
+         "operand": [
+          "onboarding membingungkan"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge GW-R2 aktif, didukung evidence ev-g-3",
+       "refs": [
+        "ev-g-3"
+       ],
+       "signal": "rule:GW-R2"
+      },
+      {
+       "reason": "acquisition exists: terbukti",
+       "refs": [
+        "ev-g-1"
+       ],
+       "signal": "state:acquisition_exists"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "improve_activation_before_acquisition",
+    "title": "Improve activation before increasing acquisition",
+    "unlock_conditions": [
+     "define the aha moment"
+    ]
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "without a named aha moment nobody can tell if activation improves",
+    "checks": [],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "DECLARED_UNCONDITIONAL",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.define_aha_moment",
+    "presentation": {
+     "en": {
+      "basis": "Name the moment a user first gets value, so you can tell if activation improves.",
+      "because": "New users are not reaching value, and nobody has named what value looks like.",
+      "short": "Define the aha moment",
+      "word": "Aha moment"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [
+      {
+       "basis": "NO_MATCHING_RECORD",
+       "branch": ".all_of[2].none_of",
+       "operand": [
+        "text_contains_any(aktivasi sudah kuat)"
+       ],
+       "operator": "none_of",
+       "rule_id": "GW-R1"
+      }
+     ],
+     "candidate": {
+      "assumed_absences": [
+       {
+        "basis": "NO_MATCHING_RECORD",
+        "branch": ".all_of[2].none_of",
+        "operand": [
+         "text_contains_any(aktivasi sudah kuat)"
+        ],
+        "operator": "none_of",
+        "rule_id": "GW-R1"
+       }
+      ],
+      "candidate_id": "cand.define_aha_moment",
+      "conflicts": [],
+      "direction": "define_aha_moment",
+      "evidence_ids": [
+       "ev-g-0",
+       "ev-g-1",
+       "ev-g-2"
+      ],
+      "knowledge_ids": [
+       "GW-R1"
+      ],
+      "mechanism_ids": [
+       "activation_bottleneck"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "knowledge_ids": [
+         "GW-R1"
+        ],
+        "mechanism_id": "activation_bottleneck",
+        "status": "ACTIVE",
+        "title": "Activation bottleneck",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "revenue goal: terbukti",
+        "refs": [
+         "ev-g-0"
+        ],
+        "signal": "state:revenue_goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:GW-R1"
+          ],
+          "mechanism_id": "activation_bottleneck",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme activation_bottleneck aktif (DERIVED)",
+        "refs": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "signal": "mechanism:activation_bottleneck"
+       },
+       {
+        "assumes": [
+         {
+          "basis": "NO_MATCHING_RECORD",
+          "branch": ".all_of[2].none_of",
+          "operand": [
+           "text_contains_any(aktivasi sudah kuat)"
+          ],
+          "operator": "none_of"
+         }
+        ],
+        "basis": [
+         {
+          "branch": ".all_of[0].text_contains_any",
+          "evidence_ids": [
+           "ev-g-1"
+          ],
+          "operand": [
+           "sign-up banyak"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         },
+         {
+          "branch": ".all_of[1].any_of[0].text_contains_any",
+          "evidence_ids": [
+           "ev-g-2"
+          ],
+          "operand": [
+           "tidak mencapai aha"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge GW-R1 aktif, didukung evidence ev-g-1, ev-g-2",
+        "refs": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "signal": "rule:GW-R1"
+       }
+      ],
+      "thesis": "without a named aha moment nobody can tell if activation improves",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:activation_bottleneck"
+      ]
+     },
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2"
+     ],
+     "knowledge_ids": [
+      "GW-R1"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [
+        {
+         "basis": "NO_MATCHING_RECORD",
+         "branch": ".all_of[2].none_of",
+         "operand": [
+          "text_contains_any(aktivasi sudah kuat)"
+         ],
+         "operator": "none_of"
+        }
+       ],
+       "branches": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-1"
+         ],
+         "operand": [
+          "sign-up banyak"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].any_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-2"
+         ],
+         "operand": [
+          "tidak mencapai aha"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "rule_id": "GW-R1",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:revenue_goal"
+     ],
+     "strategy_id": "define_aha_moment",
+     "support": [
+      {
+       "reason": "revenue goal: terbukti",
+       "refs": [
+        "ev-g-0"
+       ],
+       "signal": "state:revenue_goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:GW-R1"
+         ],
+         "mechanism_id": "activation_bottleneck",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme activation_bottleneck aktif (DERIVED)",
+       "refs": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "signal": "mechanism:activation_bottleneck"
+      },
+      {
+       "assumes": [
+        {
+         "basis": "NO_MATCHING_RECORD",
+         "branch": ".all_of[2].none_of",
+         "operand": [
+          "text_contains_any(aktivasi sudah kuat)"
+         ],
+         "operator": "none_of"
+        }
+       ],
+       "basis": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-1"
+         ],
+         "operand": [
+          "sign-up banyak"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].any_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-2"
+         ],
+         "operand": [
+          "tidak mencapai aha"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge GW-R1 aktif, didukung evidence ev-g-1, ev-g-2",
+       "refs": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "signal": "rule:GW-R1"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "define_aha_moment",
+    "title": "Define the aha moment",
+    "unlock_conditions": []
+   },
+   {
+    "advisory": "",
+    "applicability": "APPLIES",
+    "basis": "friction in the first session keeps people from reaching value",
+    "checks": [],
+    "feasibility": "SUPPORTED",
+    "feasibility_basis": "DECLARED_UNCONDITIONAL",
+    "lifecycle": "OPEN",
+    "missing_evidence": [],
+    "motion": null,
+    "path_id": "path.simplify_onboarding",
+    "presentation": {
+     "en": {
+      "basis": "Cut the first session down to the steps that lead to value.",
+      "because": "Your first session is confusing, so people give up before they see value.",
+      "short": "Simplify onboarding",
+      "word": "Onboarding"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.simplify_onboarding",
+      "conflicts": [],
+      "direction": "simplify_onboarding",
+      "evidence_ids": [
+       "ev-g-0",
+       "ev-g-3"
+      ],
+      "knowledge_ids": [
+       "GW-R2"
+      ],
+      "mechanism_ids": [
+       "onboarding_friction"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-g-3"
+        ],
+        "knowledge_ids": [
+         "GW-R2"
+        ],
+        "mechanism_id": "onboarding_friction",
+        "status": "ACTIVE",
+        "title": "Onboarding friction",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "revenue goal: terbukti",
+        "refs": [
+         "ev-g-0"
+        ],
+        "signal": "state:revenue_goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:GW-R2"
+          ],
+          "mechanism_id": "onboarding_friction",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme onboarding_friction aktif (DERIVED)",
+        "refs": [
+         "ev-g-3"
+        ],
+        "signal": "mechanism:onboarding_friction"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-g-3"
+          ],
+          "operand": [
+           "onboarding membingungkan"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge GW-R2 aktif, didukung evidence ev-g-3",
+        "refs": [
+         "ev-g-3"
+        ],
+        "signal": "rule:GW-R2"
+       }
+      ],
+      "thesis": "friction in the first session keeps people from reaching value",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:onboarding_friction"
+      ]
+     },
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R2"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-g-3"
+         ],
+         "operand": [
+          "onboarding membingungkan"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-g-3"
+       ],
+       "rule_id": "GW-R2",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "onboarding_friction"
+     ],
+     "motion": null,
+     "route_template_ids": [
+      "simplify_onboarding_v1"
+     ],
+     "state_claims": [
+      "state:revenue_goal"
+     ],
+     "strategy_id": "simplify_onboarding",
+     "support": [
+      {
+       "reason": "revenue goal: terbukti",
+       "refs": [
+        "ev-g-0"
+       ],
+       "signal": "state:revenue_goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:GW-R2"
+         ],
+         "mechanism_id": "onboarding_friction",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme onboarding_friction aktif (DERIVED)",
+       "refs": [
+        "ev-g-3"
+       ],
+       "signal": "mechanism:onboarding_friction"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-g-3"
+         ],
+         "operand": [
+          "onboarding membingungkan"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge GW-R2 aktif, didukung evidence ev-g-3",
+       "refs": [
+        "ev-g-3"
+       ],
+       "signal": "rule:GW-R2"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "simplify_onboarding_v1"
+     ]
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "simplify_onboarding",
+    "title": "Simplify onboarding",
+    "unlock_conditions": []
+   }
+  ],
+  "space_id": "growth",
+  "unresolved": [],
+  "version": 3
+ },
+ "projection": {
+  "emerging": [],
+  "generation": {
+   "considered": 3,
+   "emerged": [
+    "improve_activation_before_acquisition",
+    "define_aha_moment",
+    "simplify_onboarding"
+   ],
+   "mechanisms": [
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-g-1",
+      "ev-g-2"
+     ],
+     "knowledge_ids": [
+      "GW-R1"
+     ],
+     "mechanism_id": "activation_bottleneck",
+     "status": "ACTIVE",
+     "title": "Activation bottleneck",
+     "transcript_anchors": []
+    },
+    {
+     "conflicts": [],
+     "derived": true,
+     "direct": false,
+     "evidence_ids": [
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R2"
+     ],
+     "mechanism_id": "onboarding_friction",
+     "status": "ACTIVE",
+     "title": "Onboarding friction",
+     "transcript_anchors": []
+    }
+   ],
+   "not_emergent": [],
+   "possibilities": [
+    {
+     "candidate_id": "cand.improve_activation_before_acquisition",
+     "conflicts": [],
+     "direction": "improve_activation_before_acquisition",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R1",
+      "GW-R2"
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck",
+      "onboarding_friction"
+     ],
+     "missing": [],
+     "path_id": "path.improve_activation_before_acquisition",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Improve activation before increasing acquisition"
+    },
+    {
+     "candidate_id": "cand.define_aha_moment",
+     "conflicts": [],
+     "direction": "define_aha_moment",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2"
+     ],
+     "knowledge_ids": [
+      "GW-R1"
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck"
+     ],
+     "missing": [],
+     "path_id": "path.define_aha_moment",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Define the aha moment"
+    },
+    {
+     "candidate_id": "cand.simplify_onboarding",
+     "conflicts": [],
+     "direction": "simplify_onboarding",
+     "disposition": "PROMOTED",
+     "emerging": null,
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R2"
+     ],
+     "mechanism_ids": [
+      "onboarding_friction"
+     ],
+     "missing": [],
+     "path_id": "path.simplify_onboarding",
+     "refuted": [],
+     "status": "SUPPORTED",
+     "title": "Simplify onboarding"
+    }
+   ],
+   "rejected": [],
+   "undetermined": [],
+   "unsupported_knowledge": []
+  },
+  "navigation": {
+   "current_version": 3,
+   "detail": "",
+   "found_version": 3,
+   "i18n": {},
+   "needs_rediagnosis": false,
+   "reason_code": null,
+   "status": "CURRENT"
+  },
+  "paths": [
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Help new sign-ups reach value before you bring in more of them."
+    },
+    "candidate": {
+     "assumes_absence": true,
+     "candidate_id": "cand.improve_activation_before_acquisition",
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R1",
+      "GW-R2"
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck",
+      "onboarding_friction"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "Many people sign up, but too few reach the moment where the product pays off. Your first session is confusing, so people give up before they see value."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 1,
+     "unknown": 1
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "UNDETERMINED",
+    "feasibility_engine": "UNDETERMINED",
+    "items": [
+     {
+      "activity": "",
+      "check_id": "aha_defined",
+      "evidence": [],
+      "executability": null,
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "engine",
+       "text": "Name the moment a user first gets value."
+      },
+      "key": "aha_defined",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": "Aha defined is not measured yet"
+      },
+      "requirement_id": null,
+      "soft": false,
+      "sources": [
+       "check"
+      ],
+      "state": "UNKNOWN",
+      "title": {
+       "lang": "en",
+       "source": "engine",
+       "text": "The aha moment is defined"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": "Name the moment a user first gets value."
+      },
+      "waits_on": []
+     }
+    ],
+    "key": "path.improve_activation_before_acquisition",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "Whether the aha moment is defined is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "unclear",
+       "requirement_anchor": "aha_defined",
+       "support_state": "UNKNOWN"
+      }
+     ],
+     "holding": "",
+     "supported": "",
+     "unclear": "Whether the aha moment is defined is in place is not known yet."
+    },
+    "path_id": "path.improve_activation_before_acquisition",
+    "presentation": {
+     "en": {
+      "basis": "Help new sign-ups reach value before you bring in more of them.",
+      "because": {
+       "activation_bottleneck": "Many people sign up, but too few reach the moment where the product pays off.",
+       "onboarding_friction": "Your first session is confusing, so people give up before they see value."
+      },
+      "short": "Improve activation first",
+      "word": "Activation"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [
+      {
+       "basis": "NO_MATCHING_RECORD",
+       "branch": ".all_of[2].none_of",
+       "operand": [
+        "text_contains_any(aktivasi sudah kuat)"
+       ],
+       "operator": "none_of",
+       "rule_id": "GW-R1"
+      }
+     ],
+     "candidate": {
+      "assumed_absences": [
+       {
+        "basis": "NO_MATCHING_RECORD",
+        "branch": ".all_of[2].none_of",
+        "operand": [
+         "text_contains_any(aktivasi sudah kuat)"
+        ],
+        "operator": "none_of",
+        "rule_id": "GW-R1"
+       }
+      ],
+      "candidate_id": "cand.improve_activation_before_acquisition",
+      "conflicts": [],
+      "direction": "improve_activation_before_acquisition",
+      "evidence_ids": [
+       "ev-g-0",
+       "ev-g-1",
+       "ev-g-2",
+       "ev-g-3"
+      ],
+      "knowledge_ids": [
+       "GW-R1",
+       "GW-R2"
+      ],
+      "mechanism_ids": [
+       "activation_bottleneck",
+       "onboarding_friction"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "knowledge_ids": [
+         "GW-R1"
+        ],
+        "mechanism_id": "activation_bottleneck",
+        "status": "ACTIVE",
+        "title": "Activation bottleneck",
+        "transcript_anchors": []
+       },
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-g-3"
+        ],
+        "knowledge_ids": [
+         "GW-R2"
+        ],
+        "mechanism_id": "onboarding_friction",
+        "status": "ACTIVE",
+        "title": "Onboarding friction",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "revenue goal: terbukti",
+        "refs": [
+         "ev-g-0"
+        ],
+        "signal": "state:revenue_goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:GW-R1"
+          ],
+          "mechanism_id": "activation_bottleneck",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme activation_bottleneck aktif (DERIVED)",
+        "refs": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "signal": "mechanism:activation_bottleneck"
+       },
+       {
+        "assumes": [
+         {
+          "basis": "NO_MATCHING_RECORD",
+          "branch": ".all_of[2].none_of",
+          "operand": [
+           "text_contains_any(aktivasi sudah kuat)"
+          ],
+          "operator": "none_of"
+         }
+        ],
+        "basis": [
+         {
+          "branch": ".all_of[0].text_contains_any",
+          "evidence_ids": [
+           "ev-g-1"
+          ],
+          "operand": [
+           "sign-up banyak"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         },
+         {
+          "branch": ".all_of[1].any_of[0].text_contains_any",
+          "evidence_ids": [
+           "ev-g-2"
+          ],
+          "operand": [
+           "tidak mencapai aha"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge GW-R1 aktif, didukung evidence ev-g-1, ev-g-2",
+        "refs": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "signal": "rule:GW-R1"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:GW-R2"
+          ],
+          "mechanism_id": "onboarding_friction",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme onboarding_friction aktif (DERIVED)",
+        "refs": [
+         "ev-g-3"
+        ],
+        "signal": "mechanism:onboarding_friction"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-g-3"
+          ],
+          "operand": [
+           "onboarding membingungkan"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge GW-R2 aktif, didukung evidence ev-g-3",
+        "refs": [
+         "ev-g-3"
+        ],
+        "signal": "rule:GW-R2"
+       },
+       {
+        "reason": "acquisition exists: terbukti",
+        "refs": [
+         "ev-g-1"
+        ],
+        "signal": "state:acquisition_exists"
+       }
+      ],
+      "thesis": "acquiring more people into a weak activation only multiplies the leak",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "all_of": [
+       {
+        "any_of": [
+         "mechanism:activation_bottleneck",
+         "mechanism:onboarding_friction"
+        ]
+       },
+       "state:acquisition_exists"
+      ]
+     },
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R1",
+      "GW-R2"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [
+        {
+         "basis": "NO_MATCHING_RECORD",
+         "branch": ".all_of[2].none_of",
+         "operand": [
+          "text_contains_any(aktivasi sudah kuat)"
+         ],
+         "operator": "none_of"
+        }
+       ],
+       "branches": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-1"
+         ],
+         "operand": [
+          "sign-up banyak"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].any_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-2"
+         ],
+         "operand": [
+          "tidak mencapai aha"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "rule_id": "GW-R1",
+       "transcript_anchors": []
+      },
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-g-3"
+         ],
+         "operand": [
+          "onboarding membingungkan"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-g-3"
+       ],
+       "rule_id": "GW-R2",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck",
+      "onboarding_friction"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:revenue_goal",
+      "state:acquisition_exists"
+     ],
+     "strategy_id": "improve_activation_before_acquisition",
+     "support": [
+      {
+       "reason": "revenue goal: terbukti",
+       "refs": [
+        "ev-g-0"
+       ],
+       "signal": "state:revenue_goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:GW-R1"
+         ],
+         "mechanism_id": "activation_bottleneck",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme activation_bottleneck aktif (DERIVED)",
+       "refs": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "signal": "mechanism:activation_bottleneck"
+      },
+      {
+       "assumes": [
+        {
+         "basis": "NO_MATCHING_RECORD",
+         "branch": ".all_of[2].none_of",
+         "operand": [
+          "text_contains_any(aktivasi sudah kuat)"
+         ],
+         "operator": "none_of"
+        }
+       ],
+       "basis": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-1"
+         ],
+         "operand": [
+          "sign-up banyak"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].any_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-2"
+         ],
+         "operand": [
+          "tidak mencapai aha"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge GW-R1 aktif, didukung evidence ev-g-1, ev-g-2",
+       "refs": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "signal": "rule:GW-R1"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:GW-R2"
+         ],
+         "mechanism_id": "onboarding_friction",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme onboarding_friction aktif (DERIVED)",
+       "refs": [
+        "ev-g-3"
+       ],
+       "signal": "mechanism:onboarding_friction"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-g-3"
+         ],
+         "operand": [
+          "onboarding membingungkan"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge GW-R2 aktif, didukung evidence ev-g-3",
+       "refs": [
+        "ev-g-3"
+       ],
+       "signal": "rule:GW-R2"
+      },
+      {
+       "reason": "acquisition exists: terbukti",
+       "refs": [
+        "ev-g-1"
+       ],
+       "signal": "state:acquisition_exists"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "TEST_FIRST",
+    "stop_provenance": [],
+    "strategy_id": "improve_activation_before_acquisition",
+    "title": "Improve activation before increasing acquisition"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Name the moment a user first gets value, so you can tell if activation improves."
+    },
+    "candidate": {
+     "assumes_absence": true,
+     "candidate_id": "cand.define_aha_moment",
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2"
+     ],
+     "knowledge_ids": [
+      "GW-R1"
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "New users are not reaching value, and nobody has named what value looks like."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 0,
+     "total": 0,
+     "unknown": 0
+    },
+    "executability": "UNKNOWN",
+    "feasibility": "SUPPORTED",
+    "feasibility_engine": "SUPPORTED",
+    "items": [],
+    "key": "path.define_aha_moment",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [],
+     "holding": "",
+     "supported": "",
+     "unclear": ""
+    },
+    "path_id": "path.define_aha_moment",
+    "presentation": {
+     "en": {
+      "basis": "Name the moment a user first gets value, so you can tell if activation improves.",
+      "because": "New users are not reaching value, and nobody has named what value looks like.",
+      "short": "Define the aha moment",
+      "word": "Aha moment"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [
+      {
+       "basis": "NO_MATCHING_RECORD",
+       "branch": ".all_of[2].none_of",
+       "operand": [
+        "text_contains_any(aktivasi sudah kuat)"
+       ],
+       "operator": "none_of",
+       "rule_id": "GW-R1"
+      }
+     ],
+     "candidate": {
+      "assumed_absences": [
+       {
+        "basis": "NO_MATCHING_RECORD",
+        "branch": ".all_of[2].none_of",
+        "operand": [
+         "text_contains_any(aktivasi sudah kuat)"
+        ],
+        "operator": "none_of",
+        "rule_id": "GW-R1"
+       }
+      ],
+      "candidate_id": "cand.define_aha_moment",
+      "conflicts": [],
+      "direction": "define_aha_moment",
+      "evidence_ids": [
+       "ev-g-0",
+       "ev-g-1",
+       "ev-g-2"
+      ],
+      "knowledge_ids": [
+       "GW-R1"
+      ],
+      "mechanism_ids": [
+       "activation_bottleneck"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "knowledge_ids": [
+         "GW-R1"
+        ],
+        "mechanism_id": "activation_bottleneck",
+        "status": "ACTIVE",
+        "title": "Activation bottleneck",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "revenue goal: terbukti",
+        "refs": [
+         "ev-g-0"
+        ],
+        "signal": "state:revenue_goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:GW-R1"
+          ],
+          "mechanism_id": "activation_bottleneck",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme activation_bottleneck aktif (DERIVED)",
+        "refs": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "signal": "mechanism:activation_bottleneck"
+       },
+       {
+        "assumes": [
+         {
+          "basis": "NO_MATCHING_RECORD",
+          "branch": ".all_of[2].none_of",
+          "operand": [
+           "text_contains_any(aktivasi sudah kuat)"
+          ],
+          "operator": "none_of"
+         }
+        ],
+        "basis": [
+         {
+          "branch": ".all_of[0].text_contains_any",
+          "evidence_ids": [
+           "ev-g-1"
+          ],
+          "operand": [
+           "sign-up banyak"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         },
+         {
+          "branch": ".all_of[1].any_of[0].text_contains_any",
+          "evidence_ids": [
+           "ev-g-2"
+          ],
+          "operand": [
+           "tidak mencapai aha"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge GW-R1 aktif, didukung evidence ev-g-1, ev-g-2",
+        "refs": [
+         "ev-g-1",
+         "ev-g-2"
+        ],
+        "signal": "rule:GW-R1"
+       }
+      ],
+      "thesis": "without a named aha moment nobody can tell if activation improves",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:activation_bottleneck"
+      ]
+     },
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-1",
+      "ev-g-2"
+     ],
+     "knowledge_ids": [
+      "GW-R1"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [
+        {
+         "basis": "NO_MATCHING_RECORD",
+         "branch": ".all_of[2].none_of",
+         "operand": [
+          "text_contains_any(aktivasi sudah kuat)"
+         ],
+         "operator": "none_of"
+        }
+       ],
+       "branches": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-1"
+         ],
+         "operand": [
+          "sign-up banyak"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].any_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-2"
+         ],
+         "operand": [
+          "tidak mencapai aha"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "rule_id": "GW-R1",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "activation_bottleneck"
+     ],
+     "motion": null,
+     "route_template_ids": [],
+     "state_claims": [
+      "state:revenue_goal"
+     ],
+     "strategy_id": "define_aha_moment",
+     "support": [
+      {
+       "reason": "revenue goal: terbukti",
+       "refs": [
+        "ev-g-0"
+       ],
+       "signal": "state:revenue_goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:GW-R1"
+         ],
+         "mechanism_id": "activation_bottleneck",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme activation_bottleneck aktif (DERIVED)",
+       "refs": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "signal": "mechanism:activation_bottleneck"
+      },
+      {
+       "assumes": [
+        {
+         "basis": "NO_MATCHING_RECORD",
+         "branch": ".all_of[2].none_of",
+         "operand": [
+          "text_contains_any(aktivasi sudah kuat)"
+         ],
+         "operator": "none_of"
+        }
+       ],
+       "basis": [
+        {
+         "branch": ".all_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-1"
+         ],
+         "operand": [
+          "sign-up banyak"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        },
+        {
+         "branch": ".all_of[1].any_of[0].text_contains_any",
+         "evidence_ids": [
+          "ev-g-2"
+         ],
+         "operand": [
+          "tidak mencapai aha"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge GW-R1 aktif, didukung evidence ev-g-1, ev-g-2",
+       "refs": [
+        "ev-g-1",
+        "ev-g-2"
+       ],
+       "signal": "rule:GW-R1"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": null,
+    "route_substrate": {
+     "available": false,
+     "template_ids": []
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "define_aha_moment",
+    "title": "Define the aha moment"
+   },
+   {
+    "advisory": {
+     "lang": "id",
+     "text": ""
+    },
+    "applicability": "APPLIES",
+    "basis": {
+     "lang": "en",
+     "text": "Cut the first session down to the steps that lead to value."
+    },
+    "candidate": {
+     "assumes_absence": false,
+     "candidate_id": "cand.simplify_onboarding",
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R2"
+     ],
+     "mechanism_ids": [
+      "onboarding_friction"
+     ],
+     "origin": "MECHANISM_PATTERN",
+     "unsettled": [],
+     "why": {
+      "lang": "en",
+      "source": "curated",
+      "text": "Your first session is confusing, so people give up before they see value."
+     }
+    },
+    "conflicts": [],
+    "counts": {
+     "absent": 0,
+     "conflicted": 0,
+     "partial": 0,
+     "present": 1,
+     "total": 3,
+     "unknown": 2
+    },
+    "executability": "TRUE",
+    "feasibility": "SUPPORTED",
+    "feasibility_engine": "SUPPORTED",
+    "items": [
+     {
+      "activity": "Cut the first session down to the steps that lead to value",
+      "check_id": null,
+      "evidence": [
+       "ledger:delivery.onboarding"
+      ],
+      "executability": "TRUE",
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Say how you begin: a brief, a contract or a kick-off."
+      },
+      "key": "delivery.onboarding",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "delivery.onboarding",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "PRESENT",
+      "title": {
+       "lang": "en",
+       "source": "curated",
+       "text": "How you start with a new client"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": []
+     },
+     {
+      "activity": "Name the moment a user first gets value",
+      "check_id": null,
+      "evidence": [],
+      "executability": "TRUE",
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Compare what loyal users do with what leaving users do, using real usage data."
+      },
+      "key": "retention.aha_moment_defined",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "retention.aha_moment_defined",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "UNKNOWN",
+      "title": {
+       "lang": "en",
+       "source": "curated",
+       "text": "The moment users see the value"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": []
+     },
+     {
+      "activity": "Measure how many new users reach the aha moment",
+      "check_id": null,
+      "evidence": [],
+      "executability": "UNKNOWN",
+      "executed": false,
+      "guidance": {
+       "lang": "en",
+       "source": "curated",
+       "text": "Measure how many new clients reach the moment of value. More than half is the aim."
+      },
+      "key": "retention.activation",
+      "label_ok": true,
+      "partial": false,
+      "reason": {
+       "lang": "en",
+       "text": ""
+      },
+      "requirement_id": "retention.activation",
+      "soft": false,
+      "sources": [
+       "route"
+      ],
+      "state": "UNKNOWN",
+      "title": {
+       "lang": "en",
+       "source": "curated",
+       "text": "New clients reaching the moment of value"
+      },
+      "unlock": {
+       "lang": "en",
+       "text": ""
+      },
+      "waits_on": [
+       {
+        "key": "retention.aha_moment_defined",
+        "title": "The moment users see the value"
+       }
+      ]
+     }
+    ],
+    "key": "path.simplify_onboarding",
+    "lifecycle": "OPEN",
+    "motion": null,
+    "narrative": {
+     "claims": [
+      {
+       "claim": "You already have how you start with a new client.",
+       "claim_type": "SUPPORTED",
+       "evidence_anchor": [
+        "ledger:delivery.onboarding"
+       ],
+       "field": "supported",
+       "requirement_anchor": "delivery.onboarding",
+       "support_state": "PRESENT"
+      },
+      {
+       "claim": "Whether the moment users see the value is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "supported",
+       "requirement_anchor": "retention.aha_moment_defined",
+       "support_state": "UNKNOWN"
+      },
+      {
+       "claim": "Whether the moment users see the value is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "unclear",
+       "requirement_anchor": "retention.aha_moment_defined",
+       "support_state": "UNKNOWN"
+      },
+      {
+       "claim": "Whether new clients reaching the moment of value is in place is not known yet.",
+       "claim_type": "UNKNOWN",
+       "evidence_anchor": [],
+       "field": "unclear",
+       "requirement_anchor": "retention.activation",
+       "support_state": "UNKNOWN"
+      }
+     ],
+     "holding": "",
+     "supported": "You already have how you start with a new client. What we cannot say yet: whether the moment users see the value is in place.",
+     "unclear": "Still open: whether the moment users see the value is in place, and whether new clients reaching the moment of value is in place."
+    },
+    "path_id": "path.simplify_onboarding",
+    "presentation": {
+     "en": {
+      "basis": "Cut the first session down to the steps that lead to value.",
+      "because": "Your first session is confusing, so people give up before they see value.",
+      "short": "Simplify onboarding",
+      "word": "Onboarding"
+     }
+    },
+    "provenance": {
+     "assumed_absences": [],
+     "candidate": {
+      "assumed_absences": [],
+      "candidate_id": "cand.simplify_onboarding",
+      "conflicts": [],
+      "direction": "simplify_onboarding",
+      "evidence_ids": [
+       "ev-g-0",
+       "ev-g-3"
+      ],
+      "knowledge_ids": [
+       "GW-R2"
+      ],
+      "mechanism_ids": [
+       "onboarding_friction"
+      ],
+      "mechanisms": [
+       {
+        "conflicts": [],
+        "derived": true,
+        "direct": false,
+        "evidence_ids": [
+         "ev-g-3"
+        ],
+        "knowledge_ids": [
+         "GW-R2"
+        ],
+        "mechanism_id": "onboarding_friction",
+        "status": "ACTIVE",
+        "title": "Onboarding friction",
+        "transcript_anchors": []
+       }
+      ],
+      "origin": "MECHANISM_PATTERN",
+      "support": [
+       {
+        "reason": "revenue goal: terbukti",
+        "refs": [
+         "ev-g-0"
+        ],
+        "signal": "state:revenue_goal"
+       },
+       {
+        "basis": [
+         {
+          "derived_from": [
+           "rule:GW-R2"
+          ],
+          "mechanism_id": "onboarding_friction",
+          "via": [
+           "DERIVED"
+          ]
+         }
+        ],
+        "reason": "mekanisme onboarding_friction aktif (DERIVED)",
+        "refs": [
+         "ev-g-3"
+        ],
+        "signal": "mechanism:onboarding_friction"
+       },
+       {
+        "basis": [
+         {
+          "branch": "text_contains_any",
+          "evidence_ids": [
+           "ev-g-3"
+          ],
+          "operand": [
+           "onboarding membingungkan"
+          ],
+          "operator": "text_contains_any",
+          "quotes": []
+         }
+        ],
+        "reason": "rule knowledge GW-R2 aktif, didukung evidence ev-g-3",
+        "refs": [
+         "ev-g-3"
+        ],
+        "signal": "rule:GW-R2"
+       }
+      ],
+      "thesis": "friction in the first session keeps people from reaching value",
+      "transcript_anchors": []
+     },
+     "emerges_when": {
+      "any_of": [
+       "mechanism:onboarding_friction"
+      ]
+     },
+     "evidence_ids": [
+      "ev-g-0",
+      "ev-g-3"
+     ],
+     "knowledge_ids": [
+      "GW-R2"
+     ],
+     "knowledge_sources": [],
+     "knowledge_support": [
+      {
+       "assumed_absences": [],
+       "branches": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-g-3"
+         ],
+         "operand": [
+          "onboarding membingungkan"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "evidence_ids": [
+        "ev-g-3"
+       ],
+       "rule_id": "GW-R2",
+       "transcript_anchors": []
+      }
+     ],
+     "mechanism_ids": [
+      "onboarding_friction"
+     ],
+     "motion": null,
+     "route_template_ids": [
+      "simplify_onboarding_v1"
+     ],
+     "state_claims": [
+      "state:revenue_goal"
+     ],
+     "strategy_id": "simplify_onboarding",
+     "support": [
+      {
+       "reason": "revenue goal: terbukti",
+       "refs": [
+        "ev-g-0"
+       ],
+       "signal": "state:revenue_goal"
+      },
+      {
+       "basis": [
+        {
+         "derived_from": [
+          "rule:GW-R2"
+         ],
+         "mechanism_id": "onboarding_friction",
+         "via": [
+          "DERIVED"
+         ]
+        }
+       ],
+       "reason": "mekanisme onboarding_friction aktif (DERIVED)",
+       "refs": [
+        "ev-g-3"
+       ],
+       "signal": "mechanism:onboarding_friction"
+      },
+      {
+       "basis": [
+        {
+         "branch": "text_contains_any",
+         "evidence_ids": [
+          "ev-g-3"
+         ],
+         "operand": [
+          "onboarding membingungkan"
+         ],
+         "operator": "text_contains_any",
+         "quotes": []
+        }
+       ],
+       "reason": "rule knowledge GW-R2 aktif, didukung evidence ev-g-3",
+       "refs": [
+        "ev-g-3"
+       ],
+       "signal": "rule:GW-R2"
+      }
+     ],
+     "transcript_anchors": []
+    },
+    "route": {
+     "applicability": "APPLIES",
+     "lineage_status": "OPEN",
+     "revision_no": 1,
+     "route_id": "00000000-0000-0000-0000-000000000004",
+     "template_id": "simplify_onboarding_v1"
+    },
+    "route_substrate": {
+     "available": true,
+     "template_ids": [
+      "simplify_onboarding_v1"
+     ]
+    },
+    "status": "OPEN",
+    "stop_provenance": [],
+    "strategy_id": "simplify_onboarding",
+    "title": "Simplify onboarding"
+   }
+  ],
+  "unresolved": [],
+  "version": 4
+ },
+ "routes": {
+  "next_move": {
+   "frontier_ref": "00000000-0000-0000-0000-000000000002",
+   "output": "ACTION",
+   "reason": "EXECUTE dipilih oleh policy prioritas v1",
+   "route_id": "00000000-0000-0000-0000-000000000004"
+  },
+  "not_born": [],
+  "routes": [
+   {
+    "applicability": {
+     "evidence": [
+      "ev-g-3"
+     ],
+     "status": "APPLIES"
+    },
+    "derived_status": null,
+    "frontier": [
+     {
+      "kind": "EXECUTE",
+      "node": "00000000-0000-0000-0000-000000000002",
+      "route_id": "00000000-0000-0000-0000-000000000004"
+     }
+    ],
+    "goal_anchor": "retention.activation",
+    "lineage_status": "OPEN",
+    "motion": "ACTIVATION",
+    "nodes": [
+     {
+      "activity": "Cut the first session down to the steps that lead to value",
+      "depends_on": [],
+      "executability": "TRUE",
+      "execution_view": "NOT_STARTED",
+      "node_id": "00000000-0000-0000-0000-000000000001",
+      "resolves": [
+       "delivery.onboarding"
+      ],
+      "satisfaction": {
+       "status": "PRESENT"
+      },
+      "strength": "hard"
+     },
+     {
+      "activity": "Name the moment a user first gets value",
+      "depends_on": [],
+      "executability": "TRUE",
+      "execution_view": "NOT_STARTED",
+      "node_id": "00000000-0000-0000-0000-000000000002",
+      "resolves": [
+       "retention.aha_moment_defined"
+      ],
+      "satisfaction": {
+       "status": "UNKNOWN"
+      },
+      "strength": "hard"
+     },
+     {
+      "activity": "Measure how many new users reach the aha moment",
+      "depends_on": [
+       "00000000-0000-0000-0000-000000000001",
+       "00000000-0000-0000-0000-000000000002"
+      ],
+      "executability": "UNKNOWN",
+      "execution_view": "NOT_STARTED",
+      "node_id": "00000000-0000-0000-0000-000000000003",
+      "resolves": [
+       "retention.activation"
+      ],
+      "satisfaction": {
+       "status": "UNKNOWN"
+      },
+      "strength": "hard"
+     }
+    ],
+    "outcome": "ROUTE_CREATED",
+    "path_id": "path.simplify_onboarding",
+    "path_title": "Simplify onboarding",
+    "revision_no": 1,
+    "route_id": "00000000-0000-0000-0000-000000000004",
+    "strategy": "Cut the first session down to the steps that lead to value.",
+    "strategy_id": "simplify_onboarding",
+    "template_id": "simplify_onboarding_v1"
+   }
+  ],
+  "session_id": "s-ui-golden",
+  "user_id": "u-ui-golden"
+ }
+}

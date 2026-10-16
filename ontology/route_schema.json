@@ -1,0 +1,475 @@
+{
+  "$schema_version": "0.1",
+  "name": "NOVALINERS ROUTE SCHEMA v0.1",
+  "note": "Schema kontrak Route Ontology (internal-docs KONTRAK FINAL, 26 Sep 2026 — keputusan #1-#5 + review §3-§4 + Model B + tri-state). Deklaratif/adaitive mengikuti pola knowledge_schema.json: enums CLOSED SET + entities + invariants. Di-enforce oleh ontology/route/validate_route.py (bukan jsonschema — dependency tidak ada di venv, pola repo = validator manual). Sengaja TIDAK memuat: PROPOSED (T1/T2 belum dikunci — dilarang di enum RouteLineage), REOPEN/WAIT_FOR_DEPENDENCY/RESOLVE_EXECUTABILITY (INV-R19 — frontier bukan state machine), DONE_CREDITED/DONE_EXECUTED (INV-R8), NODE_PENDING_REQUIREMENT (bukan state RouteNode), route_score (INV-R1).",
+  "enums": {
+    "satisfaction": [
+      "PRESENT",
+      "PARTIAL",
+      "UNKNOWN",
+      "ABSENT"
+    ],
+    "applicability": [
+      "APPLIES",
+      "UNDETERMINED",
+      "NOT_APPLICABLE"
+    ],
+    "executability": [
+      "TRUE",
+      "FALSE",
+      "UNKNOWN"
+    ],
+    "execution_view": [
+      "NOT_STARTED",
+      "IN_PROGRESS",
+      "EXECUTED",
+      "ABANDONED"
+    ],
+    "lineage_status": [
+      "OPEN",
+      "CLOSED"
+    ],
+    "frontier_kind": [
+      "RESOLVE_APPLICABILITY",
+      "EXECUTE",
+      "VERIFY"
+    ],
+    "next_move": [
+      "QUESTION",
+      "EVIDENCE_REQUEST",
+      "ACTION",
+      "HOLD"
+    ],
+    "strength": [
+      "hard",
+      "soft"
+    ],
+    "quality_flag": [
+      "completed_with_gaps"
+    ],
+    "close_reason": [
+      "goal_achieved",
+      "not_applicable"
+    ],
+    "strategy_status": [
+      "active",
+      "proof_only"
+    ]
+  },
+  "banned_values": {
+    "$comment": "Nilai yang DILARANG di field enum mana pun (dicek validator terhadap instance DAN terhadap enums schema ini sendiri — guard drift)",
+    "values": [
+      "PROPOSED",
+      "REOPEN",
+      "WAIT",
+      "WAIT_FOR_DEPENDENCY",
+      "WAIT_FOR_EXECUTABILITY",
+      "BLOCKED",
+      "RESOLVE_DEPENDENCY",
+      "RESOLVE_EXECUTABILITY",
+      "DONE_CREDITED",
+      "DONE_EXECUTED",
+      "NODE_PENDING_REQUIREMENT",
+      "TEMPLATE_PENDING_ROUTE",
+      "READY",
+      "NOT_YET"
+    ]
+  },
+  "entities": {
+    "route_template": {
+      "description": "Grammar komposisi (knowledge layer) — BUKAN route. §3.1 kontrak.",
+      "required": [
+        "template_id",
+        "strategy_id",
+        "applies_when",
+        "requires",
+        "node_candidates",
+        "provenance"
+      ],
+      "properties": {
+        "template_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_\\-]+$"
+        },
+        "strategy_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_\\-]+$",
+          "note": "strategy = execution ontology (B), bukan knowledge claim"
+        },
+        "applies_when": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "applies",
+            "not_applicable"
+          ],
+          "properties": {
+            "applies": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object"
+              },
+              "note": "array predikat operator KB (rule_predicates.OPERATORS) -> APPLIES; tak ada yang match -> UNDETERMINED"
+            },
+            "not_applicable": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "note": "predikat -> NOT_APPLICABLE; sitasi wajib dari evaluate_predicate = bukti positif INV-R2 by construction; keduanya match -> UNDETERMINED (konflik)"
+            }
+          },
+          "note": "applicability_rule 3-nilai (verdict owner 27 Sep): cerminkan satisfaction_rule/D-A1b; prosa DILARANG (INV-R16)"
+        },
+        "requires": {
+          "type": "array",
+          "items": "requirement_ref",
+          "minItems": 1
+        },
+        "node_candidates": {
+          "type": "array",
+          "items": "node_candidate"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_id",
+              "chapters",
+              "knowledge_type",
+              "confidence"
+            ],
+            "properties": {
+              "source_id": {
+                "type": "string"
+              },
+              "chapters": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "knowledge_type": {
+                "type": "string"
+              },
+              "confidence": {
+                "type": "string"
+              }
+            },
+            "note": "objek skema KB (D5 — identik registry); string 'source:chapter' DITOLAK (format T6)"
+          },
+          "note": "template bisa berpijak >1 sumber"
+        }
+      }
+    },
+    "reconciliation_key": {
+      "description": "Identity-bearing reconciliation criterion (bukan identity — identity = route_id). §3.2 + INV-R13/R14.",
+      "required": [
+        "goal_anchor",
+        "strategy_id",
+        "scope_anchor"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "goal_anchor": {
+          "type": "string",
+          "note": "requirement yang mewakili goal — wajib terikat di ≥1 node (INV-R4)"
+        },
+        "strategy_id": {
+          "type": "string"
+        },
+        "scope_anchor": {
+          "type": "array",
+          "items": "string",
+          "minItems": 1,
+          "note": "referensi state ter-grounding (state:claim_xx), BUKAN label bebas LLM"
+        }
+      },
+      "forbidden_keys": [
+        "motion",
+        "template_id",
+        "label"
+      ]
+    },
+    "route_lineage": {
+      "description": "Continuous navigation episode — satu route_id, satu terminal. §3.2.",
+      "required": [
+        "route_id",
+        "reconciliation_key",
+        "applicability",
+        "motion",
+        "lineage_status",
+        "revisions"
+      ],
+      "properties": {
+        "route_id": {
+          "type": "uuid",
+          "note": "persistent identity — BUKAN hash komposisi (INV-R15)"
+        },
+        "reconciliation_key": {
+          "ref": "reconciliation_key"
+        },
+        "applicability": {
+          "ref": "applicability_eval"
+        },
+        "motion": {
+          "type": "enum:motion",
+          "note": "klasifikasi terasosiasi — BUKAN identity, tidak ada di reconciliation_key"
+        },
+        "lineage_status": {
+          "type": "enum:lineage_status"
+        },
+        "revisions": {
+          "type": "array",
+          "items": "route_revision",
+          "minItems": 1,
+          "note": "current revision = max(revision_no) — frontier & projection hanya dari current; revision lama = historical structure (review P0-1)"
+        },
+        "successor_of": {
+          "type": "uuid",
+          "note": "fork: identity-bearing key BERUBAH"
+        },
+        "reopened_from": {
+          "type": "uuid",
+          "note": "episode baru dari CLOSED lineage dgn key sama (Model B, INV-R20) — BUKAN alias successor_of"
+        }
+      }
+    },
+    "applicability_eval": {
+      "description": "3 nilai + evidence — NOT_APPLICABLE wajib berbukti positif (INV-R2).",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "enum:applicability"
+        },
+        "evidence": {
+          "type": "array",
+          "items": "string",
+          "note": "wajib terisi saat status=NOT_APPLICABLE"
+        }
+      }
+    },
+    "route_revision": {
+      "description": "Content berversi (render ≠ revision). §3.3.",
+      "required": [
+        "revision_no",
+        "nodes",
+        "based_on"
+      ],
+      "properties": {
+        "revision_no": {
+          "type": "integer",
+          "min": 1
+        },
+        "nodes": {
+          "type": "array",
+          "items": "route_node",
+          "minItems": 1
+        },
+        "based_on": {
+          "type": "array",
+          "items": "string",
+          "minItems": 1,
+          "note": "grounding ke Universal State (state:claim_xx)"
+        },
+        "label": {
+          "type": "string",
+          "note": "render dari state — content, bukan identity"
+        }
+      }
+    },
+    "route_node": {
+      "description": "Unit eksekusi kontekstual — projection tanpa authority. §3.4. primary = resolves[0]; physical node_id hanya dibutuhkan bila primary kembar (INV-R18) atau jadi target depends_on ambigu.",
+      "required": [
+        "resolves",
+        "strength",
+        "depends_on",
+        "activity"
+      ],
+      "properties": {
+        "node_id": {
+          "type": "uuid",
+          "note": "physical key OPSIONAL — bukan identity ontologis"
+        },
+        "resolves": {
+          "type": "array",
+          "items": "requirement_ref",
+          "minItems": 1,
+          "note": "minItems 1: resolves=[] BUKAN RouteNode (CORRECT-1) — itu composition gap sebelum node terbentuk"
+        },
+        "strength": {
+          "type": "enum:strength",
+          "note": "relasi node↔requirement, BUKAN identity (#2)"
+        },
+        "depends_on": {
+          "type": "array",
+          "items": "string",
+          "note": "referensi node: node_id (utama) atau primary unik — ambigu = error"
+        },
+        "activity": {
+          "type": "string",
+          "minLength": 1,
+          "note": "wording kontekstual — render ulang aman (content)"
+        },
+        "execution_context": {
+          "type": "string",
+          "note": "wajib terbedakan bila primary kembar (INV-R18 — bagian semantik = audit, bagian struktural = node_id unik)"
+        },
+        "satisfaction": {
+          "ref": "satisfaction_eval",
+          "note": "DERIVED — opsi (hanya diisi oleh engine)"
+        },
+        "executability": {
+          "type": "enum:executability",
+          "note": "DERIVED tri-state — hanya TRUE masuk frontier (INV-R19); TRUE hanya sah bila seluruh depends_on satisfaction=PRESENT (projection consistency — review hole-3)"
+        },
+        "execution_view": {
+          "type": "enum:execution_view",
+          "note": "DERIVED dari Journey Ledger — bukan state node (INV-R8)"
+        }
+      }
+    },
+    "satisfaction_eval": {
+      "description": "Refleksi enum registry dalam satuan route — node TIDAK punya bahasa status sendiri (INV-R7/R8).",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "enum:satisfaction"
+        },
+        "quality_flag": {
+          "type": "enum:quality_flag",
+          "note": "soft ABSENT saat hard semua PRESENT → PRESENT + flag ini; BUKAN PARTIAL"
+        }
+      }
+    },
+    "frontier_entry": {
+      "description": "Derived set — SET TERTUTUP tiga kind, tanpa ranking (INV-R10/R19). Frontier HANYA dihitung dari CURRENT revision (max revision_no); revision lama = historical, tidak ikut projection (review P0-1).",
+      "required": [
+        "kind",
+        "route_id"
+      ],
+      "properties": {
+        "kind": {
+          "type": "enum:frontier_kind"
+        },
+        "route_id": {
+          "type": "uuid",
+          "note": "WAJIB semua kind — setiap opportunity berasal dari route tertentu; tanpa fallback lintas-route (review A)"
+        },
+        "node": {
+          "type": "string",
+          "note": "node_id atau primary — hanya untuk kind EXECUTE/VERIFY"
+        }
+      }
+    },
+    "next_move": {
+      "description": "Selector over valid frontier — policy (info-gain dll) di M4, BUKAN kontrak ini.",
+      "required": [
+        "output"
+      ],
+      "properties": {
+        "output": {
+          "type": "enum:next_move"
+        },
+        "frontier_ref": {
+          "type": "string",
+          "note": "referential integrity: wajib menunjuk entry frontier yang benar-benar ada (dicek validator — review B; ini BUKAN ranking M4)"
+        }
+      }
+    },
+    "node_candidate": {
+      "description": "Kandidat node dalam RouteTemplate (knowledge/grammar layer — §3.1). Kunci lokal = candidate_key; node_id UUID = kunci FISIK instance, DITERBITKAN saat instansiasi (INV-R15) — DILARANG di template.",
+      "required": [
+        "candidate_key",
+        "resolves",
+        "strength",
+        "depends_on",
+        "activity"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "candidate_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "resolves": {
+          "type": "array",
+          "items": "requirement_ref",
+          "minItems": 1
+        },
+        "strength": {
+          "type": "string",
+          "note": "enum hard|soft (mirror node)"
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "note": "referensi candidate_key (utama) atau primary unik — ambigu = error"
+        },
+        "activity": {
+          "type": "string"
+        },
+        "execution_context": {
+          "type": "string",
+          "note": "wajib bila primary kembar (INV-R18)"
+        }
+      }
+    },
+    "strategy": {
+      "description": "Strategy registry (D5) — execution ontology, identity-bearing (INV-R14). motion diambil dari sini oleh bridge; template TIDAK membawa motion (T1.13).",
+      "required": [
+        "strategy_id",
+        "motion",
+        "status",
+        "description"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "strategy_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_\\-]+$"
+        },
+        "motion": {
+          "type": "enum:motion"
+        },
+        "status": {
+          "type": "enum:strategy_status"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "requirement_ref": {
+    "type": "string",
+    "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+)+$",
+    "note": "id requirement di Requirement Registry (mis. commercial.price, gtm.beachhead). Cross-check ke registry bila file registry ada (substrat bangun ulang)."
+  },
+  "invariants": {
+    "INV-R4": "goal_anchor ∈ union resolves[] node route",
+    "INV-R6": "resolves[] non-empty; setiap requirement ada di Registry + provenance valid",
+    "INV-R8": "larangan DONE_CREDITED/DONE_EXECUTED di field enum",
+    "INV-R13": "reconciliation_key = {goal_anchor, strategy_id, scope_anchor} saja",
+    "INV-R14": "strategy_id di key; template_id TIDAK di key",
+    "INV-R15": "route_id = uuid persist, bukan hash",
+    "INV-R18": "primary kembar dalam 1 revision → node_id unik wajib; UNIQUE(route_id, primary) dilarang",
+    "INV-R19": "frontier kind = set tertutup 3 nilai; FALSE/UNKNOWN executability bukan frontier",
+    "INV-R20": "CLOSED tak pernah di-match; reopened_from ≠ successor_of"
+  },
+  "domain_vocabularies": {
+    "motion": "ontology/route/strategies.json#motion_vocabulary (dideklarasikan domain; bukan enum kontrak mesin route)"
+  }
+}

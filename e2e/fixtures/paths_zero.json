@@ -1,0 +1,250 @@
+{
+ "navigation": {
+  "current_version": 3,
+  "detail": "",
+  "found_version": 3,
+  "i18n": {},
+  "needs_rediagnosis": false,
+  "reason_code": null,
+  "status": "CURRENT"
+ },
+ "possible_paths": {
+  "context": {
+   "capacity_utilization": null,
+   "goal": null,
+   "spectrum_level": null
+  },
+  "generation": {
+   "considered": 8,
+   "emerged": [],
+   "not_emergent": [],
+   "rejected": [],
+   "undetermined": [
+    {
+     "candidate_id": "cand.fix_response_before_more_leads",
+     "missing": [
+      "mechanism:lead_leakage"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:lead_leakage"
+      }
+     ],
+     "strategy_id": "fix_response_before_more_leads"
+    },
+    {
+     "candidate_id": "cand.narrow_target_before_volume",
+     "missing": [
+      "mechanism:targeting_gap"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:targeting_gap"
+      }
+     ],
+     "strategy_id": "narrow_target_before_volume"
+    },
+    {
+     "candidate_id": "cand.shape_buyable_offer",
+     "missing": [
+      "mechanism:offer_disconnect"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:offer_disconnect"
+      }
+     ],
+     "strategy_id": "shape_buyable_offer"
+    },
+    {
+     "missing": [
+      "state:revenue_gap",
+      "mechanism:insufficient_pipeline"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "The gap to your goal is not measured yet"
+        }
+       },
+       "reason": "selisih menuju target belum terukur",
+       "signal": "state:revenue_gap"
+      },
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:insufficient_pipeline"
+      }
+     ],
+     "strategy_id": "direct_outreach"
+    },
+    {
+     "missing": [
+      "state:existing_revenue",
+      "mechanism:pricing_avoidance_loop"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "Your current income is not measured yet"
+        }
+       },
+       "reason": "pendapatan berjalan belum terukur",
+       "signal": "state:existing_revenue"
+      },
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:pricing_avoidance_loop"
+      }
+     ],
+     "strategy_id": "value_repricing"
+    },
+    {
+     "missing": [
+      "state:existing_revenue"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "Your current income is not measured yet"
+        }
+       },
+       "reason": "pendapatan berjalan belum terukur",
+       "signal": "state:existing_revenue"
+      }
+     ],
+     "strategy_id": "client_expansion"
+    },
+    {
+     "missing": [
+      "state:existing_revenue",
+      "mechanism:trust_gap"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "Your current income is not measured yet"
+        }
+       },
+       "reason": "pendapatan berjalan belum terukur",
+       "signal": "state:existing_revenue"
+      },
+      {
+       "i18n": {},
+       "reason": "",
+       "signal": "mechanism:trust_gap"
+      }
+     ],
+     "strategy_id": "referral_partnership"
+    },
+    {
+     "missing": [
+      "state:revenue_gap"
+     ],
+     "missing_detail": [
+      {
+       "i18n": {
+        "en": {
+         "reason": "The gap to your goal is not measured yet"
+        }
+       },
+       "reason": "selisih menuju target belum terukur",
+       "signal": "state:revenue_gap"
+      }
+     ],
+     "strategy_id": "paid_channel_test"
+    }
+   ],
+   "unsupported_knowledge": []
+  },
+  "note": "Peta jalur ini berdasar keadaan yang sudah terukur; seberapa besar Anda boleh melangkah tetap diatur Decision Spectrum (GO. STOP. OR DO SOMETHING ELSE). NOT YET berarti syaratnya belum terpenuhi dan bisa dibuka; STOP berarti jalur ini bertentangan dengan kondisi bisnis Anda sekarang atau sudah Anda hentikan.",
+  "note_i18n": {
+   "en": "This map of paths is built from what is measured today; how big a step you may take is still governed by the Decision Spectrum (GO. STOP. OR DO SOMETHING ELSE). NOT YET means the condition is not met yet and can be opened; STOP means this path collides with your business as it stands today, or you stopped it yourself."
+  },
+  "paths": [],
+  "space_id": "revenue",
+  "unresolved": [
+   {
+    "code": "INSUFFICIENT_VERIFIED_STATE",
+    "detail": "keadaan terverifikasi belum cukup untuk membentuk hipotesis path",
+    "i18n": {
+     "en": {
+      "detail": "We do not yet know enough about your situation to name a way forward with confidence."
+     }
+    },
+    "missing": [
+     "mechanism:insufficient_pipeline",
+     "mechanism:lead_leakage",
+     "mechanism:offer_disconnect",
+     "mechanism:pricing_avoidance_loop",
+     "mechanism:targeting_gap",
+     "mechanism:trust_gap",
+     "state:existing_revenue",
+     "state:revenue_gap"
+    ],
+    "missing_detail": [
+     {
+      "i18n": {},
+      "reason": "",
+      "signal": "mechanism:insufficient_pipeline"
+     },
+     {
+      "i18n": {},
+      "reason": "",
+      "signal": "mechanism:lead_leakage"
+     },
+     {
+      "i18n": {},
+      "reason": "",
+      "signal": "mechanism:offer_disconnect"
+     },
+     {
+      "i18n": {},
+      "reason": "",
+      "signal": "mechanism:pricing_avoidance_loop"
+     },
+     {
+      "i18n": {},
+      "reason": "",
+      "signal": "mechanism:targeting_gap"
+     },
+     {
+      "i18n": {},
+      "reason": "",
+      "signal": "mechanism:trust_gap"
+     },
+     {
+      "i18n": {
+       "en": {
+        "reason": "Your current income is not measured yet"
+       }
+      },
+      "reason": "pendapatan berjalan belum terukur",
+      "signal": "state:existing_revenue"
+     },
+     {
+      "i18n": {
+       "en": {
+        "reason": "The gap to your goal is not measured yet"
+       }
+      },
+      "reason": "selisih menuju target belum terukur",
+      "signal": "state:revenue_gap"
+     }
+    ]
+   }
+  ],
+  "version": 3
+ }
+}

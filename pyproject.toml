@@ -1,0 +1,137 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "novaliners-engine"
+version = "0.1.0"
+description = "Revenue Navigation engine — evidence ledger, deterministic state, decision integrity pipeline"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "pydantic>=2.9",
+    "openai>=1.60",
+    "python-dotenv>=1.0",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "import-linter>=2.0",
+    "ruff>=0.6",
+]
+
+[tool.setuptools]
+packages = ["core", "core.schema", "core.stages", "core.navigation", "domains", "llm", "engine", "agents", "store", "providers", "app"]
+
+[tool.importlinter]
+# Phase A (internal-docs §9 P0.0): architecture contracts as a MECHANISM, not an intention.
+# Research: Cockburn, Hexagonal Architecture (2005) — the main problem is not "leaky layers"
+# but "having no mechanism to detect when a violation of that promise occurs".
+#
+# The content below = ONLY contracts that are already green (measured baseline 17 Sep 2026),
+# so that `make lint-imports` can immediately serve as a gate.
+#
+# TWO VIOLATIONS found during the Phase A baseline were ALREADY REMOVED and then ENFORCED
+# below: `core -> schemas` (facade) and `core -> providers` (LLM port inversion).
+#
+# Tooling note: `store` & `providers` cannot be used as source_modules
+# (grimp fails to build their tree in this multi-package layout) — only as
+# forbidden_modules. Therefore the "infra only depends inward" contract cannot yet be
+# enforced through this tool and is recorded here as debt.
+root_package = "core"
+# This project has several top-level packages (core, domains, llm, engine, agents,
+# app, store, providers) — not a single root — so modules outside `core` must
+# also be analyzed as "external packages".
+include_external_packages = true
+
+# Inner → outer layers: the inner ones MUST NOT know the outer ones.
+[[tool.importlinter.contracts]]
+name = "core (generic engine) must not know the application layer"
+type = "forbidden"
+source_modules = ["core"]
+forbidden_modules = ["agents", "app", "store", "evals"]
+
+# Tooling note (verified empirically, not assumed):
+#   * `source_modules` may ONLY contain modules reachable from `root_package`.
+#     grimp cannot build the tree of other modules → error "Module 'X' does not exist."
+#   * Therefore the old contract "schemas only depends inward" was REVOKED after P0.2:
+#     `schemas` is no longer reachable from `core`, so it cannot be source_modules
+#     or a regular source. What matters is the opposite direction — and that is enforced
+#     at the bottom (core must not penetrate the `schemas` facade).
+#   * Debt that cannot yet be enforced through this tool: `store`/`providers` as
+#     source (infra must depend inward). Recorded here, not hidden.
+[[tool.importlinter.contracts]]
+name = "core.schema is a leaf (pure types/contracts)"
+type = "forbidden"
+source_modules = ["core.schema"]
+forbidden_modules = [
+    "core.stages", "core.pipeline",
+    "agents", "app", "engine", "providers", "store",
+]
+
+[[tool.importlinter.contracts]]
+name = "engine (loader) must not know the application layer"
+type = "forbidden"
+source_modules = ["engine"]
+forbidden_modules = ["agents", "app", "store", "evals"]
+
+# No production code may import the test harness.
+# Tooling note: source_modules may only contain modules reachable from
+# root_package (grimp cannot build the tree of other modules). After P0.2, `schemas`
+# is NO LONGER reachable from `core` → it may only appear as forbidden_modules.
+[[tool.importlinter.contracts]]
+name = "evals (test harness) must not be imported by production code"
+type = "forbidden"
+source_modules = ["core", "engine"]
+forbidden_modules = ["evals"]
+
+# --- Enforced in Phase B (P0.2 / P0.2b) — previously two real violations ---
+
+[[tool.importlinter.contracts]]
+name = "core must not bypass the `schemas` facade (P0.2)"
+type = "forbidden"
+source_modules = ["core"]
+forbidden_modules = ["schemas"]
+
+[[tool.importlinter.contracts]]
+name = "core must not depend on the `providers` adapter (P0.2b — F6)"
+type = "forbidden"
+source_modules = ["core"]
+forbidden_modules = ["providers"]
+
+[[tool.importlinter.contracts]]
+name = "core must not depend on the domain pack (F2' 18 Sep — internal-docs §5)"
+type = "forbidden"
+source_modules = ["core"]
+forbidden_modules = ["domains"]
+
+
+[tool.ruff.lint.per-file-ignores]
+"ontology/mapper/contract.py" = ["I001"]
+"domains/revenue/prompts/ask_system.py" = ["E501"]   # prompt text: long lines are intentional
+"evals/test_candidate_possibility.py" = ["E501"]   # test contract description: full sentences are intentional
+"evals/test_candidate_closure.py" = ["E501"]   # same (test contract description: full sentences are intentional)
+"evals/test_candidate_golden.py" = ["E501"]   # same
+"evals/test_m4_*.py" = ["E501"]   # same (M4 contract tests: contract description is full sentences)
+"evals/test_m5_*.py" = ["E501"]   # same (M5 contract tests)
+"evals/test_goal_measurement_contract.py" = ["E501"]   # same (Goal measurement contract tests)
+"evals/test_goal_narrative_guard.py" = ["E501"]   # same (Goal narrative guard contract tests)
+"evals/test_goal_series.py" = ["E501"]   # same (Goal observation series contract tests)
+"core/reasoning/*.py" = ["E501"]   # R5 reasoning modules: prompts + contract docstrings are full sentences
+"engine/applicable_knowledge.py" = ["E501"]   # same (retrieval contract docstring)
+"app/adaptive.py" = ["E501"]   # same (R5 reasoning orchestration)
+"app/moves.py" = ["E501"]   # same (Move/Outcome contract R6)
+"app/checkpoints.py" = ["E501"]   # same (living checkpoint contract R6)
+"app/binding.py" = ["E501"]   # same (binding snapshot contract R6)
+"evals/run_live_*.py" = ["E501"]   # R7 live qualification script: check descriptions are full sentences
+"evals/test_recovery_*.py" = ["E501"]   # same (R3+ recovery contract tests: contract description in full sentences)
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]

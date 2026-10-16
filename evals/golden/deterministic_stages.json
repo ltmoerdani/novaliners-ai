@@ -1,0 +1,458 @@
+{
+  "pack": {
+    "domain_order": [
+      "D1",
+      "V2",
+      "M3",
+      "DS4",
+      "DM5",
+      "C6",
+      "R7",
+      "L8"
+    ],
+    "id": "revenue",
+    "mechanism_ids": [
+      "insufficient_pipeline",
+      "lead_leakage",
+      "offer_disconnect",
+      "pricing_avoidance_loop",
+      "targeting_gap",
+      "trust_gap"
+    ],
+    "version": "0.1.0"
+  },
+  "rule_activation": {
+    "active_rule_sources": [
+      "CS",
+      "EM",
+      "HG",
+      "HK",
+      "LC",
+      "PR",
+      "SP",
+      "TM",
+      "VP"
+    ]
+  },
+  "scenarios": {
+    "distribusi_mati_tanpa_outreach": {
+      "gap": {
+        "penalty": 0.0,
+        "probes": []
+      },
+      "mechanisms": {
+        "boost": {
+          "DS4.2": [
+            "insufficient_pipeline"
+          ]
+        },
+        "detected": {
+          "insufficient_pipeline": [
+            "ev-d1",
+            "ev-d2",
+            "ev-d3"
+          ]
+        },
+        "weights": {
+          "DS4.2": 0.4
+        }
+      },
+      "notes": {
+        "C6.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "C6.3": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "C6.4": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "D1.2": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "DM5.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "DM5.5": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "DM5.6": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "L8.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "L8.3": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "M3.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "M3.4": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "R7.2": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "V2.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "V2.4": "Belum ter-probe — tidak ada bukti apapun arah ini"
+      },
+      "overall_confidence": 0.526,
+      "rank_order": [
+        "DS4.2"
+      ],
+      "ranking": [
+        {
+          "constraint_id": "DS4.2",
+          "decision_relevance": 1.0,
+          "diagnostic_fit": 1.0,
+          "effective_score": 0.405,
+          "evidence_strength": 0.37,
+          "score": 0.477,
+          "supporting_evidence_ids": [
+            "ev-d1",
+            "ev-d2",
+            "mech:insufficient_pipeline"
+          ]
+        }
+      ],
+      "split_confidences": {
+        "constraint_confidence": 0.46,
+        "decision_confidence": 0.5,
+        "diagnosis_confidence": 0.526,
+        "experiment_confidence": 0.7,
+        "revenue_impact_confidence": 0.45
+      },
+      "status": {
+        "C6.1": "UNRESOLVED",
+        "C6.3": "UNRESOLVED",
+        "C6.4": "UNRESOLVED",
+        "D1.2": "UNRESOLVED",
+        "DM5.1": "UNRESOLVED",
+        "DM5.5": "UNRESOLVED",
+        "DM5.6": "UNRESOLVED",
+        "DS4.2": "INFERRED",
+        "L8.1": "UNRESOLVED",
+        "L8.3": "UNRESOLVED",
+        "M3.1": "UNRESOLVED",
+        "M3.4": "UNRESOLVED",
+        "R7.2": "UNRESOLVED",
+        "V2.1": "UNRESOLVED",
+        "V2.4": "UNRESOLVED"
+      },
+      "systemic_risk": {
+        "C6.1": false,
+        "DS4.2": false,
+        "L8.1": false,
+        "L8.3": false
+      },
+      "tier": {
+        "C6.1": "UNKNOWN",
+        "C6.3": "UNKNOWN",
+        "C6.4": "UNKNOWN",
+        "D1.2": "UNKNOWN",
+        "DM5.1": "UNKNOWN",
+        "DM5.5": "UNKNOWN",
+        "DM5.6": "UNKNOWN",
+        "DS4.2": "PRIMARY",
+        "L8.1": "UNKNOWN",
+        "L8.3": "UNKNOWN",
+        "M3.1": "UNKNOWN",
+        "M3.4": "UNKNOWN",
+        "R7.2": "UNKNOWN",
+        "V2.1": "UNKNOWN",
+        "V2.4": "UNKNOWN"
+      }
+    },
+    "pipeline_tipis_followup_bocor": {
+      "gap": {
+        "penalty": 0.05,
+        "probes": [
+          "tidak tahu kapasitas jam per minggu yang tersedia"
+        ]
+      },
+      "mechanisms": {
+        "boost": {
+          "C6.1": [
+            "lead_leakage"
+          ],
+          "C6.3": [
+            "lead_leakage",
+            "pricing_avoidance_loop"
+          ],
+          "C6.4": [
+            "lead_leakage",
+            "pricing_avoidance_loop"
+          ],
+          "DS4.2": [
+            "insufficient_pipeline"
+          ],
+          "V2.1": [
+            "offer_disconnect",
+            "pricing_avoidance_loop"
+          ],
+          "V2.4": [
+            "offer_disconnect"
+          ]
+        },
+        "detected": {
+          "insufficient_pipeline": [
+            "ev-3",
+            "ev-5"
+          ],
+          "lead_leakage": [
+            "ev-1",
+            "ev-7"
+          ],
+          "offer_disconnect": [
+            "ev-6"
+          ],
+          "pricing_avoidance_loop": [
+            "ev-1",
+            "ev-6"
+          ]
+        },
+        "weights": {
+          "C6.1": 0.3,
+          "C6.3": 0.3,
+          "C6.4": 0.3,
+          "DS4.2": 0.3,
+          "V2.1": 0.3,
+          "V2.4": 0.15
+        }
+      },
+      "notes": {
+        "D1.2": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "DM5.5": "Disqualifier terpicu: ada transaksi nyata baru-baru ini — trust terbukti cukup; 'Trust Deficit' kemungkinan bukan akar masalah",
+        "L8.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "L8.3": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "M3.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "M3.4": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "R7.2": "Belum ter-probe — tidak ada bukti apapun arah ini"
+      },
+      "overall_confidence": 0.397,
+      "rank_order": [
+        "V2.4",
+        "C6.3",
+        "C6.4",
+        "DS4.2",
+        "DM5.1",
+        "DM5.5",
+        "DM5.6",
+        "V2.1",
+        "C6.1"
+      ],
+      "ranking": [
+        {
+          "constraint_id": "C6.1",
+          "decision_relevance": 1.0,
+          "diagnostic_fit": 0.0,
+          "effective_score": 0.128,
+          "evidence_strength": 0.0,
+          "score": 0.15,
+          "supporting_evidence_ids": [
+            "mech:lead_leakage"
+          ]
+        },
+        {
+          "constraint_id": "C6.3",
+          "decision_relevance": 1.0,
+          "diagnostic_fit": 0.0,
+          "effective_score": 0.443,
+          "evidence_strength": 0.495,
+          "score": 0.521,
+          "supporting_evidence_ids": [
+            "ev-1",
+            "mech:lead_leakage+pricing_avoidance_loop"
+          ]
+        },
+        {
+          "constraint_id": "C6.4",
+          "decision_relevance": 1.0,
+          "diagnostic_fit": 0.0,
+          "effective_score": 0.443,
+          "evidence_strength": 0.495,
+          "score": 0.521,
+          "supporting_evidence_ids": [
+            "ev-1",
+            "mech:lead_leakage+pricing_avoidance_loop"
+          ]
+        },
+        {
+          "constraint_id": "DM5.1",
+          "decision_relevance": 0.97,
+          "diagnostic_fit": 0.0,
+          "effective_score": 0.251,
+          "evidence_strength": 0.405,
+          "score": 0.304,
+          "supporting_evidence_ids": [
+            "ev-2"
+          ]
+        },
+        {
+          "constraint_id": "DM5.5",
+          "decision_relevance": 0.97,
+          "diagnostic_fit": 0.0,
+          "effective_score": 0.251,
+          "evidence_strength": 0.405,
+          "score": 0.304,
+          "supporting_evidence_ids": [
+            "ev-2"
+          ]
+        },
+        {
+          "constraint_id": "DM5.6",
+          "decision_relevance": 0.97,
+          "diagnostic_fit": 0.0,
+          "effective_score": 0.251,
+          "evidence_strength": 0.405,
+          "score": 0.304,
+          "supporting_evidence_ids": [
+            "ev-2"
+          ]
+        },
+        {
+          "constraint_id": "DS4.2",
+          "decision_relevance": 1.0,
+          "diagnostic_fit": 1.0,
+          "effective_score": 0.332,
+          "evidence_strength": 0.32,
+          "score": 0.39,
+          "supporting_evidence_ids": [
+            "ev-3",
+            "mech:insufficient_pipeline"
+          ]
+        },
+        {
+          "constraint_id": "V2.1",
+          "decision_relevance": 1.0,
+          "diagnostic_fit": 1.0,
+          "effective_score": 0.246,
+          "evidence_strength": 0.185,
+          "score": 0.289,
+          "supporting_evidence_ids": [
+            "ev-6",
+            "mech:offer_disconnect+pricing_avoidance_loop"
+          ]
+        },
+        {
+          "constraint_id": "V2.4",
+          "decision_relevance": 1.0,
+          "diagnostic_fit": 1.0,
+          "effective_score": 0.548,
+          "evidence_strength": 0.63,
+          "score": 0.548,
+          "supporting_evidence_ids": [
+            "ev-4",
+            "mech:offer_disconnect"
+          ]
+        }
+      ],
+      "split_confidences": {
+        "constraint_confidence": 0.55,
+        "decision_confidence": 0.7,
+        "diagnosis_confidence": 0.397,
+        "experiment_confidence": 0.8,
+        "revenue_impact_confidence": 0.337
+      },
+      "status": {
+        "C6.1": "INFERRED",
+        "C6.3": "INFERRED",
+        "C6.4": "INFERRED",
+        "D1.2": "UNRESOLVED",
+        "DM5.1": "INFERRED",
+        "DM5.5": "INFERRED",
+        "DM5.6": "INFERRED",
+        "DS4.2": "INFERRED",
+        "L8.1": "UNRESOLVED",
+        "L8.3": "UNRESOLVED",
+        "M3.1": "UNRESOLVED",
+        "M3.4": "UNRESOLVED",
+        "R7.2": "UNRESOLVED",
+        "V2.1": "INFERRED",
+        "V2.4": "OBSERVED"
+      },
+      "systemic_risk": {
+        "C6.1": false,
+        "C6.3": false,
+        "C6.4": false,
+        "DM5.1": false,
+        "DM5.5": false,
+        "DM5.6": false,
+        "DS4.2": false,
+        "L8.1": true,
+        "L8.3": true,
+        "V2.1": false,
+        "V2.4": false
+      },
+      "tier": {
+        "C6.1": "UNPROVEN",
+        "C6.3": "SECONDARY",
+        "C6.4": "SECONDARY",
+        "D1.2": "UNKNOWN",
+        "DM5.1": "UNPROVEN",
+        "DM5.5": "UNPROVEN",
+        "DM5.6": "UNPROVEN",
+        "DS4.2": "UNPROVEN",
+        "L8.1": "UNKNOWN",
+        "L8.3": "UNKNOWN",
+        "M3.1": "UNKNOWN",
+        "M3.4": "UNKNOWN",
+        "R7.2": "UNKNOWN",
+        "V2.1": "UNPROVEN",
+        "V2.4": "PRIMARY"
+      }
+    },
+    "tanpa_state_no_evidence": {
+      "gap": {
+        "penalty": 0.0,
+        "probes": []
+      },
+      "mechanisms": {
+        "boost": {},
+        "detected": {},
+        "weights": {}
+      },
+      "notes": {
+        "C6.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "C6.3": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "C6.4": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "D1.2": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "DM5.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "DM5.5": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "DM5.6": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "DS4.2": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "L8.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "L8.3": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "M3.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "M3.4": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "R7.2": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "V2.1": "Belum ter-probe — tidak ada bukti apapun arah ini",
+        "V2.4": "Belum ter-probe — tidak ada bukti apapun arah ini"
+      },
+      "overall_confidence": 0.0,
+      "rank_order": [],
+      "ranking": [],
+      "split_confidences": {
+        "constraint_confidence": 0.0,
+        "diagnosis_confidence": 0.0,
+        "revenue_impact_confidence": 0.0
+      },
+      "status": {
+        "C6.1": "UNRESOLVED",
+        "C6.3": "UNRESOLVED",
+        "C6.4": "UNRESOLVED",
+        "D1.2": "UNRESOLVED",
+        "DM5.1": "UNRESOLVED",
+        "DM5.5": "UNRESOLVED",
+        "DM5.6": "UNRESOLVED",
+        "DS4.2": "UNRESOLVED",
+        "L8.1": "UNRESOLVED",
+        "L8.3": "UNRESOLVED",
+        "M3.1": "UNRESOLVED",
+        "M3.4": "UNRESOLVED",
+        "R7.2": "UNRESOLVED",
+        "V2.1": "UNRESOLVED",
+        "V2.4": "UNRESOLVED"
+      },
+      "systemic_risk": {
+        "C6.1": false,
+        "L8.1": false,
+        "L8.3": false
+      },
+      "tier": {
+        "C6.1": "UNKNOWN",
+        "C6.3": "UNKNOWN",
+        "C6.4": "UNKNOWN",
+        "D1.2": "UNKNOWN",
+        "DM5.1": "UNKNOWN",
+        "DM5.5": "UNKNOWN",
+        "DM5.6": "UNKNOWN",
+        "DS4.2": "UNKNOWN",
+        "L8.1": "UNKNOWN",
+        "L8.3": "UNKNOWN",
+        "M3.1": "UNKNOWN",
+        "M3.4": "UNKNOWN",
+        "R7.2": "UNKNOWN",
+        "V2.1": "UNKNOWN",
+        "V2.4": "UNKNOWN"
+      }
+    }
+  }
+}

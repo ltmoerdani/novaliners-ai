@@ -1,0 +1,72 @@
+{
+ "$comment": "Interventions dari The Challenger Sale (mapping §6).",
+ "interventions": [
+  {
+   "intervention_id": "CS-I01",
+   "name": "Bangun Commercial Teaching pitch 6 langkah (mundur dari step 6; grade SAFE-BOLD)",
+   "targets": [
+    "C6.3",
+    "V2.4"
+   ],
+   "expected_evidence": "1 pitch lengkap (Warmer→Reframe→Drowning→Emotional→New Way→Solution); Reframe memicu 'never thought of it that way' di ≥2 dari 3 percakapan; skor BOLD ≥ median",
+   "contraindicated_until": "Fase OFFER — offer sudah ada dan riset customer (TM-style) sudah cukup; jangan pakai pitch saat masih learning",
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch04",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "CS-I02",
+   "name": "Functional bias mapping + value planning sign-off (deal multi-stakeholder)",
+   "targets": [
+    "M3.4",
+    "DM5.5"
+   ],
+   "expected_evidence": "Bias cards completed per role + value planning document with ≥1 stakeholder sign-off",
+   "contraindicated_until": "Deal belum teridentifikasi multi-stakeholder (≥2 peran terlibat) — bias card untuk deal single-thread = buang waktu",
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  },
+  {
+   "intervention_id": "CS-I03",
+   "name": "Negotiation pre-call plan (power positions + concession scoring) pada deal bertekanan harga",
+   "targets": [
+    "L8.1",
+    "C6.3"
+   ],
+   "expected_evidence": "Template SSN terisi sebelum negosiasi; hasil: tidak ada cave-on-price ATAU trade sesuai rencana (low-cost-to-you, high-value-to-them dulu)",
+   "contraindicated_until": "Deal belum masuk tahap negosiasi dengan value terbangun (SP-I02) — rencana negosiasi tanpa leverage value = latihan di atas kertas",
+   "provenance": {
+    "source_id": "cs",
+    "chapters": [
+     "ch07"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES"
+   ]
+  }
+ ]
+}

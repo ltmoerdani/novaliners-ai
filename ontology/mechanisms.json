@@ -1,0 +1,90 @@
+{
+  "version": "0.1-mvp",
+  "$comment": "Katalog mekanisme domain (Fase F, internal-docs §9). Dulu hardcoded di core/stages/mechanisms.py — layer generik menyimpan identitas domain. Setelah F, engine hanya menyimpan ALGORITMA deteksi; klaster + sinyalnya milik domain. Isi file ini dibangun dari konstanta asli (nol risiko transkripsi).",
+  "$field_legend": {
+    "id": "mechanism id (snake_case); muncul di artefak sebagai tag `mech:<id>`",
+    "constraints": "constraint ID yang didukung mekanisme ini — WAJIB ada di ontology/constraints.json (fail-fast)",
+    "signals": "frasa lowercase; substring match ke evidence.signal (deterministik, tanpa LLM)"
+  },
+
+  "mechanisms": [
+    {
+      "id": "lead_leakage",
+      "name": "Conversion Leakage",
+      "description": "Prospek/inquiry masuk tapi bocor di proses respons/follow-up",
+      "constraints": ["C6.4", "C6.1", "C6.3"],
+      "signals": [
+        "tidak di-follow", "tidak difollow", "belum follow", "belum di follow",
+        "respons lambat", "lambat merespons", "lambat membalas", "balas 5 hari",
+        "sudah ambil jasa orang lain", "hilang ke kompetitor", "macet di follow",
+        "dibaca saja", "belum balas", "tidak dibalas", "stalled", "ghost",
+        "macet", "terbengkalai", "ditinggal"
+      ]
+    },
+    {
+      "id": "insufficient_pipeline",
+      "name": "Insufficient Pipeline Creation",
+      "description": "Aktivitas akuisisi terlalu rendah untuk mengisi pipeline",
+      "constraints": ["DS4.2"],
+      "signals": [
+        "outreach", "cuma 2 dm", "2 dm", "jarang outreach", "tidak ada outreach",
+        "minim outreach", "1 inquiry", "tidak pernah outreach", "hanya dari referensi",
+        "pasif", "tidak ada aktivitas penjualan", "volume rendah",
+        "cold email", "email per minggu", "inquiry cuma", "inquiry hanya",
+        "tidak posting", "berhenti posting", "jarang posting", "inquiry ikut berhenti",
+        "pipeline tipis", "4-5 inquiry", "1-2 per bulan", "tidak pernah saya ulangi",
+        "menunggu inquiry", "tidak membangun channel"
+      ]
+    },
+    {
+      "id": "trust_gap",
+      "name": "Trust Gap",
+      "description": "Calon pembeli ragu karena tidak ada bukti/kredibilitas",
+      "constraints": ["DM5.5", "DM5.6", "V2.4"],
+      "signals": [
+        "tidak percaya", "butuh proof", "minta referensi", "siapa saja klien",
+        "tidak ada portofolio", "ragu", "cuma 1 klien", "belum ada bukti"
+      ]
+    },
+    {
+      "id": "offer_disconnect",
+      "name": "Capability-Offer Disconnect",
+      "description": "Kemampuan ada tapi belum dibentuk jadi penawaran yang bisa dibeli",
+      "constraints": ["V2.1", "V2.4"],
+      "signals": [
+        "belum ada paket", "belum tahu charge", "tidak ada penawaran",
+        "belum packaging", "belum bentuk jasa",
+        "harga di kepala", "angka di kepala", "belum ditulis", "belum pernah ditulis",
+        "belum formal", "tidak pernah menuliskan", "dari kebiasaan"
+      ]
+    },
+    {
+      "id": "targeting_gap",
+      "name": "Targeting Gap",
+      "description": "Kontak/sasaran tidak cocok dengan pembeli keputusan",
+      "constraints": ["M3.1", "M3.4"],
+      "signals": [
+        "bukan pemegang keputusan", "tidak tahu siapa", "sebar ke semua",
+        "belum ada icp", "segmen belum jelas"
+      ]
+    },
+    {
+      "id": "pricing_avoidance_loop",
+      "name": "Pricing Uncertainty → Response Avoidance → Conversion Leakage",
+      "description": "Tidak ada arsitektur harga yang bisa disebut percaya diri → pertanyaan harga ditunda/dihindari → momentum lead turun → lead hilang → bukti komersial makin sedikit → makin takut menyebut angka",
+      "constraints": ["C6.4", "V2.1", "C6.3"],
+      "signals": [
+        "proposal custom", "custom pricing", "belum ada rate card",
+        "tidak ada rate card", "belum ada paket", "belum punya paket",
+        "tunda jawab harga", "menunda jawab harga", "menghindari harga",
+        "menghindar harga", "belum siap jawab angka", "belum siap menyebut angka",
+        "tidak siap sebut angka", "belum bisa menjawab dengan satu angka",
+        "belum pernah menyebut angka", "takut angka awal salah",
+        "takut ditanya kenapa", "kenapa segitu", "tidak punya justifikasi",
+        "tidak menyebut angka", "tanpa angka", "tidak pernah ditindaklanjuti",
+        "proposal dikirim lalu", "setengah jalan", "malu follow-up",
+        "ragu angkanya", "tunda-tunda", "ditunggu", "kirim proposal lalu saya tunggu"
+      ]
+    }
+  ]
+}

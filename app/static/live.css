@@ -1,0 +1,114 @@
+/* Additions for the live (real-engine) UI. Prototype v9 styles stay untouched in app.css. */
+.think-dots { display: inline-flex; gap: 4px; align-items: center; }
+.think-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-muted); animation: thinkDot 1.2s ease-in-out infinite; }
+.think-dots i:nth-child(2) { animation-delay: 0.15s; }
+.think-dots i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes thinkDot { 0%, 80%, 100% { opacity: 0.25; transform: scale(0.85); } 40% { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .think-dots i { animation: none; opacity: 0.6; } }
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100001; background: var(--ink); color: #fff; padding: 8px 12px; border-radius: 8px; font-family: var(--font-ui); font-size: 13px; }
+.skip-link:focus { left: 8px; }
+@media (max-width: 720px) {
+  .hide-sm { display: none; }
+  .app-header { padding: 0 12px; }
+  .breadcrumbs > span:nth-child(-n+4) { display: none; }
+  #app-root:not(:has(#v11-main)) :is(.today-layout, .map-layout, .diag-layout) { padding: 16px 16px 24px; }   /* v9 screens; the v11 destinations own their padding */
+  #proto-widget { bottom: 12px; right: 12px; }
+  #proto-widget-btn { padding: 6px 10px 6px 10px !important; }
+  #proto-widget-btn > span:nth-of-type(1) { display: none; }
+  #proto-widget-btn > span:nth-of-type(2) { max-width: 96px !important; }
+  #app-root:not(:has(#v11-main)) .serif-heading { font-size: 28px !important; }   /* v9 screens; v11 headings follow --fs-h1/--fs-h2 */
+}
+
+body:has(.drawer-backdrop.open) #proto-widget, body:has(.modal-backdrop.open) #proto-widget { display: none; }
+
+/* Below the prototype's 1100px breakpoint the one-viewport layouts must grow with their content
+   (the prototype keeps flex:1 + min-height:0 there, which clips the card body). */
+@media (max-width: 1100px), (max-height: 620px) {
+  .today-layout, .map-layout { flex: none; }
+  .today-main, .today-card { min-height: auto; flex: none; }
+  .today-side { overflow: visible; }
+}
+
+/* ── Accessibility pass (live only). Prototype v9 has several text colours below WCAG AA (4.5:1):
+   --ink-muted (#a1a1aa) on white is 2.56:1, --open-line (#059669) text is 3.77:1, --stop-fg (#dc2626) on the red tint is 4.41:1.
+   Demo mode keeps the prototype's exact colours (pixel parity); live darkens just these text colours.
+   The dark theme's palette is already AA, so it needs no override. */
+html:not([data-theme="dark"]) body[data-mode="live"] {
+  --ink-muted: #6a6a72;
+  --ink-3: #6c6c74;            /* was #71717a: 4.39:1 on the grey surface */
+  --stop-fg: #d42121;
+}
+body[data-mode="live"] .sidebar-goal-label { color: var(--ink-aa-2); }
+body[data-mode="live"] .sidebar-section-label { color: var(--ink-aa-2); }
+html:not([data-theme="dark"]) body[data-mode="live"] [style*="color:var(--open-line)"] { color: var(--open-fg) !important; }
+/* dark surfaces keep the light greys (they are 7:1 there) */
+html:not([data-theme="dark"]) body[data-mode="live"] :is(.card-dark, .step-focus, .tip-bubble, .dark-surface, .j-tip, .map-tip, .app-toast, #proto-widget, [style*="background:var(--ink)"]) { --ink-muted: #a1a1aa; }
+
+/* Diagnosis summary while the plain-language rewrite is being written (live only) */
+.diag-skel { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; font-family: var(--font-ui); font-size: 13px; color: var(--ink-3); }
+.diag-skel > .think-dots { align-self: flex-start; display: inline-flex; margin-right: 8px; }
+.diag-skel > i { display: block; height: 12px; border-radius: 6px; background: var(--surface-2); }
+.diag-skel > i:nth-of-type(1) { width: 96%; } .diag-skel > i:nth-of-type(2) { width: 88%; } .diag-skel > i:nth-of-type(3) { width: 62%; }
+
+/* ── Candidate possibility (live only): a path's reason for being on the map, and possibilities that are only taking
+   shape. The card is DASHED and its pill is neutral on purpose: nothing here may read as a path, a status or a route. */
+.why-here { margin: 4px 0 0; font-size: 13px; color: var(--ink-2); }
+.why-here > summary { cursor: pointer; font-family: var(--font-ui); font-size: 12.5px; font-weight: 600; color: var(--ink); width: max-content; max-width: 100%; border-radius: 6px; }
+.why-here > summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.why-here-text { margin: 8px 0 0; line-height: 1.55; max-width: 68ch; }
+.why-here-basis { margin: 4px 0 0; font-size: 12.5px; color: var(--ink-3); line-height: 1.5; }
+.why-here-note { margin: 4px 0 0; font-size: 12.5px; color: var(--ink-3); line-height: 1.5; max-width: 68ch; }
+.no-paths-stack { display: flex; flex-direction: column; align-self: center; width: 100%; }
+.emerging { margin-top: 14px; padding: 18px 20px; border-style: dashed; border-color: var(--border-strong); background: var(--bg-canvas); box-shadow: none; }
+.emerging-head { font-family: var(--font-ui); font-size: 15px; font-weight: 700; margin: 0; color: var(--ink); }
+.emerging-sub { font-size: 13px; line-height: 1.5; color: var(--ink-2); margin: 4px 0 0; }
+.emerging-list { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; }
+.emerging-item { padding: 10px 0; border-top: 1px dashed var(--border-strong); }
+.emerging-item:first-child { border-top: 0; padding-top: 4px; }
+.emerging-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.emerging-title { font-family: var(--font-ui); font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.emerging-pill { font-family: var(--font-ui); font-size: 11.5px; font-weight: 600; color: var(--ink-2); border: 1px solid var(--border-strong); border-radius: var(--r-pill); padding: 1px 9px; background: var(--surface); }
+.emerging-line { font-size: 13px; line-height: 1.5; color: var(--ink-2); margin: 4px 0 0; }
+.emerging-need { font-size: 12.5px; line-height: 1.5; color: var(--ink-3); margin: 4px 0 0; }
+.emerging-need span { font-weight: 600; color: var(--ink-2); }
+
+/* ── Presentation cap (live only): "+3 other possibilities". The engine forms 0..N possibilities; the screens draw at
+   most five. Solid and calm on purpose: these are real paths that are only not drawn here (the dashed card above is for
+   things that are not paths yet). The disclosure is a native <details>: Tab, Enter and Space work with no script. */
+.path-overflow { margin-top: 14px; border: 1px solid var(--border); border-radius: var(--r-card); background: var(--surface); }
+.path-overflow > summary { list-style: none; display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; cursor: pointer; border-radius: var(--r-card); }
+.path-overflow > summary::-webkit-details-marker { display: none; }
+.path-overflow > summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.po-count { font-family: var(--font-ui); font-size: 14px; font-weight: 700; color: var(--ink); }
+.po-count::after { content: '\25BE'; display: inline-block; margin-left: 8px; font-weight: 400; color: var(--ink-3); transition: transform 0.15s; }
+.path-overflow[open] > summary .po-count::after { transform: rotate(180deg); }
+.po-note { font-size: 12.5px; line-height: 1.45; color: var(--ink-3); }
+.po-sub { margin: 0; padding: 0 16px 10px; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); }
+.po-list { list-style: none; margin: 0; padding: 0 16px 14px; display: flex; flex-direction: column; }
+.po-row { display: flex; flex-direction: column; gap: 6px; padding: 10px 0; border-top: 1px solid var(--border); }
+.po-row-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.po-name { min-width: 0; font-family: var(--font-ui); font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.po-why { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); }
+.po-pick { align-self: flex-start; }
+.rd-paths .path-overflow { margin-top: 4px; }
+/* Inside the Diagnosis side card (already a card) the disclosure is a plain section, not a card in a card */
+.diag-path-list .path-overflow { margin-top: 8px; border: 0; border-top: 1px solid var(--border); border-radius: 0; background: none; }
+.diag-path-list .path-overflow > summary { padding: 10px 0 6px; border-radius: 6px; }
+.diag-path-list .po-sub, .diag-path-list .po-list { padding-left: 0; padding-right: 0; }
+@media (prefers-reduced-motion: reduce) { .po-count::after { transition: none; } }
+
+/* ── Conversation navigation (live only, M4): the engine picks the next move from state; this is how it is shown.
+   The move caption sits under an engine message, the focus box above the input says what we are asking and why, and
+   "Why we ask this" is a native <details> (Tab, Enter, Space work with no script). Nothing here is uppercase or tracked. */
+.move-tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: 12px; font-weight: 600; color: var(--ink-3); }
+.move-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+#nav-focus .nav-focus-label { font-family: var(--font-ui); font-size: 11.5px; font-weight: 600; color: var(--ink-3); }
+#nav-focus .nav-focus-text { font-size: 13px; line-height: 1.45; color: var(--ink-2b); }
+.nav-why { margin-top: 4px; font-size: 12.5px; color: var(--ink-2); }
+.nav-why > summary, .nav-trail > summary { cursor: pointer; font-family: var(--font-ui); font-size: 12px; font-weight: 600; color: var(--ink); width: max-content; max-width: 100%; border-radius: 6px; padding: 2px 0; }
+.nav-why > summary:focus-visible, .nav-trail > summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.nav-why-list, .nav-trail-list { margin: 6px 0 4px; padding-left: 18px; line-height: 1.5; max-width: 68ch; }
+.nav-trail { margin-top: 6px; }
+.nav-trail-list { font-size: 12px; color: var(--ink-3); overflow-wrap: anywhere; }
+@media (max-width: 720px) { .move-tag { flex-wrap: wrap; } }
+#chat-messages-container:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }   /* a scrollable region must be reachable by keyboard (WCAG 2.1.1) */

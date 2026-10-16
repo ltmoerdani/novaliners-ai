@@ -1,0 +1,67 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: .   # root = isi mvp/
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install deps + linters
+        run: |
+          pip install -r requirements.txt
+          pip install "ruff==0.16.10" "import-linter==2.15" "pytest==9.1.1"
+      - name: Lint & import contracts
+        run: |
+          ruff check .
+          lint-imports
+      - name: Deterministic gate (0 LLM calls) — gate-fast.sh (script-style suites)
+        run: bash gate-fast.sh
+        env:
+          LLM_PROVIDER: mock
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/960620375579/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+          service_account: github-deployer@novaliners.iam.gserviceaccount.com
+      - uses: google-github-actions/setup-gcloud@v2
+      - name: Deploy to Cloud Run (asia-southeast2)
+        run: |
+          gcloud run deploy novaliners \
+            --source . \
+            --region asia-southeast2 \
+            --allow-unauthenticated \
+            --memory 1Gi --cpu 1 --timeout 120 --max-instances 3 \
+            --set-env-vars "LLM_PROVIDER=vertex,VERTEX_MODEL=gemini-3.5-flash-lite,ENABLE_ADMIN_SWITCH=1" \
+            --set-secrets "VERTEX_API_KEY=vertex-key:latest,GEMINI_API_KEY=gemini-key:latest"
+      - name: Smoke test /health
+        run: |
+          URL=$(gcloud run services describe novaliners --region asia-southeast2 --format 'value(status.url)')
+          for i in 1 2 3 4 5; do
+            CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$URL/health") && [ "$CODE" = "200" ] && echo "health OK ($URL)" && exit 0
+            echo "attempt $i: $CODE — retry in 10s"; sleep 10
+          done
+          echo "health check FAILED"; exit 1

@@ -1,0 +1,100 @@
+{
+ "$comment": "Hacking Growth — interventions.",
+ "interventions": [
+  {
+   "intervention_id": "HG-I01",
+   "name": "Aha Moment Mapping",
+   "targets": [
+    "R7.2"
+   ],
+   "expected_evidence": "Aha moment tertulis dalam 1 kalimat perilaku customer (bukan fitur) + 5 customer baru di-track: berapa yang sampai momen itu di 2 minggu pertama",
+   "contraindicated_until": "Belum ada ≥5 pengguna nyata yang mencapai value — aha moment dari dugaan founder, bukan perilaku",
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch02",
+     "ch03",
+     "ch06"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES",
+    "AFTER_SALES"
+   ]
+  },
+  {
+   "intervention_id": "HG-I02",
+   "name": "Channel Audit 30 hari",
+   "targets": [
+    "DS4.2",
+    "DM5.1"
+   ],
+   "expected_evidence": "Tabel sumber customer 30 hari terakhir (per transaksi) + identifikasi 1 channel terkuat + keputusan tulis: perbesar / perbaiki / matikan channel mana",
+   "contraindicated_until": "Log sumber customer belum jalan ≥30 hari — audit tanpa catatan = rekonstruksi ingatan",
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch03",
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES",
+    "AFTER_SALES"
+   ]
+  },
+  {
+   "intervention_id": "HG-I03",
+   "name": "One Growth Experiment",
+   "targets": [
+    "C6.3",
+    "DS4.2"
+   ],
+   "expected_evidence": "1 eksperimen berjalan dengan hipotesis tertulis + metrik pembanding eksplisit (baseline lama vs treatment) + hasil dicatat apa pun keluarannya",
+   "contraindicated_until": "Aha moment (HG-I01) & channel audit (HG-I02) belum selesai — eksperimen tanpa metrik utama & channel = lempar dadu",
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES",
+    "AFTER_SALES"
+   ]
+  },
+  {
+   "intervention_id": "HG-I04",
+   "name": "Existing-Customer Touch 14 hari",
+   "targets": [
+    "DM5.5",
+    "R7.2"
+   ],
+   "expected_evidence": "Minimal 10 customer lama dihubungi (check-in/bundling/info baru) dalam 14 hari + jumlah response & transaksi repeat yang terjadi dicatat",
+   "contraindicated_until": "Basis customer lama <10 atau kontak tidak valid — touch ke daftar usang menaikkan unsubscribe tanpa revenue",
+   "provenance": {
+    "source_id": "hg",
+    "chapters": [
+     "ch07",
+     "ch09"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED",
+   "e2e_phase": [
+    "SALES",
+    "AFTER_SALES"
+   ]
+  }
+ ]
+}

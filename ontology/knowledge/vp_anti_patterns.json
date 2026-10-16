@@ -1,0 +1,75 @@
+{
+ "$comment": "Anti-patterns dari Value Proposition Design (mapping §5).",
+ "anti_patterns": [
+  {
+   "pattern_id": "VP-A01",
+   "name": "Segment Mixing",
+   "symptom": "One customer profile for many segments at once — jobs/pains/gains become an average that isn’t accurate for anyone",
+   "constraint_link": [
+    "M3.1"
+   ],
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch01"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "VP-A02",
+   "name": "Feature Dump",
+   "symptom": "A list of products/features is referred to as 'value' without explaining which pain is relieved or which gain is created",
+   "constraint_link": [
+    "V2.1",
+    "C6.3"
+   ],
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch02"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "VP-A03",
+   "name": "Address Everything",
+   "symptom": "Mencoba menyelesaikan semua pains/gains customer sekaligus — tidak fokus, tidak unggul di satu pun",
+   "constraint_link": [
+    "V2.1"
+   ],
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch02",
+     "ch04"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  },
+  {
+   "pattern_id": "VP-A04",
+   "name": "Spreadsheet Fantasy",
+   "symptom": "Business plan/spreadsheet detail tanpa eksperimen lapangan — 'completely made up and turned out to be wrong'",
+   "constraint_link": [
+    "V2.4"
+   ],
+   "provenance": {
+    "source_id": "vp",
+    "chapters": [
+     "ch05"
+    ],
+    "knowledge_type": "source_claim",
+    "confidence": "normative_only"
+   },
+   "lifecycle": "MAPPED"
+  }
+ ]
+}
